@@ -1,4 +1,3 @@
-from turtle import title
 from app.models import db, User
 from app.models.game import Game
 
