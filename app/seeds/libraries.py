@@ -79,3 +79,25 @@ def seed_libraries():
         game_id = 5,
         is_owner = True
     )
+
+    db.session.add_all([user1_cart,
+    user1_lib,
+    user1_lib2,
+    user1_lib3,
+    user1_lib4,
+    user2_cart,
+    user2_lib,
+    user2_lib2,
+    user2_lib3,
+    user2_lib4,
+    user3_cart,
+    user3_cart2,
+    user3_lib,
+    user3_lib2,
+    user3_lib3])
+
+    db.session.commit()
+
+def undo_libraries():
+    db.session.execute('TRUNCATE libraries RESTART IDENTITY CASCADE;')
+    db.session.commit()
