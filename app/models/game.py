@@ -1,6 +1,7 @@
 from .db import db
 
 
+
 class Game(db.Model):
     __tablename__ = 'games'
 
@@ -13,5 +14,6 @@ class Game(db.Model):
     video = db.Column(db.String(255))
     img = db.Column(db.String(255), nullable=False)
     developer = db.Column(db.String(255), nullable=False)
+    
     reviews = db.relationship("Review", back_populates="games")
     tags = db.relationship("Tag", back_populates="games")
