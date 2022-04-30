@@ -130,6 +130,7 @@ return (
         checked={is_mature === true}
       />
     </div>
+    {/* prior to s3 integration */}
     <div className="video-div">
       <label htmlFor='video'>
       Trailers or Video clips:
