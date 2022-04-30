@@ -14,6 +14,19 @@ class Game(db.Model):
     video = db.Column(db.String(255))
     img = db.Column(db.String(255), nullable=False)
     developer = db.Column(db.String(255), nullable=False)
-    
+
     reviews = db.relationship("Review", back_populates="games")
     tags = db.relationship("Tag", back_populates="games")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'price': self.price,
+            'description': self.description,
+            'release_date': self.release_date,
+            'is_mature': self.is_mature,
+            'video' : self.video,
+            'img': self.img,
+            'developer': self.developer
+        }
