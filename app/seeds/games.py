@@ -42,8 +42,8 @@ def seed_games():
         title="Madden NFL 22", price=59.99, description="Madden NFL 22 is where gameday happens. All-new features in Franchise include staff management, an enhanced scenario engine, and weekly strategy. Share avatar progress and player class between Face of The Franchise and The Yard with unified progression.", release_date="2021_08_19", is_mature=False, img="https://cdn.akamai.steamstatic.com/steam/apps/1519350/header.jpg?t=1646323223", developer="Tiburon"
     )
 
-    db.session.add(forza_horizon_4)
     db.session.add(eldenring)
+    db.session.add(forza_horizon_4)
     db.session.add(death_stranding)
     db.session.add(elder_scrolls_v)
     db.session.add(dynasty_warriors_8)
