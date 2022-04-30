@@ -33,8 +33,9 @@ const remove = (id) => ({
 export const get_all_games = () => async(dispatch) => {
     const response = await fetch("/api/games/")
     if (response.ok) {
-        const { games } = await response.json()
-        dispatch(all_games(games))
+        const games = await response.json()
+        // console.log(games.games_list, "<>>>>>>>>>>>>")
+        dispatch(all_games(games.games_list))
     } else {
         return "ERROR AT GET_ALL_GAMES THUNK"
     }

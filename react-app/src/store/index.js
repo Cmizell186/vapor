@@ -5,7 +5,7 @@ import game_reducer from './game';
 
 const rootReducer = combineReducers({
   session,
-  game_reducer,
+  games: game_reducer,
 });
 
 
