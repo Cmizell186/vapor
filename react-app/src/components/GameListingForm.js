@@ -39,7 +39,7 @@ const CreateGame = () => {
   setPrice("");
   setDescription("");
   setRelease_Date("");
-  setIs_Mature(False);
+  setIs_Mature(false);
   setVideo([]);
   setImg([]);
   setDeveloper("");
@@ -51,7 +51,7 @@ const CreateGame = () => {
 }
 
 const img_upload = (e) => {
-  setImage(e.target.value);
+  setImg(e.target.value);
 };
 const vid_upload = (e) => {
   setVideo(e.target.value);
@@ -59,13 +59,12 @@ const vid_upload = (e) => {
 
 return (
   <>
-  <div className="game-listing-container">
+  <div className="game-listing-form-container">
     <p>This area is where you configure the presentation of your product's
         page in the Steam store. Please complete all the fields marked.
         If you need help, check out the Store Page Best Practices documentation
         for a video walkthrough of configuring your store page.
     </p>
-    <div>
     <form onSubmit={handleSubmit} classname="add-game-container">
       {hasSubmitted && (
         <div className="error">
@@ -74,7 +73,6 @@ return (
             ))}
             </div>
       )}
-      </div>
     <div className="title-div">
       <label htmlFor='title'>
       Game Name:
@@ -173,8 +171,9 @@ return (
     Submit Game
     </button>
     </form>
-    </div>
+  </div>
 </>
 )
+}
 
 export default CreateGame;
