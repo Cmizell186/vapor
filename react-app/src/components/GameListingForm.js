@@ -58,6 +58,7 @@ const vid_upload = (e) => {
 };
 
 return (
+  <>
   <div className="game-listing-container">
     <p>This area is where you configure the presentation of your product's
         page in the Steam store. Please complete all the fields marked.
@@ -105,7 +106,7 @@ return (
         type='text'
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-      /></textarea>
+      />
     </div>
     <div className="release_date-div">
       <label htmlFor='release_date'>
@@ -125,7 +126,7 @@ return (
       <input
         name='is_mature'
         type='radio'
-        value=true
+        value={true}
         onChange={(e) => setIs_Mature(true)}
         checked={is_mature === true}
       />
@@ -136,7 +137,7 @@ return (
       Trailers or Video clips:
       </label>
       <input
-        name=video'
+        name='video'
         type='text'
         multiple
         value={video}
@@ -171,9 +172,9 @@ return (
     >
     Submit Game
     </button>
-  </form>
-</div>
-// add loading screen
+    </form>
+    </div>
+</>
 )
 
 export default CreateGame;
