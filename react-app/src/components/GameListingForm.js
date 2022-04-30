@@ -51,7 +51,7 @@ const CreateGame = () => {
 }
 
 const img_upload = (e) => {
-  setImage(e.target.value):
+  setImage(e.target.value);
 };
 const vid_upload = (e) => {
   setVideo(e.target.value):
