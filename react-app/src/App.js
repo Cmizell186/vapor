@@ -11,6 +11,7 @@ import ReviewList from './components/Reviews/ReviewList'
 import GameListingForm from './components/Games/GameListingForm'
 import LandingPage from './components/LandingPage'
 import GameDetails from './components/Games/GameDetail'
+import UploadPicture from './components/Images';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -47,6 +48,9 @@ function App() {
           <GameListingForm />
           <GameList />
           <ReviewList />
+        </ProtectedRoute>
+        <ProtectedRoute exact path='/images' user={user}>
+          <UploadPicture />
         </ProtectedRoute>
         {user ?
         <>
