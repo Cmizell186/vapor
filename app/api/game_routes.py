@@ -8,7 +8,7 @@ game_routes = Blueprint('games', __name__)
 @game_routes.route('/')
 def get_games():
     games_list = Game.query.all()
-    print({'games_list': [game.to_dict() for game in games_list]})
+    # print({'games_list': [game.to_dict() for game in games_list]})
     return {'games_list': [game.to_dict() for game in games_list]}
 
 @game_routes.route('/', methods=["POST"])
@@ -37,5 +37,5 @@ def post_games():
 @game_routes.route('/<int:id>')
 def get_specific_game(id):
     game = Game.query.get(id)
-    print('================', game.to_dict())
+    # print('================', game.to_dict())
     return {'game': game.to_dict()}
