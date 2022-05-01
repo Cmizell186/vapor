@@ -9,12 +9,11 @@ const reviews = useSelector(state => Object.values(state.reviews))
 useEffect(() => {
     dispatch(get_all_reviews())
 }, [dispatch])
-console.log(reviews)
 
 return (
     <>
     <h1>{reviews?.map(review =>
-        <p>{review.content}</p>
+        <p key={review.id}>{review.content}</p>
         )}</h1>
     </>
 )
