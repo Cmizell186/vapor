@@ -17,11 +17,20 @@ const GameDetails = () => {
     dispatch(get_one_game(gameId))
   }, [dispatch])
 
+  const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
+
   return (
     <>
       <div>
         <h2>{game?.title}</h2>
-        <p>here</p>
+        <p>{game?.description}</p>
+        <p>{game?.price}</p>
+        <p>{new Date(game?.release_date).toLocaleDateString('en-US', DATE_OPTIONS)}</p>
+        <p>{game?.is_mature}</p>
+        <p>{game?.video}</p>
+        <p>{game?.img}</p>
+        <img src={game?.img} />
+        <p>{game?.developer}</p>
       </div>
       { filteredReviews?.map(review =>
         <div key={review.id}>

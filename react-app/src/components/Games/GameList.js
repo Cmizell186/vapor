@@ -15,15 +15,15 @@ const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
 return (
     <>
     {games?.map(game =>
-    <div key={game.id}>
-        <h2>{game.title}</h2>
-        <p>{game.description}</p>
-        <p>{game.price}</p>
-        <p>{new Date(game.release_date).toLocaleDateString('en-US', DATE_OPTIONS)}</p>
-        <p>{game.is_mature}</p>
-        <p>{game.video}</p>
-        <p>{game.img}</p>
-        <p>{game.developer}</p>
+    <div key={game?.id}>
+        <h2>{game?.title}</h2>
+        <p>{game?.description}</p>
+        <p>{game?.price}</p>
+        <p>{new Date(game?.release_date).toLocaleDateString('en-US', DATE_OPTIONS)}</p>
+        <p>{game?.is_mature}</p>
+        <p>{game?.video}</p>
+        <p>{game?.img}</p>
+        <p>{game?.developer}</p>
     </div>
         )}
     </>
