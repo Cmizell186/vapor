@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, FloatField, IntegerField, DateField, BooleanField
+from wtforms import StringField, FloatField, IntegerField, DateField, BooleanField, FileField
 from wtforms.validators import DataRequired, Email, ValidationError
 from app.models import Game
 
@@ -10,5 +10,5 @@ class CreateGame(FlaskForm):
   release_date = DateField('release date', validators=[DataRequired()])
   is_mature = BooleanField('mature')
   video = StringField('video')
-  img = StringField('img', validators=[DataRequired()])
+  image = FileField('image', validators=[DataRequired()])
   developer = StringField('developer', validators=[DataRequired()])
