@@ -71,6 +71,7 @@ def post_games():
             img = url,
             developer = form.developer.data
         )
+        print(game)
         db.session.add(game)
         db.session.commit()
         return game.to_dict()
