@@ -13,7 +13,7 @@ const CreateGame = () => {
     const [video, setVideo] = useState([]);
 
     // for aws upload
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState([]);
     const [imageLoading, setImageLoading] = useState(false);
 
     const [developer, setDeveloper] = useState("");
@@ -28,7 +28,7 @@ const CreateGame = () => {
         const formData = new FormData();
         formData.append('image', image);
         console.log(formData.append('image', image))
-        console.log(formData)
+        console.log(image)
         setHasSubmitted(true);
 
         // aws is slow! adding a loading message for users to not get too worried!

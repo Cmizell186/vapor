@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { create } from "../../store/review"
+import { create_review } from "../../store/reviews"
 
 const ReviewGame = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -21,7 +21,7 @@ const ReviewGame = () => {
       content,
       userId: sessionUser.id
     };
-    let newReview = await dispatch(create(review))
+    let newReview = await dispatch(create_review(review))
     setIs_Recommended(false)
     setContent("")
     setHasSubmitted(false);
@@ -52,12 +52,14 @@ const ReviewGame = () => {
           </label>
           <button className='recommend_yes'
             value={true}
-            onChange={(e) => setIs_Recommended(true)}
-          />
+
+            onClick={(e) => setIs_Recommended(true)}
+          >Yes</button>
           <button className='recommend_no'
           value={false}
-          onChange={(e) => setIs_Recommended(false)}
-          />
+
+          onClick={(e) => (setIs_Recommended(false))}
+          >No</button>
         </div>
         <div className="content-div">
           <label htmlFor='content'>
