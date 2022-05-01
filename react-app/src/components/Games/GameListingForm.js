@@ -4,58 +4,70 @@ import { useHistory } from "react-router-dom";
 import { create_game } from "../../store/game";
 
 const CreateGame = () => {
-  const sessionUser = useSelector((state) => state.session.user);
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
-  const [release_date, setRelease_Date] = useState("");
-  const [is_mature, setIs_Mature] = useState(false);
-  const [video, setVideo] = useState([]);
-  const [img, setImg] = useState([]);
-  const [developer, setDeveloper] = useState("");
-  const [errors, setErrors] = useState([]);
-  const [hasSubmitted, setHasSubmitted] = useState(false);
-  // const [validationErrors, setValidationErrors] = useState([])
-  const history = useHistory();
-  const dispatch = useDispatch();
+    const sessionUser = useSelector((state) => state.session.user);
+    const [title, setTitle] = useState("");
+    const [price, setPrice] = useState("");
+    const [description, setDescription] = useState("");
+    const [release_date, setRelease_Date] = useState("");
+    const [is_mature, setIs_Mature] = useState(false);
+    const [video, setVideo] = useState([]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setHasSubmitted(true);
+    // for aws upload
+    const [image, setImage] = useState(null);
+    const [imageLoading, setImageLoading] = useState(false);
 
-    const game = {
-      title,
-      price,
-      description,
-      release_date,
-      is_mature,
-      video,
-      img,
-      developer,
-      userId: sessionUser.id,
+    const [developer, setDeveloper] = useState("");
+    const [errors, setErrors] = useState([]);
+    const [hasSubmitted, setHasSubmitted] = useState(false);
+    // const [validationErrors, setValidationErrors] = useState([])
+    const history = useHistory();
+    const dispatch = useDispatch();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('image', image);
+        setHasSubmitted(true);
+
+        // aws is slow! adding a loading message for users to not get too worried!
+        setImageLoading(true);
+
+        const game = {
+            title,
+            price,
+            description,
+            release_date,
+            is_mature,
+            video,
+            image:formData,
+            developer,
+            userId: sessionUser.id,
+        };
+        let newGame = await dispatch(create_game(game));
+
+        // set all back to empty form field
+        setTitle("");
+        setPrice("");
+        setDescription("");
+        setRelease_Date("");
+        setIs_Mature(false);
+        setVideo([]);
+        setImage([]);
+        setDeveloper("");
+        setHasSubmitted(false);
+
+        if (newGame) {
+            history.push("/");
+        }
     };
-    let newGame = await dispatch(create_game(game));
-    setTitle("");
-    setPrice("");
-    setDescription("");
-    setRelease_Date("");
-    setIs_Mature(false);
-    setVideo([]);
-    setImg([]);
-    setDeveloper("");
 
-    setHasSubmitted(false);
-    if (newGame) {
-      history.push("/");
-    }
-  };
-
-  const img_upload = (e) => {
-    setImg(e.target.value);
-  };
-  const vid_upload = (e) => {
-    setVideo(e.target.value);
-  };
+    const updateImage = (e) => {
+        const file = e.target.files[0];
+        setImage(file);
+    };
+    const vid_upload = (e) => {
+        setVideo(e.target.value);
+    };
 
   return (
     <>
@@ -132,8 +144,8 @@ const CreateGame = () => {
             />
           </div>
           <div className="img-div">
-            <label htmlFor="img">Images:</label>
-            <input name="img" type="text" value={img} onChange={img_upload} />
+            <label htmlFor="image">Images:</label>
+            <input name="image" type="file" accept="image/*" onChange={updateImage} />
           </div>
           <div className="developer-div">
             <label htmlFor="developer">Developer:</label>
@@ -147,6 +159,7 @@ const CreateGame = () => {
           <button className={"button btn-submit-game"} type="submit">
             Submit Game
           </button>
+          {(imageLoading)&& <p>Loading...</p>}
         </form>
       </div>
     </>
