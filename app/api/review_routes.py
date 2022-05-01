@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from app.models import Review, db
-
+from app.forms.review_form import ReviewGame
 review_routes = Blueprint('reviews', __name__)
 
 @review_routes.route('/')
@@ -14,9 +14,9 @@ def get_specific_review(id):
   return specific_review
 
 
-@review_routes.route('/<int:id>', methods=["POST"])
+@review_routes.route('/', methods=["POST"])
 def post_review():
-    form = CreateReview()
+    form = ReviewGame()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         review = Review(

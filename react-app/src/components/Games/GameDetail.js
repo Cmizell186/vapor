@@ -3,6 +3,7 @@ import { get_one_game } from "../../store/game"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
+import ReviewGame from "../Reviews/ReviewsForm";
 
 const GameDetails = () => {
   const { gameId } = useParams();
@@ -29,9 +30,13 @@ const GameDetails = () => {
         <p>{game?.is_mature}</p>
         <p>{game?.video}</p>
         <p>{game?.img}</p>
-        <img src={game?.img} />
+        <img src={game?.img} alt=""/>
         <p>{game?.developer}</p>
       </div>
+      <div className='create-reviews-container'>
+        <ReviewGame/>
+      </div>
+      <div className='reviews-container'>
       { filteredReviews?.map(review =>
         <div key={review.id}>
           <h2>
@@ -39,6 +44,7 @@ const GameDetails = () => {
           </h2>
         </div>
       )}
+      </div>
     </>
   )
   }
