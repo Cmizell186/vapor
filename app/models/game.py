@@ -13,13 +13,13 @@ class Game(db.Model):
     release_date = db.Column(db.Date, nullable=False)
     is_mature = db.Column(db.Boolean, nullable=False)
     video = db.Column(db.String(255), nullable=False)
-    image = db.Column(db.String(255), nullable=False)
     developer = db.Column(db.String(255), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
     user = db.relationship("User", back_populates="games")
     reviews = db.relationship("Review", back_populates="games")
     tags = db.relationship("Tag", back_populates="games")
+    image = db.relationship("Image", back_populates="games")
 
     def to_dict(self):
         return {
