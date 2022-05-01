@@ -52,7 +52,7 @@ export const get_one_game = (id) => async(dispatch) => {
 }
 
 export const create_game = (game) => async(dispatch) => {
-    const response = await fetch("/api/games", {
+    const response = await fetch("/api/games/", {
         method: "POST",
         headers: {
             'Accept': 'application/json',

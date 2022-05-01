@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { add_game } from "../store/game"
+import { create_game } from "../store/game"
 
 const CreateGame = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -34,7 +34,7 @@ const CreateGame = () => {
     developer,
     userId: sessionUser.id
   };
-  let newGame = await dispatch(add_game(game))
+  let newGame = await dispatch(create_game(game))
   setTitle("");
   setPrice("");
   setDescription("");
