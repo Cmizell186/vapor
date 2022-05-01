@@ -28,6 +28,8 @@ def upgrade():
     sa.Column('video', sa.String(length=255), nullable=True),
     sa.Column('image', sa.String(length=255), nullable=False),
     sa.Column('developer', sa.String(length=255), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('title')
     )
