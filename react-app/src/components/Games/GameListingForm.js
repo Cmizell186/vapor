@@ -91,6 +91,7 @@ return (
       <input
         name='price'
         type='number'
+        step='any'
         value={price}
         onChange={(e) => setPrice(e.target.value)}
       />
