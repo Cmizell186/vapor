@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { create_game } from "../store/game"
+import { create_game } from "../../store/game"
 
 const CreateGame = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -65,7 +65,7 @@ return (
         If you need help, check out the Store Page Best Practices documentation
         for a video walkthrough of configuring your store page.
     </p>
-    <form onSubmit={handleSubmit} classname="add-game-container">
+    <form onSubmit={handleSubmit} className="add-game-container">
       {hasSubmitted && (
         <div className="error">
           {errors.map((error, index) => (

@@ -10,7 +10,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import GameList from './components/Games/GameList'
 import ReviewList from './components/Reviews/ReviewList'
-import GameListingForm from './components/GameListingForm'
+import GameListingForm from './components/Games/GameListingForm'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -27,12 +27,13 @@ function App() {
     return null;
   }
 
-  // <ReviewList />
+  //
   return (
     <BrowserRouter>
       <NavBar />
-      <GameList />
       <GameListingForm />
+      <GameList />
+      <ReviewList />
       <Switch>
         <Route path='/login' exact={true}>
           <LoginForm />
