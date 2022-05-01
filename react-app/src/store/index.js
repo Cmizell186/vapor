@@ -2,10 +2,12 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
 import game_reducer from './game';
+import review_reducer from './reviews';
 
 const rootReducer = combineReducers({
   session,
   games: game_reducer,
+  reviews: review_reducer
 });
 
 
