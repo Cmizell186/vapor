@@ -1,3 +1,4 @@
+from turtle import back
 from .db import db
 
 
@@ -12,9 +13,11 @@ class Game(db.Model):
     release_date = db.Column(db.Date, nullable=False)
     is_mature = db.Column(db.Boolean, nullable=False)
     video = db.Column(db.String(255), nullable=False)
-    img = db.Column(db.String(255), nullable=False)
+    image = db.Column(db.String(255), nullable=False)
     developer = db.Column(db.String(255), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
+    user = db.relationship("User", back_populates="games")
     reviews = db.relationship("Review", back_populates="games")
     tags = db.relationship("Tag", back_populates="games")
 
@@ -27,6 +30,6 @@ class Game(db.Model):
             'release_date': self.release_date,
             'is_mature': self.is_mature,
             'video' : self.video,
-            'img': self.img,
+            'image': self.image,
             'developer': self.developer
         }
