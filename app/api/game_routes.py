@@ -36,6 +36,6 @@ def post_games():
 
 @game_routes.route('/<int:id>')
 def get_specific_game(id):
-    specific_game = Game.query.get(id)
-    print(specific_game)
-    return specific_game
+    game = Game.query.get(id)
+    print('================', game.to_dict())
+    return {'game': game.to_dict()}

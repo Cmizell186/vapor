@@ -45,6 +45,7 @@ export const get_one_game = (id) => async(dispatch) => {
     const response = await fetch(`/api/games/${id}`)
     if (response.ok) {
         const { game } = await response.json()
+
         dispatch(get_one(game))
     } else {
         return "ERROR AT GET_ONE_GAME THUNK"
