@@ -9,6 +9,7 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import GameList from './components/Games/GameList'
+import ReviewList from './components/Reviews/ReviewList'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -29,6 +30,7 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <GameList />
+      <ReviewList />
       <Switch>
         <Route path='/login' exact={true}>
           <LoginForm />

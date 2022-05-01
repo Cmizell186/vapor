@@ -14,12 +14,12 @@ const get_one = (review) => ({
   review
 })
 
-const create = (review) = ({
+const create = (review) => ({
   type: CREATE_REVIEW,
   review
 })
 
-const update = (review) = ({
+const update = (review) => ({
   type: UPDATE_REVIEW,
   review
 })
