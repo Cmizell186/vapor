@@ -26,7 +26,7 @@ def upgrade():
     sa.Column('release_date', sa.Date(), nullable=False),
     sa.Column('is_mature', sa.Boolean(), nullable=False),
     sa.Column('video', sa.String(length=255), nullable=True),
-    sa.Column('img', sa.String(length=255), nullable=False),
+    sa.Column('image', sa.String(length=255), nullable=False),
     sa.Column('developer', sa.String(length=255), nullable=False),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('title')
