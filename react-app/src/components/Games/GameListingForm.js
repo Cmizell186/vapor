@@ -27,6 +27,8 @@ const CreateGame = () => {
         e.preventDefault();
         const formData = new FormData();
         formData.append('image', image);
+        console.log(formData.append('image', image))
+        console.log(formData)
         setHasSubmitted(true);
 
         // aws is slow! adding a loading message for users to not get too worried!
