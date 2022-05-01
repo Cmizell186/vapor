@@ -10,7 +10,7 @@ import GameList from './components/Games/GameList'
 import ReviewList from './components/Reviews/ReviewList'
 import GameListingForm from './components/Games/GameListingForm'
 import LandingPage from './components/LandingPage'
-
+import GameDetails from './components/Games/GameDetail'
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -55,9 +55,9 @@ function App() {
         {user ?
         <>
         <Switch>
-        {/* <Route path='/games/:gameId'>
-          <GameDetail />
-        </Route> */}
+         <Route path='/games/:gameId'>
+          <GameDetails />
+        </Route>
         {/* <Route path='/reviews/:reviewId'>
           <Reviews />
         </Route> */}
