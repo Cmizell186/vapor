@@ -1,5 +1,6 @@
 from crypt import methods
 from flask import Blueprint, jsonify, request
+from flask_login import current_user
 from app.models import Game, db
 from app.forms.create_game_form import CreateGame
 from app.s3config import (
@@ -69,7 +70,8 @@ def post_games():
             is_mature = form.is_mature.data,
             video = form.video.data,
             img = url,
-            developer = form.developer.data
+            developer = form.developer.data,
+            user_id = current_user.id
         )
         print(game)
         db.session.add(game)
