@@ -16,7 +16,6 @@ function App() {
   const user = useSelector(state => state.session.user)
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
-  console.log(user, "USER<<<<")
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
@@ -35,9 +34,6 @@ function App() {
       </div>
     )
   }
-  // <GameListingForm />
-  // <GameList />
-  // <ReviewList />
   //
   return (
     <>
