@@ -10,8 +10,8 @@ def seed_reviews():
     )
     review2 = Review(
         is_recommended = False,
-        content = "WoW! THIS GAME WAS HORRIBLE! I had no fun! Could not even beat the tutorial boss?! If there was a difficulty bar that i could set to easy then I would have made it easy!",
-        game_id = 2,
+        content = "TOGETHAAAA, WE WILL DEVOAHHH THE VERYY GOOOUHDS",
+        game_id = 1,
         user_id = 1,
     )
     review3 = Review(
