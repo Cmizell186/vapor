@@ -21,7 +21,7 @@ def upgrade():
     op.create_table('games',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(length=150), nullable=False),
-    sa.Column('price', sa.Float(precision=4, asdecimal=2), nullable=False),
+    sa.Column('price', sa.Float(precision=4, asdecimal=False), nullable=False),
     sa.Column('description', sa.String(length=2500), nullable=False),
     sa.Column('release_date', sa.Date(), nullable=False),
     sa.Column('is_mature', sa.Boolean(), nullable=False),

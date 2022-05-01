@@ -7,11 +7,11 @@ class Game(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150), nullable=False, unique=True)
-    price = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Float(precision=4, asdecimal=False), nullable=False)
     description = db.Column(db.String(2500), nullable=False)
     release_date = db.Column(db.Date, nullable=False)
     is_mature = db.Column(db.Boolean, nullable=False)
-    video = db.Column(db.String(255))
+    video = db.Column(db.String(255), nullable=False)
     img = db.Column(db.String(255), nullable=False)
     developer = db.Column(db.String(255), nullable=False)
 
