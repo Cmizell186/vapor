@@ -44,12 +44,14 @@ def post_games():
     form = CreateGame()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-
+    print(dir(form.image.data), "<<<<<<<<<<<<<<<<<<<<<<")
+    # print(request.files["image"], ">>>>>>>>>>>>>>>>>>")
     # for adding image to s3 bucket
     if "image" not in request.files:
         print("error happenend at line 50")
         return {"errors": "image required"}, 400
     image = request.files["image"]
+    print(image, ">>>>>>>>>>>>>>>>>")
     if not allowed_file(image.filename):
         print("error happenend at line 53")
         return {"errors": "file type not permitted"}, 400
@@ -76,7 +78,6 @@ def post_games():
             developer = form.developer.data,
             user_id = current_user.id
         )
-        print(game)
         db.session.add(game)
         db.session.commit()
         return game.to_dict()

@@ -11,15 +11,15 @@ class Game(db.Model):
     price = db.Column(db.Float(precision=4, asdecimal=False), nullable=False)
     description = db.Column(db.String(2500), nullable=False)
     release_date = db.Column(db.Date, nullable=False)
-    is_mature = db.Column(db.Boolean)
-    video = db.Column(db.String(255))
-    image = db.Column(db.String(255), nullable=False)
+    is_mature = db.Column(db.Boolean, nullable=False)
+    video = db.Column(db.String(255), nullable=False)
     developer = db.Column(db.String(255), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
     user = db.relationship("User", back_populates="games")
     reviews = db.relationship("Review", back_populates="games")
     tags = db.relationship("Tag", back_populates="games")
+    image = db.relationship("Image", back_populates="games")
 
     def to_dict(self):
         return {

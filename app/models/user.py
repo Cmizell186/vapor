@@ -14,6 +14,7 @@ class User(db.Model, UserMixin):
 
     games = db.relationship("Game", back_populates="user")
     reviews_user = db.relationship("Review", back_populates="users")
+    image = db.relationship("Image", back_populates="user")
 
     @property
     def password(self):
