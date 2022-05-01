@@ -41,11 +41,12 @@ const CreateGame = () => {
             release_date,
             is_mature,
             video,
-            image:formData,
+            formData,
             developer,
             userId: sessionUser.id,
         };
         let newGame = await dispatch(create_game(game));
+        console.log(newGame, "<<<<<<<<<<<<<<<<<<<")
 
         // set all back to empty form field
         setTitle("");
