@@ -14,7 +14,7 @@ export default function LandingPage() {
                 <div className="nav_nav" id="nav_profile">PROFILE</div>
                 <div className="nav_nav" id="nav_about">ABOUT</div>
                 </div>
-            <div id="loginnav">Login Demo</div>
+            <div id="loginnav">Login | Demo</div>
         </div>
         </div>
       <div id="page_content">
@@ -38,6 +38,9 @@ export default function LandingPage() {
 
         </div>
       </div>
+      <div id="footer">
+          © 2022 Vapor. A Steam clone made by Jason Vien, Chris Mitzell, Jared Kunhart and Damian can fill in his own name.
+        </div>
     </div>
     )
 }
