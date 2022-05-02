@@ -15,7 +15,11 @@ const Images = () =>{
         <>
         {images?.map(image =>(
             <div key={image?.id}>
-                <img src={image?.image}>
+                <img
+                    src={image?.image}
+                    width="500"
+                    height="500"
+                >
                 </img>
             </div>
         ))}
