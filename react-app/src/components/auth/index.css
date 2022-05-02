@@ -1,6 +1,6 @@
 @font-face {
     font-family: Motiva Sans;
-    src: url("../../fonts/Motiva-Sans.ttf");
+    src: url("../../public/fonts/Motiva-Sans-Light.ttf");
 }
 
 #login_label {
@@ -19,6 +19,7 @@
     display: block;
     box-shadow: none;
     width: 100%;
+    border: 1px solid #26282d00;
     transition: border ease-in-out .5s;
     outline: none;
     font-family: "Motiva Sans", Sans-serif;
@@ -27,12 +28,14 @@
 
 .input_login {
     background: #32353C;
+    margin-bottom: 18px;
 }
 
 #sign_in_button {
     padding: 3px 80px;
     font-size: 15px;
     line-height: 15px;
+    height: 37px;
     font-family: "Motiva Sans", Sans-serif;
     border-radius: 2px;
     border: none;
@@ -46,4 +49,5 @@
     background-size: 330% 100%;
     border-radius: 2px;
     display: block;
+    margin: auto;
 }
