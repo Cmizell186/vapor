@@ -18,6 +18,11 @@ def get_specific_review(id):
 def post_review():
     form = ReviewGame()
     form['csrf_token'].data = request.cookies['csrf_token']
+
+    print('content', form.content.data)
+    print('game_id', form.game_id.data)
+    print('user_id', form.user_id.data)
+    print('is_recommended', form.is_recommended.data)
     if form.validate_on_submit():
         review = Review(
             is_recommended = form.is_recommended.data,
