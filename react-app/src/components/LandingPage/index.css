@@ -63,6 +63,11 @@
   right: 5px;
 }
 
+#demo_login {
+  text-decoration: none;
+  color: #fff !important;
+}
+
 #join_pc {
   width: 320px;
 }
