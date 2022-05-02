@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { create_review } from "../../store/reviews"
 
-const ReviewGame = () => {
+const ReviewGame = ({gameId}) => {
   const sessionUser = useSelector((state) => state.session.user);
-  const [is_recommended, setIs_Recommended] = useState(false)
+  const [is_recommended, setIs_Recommended] = useState(null)
   const [content, setContent] = useState("")
   const [errors, setErrors] = useState([])
   const [hasSubmitted, setHasSubmitted] = useState(false)
@@ -16,13 +16,19 @@ const ReviewGame = () => {
     e.preventDefault();
     setHasSubmitted(true);
 
+    let ourErrors = [];
+    if(is_recommended === null) ourErrors.push("must have recommended selected")
+    if(!content) ourErrors.push("must have content")
+    if(ourErrors.length) return setErrors(ourErrors)
+
     const review = {
       is_recommended,
       content,
-      userId: sessionUser.id
+      user_id: sessionUser.id,
+      game_id: gameId
     };
     let newReview = await dispatch(create_review(review))
-    setIs_Recommended(false)
+    setIs_Recommended(null)
     setContent("")
     setHasSubmitted(false);
     if (newReview) {
@@ -34,10 +40,10 @@ const ReviewGame = () => {
     <>
       <div className="review-form-container">
         <h2>Write a review</h2>
-        {/* <p>Please describe what you liked or disliked about this game
+        <p>Please describe what you liked or disliked about this game
            and whether you recommend it to others.
           Please remember to be polite and follow the Rules and Guidelines.
-        </p> */}
+        </p>
         <form onSubmit={handleSubmit} className="create-reviews-container">
           {hasSubmitted && (
             <div className="error">

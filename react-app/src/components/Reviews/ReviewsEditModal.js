@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import EditReview from './ReviewsEditForm';
 
-const ReviewsEditModal = ({ user, review }) => {
+const ReviewsEditModal = ({ user, review, gameId }) => {
   const[showModal, setShowModal] = useState(false);
 
   return (
@@ -10,7 +10,7 @@ const ReviewsEditModal = ({ user, review }) => {
       <button className='edit_button' onClick={() => setShowModal(true)}>Update Review</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <EditReview review={review} hideModal={() => setShowModal(false)} />
+          <EditReview review={review} hideModal={() => setShowModal(false)} gameId={gameId} />
         </Modal>
       )}
     </>

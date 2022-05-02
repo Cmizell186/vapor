@@ -13,6 +13,9 @@ import LandingPage from './components/LandingPage'
 import GameDetails from './components/Games/GameDetail'
 import ReviewDetails from './components/Reviews/ReviewDetail'
 import UploadPicture from './components/Images';
+import Images from './components/Images/ImageList';
+import SingleImage from './components/Images/UserImage';
+
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -40,18 +43,19 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <NavBar />
       <Switch>
         <Route exact path="/">
           {user ? <Redirect to="/games" /> : <Splash />}
         </Route>
         <ProtectedRoute exact path="/games" user={user}>
+          <NavBar />
           <GameListingForm />
           <GameList />
           <ReviewList />
         </ProtectedRoute>
         <ProtectedRoute exact path='/images' user={user}>
           <UploadPicture />
+          <Images />
         </ProtectedRoute>
         {user ?
         <>
@@ -67,6 +71,8 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
+          <UploadPicture />
+          <SingleImage />
         </ProtectedRoute>
         </Switch>
         </>

@@ -131,3 +131,4 @@ def edit_game(id):
     else:
         print(form.errors)
         return "Bad data"
+
