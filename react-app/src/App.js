@@ -44,12 +44,13 @@ function App() {
   return (
     <>
     <BrowserRouter>
+    <NavBar user={user} />
       <Switch>
         <Route exact path="/">
           {user ? <Redirect to="/games" /> : <Splash />}
         </Route>
         <ProtectedRoute exact path="/games" user={user}>
-          <NavBar user={user} />
+          {/* <NavBar user={user} /> */}
           <GameListingForm />
           <GameList />
           <ReviewList />
