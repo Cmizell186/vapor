@@ -10,9 +10,13 @@ export const get_all_game_images = (id) => async dispatch =>{
     const res = await fetch(`/api/images/game/${id}`)
 
     if(res.ok){
-        const {images} = await res.json()
-
-        dispatch(all_game_images(images.games_images))
+        const imagesDict = await res.json()
+        const images = imagesDict["game_images"]
+        if(!images){
+            return "Images is empty!"
+        }
+        console.log(imagesDict)
+        dispatch(all_game_images(images))
     } else {
         return "ERROR AT GET_ALL_GAME_IMAGES THUNK!"
     }

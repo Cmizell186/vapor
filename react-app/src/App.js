@@ -14,7 +14,8 @@ import GameDetails from './components/Games/GameDetail'
 import UploadPicture from './components/Images';
 import Images from './components/Images/ImageList';
 import SingleImage from './components/Images/UserImage';
-
+import GameImages from './components/Games/GameImages';
+import UploadGamePicture from './components/Games/GameImageForm';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -61,6 +62,8 @@ function App() {
         <Switch>
          <Route path='/games/:gameId'>
           <GameDetails />
+          <UploadGamePicture />
+          <GameImages />
         </Route>
         {/* <Route path='/reviews/:reviewId'>
           <Reviews />
