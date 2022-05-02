@@ -13,6 +13,8 @@ import LandingPage from './components/LandingPage'
 import GameDetails from './components/Games/GameDetail'
 import UploadPicture from './components/Images';
 import Images from './components/Images/ImageList';
+import SingleImage from './components/Images/UserImage';
+
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -68,6 +70,8 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
+          <UploadPicture />
+          <SingleImage />
         </ProtectedRoute>
         </Switch>
         </>
