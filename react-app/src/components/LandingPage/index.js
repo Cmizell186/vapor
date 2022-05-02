@@ -14,7 +14,7 @@ export default function LandingPage() {
                 <div className="nav_nav" id="nav_profile">PROFILE</div>
                 <div className="nav_nav" id="nav_about">ABOUT</div>
                 </div>
-            <div id="loginnav">Login | Demo</div>
+            <div id="loginnav">Login | <a href="/demo" id="demo_login">Demo</a></div>
         </div>
         </div>
       <div id="page_content">
@@ -33,13 +33,14 @@ export default function LandingPage() {
         </div>
         It's free and easy to use.
         <div id="signup_button">
-            <button id="join_vapor">Join Vapor</button>
+
+            <button id="join_vapor"><a href="/signup">Join Vapor</a></button>
         </div>
 
         </div>
       </div>
       <div id="footer">
-          © 2022 Vapor. A Steam clone made by Jason Vien, Chris Mitzell, Jared Kunhart and Damian can fill in his own name.
+          © 2022 Vapor. A Steam clone made by Jason Vien, Chris Mizell, Jared Kunhart and Damian can fill in his own name.
         </div>
     </div>
     )
