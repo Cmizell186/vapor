@@ -47,6 +47,7 @@ const LoginForm = () => {
           value={email}
           onChange={updateEmail}
           className="input_login"
+          id='login_input'
         />
       </div>
       <div>
@@ -57,6 +58,7 @@ const LoginForm = () => {
           value={password}
           onChange={updatePassword}
           className="input_login"
+          id='login_input'
         />
         <button id="sign_in_button" type='submit'>Sign In</button>
       </div>
