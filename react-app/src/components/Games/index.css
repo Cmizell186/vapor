@@ -30,6 +30,7 @@
   flex-flow: row;
   width: 940px;
   height: 444px;
+  background-color: #0e0e0f42;
 }
 
 #selected-image {
@@ -42,7 +43,7 @@
   width: 616px;
   margin: 0px;
   padding: 0px 0px 0px 0px;
-  margin-right: 20px;
+  margin-right: 14px;
 }
 
 #details-subcontainer {
@@ -52,9 +53,10 @@
   height: 392px;
   width: 324px;
   word-wrap: break-word;
+  background-image: linear-gradient(to bottom right,#5f5f5f00, #0000009c );
 }
 
-#details-subcontainer > p {
+#details-subcontainer > div {
   margin: 0px 0px 0px 0px;
   font-family: "Motiva Sans", Sans-serif;
 }
@@ -62,4 +64,30 @@
 #main-game-image {
   width: 324px;
   height: 151px;
+}
+
+#description-paragraph {
+  padding-right: 16px;
+}
+
+#user-review-div {
+  display: flex;
+}
+
+#user-review-div > p {
+  margin-right: 30px;
+}
+
+#developer-name-div {
+  display: flex;
+}
+
+#developer-name-div > p {
+  margin-right: 30px;
+}
+
+.subdetail-divs {
+  font-size: 11px;
+  color: #5f6168;
+  margin: 0px 0px 0px 0px;
 }
