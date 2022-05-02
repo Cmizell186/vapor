@@ -42,12 +42,12 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <NavBar />
       <Switch>
         <Route exact path="/">
           {user ? <Redirect to="/games" /> : <Splash />}
         </Route>
         <ProtectedRoute exact path="/games" user={user}>
+          <NavBar />
           <GameListingForm />
           <GameList />
           <ReviewList />
