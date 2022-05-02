@@ -11,3 +11,11 @@ class Image(db.Model):
 
     games = db.relationship("Game", back_populates="image")
     user = db.relationship("User", back_populates="image")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'image': self.image,
+            'user_id': self.user_id,
+            'game_id': self.game_id,
+        }
