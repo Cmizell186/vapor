@@ -38,7 +38,7 @@
   flex-direction: row;
   justify-content: center;
   color: #E9E9E9;
-  background-image: url("../../images/steamloginbg.jpg");
+  background-image: url("../../public/images/steamloginbg.jpg");
   background-repeat: no-repeat;
 }
 
