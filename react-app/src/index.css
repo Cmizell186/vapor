@@ -1,21 +1,10 @@
 /* TODO Add site wide styles */
-.splashWrapper {
-    display: flex;
-    flex-direction: row;
+html {
+    margin: 0;
+    /* padding: 0; */
 }
 
-input {
-    width: auto;
-    color: black;
-    padding: 10px 20px;
-    margin: 4px 0;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Righteous', cursive;
-}
-
-label {
-    font-family: 'Dosis', sans-serif;
-    font-weight: 900;
-    padding: 5px;
+body {
+    margin: 0;
+    padding: 0;
 }
