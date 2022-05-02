@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Motiva Sans;
+    src: url("../../fonts/Motiva-Sans.ttf");
+}
+
+#login_label {
+    font-size: 14px;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: normal;
+}
+
+.login_form, label, input {
+    display:flex;
+    justify-content: center;
+    max-width: 300px;
+    border-radius: 3px;
+    color: #E9E9E9;
+    padding: 8px 6px;
+    display: block;
+    box-shadow: none;
+    width: 100%;
+    transition: border ease-in-out .5s;
+    outline: none;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: normal;
+}
+
+.input_login {
+    background: #32353C;
+}
+
+#sign_in_button {
+    padding: 3px 80px;
+    font-size: 15px;
+    line-height: 15px;
+    font-family: "Motiva Sans", Sans-serif;
+    border-radius: 2px;
+    border: none;
+    color: #c3e1f8;
+    cursor: pointer;
+    background: transparent;
+    text-shadow: 1px 1px 0px rgb(0 0 0 / 30%);
+    background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+    background-position: 25%;
+    background-size: 330% 100%;
+    border-radius: 2px;
+    display: block;
+}

@@ -1,0 +1,106 @@
+.landingPageWrapper {
+    height: 100vh;
+    width: 100vw;
+}
+
+#navarea {
+  font-family: "Motiva Sans", Sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  font-size: 14px;
+  height: 13vh;
+  width: 100%;
+  background: #171a21;
+  color: #E9E9E9;
+}
+
+#logo {
+  width: 55px;
+  height: 45px;
+}
+
+#navbar {
+  margin: 25px;
+}
+
+#loginnav {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+#page_content {
+  height: 80vh;
+  background: #212429;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #E9E9E9;
+  background-image: url("../../images/steamloginbg.jpg");
+  background-repeat: no-repeat;
+}
+
+#signinform {
+  width: 25%;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+  padding: 40px 20px 20px 20px;
+}
+
+#signintext {
+  font-family: "Motiva Sans", Sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  font-size: 34px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#loginform {
+  display: flex;
+  justify-content: center;
+  color: #E9E9E9;
+  padding: 8px 6px;
+  box-shadow: none;
+  outline: none;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+}
+
+/* * {
+    font-family: "Motiva Sans", Sans-serif;
+    color: white;
+  } */
+
+
+  /* body {
+    background-image: url("https://cdn.akamai.steamstatic.com/store/home/store_home_share.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+  } */
+
+  /* form {
+    background-color: rgba(24,34,49, 0.8);
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    margin: 30px 400px 60px 400px;
+    border-radius: 20px;
+  }
+
+  textarea {
+    color: rgb(38,58,82);
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.9)
+  } */
