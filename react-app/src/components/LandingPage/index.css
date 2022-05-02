@@ -58,6 +58,7 @@
 
 #loginnav {
   position: absolute;
+  vertical-align: top;
   top: 5px;
   right: 5px;
 }
