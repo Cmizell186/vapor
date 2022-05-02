@@ -11,6 +11,11 @@ def get_images():
     all_images = UserImage.query.all()
     return {'all_images': [img.to_dict() for img in all_images]}
 
+@image_routes.route("/<int:id>")
+def get_single_image(id):
+    single_image = UserImage.query.filter_by(user_id=id).first()
+    return {"image": single_image.to_dict()}
+
 
 @image_routes.route("", methods=["POST"])
 def upload_image():
