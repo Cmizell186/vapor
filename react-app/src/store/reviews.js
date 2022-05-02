@@ -24,6 +24,7 @@ const update = (review) => ({
   review
 })
 
+
 const remove = (id) => ({
   type: DELETE_REVIEW,
   review_id: id
@@ -68,17 +69,17 @@ export const create_review = (review) => async(dispatch) => {
   }
 }
 
-export const update_review = (review) => async(dispatch) => {
+export const update_review = review => async (dispatch) => {
   const response = await fetch(`/api/reviews/${review.id}`, {
-      method: "PUT",
+      method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(review)
   })
   if (response.ok) {
       const data = await response.json()
       console.log(data)
-      const updated_review = data.review
-      dispatch(update(updated_review))
+      dispatch(update(data))
+      return response;
   } else {
       return "ERROR AT UPDATE_REVIEW THUNK"
   }

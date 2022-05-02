@@ -4,9 +4,11 @@ import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import ReviewGame from "../Reviews/ReviewsForm";
+import GameEditModal from "./GameEditModal"
 import './index.css'
 
 const GameDetails = () => {
+  const sessionUser = useSelector((state) => state.session.user);
   const { gameId } = useParams();
   const dispatch = useDispatch();
   const game = useSelector(state => state.games[gameId])
@@ -58,6 +60,11 @@ const GameDetails = () => {
             </div>
           </div>
         </div>
+        {/* {sessionUser?.id === game?.user_id && ( */}
+        <div className='user-controls-container'>
+          <GameEditModal game={game} user={{ ...sessionUser }}  />
+        </div>
+      {/* )} */}
         <div className='create-reviews-container'>
           <ReviewGame gameId={gameId} />
         </div>

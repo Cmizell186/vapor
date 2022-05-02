@@ -10,6 +10,7 @@ const Demo = () => {
 
   const Login = async (e) => {
     const data = await dispatch(login(email, password));
+    return data
   }
   Login()
   return (
