@@ -16,6 +16,9 @@ class User(db.Model, UserMixin):
     reviews_user = db.relationship("Review", back_populates="users")
     image = db.relationship("Image", back_populates="user")
 
+    # associations for UserImage table
+    user_image = db.relationship("UserImage", back_populates='image_user')
+
     @property
     def password(self):
         return self.hashed_password
