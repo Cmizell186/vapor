@@ -1,6 +1,6 @@
 @font-face {
   font-family: Motiva Sans;
-  src: url("../../fonts/Motiva-Sans.ttf");
+  src: url("../../fonts/Motiva-Sans-Light.ttf");
 }
 
 #title-container,
@@ -56,6 +56,7 @@
 
 #details-subcontainer > p {
   margin: 0px 0px 0px 0px;
+  font-family: "Motiva Sans", Sans-serif;
 }
 
 #main-game-image {
