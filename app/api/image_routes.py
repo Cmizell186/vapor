@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from app.models import db, Image
+from app.models import db, Image, UserImage
 from flask_login import current_user
 from app.s3config import (
     upload_file_to_s3, allowed_file, get_unique_filename)
@@ -8,11 +8,11 @@ image_routes = Blueprint("images", __name__)
 
 @image_routes.route("")
 def get_images():
-    all_images = Image.query.all()
+    all_images = UserImage.query.all()
     return {'all_images': [img.to_dict() for img in all_images]}
 
 
-@image_routes.route("/api/users", methods=["POST"])
+@image_routes.route("", methods=["POST"])
 def upload_image():
     if "image" not in request.files:
         return {"errors": "image required"}, 400
@@ -34,7 +34,7 @@ def upload_image():
 
     url = upload["url"]
     # flask_login allows us to get the current user from the request
-    new_image = Image(image=url, user_id=current_user.id, game_id=None)
+    new_image = UserImage(image=url, user_id=current_user.id)
     db.session.add(new_image)
     db.session.commit()
     return {"image": url}
