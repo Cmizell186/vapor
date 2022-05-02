@@ -1,4 +1,5 @@
-from flask import Blueprint, jsonify, session, request
+import email
+from flask import Blueprint, jsonify, redirect, session, request
 from app.models import User, db
 from app.forms import LoginForm
 from app.forms import SignUpForm
@@ -48,6 +49,16 @@ def login():
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
+@auth_routes.route('/demo')
+def demo():
+    """
+    Demo User
+    """
+    user = User.query.get(1)
+    login_user(user)
+    return user.to_dict()
+
+
 @auth_routes.route('/logout')
 def logout():
     """
@@ -75,7 +86,6 @@ def sign_up():
         login_user(user)
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
-
 
 
 @auth_routes.route('/unauthorized')
