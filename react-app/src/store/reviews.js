@@ -50,6 +50,7 @@ export const get_one_review = (id) => async(dispatch) => {
 }
 
 export const create_review = (review) => async(dispatch) => {
+  console.log(review)
   const response = await fetch("/api/reviews/", {
       method: "POST",
       headers: {

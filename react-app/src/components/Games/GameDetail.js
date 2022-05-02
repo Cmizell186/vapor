@@ -34,7 +34,7 @@ const GameDetails = () => {
         <p>{game?.developer}</p>
       </div>
       <div className='create-reviews-container'>
-        <ReviewGame/>
+        <ReviewGame gameId={gameId}/>
       </div>
       <div className='reviews-container'>
       { filteredReviews?.map(review =>
