@@ -16,28 +16,6 @@ def get_games():
     return {'games_list': [game.to_dict() for game in games_list]}
 
 
-# helper function for uploading game image
-# def upload_game_image():
-#     if "image" not in request.files:
-#         return {"errors": "image required"}, 400
-
-#     image = request.files["image"]
-
-#     if not allowed_file(image.filename):
-#         return {"errors": "file type not permitted"}, 400
-
-#     image.filename = get_unique_filename(image.filename)
-
-#     upload = upload_file_to_s3(image)
-
-#     if "url" not in upload:
-#         # if the dictionary doesnt have a url key
-#         # it means that there was an error when we tried to upload
-#         # so we send back that error message
-#         return upload, 400
-
-#     url = upload['url']
-
 
 @game_routes.route('/', methods=["POST"])
 def post_games():
@@ -74,7 +52,6 @@ def post_games():
             release_date = form.release_date.data,
             is_mature = form.is_mature.data,
             video = form.video.data,
-            image = url,
             developer = form.developer.data,
             user_id = current_user.id
         )
@@ -131,4 +108,3 @@ def edit_game(id):
     else:
         print(form.errors)
         return "Bad data"
-

@@ -4,7 +4,11 @@ import session from './session'
 import game_reducer from './game';
 import review_reducer from './reviews';
 import image_reducer from './image';
+<<<<<<< HEAD
 import cart_reducer from './cart';
+=======
+import gameImage_reducer from './gameImage';
+>>>>>>> main
 
 
 const rootReducer = combineReducers({
@@ -12,7 +16,11 @@ const rootReducer = combineReducers({
   games: game_reducer,
   reviews: review_reducer,
   images: image_reducer,
+<<<<<<< HEAD
   carts: cart_reducer
+=======
+  gameImages: gameImage_reducer,
+>>>>>>> main
 });
 
 
