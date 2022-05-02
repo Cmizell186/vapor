@@ -12,6 +12,7 @@ const UploadGamePicture = () =>{
         e.preventDefault();
         const formData = new FormData();
         formData.append('image', image);
+        // formData.append('game_id', gameId)
 
         // since aws is slow! We will display a message for users to know
         // it is uploading

@@ -80,7 +80,5 @@ def upload_image_to_game():
 
 @image_routes.route('/game/<int:id>')
 def get_all_images_for_game(id):
-    games_images = Image.query.filter_by(game_id=id)
-    print(games_images)
-
-    return {"game_images":img.to_dict() for img in games_images}
+    games_images = Image.query.filter_by(game_id=id).all()
+    return {"game_images":[img.to_dict() for img in games_images]}

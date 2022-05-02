@@ -7,7 +7,6 @@ const GameImages = () =>{
     const dispatch = useDispatch()
     const gameImages = useSelector(state => Object.values(state.gameImages))
     const {gameId} = useParams()
-    console.log(gameImages)
 
     useEffect(() =>{
         dispatch(get_all_game_images(gameId))
