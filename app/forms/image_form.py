@@ -5,4 +5,3 @@ from app.models import Image
 
 class CreateImage(FlaskForm):
     image = FileField('image', validators=[FileRequired()])
-    
