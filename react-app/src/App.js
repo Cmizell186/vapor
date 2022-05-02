@@ -15,6 +15,8 @@ import ReviewDetails from './components/Reviews/ReviewDetail'
 import UploadPicture from './components/Images';
 import Images from './components/Images/ImageList';
 import SingleImage from './components/Images/UserImage';
+import SignUpForm from './components/auth/SignUpForm';
+import Demo from './components/auth/Demo'
 
 
 function App() {
@@ -48,7 +50,7 @@ function App() {
           {user ? <Redirect to="/games" /> : <Splash />}
         </Route>
         <ProtectedRoute exact path="/games" user={user}>
-          <NavBar />
+          <NavBar user={user} />
           <GameListingForm />
           <GameList />
           <ReviewList />
@@ -57,6 +59,12 @@ function App() {
           <UploadPicture />
           <Images />
         </ProtectedRoute>
+        <Route path="/signup">
+          <SignUpForm />
+        </Route>
+        <Route path="/demo">
+          <Demo />
+        </Route>
         {user ?
         <>
         <Switch>

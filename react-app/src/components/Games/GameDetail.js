@@ -49,10 +49,10 @@ const GameDetails = () => {
               <p>Very Positive</p>
             </div>
             <div>
-            <div id="developer-name-div" className="subdetail-divs">
-            <p>RELEASE DATE:</p>
-              <p>{new Date(game?.release_date).toLocaleDateString('en-US', DATE_OPTIONS)}</p>
-            </div>
+              <div id="developer-name-div" className="subdetail-divs">
+                <p>RELEASE DATE:</p>
+                <p>{new Date(game?.release_date).toLocaleDateString('en-US', DATE_OPTIONS)}</p>
+              </div>
             </div>
             <div id="developer-name-div" className="subdetail-divs">
               <p>PUBLISHER:</p>

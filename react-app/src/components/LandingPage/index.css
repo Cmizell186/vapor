@@ -58,8 +58,14 @@
 
 #loginnav {
   position: absolute;
+  vertical-align: top;
   top: 5px;
   right: 5px;
+}
+
+#demo_login {
+  text-decoration: none;
+  color: #fff !important;
 }
 
 #join_pc {
