@@ -4,14 +4,16 @@ import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import ReviewGame from "../Reviews/ReviewsForm";
+import GameEditModal from "./GameEditModal"
 
 const GameDetails = () => {
+  const sessionUser = useSelector((state) => state.session.user);
   const { gameId } = useParams();
   const dispatch = useDispatch();
   const game = useSelector(state => state.games[gameId])
   const reviews = useSelector(state => Object.values(state.reviews))
 
-  const filteredReviews = reviews.filter(review => review.game_id == gameId)
+  const filteredReviews = reviews.filter(review => review.game_id === gameId)
 
   useEffect(() => {
     dispatch(get_all_reviews())
@@ -33,6 +35,13 @@ const GameDetails = () => {
         <img src={game?.img} alt=""/>
         <p>{game?.developer}</p>
       </div>
+      {/* {sessionUser?.id === game?.user_id && ( */}
+        <div className='user-controls-container'>
+          <GameEditModal game={game} user={{ ...sessionUser }}  />
+
+        </div>
+      {/* )} */}
+
       <div className='create-reviews-container'>
         <ReviewGame/>
       </div>

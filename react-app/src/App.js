@@ -11,6 +11,7 @@ import ReviewList from './components/Reviews/ReviewList'
 import GameListingForm from './components/Games/GameListingForm'
 import LandingPage from './components/LandingPage'
 import GameDetails from './components/Games/GameDetail'
+import ReviewDetails from './components/Reviews/ReviewDetail'
 import UploadPicture from './components/Images';
 
 function App() {
@@ -58,9 +59,9 @@ function App() {
          <Route path='/games/:gameId'>
           <GameDetails />
         </Route>
-        {/* <Route path='/reviews/:reviewId'>
-          <Reviews />
-        </Route> */}
+        <Route path='/reviews/:reviewId'>
+          <ReviewDetails />
+        </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>

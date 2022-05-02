@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { update } from "../../store/reviews";
+import { update_review } from "../../store/reviews";
 
 const EditReview = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -25,7 +25,7 @@ const EditReview = () => {
       content,
       userId: sessionUser.id,
     };
-    let newReview = await dispatch(update(updatedReview));
+    let newReview = await dispatch(update_review(updatedReview));
     setIs_Recommended(false);
     setContent("");
 

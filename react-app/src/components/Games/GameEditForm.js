@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { update } from "../../store/game";
+import { update_game } from "../../store/game";
 
-const EditGame = () => {
+const EditGame = ({ gamelisting, hideModal }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const { id } = useParams()
   const history = useHistory();
@@ -11,54 +11,62 @@ const EditGame = () => {
   const games = useSelector((state) => state.games)
   const gamesList = Object.values(games)
   const game = gamesList.filter((game) => game.id === +id)[0];
-  const [title, setTitle] = useState(game?.title);
-  const [price, setPrice] = useState(game?.price);
-  const [description, setDescription] = useState(game?.description);
-  const [release_date, setRelease_Date] = useState(game?.release_date);
-  const [is_mature, setIs_Mature] = useState(game?.is_mature);
-  const [video, setVideo] = useState(game?.video);
-  const [img, setImg] = useState(game?.img);
-  const [developer, setDeveloper] = useState(game?.developer);
+  const [title, setTitle] = useState(gamelisting?.title);
+  const [price, setPrice] = useState(gamelisting?.price);
+  const [description, setDescription] = useState(gamelisting?.description);
+  const [release_date, setRelease_Date] = useState(gamelisting?.release_date);
+  const [is_mature, setIs_Mature] = useState(gamelisting?.is_mature);
+  const [video, setVideo] = useState(gamelisting?.video);
+  const [developer, setDeveloper] = useState(gamelisting?.developer);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
+  // for aws upload
+  const [image, setImage] = useState([]);
+  const [imageLoading, setImageLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append('image', image);
     setHasSubmitted(true);
 
+    // aws is slow! adding a loading message for users to not get too worried!
+    setImageLoading(true);
+
     const updatedGame = {
-      id: game.id,
+      id: gamelisting.id,
       title,
       price,
       description,
       release_date,
       is_mature,
       video,
-      img,
+      formData,
       developer,
       userId: sessionUser.id,
     };
-    let newGame = await dispatch(update(updatedGame));
+    let newGame = await dispatch(update_game(updatedGame));
     setTitle("");
     setPrice("");
     setDescription("");
     setRelease_Date("");
     setIs_Mature(false);
     setVideo([]);
-    setImg([]);
+    setImage([]);
     setDeveloper("");
 
     if (newGame) {
       history.push("/games");
     }
   };
-
-  const img_upload = (e) => {
-    setImg(e.target.value);
-  };
-  const vid_upload = (e) => {
+  const updateImage = (e) => {
+    const file = e.target.files[0];
+    setImage(file);
+};
+const vid_upload = (e) => {
     setVideo(e.target.value);
-  };
+};
 
   return (
     <>
@@ -123,7 +131,6 @@ const EditGame = () => {
               checked={is_mature === true}
             />
           </div>
-          {/* prior to s3 integration */}
           <div className="video-div">
             <label htmlFor="video">Trailers or Video clips:</label>
             <input
@@ -135,8 +142,8 @@ const EditGame = () => {
             />
           </div>
           <div className="img-div">
-            <label htmlFor="img">Images:</label>
-            <input name="img" type="text" value={img} onChange={img_upload} />
+            <label htmlFor="image">Images:</label>
+            <input name="image" type="file" accept="image/*" onChange={updateImage} />
           </div>
           <div className="developer-div">
             <label htmlFor="developer">Developer:</label>
@@ -150,6 +157,7 @@ const EditGame = () => {
           <button className={"button btn-submit-game"} type="submit">
             Update Game Details
           </button>
+          {(imageLoading)&& <p>Loading...</p>}
         </form>
       </div>
     </>

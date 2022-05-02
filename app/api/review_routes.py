@@ -10,8 +10,9 @@ def get_reviews():
 
 @review_routes.route('/<int:id>')
 def get_specific_review(id):
-  specific_review = Review.query.get(id)
-  return specific_review
+  review = Review.query.get(id)
+  # return specific_review
+  return {'review': review.to_dict()}
 
 
 @review_routes.route('/', methods=["POST"])
