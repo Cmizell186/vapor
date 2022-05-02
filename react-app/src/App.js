@@ -14,6 +14,7 @@ import GameDetails from './components/Games/GameDetail'
 import UploadPicture from './components/Images';
 import Images from './components/Images/ImageList';
 import SingleImage from './components/Images/UserImage';
+import SignUpForm from './components/auth/SignUpForm';
 
 
 function App() {
@@ -56,6 +57,9 @@ function App() {
           <UploadPicture />
           <Images />
         </ProtectedRoute>
+        <Route>
+          <SignUpForm path="/signup" />
+      </Route>
         {user ?
         <>
         <Switch>

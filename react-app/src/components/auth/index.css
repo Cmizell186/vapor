@@ -9,7 +9,7 @@
     font-weight: normal;
 }
 
-.login_form, label, input {
+.login_form, #login_label, #login_input {
     display:flex;
     justify-content: center;
     max-width: 300px;
@@ -24,6 +24,11 @@
     outline: none;
     font-family: "Motiva Sans", Sans-serif;
     font-weight: normal;
+}
+
+#join_vapor > a {
+    text-decoration: none;
+    color: #fff !important;
 }
 
 .input_login {
