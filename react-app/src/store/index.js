@@ -5,6 +5,7 @@ import game_reducer from './game';
 import review_reducer from './reviews';
 import image_reducer from './image';
 
+
 const rootReducer = combineReducers({
   session,
   games: game_reducer,
