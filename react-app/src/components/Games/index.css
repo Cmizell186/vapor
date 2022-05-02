@@ -1,0 +1,64 @@
+@font-face {
+  font-family: Motiva Sans;
+  src: url("../../fonts/Motiva-Sans.ttf");
+}
+
+#title-container,
+#image-details-container,
+.create-reviews-container,
+#reviews-container {
+  font-family: "Motiva Sans", Sans-serif;
+  width: 940px;
+}
+
+#page-content-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: #1b2838;
+  color: white;
+}
+
+#title-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 940px;
+}
+
+#image-details-container {
+  display: flex;
+  flex-flow: row;
+  width: 940px;
+  height: 444px;
+}
+
+#selected-image {
+  width: 600px;
+  height: 337px;
+}
+
+#react-media-subcontainer {
+  display: block;
+  width: 616px;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  margin-right: 20px;
+}
+
+#details-subcontainer {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  height: 392px;
+  width: 324px;
+  word-wrap: break-word;
+}
+
+#details-subcontainer > p {
+  margin: 0px 0px 0px 0px;
+}
+
+#main-game-image {
+  width: 324px;
+  height: 151px;
+}
