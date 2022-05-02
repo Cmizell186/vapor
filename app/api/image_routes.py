@@ -6,6 +6,11 @@ from app.s3config import (
 
 image_routes = Blueprint("images", __name__)
 
+@image_routes.route("")
+def get_images():
+    all_images = Image.query.all()
+    return {'all_images': [img.to_dict() for img in all_images]}
+
 
 @image_routes.route("", methods=["POST"])
 def upload_image():
@@ -32,4 +37,4 @@ def upload_image():
     new_image = Image(image=url, user_id=current_user.id, game_id=1)
     db.session.add(new_image)
     db.session.commit()
-    return {"url": url}
+    return {"image": url}
