@@ -52,6 +52,7 @@ def upload_image():
 # posting to a specific game page
 @image_routes.route("/game", methods=["POST"])
 def upload_image_to_game():
+    print(request.json(), "<<<<<<<<<<<<<<")
     if "image" not in request.files:
         return {"errors": "image required"}, 400
 
