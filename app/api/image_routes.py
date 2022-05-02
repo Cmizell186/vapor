@@ -12,7 +12,7 @@ def get_images():
     return {'all_images': [img.to_dict() for img in all_images]}
 
 
-@image_routes.route("", methods=["POST"])
+@image_routes.route("/api/users", methods=["POST"])
 def upload_image():
     if "image" not in request.files:
         return {"errors": "image required"}, 400
@@ -34,7 +34,7 @@ def upload_image():
 
     url = upload["url"]
     # flask_login allows us to get the current user from the request
-    new_image = Image(image=url, user_id=current_user.id, game_id=1)
+    new_image = Image(image=url, user_id=current_user.id, game_id=None)
     db.session.add(new_image)
     db.session.commit()
     return {"image": url}
