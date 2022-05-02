@@ -17,7 +17,7 @@ import Images from './components/Images/ImageList';
 import SingleImage from './components/Images/UserImage';
 import SignUpForm from './components/auth/SignUpForm';
 import Demo from './components/auth/Demo'
-
+import Cart from './components/Carts/Cart'
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -65,6 +65,9 @@ function App() {
         </Route>
         <Route path="/demo">
           <Demo />
+        </Route>
+        <Route path="/cart">
+          <Cart />
         </Route>
         {user ?
         <>
