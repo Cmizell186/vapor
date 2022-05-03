@@ -38,12 +38,13 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('libraries',
+    sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('game_id', sa.Integer(), nullable=False),
     sa.Column('is_owned', sa.Boolean(), nullable=True),
     sa.ForeignKeyConstraint(['game_id'], ['games.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
-    sa.PrimaryKeyConstraint('user_id', 'game_id')
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('reviews',
     sa.Column('id', sa.Integer(), nullable=False),
