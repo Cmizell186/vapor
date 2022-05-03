@@ -11,6 +11,7 @@ const ReviewsEditModal = ({ user, review, gameId }) => {
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <EditReview review={review} hideModal={() => setShowModal(false)} gameId={gameId} />
+          <button onClick={e => setShowModal(false)}>Cancel</button>
         </Modal>
       )}
     </>
