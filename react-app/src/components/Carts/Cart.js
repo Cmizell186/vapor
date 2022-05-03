@@ -13,6 +13,11 @@ const Cart = () => {
   useEffect(() => {
     dispatch(get_all_carts())
   }, [dispatch])
+
+  const removeCartItem = (id) => {
+    // TODO SEND TO DISPATCH TO DELETE FROM LIBRARY
+    console.log(id)
+  }
   // entry.game.images[0]
   // console.log(user_cart[0].game.images[0].image)
 
@@ -37,7 +42,7 @@ const Cart = () => {
                   <p>{entry.game.title}</p>
                   <div className='cart-item-price-remove'>
                     <p>{entry.game.price}</p>
-                    <a>Remove</a>
+                    <a href='#' onClick={() => removeCartItem(`${entry.user_id},${entry.game_id}`)}>Remove</a>
                   </div>
                 </div>
               </div>
