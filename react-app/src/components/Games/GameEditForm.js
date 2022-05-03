@@ -110,20 +110,21 @@ const vid_upload = (e) => {
           </div>
           <div className="is_mature-div">
             <label htmlFor="is_mature">Mature Rating?:</label>
-            <input
+            {/* <input
               name="is_mature"
               type="radio"
               value={is_mature}
               onChange={(e) => setIs_Mature(true)}
               checked={is_mature === true}
-            />
-            {/* <input
-              name="is_mature"
-              type="radio"
-              value={false}
-              onChange={(e) => setIs_Mature(false)}
-              checked={is_mature === false}
             /> */}
+            <input
+              type="checkbox"
+              checked={is_mature ? true : false}
+              value={is_mature}
+              name="is_mature"
+              onChange={e => is_mature ? setIs_Mature(false) : setIs_Mature(true) }
+
+            />
           </div>
           <div className="video-div">
             <label htmlFor="video">Trailers or Video clips:</label>
