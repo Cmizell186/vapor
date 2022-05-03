@@ -17,7 +17,7 @@ const UploadPicture = () => {
         // it is uploading
         setImageLoading(true);
 
-        await dispatch(post_image(image))
+        await dispatch(post_image(formData))
 
         setImageLoading(false)
     }
