@@ -13,6 +13,8 @@ const Cart = () => {
   useEffect(() => {
     dispatch(get_all_carts())
   }, [dispatch])
+  // entry.game.images[0]
+  // console.log(user_cart[0].game.images[0].image)
 
   // <p>{entry.user_id} <span>{entry.game_id}</span></p>
   // <p>{entry.game.description}</p>
@@ -25,14 +27,28 @@ const Cart = () => {
         <div className='main-page-content'>
           <div className='left-content'>
             {user_cart?.map(entry =>
-              <div key={entry.game_id}>
-                <p>{entry.game.title}</p>
+              <div className='cart-item-container' key={entry.game_id}>
+                <div class="cart-li-image">
+                  <a>
+                    <img src={entry?.game?.images[0]?.image} />
+                  </a>
+                </div>
+                <div className="cart-item-desc">
+                  <p>{entry.game.title}</p>
+                  <div className='cart-item-price-remove'>
+                    <p>{entry.game.price}</p>
+                    <a>Remove</a>
+                  </div>
+                </div>
               </div>
             )}
           </div>
           <div className="right-content">
-            <div className="right-content-divs">palceholder</div>
-            <div className="right-content-divs">palceholder</div>
+            <div className="right-content-divs">
+            <img src="https://cdn.akamai.steamstatic.com/steam/apps/468920/header.jpg?t=1651602622" /></div>
+            <div className="right-content-divs">
+              <img src='https://cdn.akamai.steamstatic.com/steam/apps/470310/header.jpg?t=1650008969' />
+            </div>
           </div>
         </div>
       </div>
