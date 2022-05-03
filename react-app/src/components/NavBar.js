@@ -3,7 +3,6 @@ import ProfileMenu from '../components/Profile/ProfileMenu'
 import '../../src/components/LandingPage/index.css'
 
 const NavBar = ({user}) => {
-  console.log(user)
   return (
     <div className='splashWrapper'>
       <div id="nav">

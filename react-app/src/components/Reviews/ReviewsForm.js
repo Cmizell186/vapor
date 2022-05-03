@@ -15,8 +15,6 @@ const ReviewGame = ({ gameId }) => {
   const history = useHistory()
   const dispatch = useDispatch();
 
-  console.log(currentGame, "daskfjklsadjfjlsajf;")
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setHasSubmitted(true);
