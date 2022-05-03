@@ -47,24 +47,34 @@ def get_specific_game(id):
     # print('================', game.to_dict())
     return {'game': game.to_dict()}
 
-@game_routes.route('<int:id>/update', methods=["PUT"])
+@game_routes.route('/<int:id>', methods=["POST"])
 def edit_game(id):
     form = EditGame()
     form['csrf_token'].data = request.cookies['csrf_token']
 
     game = Game.query.get(id)
-    if request.method == "PUT":
+    print(game.to_dict(), "====================================================")
+    print(form.is_mature.data, '*********')
+    if request.method == "POST":
         if (game):
-            game.title = request.form['title'],
-            game.price = request.form['price'],
-            game.description = request.form['description'],
-            game.release_date = request.form['release_date'],
-            game.is_mature = request.form['is_mature'],
-            game.video = request.form['video'],
-            game.developer = request.form['developer'],
+            game.title = form.title.data
+            game.price = form.price.data
+            game.description = form.description.data
+            game.release_date = form.release_date.data
+            game.is_mature = form.is_mature.data
+            game.video = form.video.data
+            game.developer = form.developer.data
             game.user_id = current_user.id
         db.session.commit()
+        print(game.to_dict(), "=========================================>>>>")
         return game.to_dict()
     else:
         print(form.errors)
         return "Bad data"
+
+
+@game_routes.route('<int:id>', methods=["DELETE"])
+def delete_game(id):
+    game = Game.query.filter(Game.id == id).delete()
+    db.session.commit()
+    return "successful delete"

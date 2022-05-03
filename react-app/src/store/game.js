@@ -70,14 +70,15 @@ export const create_game = (game) => async(dispatch) => {
 
 export const update_game = (game) => async(dispatch) => {
     const response = await fetch(`/api/games/${game.id}`, {
-        method: "PUT",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(game)
     })
     if (response.ok) {
         const data = await response.json()
-        const updated_game = data.game
-        dispatch(update(updated_game))
+        // const updated_game = data.game
+        dispatch(update(data))
+        return response
     } else {
         return "ERROR AT UPDATE_GAME THUNK"
     }

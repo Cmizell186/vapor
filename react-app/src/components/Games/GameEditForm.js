@@ -21,18 +21,10 @@ const EditGame = ({ gamelisting, hideModal }) => {
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
-  // for aws upload
-  const [image, setImage] = useState([]);
-  const [imageLoading, setImageLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('image', image);
     setHasSubmitted(true);
-
-    // aws is slow! adding a loading message for users to not get too worried!
-    setImageLoading(true);
 
     const updatedGame = {
       id: gamelisting.id,
@@ -42,7 +34,6 @@ const EditGame = ({ gamelisting, hideModal }) => {
       release_date,
       is_mature,
       video,
-      formData,
       developer,
       userId: sessionUser.id,
     };
@@ -53,17 +44,13 @@ const EditGame = ({ gamelisting, hideModal }) => {
     setRelease_Date("");
     setIs_Mature(false);
     setVideo([]);
-    setImage([]);
     setDeveloper("");
 
     if (newGame) {
-      history.push("/games");
+      history.push(`/games/${gamelisting.id}`);
     }
   };
-  const updateImage = (e) => {
-    const file = e.target.files[0];
-    setImage(file);
-};
+
 const vid_upload = (e) => {
     setVideo(e.target.value);
 };
@@ -123,12 +110,20 @@ const vid_upload = (e) => {
           </div>
           <div className="is_mature-div">
             <label htmlFor="is_mature">Mature Rating?:</label>
-            <input
+            {/* <input
               name="is_mature"
               type="radio"
-              value={true}
+              value={is_mature}
               onChange={(e) => setIs_Mature(true)}
               checked={is_mature === true}
+            /> */}
+            <input
+              type="checkbox"
+              checked={is_mature ? true : false}
+              value={is_mature}
+              name="is_mature"
+              onChange={e => is_mature ? setIs_Mature(false) : setIs_Mature(true) }
+
             />
           </div>
           <div className="video-div">
@@ -140,10 +135,6 @@ const vid_upload = (e) => {
               value={video}
               onChange={vid_upload}
             />
-          </div>
-          <div className="img-div">
-            <label htmlFor="image">Images:</label>
-            <input name="image" type="file" accept="image/*" onChange={updateImage} />
           </div>
           <div className="developer-div">
             <label htmlFor="developer">Developer:</label>
@@ -157,7 +148,6 @@ const vid_upload = (e) => {
           <button className={"button btn-submit-game"} type="submit">
             Update Game Details
           </button>
-          {(imageLoading)&& <p>Loading...</p>}
         </form>
       </div>
     </>

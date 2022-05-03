@@ -5,10 +5,10 @@ class Library(db.Model):
     __tablename__ = 'libraries'
 
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), primary_key=True)
-    game_id = db.Column(db.Integer, db.ForeignKey("games.id"), primary_key=True)
+    game_id = db.Column(db.Integer, db.ForeignKey("games.id", ondelete='CASCADE'), primary_key=True)
     is_owned = db.Column(db.Boolean)
 
-    game = db.relationship('Game', back_populates="library")
+    game = db.relationship('Game', back_populates="library", passive_deletes=True)
 
     def to_dict(self):
         return {
