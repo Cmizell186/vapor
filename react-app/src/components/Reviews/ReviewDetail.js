@@ -20,7 +20,7 @@ const ReviewDetails = () => {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    dispatch(get_one_review(reviewId));
+    dispatch(get_one_review(reviewId)); //warning here- useEffect has a missing dependency: 'reviewId'. Either include it or remove the dependency array
   }, [dispatch]);
 
   const recommendation = () => {
@@ -40,7 +40,7 @@ const ReviewDetails = () => {
         <div className="banner-temp">Vapor</div>
         <div className="user-banner">
           <h1>{sessionUser.username}</h1>
-          <p>>> Reviews >> "Game"</p>
+          <p>-- Reviews -- "Game"</p>
         </div>
         <div className="review-detail-container">
           <div className="review-content-subbody">

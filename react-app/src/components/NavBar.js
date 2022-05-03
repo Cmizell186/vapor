@@ -7,7 +7,7 @@ const NavBar = ({user}) => {
     <div className='splashWrapper'>
       <div id="nav">
         <div id="navarea">
-        <div id="div_logo"><img src="/images/vapor_logo.png" id="logo"></img></div>
+        <div id="div_logo"><img src="/images/vapor_logo.png" id="logo" alt=""></img></div>
         <div id="navbar">
                 <div className="nav_nav" id="nav_store"><a className='nav_links' href='/games'>STORE</a></div>
                 <div className="nav_nav" id="nav_library"><a className='nav_links' href='/games'>LIBRARY</a></div>
@@ -25,32 +25,3 @@ const NavBar = ({user}) => {
 }
 
 export default NavBar;
-
-
-{/* <nav>
-<ul>
-  <li>
-    <NavLink to='/' exact={true} activeClassName='active'>
-      Home
-    </NavLink>
-  </li>
-  <li>
-    <NavLink to='/login' exact={true} activeClassName='active'>
-      Login
-    </NavLink>
-  </li>
-  <li>
-    <NavLink to='/sign-up' exact={true} activeClassName='active'>
-      Sign Up
-    </NavLink>
-  </li>
-  <li>
-    <NavLink to='/users' exact={true} activeClassName='active'>
-      Users
-    </NavLink>
-  </li>
-  <li>
-    {user.username} <LogoutButton />
-  </li>
-</ul>
-</nav> */}

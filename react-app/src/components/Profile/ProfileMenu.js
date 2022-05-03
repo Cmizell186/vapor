@@ -30,7 +30,7 @@ const ProfileMenu = ({user}) => {
 return (
     <>
 
-    <div id="profile_" onClick={openMenu}>{user.username} <img src="/images/btn_arrow_down_padded.png"></img></div>
+    <div id="profile_" onClick={openMenu}>{user.username} <img src="/images/btn_arrow_down_padded.png" alt=''></img></div>
     {showMenu && (
         <>
         <div className='profile_dropdown'>

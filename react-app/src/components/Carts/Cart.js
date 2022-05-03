@@ -1,7 +1,6 @@
 import { get_all_carts } from '../../store/cart'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from "react-router-dom";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 const Cart = () => {
   const sessionUser = useSelector((state) => state.session.user);
