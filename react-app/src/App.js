@@ -15,6 +15,8 @@ import ReviewDetails from './components/Reviews/ReviewDetail'
 import UploadPicture from './components/Images';
 import Images from './components/Images/ImageList';
 import SingleImage from './components/Images/UserImage';
+import GameImages from './components/Games/GameImages';
+import UploadGamePicture from './components/Games/GameImageForm';
 import SignUpForm from './components/auth/SignUpForm';
 import Demo from './components/auth/Demo'
 
@@ -45,12 +47,13 @@ function App() {
   return (
     <>
     <BrowserRouter>
+    <NavBar user={user} />
       <Switch>
         <Route exact path="/">
           {user ? <Redirect to="/games" /> : <Splash />}
         </Route>
         <ProtectedRoute exact path="/games" user={user}>
-          <NavBar user={user} />
+          {/* <NavBar user={user} /> */}
           <GameListingForm />
           <GameList />
           <ReviewList />
@@ -70,6 +73,8 @@ function App() {
         <Switch>
          <Route path='/games/:gameId'>
           <GameDetails />
+          <UploadGamePicture />
+          <GameImages />
         </Route>
         <Route path='/reviews/:reviewId'>
           <ReviewDetails />

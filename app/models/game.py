@@ -30,6 +30,5 @@ class Game(db.Model):
             'release_date': self.release_date,
             'is_mature': self.is_mature,
             'video' : self.video,
-            'image': self.image,
             'developer': self.developer
         }
