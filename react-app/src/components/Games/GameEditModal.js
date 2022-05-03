@@ -11,6 +11,7 @@ const GameEditModal = ({ user, game }) => {
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <EditGame gamelisting={game} hideModal={() => setShowModal(false)} />
+          <button onClick={() => setShowModal(false)}> Cancel </button>
         </Modal>
       )}
     </>
