@@ -1,25 +1,34 @@
 import { get_all_reviews } from "../../store/reviews"
 import { get_one_game } from "../../store/game"
 import { useDispatch, useSelector } from "react-redux"
-import { useParams } from "react-router-dom";
-import React, { useEffect } from 'react';
+import { useParams, useHistory } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
 import ReviewGame from "../Reviews/ReviewsForm";
 import GameEditModal from "./GameEditModal"
+import { delete_game } from "../../store/game";
+import { Modal } from "../../context/Modal";
 import './index.css'
 
 const GameDetails = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const { gameId } = useParams();
   const dispatch = useDispatch();
-  const game = useSelector(state => state.games[gameId])
+  const history = useHistory();
+  const game = useSelector((state) => state.games[gameId])
   const reviews = useSelector(state => Object.values(state.reviews))
-
+  const [showModal, setShowModal] = useState(false);
   const filteredReviews = reviews.filter(review => review.game_id === +gameId)
 
   useEffect(() => {
     dispatch(get_all_reviews())
     dispatch(get_one_game(gameId)) // warning here - React Hook useEffect has a missing dependency: 'gameId'. Either include it or remove the dependency array
   }, [dispatch])
+
+  const handleDelete = (gameId) => {
+    dispatch(delete_game(gameId));
+    setShowModal(false);
+    history.push(`/games`);
+  };
 
   const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
 
@@ -59,8 +68,26 @@ const GameDetails = () => {
         {/* {sessionUser?.id === game?.user_id && ( */}
         <div className='user-controls-container'>
           <GameEditModal game={game} user={{ ...sessionUser }}  />
+          <button
+            onClick={() => setShowModal(true)}
+            className="delete-bttn"
+          >
+            Delete
+          </button>
+          {showModal && (
+            <Modal onClose={() => setShowModal(false)}>
+              <h2>DELETE GAME LISTING?</h2>
+              <p>
+                Are you sure you want to remove your game listing from the Stearm Store?
+              </p>
+              <div className="modal-content-bttn-ok">
+                <span onClick={() => handleDelete(game.id)}> Ok </span>
+                <span onClick={() => setShowModal(false)}> Cancel </span>
+              </div>
+            </Modal>
+          )}
         </div>
-      {/* )} */}
+         {/* )} */}
         <div className='create-reviews-container'>
           <ReviewGame gameId={gameId} />
         </div>

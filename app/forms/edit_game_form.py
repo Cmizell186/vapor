@@ -11,5 +11,4 @@ class EditGame(FlaskForm):
   release_date = DateField('release date', validators=[DataRequired()])
   is_mature = BooleanField('mature')
   video = StringField('video')
-  image = FileField('image', validators=[FileRequired()])
   developer = StringField('developer', validators=[DataRequired()])

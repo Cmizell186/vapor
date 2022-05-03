@@ -9,7 +9,7 @@ const CreateGame = () => {
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
     const [release_date, setRelease_Date] = useState("");
-    const [is_mature, setIs_Mature] = useState(false);
+    const [is_mature, setIs_Mature] = useState(null);
     const [video, setVideo] = useState([]);
 
     const [developer, setDeveloper] = useState("");
