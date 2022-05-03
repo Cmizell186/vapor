@@ -1,8 +1,11 @@
 import React,{useState} from "react";
+import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
+import {add_new_image} from '../../store/gameImage.js';
 
 const UploadGamePicture = () =>{
     const history = useHistory(); //redirect after uploading image
+    const dispatch = useDispatch();
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
     const {gameId} = useParams();
@@ -12,24 +15,16 @@ const UploadGamePicture = () =>{
         e.preventDefault();
         const formData = new FormData();
         formData.append('image', image);
-        // formData.append('game_id', gameId)
+
 
         // since aws is slow! We will display a message for users to know
         // it is uploading
         setImageLoading(true);
 
-        const res = await fetch(`/api/images/game`, {
-            method: "POST",
-            body: formData,
-        })
 
-        if(res.ok){
-            await res.json();
-            setImageLoading(false);
-        } else {
-            setImageLoading(false);
-            console.log('error!!!! YOU MESSED UP!')
-        }
+        await dispatch(add_new_image(formData, gameId))
+
+        setImageLoading(false);
     }
 
     const updateImage = (e) =>{
