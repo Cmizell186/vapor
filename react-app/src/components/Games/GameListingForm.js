@@ -27,8 +27,6 @@ const CreateGame = () => {
         e.preventDefault();
         const formData = new FormData();
         formData.append('image', image);
-        console.log(formData.append('image', image))
-        console.log(image)
         setHasSubmitted(true);
 
         // aws is slow! adding a loading message for users to not get too worried!
@@ -46,7 +44,6 @@ const CreateGame = () => {
             userId: sessionUser.id,
         };
         let newGame = await dispatch(create_game(game));
-        console.log(newGame, "<<<<<<<<<<<<<<<<<<<")
 
         // set all back to empty form field
         setTitle("");

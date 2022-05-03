@@ -20,7 +20,6 @@ export const get_all_game_images = (id) => async dispatch =>{
         if(!images){
             return "Images is empty!"
         }
-        console.log(imagesDict)
         dispatch(all_game_images(images))
     } else {
         return "ERROR AT GET_ALL_GAME_IMAGES THUNK!"

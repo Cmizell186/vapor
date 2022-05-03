@@ -51,7 +51,6 @@ export const get_one_review = (id) => async(dispatch) => {
 }
 
 export const create_review = (review) => async(dispatch) => {
-  console.log(review)
   const response = await fetch("/api/reviews/", {
       method: "POST",
       headers: {
@@ -62,7 +61,6 @@ export const create_review = (review) => async(dispatch) => {
   })
   if (response.ok) {
       const review = await response.json()
-      console.log(review)
       dispatch(create(review))
   } else {
       return "ERROR AT CREATE_REVIEW THUNK"
@@ -77,7 +75,6 @@ export const update_review = review => async (dispatch) => {
   })
   if (response.ok) {
       const data = await response.json()
-      console.log(data)
       dispatch(update(data))
       return response;
   } else {

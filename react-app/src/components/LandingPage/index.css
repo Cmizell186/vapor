@@ -3,10 +3,10 @@
   src: url("../../public/fonts/Motiva-Sans-Light.ttf");
 }
 
-.landingPageWrapper {
+/* .landingPageWrapper {
     height: 100vh;
     width: 100vw;
-}
+} */
 
 #nav {
   background: #171a21;
@@ -56,11 +56,32 @@
   letter-spacing: .5px;
 }
 
+.nav_links {
+  text-decoration: none;
+  color: #b8b6b4;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.nav_links:hover {
+  color: white;
+}
+
+#demo_login {
+  padding-left: 3px;
+}
+
 #loginnav {
   position: absolute;
+  display: flex;
   vertical-align: top;
   top: 5px;
   right: 5px;
+  font-size: 12px;
+  font-family: "Motiva Sans", Sans-serif;
 }
 
 #demo_login {
@@ -154,34 +175,61 @@
   text-align: center;
 }
 
-/* * {
-    font-family: "Motiva Sans", Sans-serif;
-    color: white;
-  } */
+#profile_ {
+  padding: 5px;
+  cursor: pointer;
+}
 
+#profile {
+  text-decoration: none;
+  color: #8F98A0;
+}
 
-  /* body {
-    background-image: url("https://cdn.akamai.steamstatic.com/store/home/store_home_share.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-  } */
+.profile_dropdown {
+  position: absolute;
+  width: 100%;
+  text-decoration: none;
+  padding: 5px 12px;
+  text-transform: none;
+  font-family: Motiva Sans, Arial, Helvectica, Verdana, sans-serif;
+  font-size: 12px;
+  bottom: -45px;
+  font-weight: normal;
+  line-height: normal;
+  text-align: left;
+  border: 1px solid #171a21;
+  background-color: #171a21;
+  box-shadow: 0px 0px 2px rgb(185, 181, 217);
+}
 
-  /* form {
-    background-color: rgba(24,34,49, 0.8);
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
-    margin: 30px 400px 60px 400px;
-    border-radius: 20px;
-  }
+.profile_div {
+  display: flex;
+}
 
-  textarea {
-    color: rgb(38,58,82);
-    font-size: 18px;
-  }
+#logout {
+  padding: 3px 1px;
+  color: #d5d2d2;
+  text-overflow: unset;
+}
 
-  h4 {
-    font-size: 20px;
-    font-weight: normal;
-    color: rgba(255, 255, 255, 0.9)
-  } */
+#profile {
+  padding: 3px 1px;
+  color: #d5d2d2;
+}
+
+#profile:hover {
+  text-shadow: 0px 0px rgb(255, 255, 255), 0px 0px white;
+}
+
+#logout:hover {
+  text-shadow: 0px 0px rgb(255, 255, 255), 0px 0px white;
+}
+
+#profile_pic {
+  background-color: #E9E9E9;
+  width: 32px;
+  height: 32px;
+  padding: 1px;
+  border-radius: 0;
+  border: none;
+}

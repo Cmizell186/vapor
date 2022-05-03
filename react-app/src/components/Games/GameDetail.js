@@ -2,7 +2,7 @@ import { get_all_reviews } from "../../store/reviews"
 import { get_one_game } from "../../store/game"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ReviewGame from "../Reviews/ReviewsForm";
 import GameEditModal from "./GameEditModal"
 import './index.css'
@@ -18,15 +18,11 @@ const GameDetails = () => {
 
   useEffect(() => {
     dispatch(get_all_reviews())
-    dispatch(get_one_game(gameId))
+    dispatch(get_one_game(gameId)) // warning here - React Hook useEffect has a missing dependency: 'gameId'. Either include it or remove the dependency array
   }, [dispatch])
 
   const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
 
-  // <p>{game?.img}</p>
-  // <p>{game?.video}</p>
-  // <p>{game?.price}</p>
-  // <p>{game?.is_mature}</p>
   return (
     <>
       <div id="page-content-container">
