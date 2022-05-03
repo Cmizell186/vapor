@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { post_image } from '../../store/image';
 
 const UploadPicture = () => {
     const histroy = useHistory(); //redirect after successful image
+    const dispatch = useDispatch();
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
 
@@ -14,19 +17,9 @@ const UploadPicture = () => {
         // it is uploading
         setImageLoading(true);
 
-        const res = await fetch('/api/images',{
-            method: "POST",
-            body: formData,
-        });
+        await dispatch(post_image(image))
 
-        if(res.ok){
-            await res.json();
-            setImageLoading(false);
-            histroy.push('/')
-        } else {
-            setImageLoading(false);
-            console.log('error!!!! YOU MESSED UP!')
-        }
+        setImageLoading(false)
     }
 
     const updateImage = (e) =>{
