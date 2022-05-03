@@ -27,8 +27,8 @@ export const get_all_game_images = (id) => async dispatch =>{
     }
 }
 
-export const add_new_image = (data) => async dispatch =>{
-    const res = await fetch(`/api/images/game`, {
+export const add_new_image = (data, gameId) => async dispatch =>{
+    const res = await fetch(`/api/images/game/${gameId}`, {
         method: "POST",
         body: data,
     })

@@ -50,9 +50,8 @@ def upload_image():
 
 
 # posting to a specific game page
-@image_routes.route("/game", methods=["POST"])
-def upload_image_to_game():
-    print(request.json(), "<<<<<<<<<<<<<<")
+@image_routes.route("/game/<int:id>", methods=["POST"])
+def upload_image_to_game(id):
     if "image" not in request.files:
         return {"errors": "image required"}, 400
 
@@ -73,7 +72,7 @@ def upload_image_to_game():
 
     url = upload["url"]
     # flask_login allows us to get the current user from the request
-    new_game_image = Image(image=url, user_id=current_user.id, game_id=1)
+    new_game_image = Image(image=url, user_id=current_user.id, game_id=id)
     db.session.add(new_game_image)
     db.session.commit()
     return {"image": url}

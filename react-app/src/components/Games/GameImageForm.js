@@ -15,27 +15,16 @@ const UploadGamePicture = () =>{
         e.preventDefault();
         const formData = new FormData();
         formData.append('image', image);
-        // formData.append('game_id', gameId)
+
 
         // since aws is slow! We will display a message for users to know
         // it is uploading
         setImageLoading(true);
-        dispatch(add_new_image(formData))
-
-        // const res = await fetch(`/api/images/game`, {
-        //     method: "POST",
-        //     body: formData,
-        // })
-        // let data = {body:formData, id:gameId}
 
 
-        if(res.ok){
-            await res.json();
-            setImageLoading(false);
-        } else {
-            setImageLoading(false);
-            console.log('error!!!! YOU MESSED UP!')
-        }
+        await dispatch(add_new_image(formData, gameId))
+
+        setImageLoading(false);
     }
 
     const updateImage = (e) =>{
