@@ -15,4 +15,5 @@ class Library(db.Model):
             'user_id': self.user_id,
             'game_id': self.game_id,
             'is_owned': self.is_owned,
+            'game': self.game.to_dict()
         }
