@@ -5,7 +5,9 @@ import React, { useEffect } from 'react';
 const Cart = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
+  // cart_entries is an array with all entries
   const cart_entries = useSelector(state => Object.values(state.carts))
+  // user_cart is an array with only the not owned games
   const user_cart = cart_entries.filter(entry => entry.user_id === sessionUser.id && !entry.is_owned)
 
   useEffect(() => {
