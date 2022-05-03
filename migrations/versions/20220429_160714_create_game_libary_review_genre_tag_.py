@@ -1,6 +1,6 @@
 """create game/libary/review/genre/tag tables
 
-Revision ID: 51bb4d9a7bfb
+Revision ID:9a7 51bb4dbfb
 Revises: ffdc0a98111c
 Create Date: 2022-04-29 16:07:14.529009
 
