@@ -75,7 +75,7 @@ def upload_image_to_game(id):
     new_game_image = Image(image=url, user_id=current_user.id, game_id=id)
     db.session.add(new_game_image)
     db.session.commit()
-    return {"image": url}
+    return new_game_image.to_dict()
 
 
 @image_routes.route('/game/<int:id>')

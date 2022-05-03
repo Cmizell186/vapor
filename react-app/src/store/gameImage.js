@@ -5,9 +5,10 @@ const all_game_images = (images) =>({
     type: LOAD_GAME_IMAGE,
     images
 })
-const add_game_image = (image) =>({
+const add_game_image = (image, gameId) =>({
     type: ADD_NEW_GAME_IMAGE,
-    image
+    image,
+    gameId
 })
 
 
@@ -26,15 +27,15 @@ export const get_all_game_images = (id) => async dispatch =>{
     }
 }
 
-export const add_new_image = (data, gameId) => async dispatch =>{
+export const add_new_image = (image, gameId) => async dispatch =>{
     const res = await fetch(`/api/images/game/${gameId}`, {
         method: "POST",
-        body: data,
+        body: image,
     })
 
     if(res.ok){
         const image = await res.json();
-        dispatch(add_game_image(image))
+        dispatch(add_game_image(image, gameId))
     } else {
         return "ERROR AT ADD_NEW_IMAGE"
     }
@@ -48,6 +49,11 @@ const gameImage_reducer = (state=inititalState, action) =>{
         case LOAD_GAME_IMAGE:
             newState = {};
             action.images.forEach((image) => (newState[image.id] = image));
+            return newState;
+        case ADD_NEW_GAME_IMAGE:
+            console.log([action.image])
+            newState = {...state};
+            newState[action.image.id] = action.image
             return newState;
         default:
             return state;
