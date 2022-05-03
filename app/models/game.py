@@ -20,6 +20,7 @@ class Game(db.Model):
     reviews = db.relationship("Review", back_populates="games")
     tags = db.relationship("Tag", back_populates="games")
     image = db.relationship("Image", back_populates="games")
+    library = db.relationship("Library", back_populates="game")
 
     def to_dict(self):
         return {
