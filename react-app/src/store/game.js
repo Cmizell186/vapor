@@ -78,6 +78,7 @@ export const update_game = (game) => async(dispatch) => {
         const data = await response.json()
         // const updated_game = data.game
         dispatch(update(data))
+        return response
     } else {
         return "ERROR AT UPDATE_GAME THUNK"
     }

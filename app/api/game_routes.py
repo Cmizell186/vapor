@@ -23,27 +23,6 @@ def post_games():
     form = CreateGame()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    print(dir(form.image.data), "<<<<<<<<<<<<<<<<<<<<<<")
-    # for adding image to s3 bucket
-    if "image" not in request.files:
-        print("error happenend at line 50")
-        return {"errors": "image required"}, 400
-    image = request.files["image"]
-    print(image, ">>>>>>>>>>>>>>>>>")
-    if not allowed_file(image.filename):
-        print("error happenend at line 53")
-        return {"errors": "file type not permitted"}, 400
-    image.filename = get_unique_filename(image.filename)
-    upload = upload_file_to_s3(image)
-    if "url" not in upload:
-        # if the dictionary doesnt have a url key
-        # it means that there was an error when we tried to upload
-        # so we send back that error message
-        print("error happenend at line 62")
-        return upload, 400
-    url = upload['url']
-    # end of s3 bucket adding
-
     if form.validate_on_submit():
         game = Game(
             title = form.title.data,
@@ -68,43 +47,26 @@ def get_specific_game(id):
     # print('================', game.to_dict())
     return {'game': game.to_dict()}
 
-@game_routes.route('<int:id>/update', methods=["POST"])
+@game_routes.route('/<int:id>', methods=["POST"])
 def edit_game(id):
     form = EditGame()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-        # for adding image to s3 bucket
-    if "image" not in request.files:
-        print("error happenend at line 50")
-        return {"errors": "image required"}, 400
-    image = request.files["image"]
-    print(image, ">>>>>>>>>>>>>>>>>")
-    if not allowed_file(image.filename):
-        print("error happenend at line 53")
-        return {"errors": "file type not permitted"}, 400
-    image.filename = get_unique_filename(image.filename)
-    upload = upload_file_to_s3(image)
-    if "url" not in upload:
-        # if the dictionary doesnt have a url key
-        # it means that there was an error when we tried to upload
-        # so we send back that error message
-        print("error happenend at line 62")
-        return upload, 400
-    url = upload['url']
-    # end of s3 bucket adding
-
     game = Game.query.get(id)
+    print(game.to_dict(), "====================================================")
+    print(form.is_mature.data, '*********')
     if request.method == "POST":
         if (game):
-            game.title = form.title.data,
-            game.price = form.price.data,
-            game.description = form.description.data,
-            game.release_date = form.release_date.data,
-            game.is_mature = form.is_mature.data,
-            game.video = form.video.data,
-            game.developer = form.developer.data,
+            game.title = form.title.data
+            game.price = form.price.data
+            game.description = form.description.data
+            game.release_date = form.release_date.data
+            game.is_mature = form.is_mature.data
+            game.video = form.video.data
+            game.developer = form.developer.data
             game.user_id = current_user.id
         db.session.commit()
+        print(game.to_dict(), "=========================================>>>>")
         return game.to_dict()
     else:
         print(form.errors)
