@@ -4,6 +4,7 @@ from flask_login import current_user
 from app.models import Game, db
 from app.forms.create_game_form import CreateGame
 from app.forms.edit_game_form import EditGame
+from app.models.image import Image
 from app.s3config import (
     upload_file_to_s3, allowed_file, get_unique_filename)
 
