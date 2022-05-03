@@ -1,4 +1,4 @@
-import { get_all_carts } from '../../store/cart'
+import { get_all_carts, delete_cart } from '../../store/cart'
 import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect } from 'react';
 import './index.css'
@@ -16,7 +16,7 @@ const Cart = () => {
 
   const removeCartItem = (id) => {
     // TODO SEND TO DISPATCH TO DELETE FROM LIBRARY
-    console.log(id)
+    dispatch(delete_cart(id))
   }
   // entry.game.images[0]
   // console.log(user_cart[0].game.images[0].image)
@@ -42,7 +42,7 @@ const Cart = () => {
                   <p>{entry.game.title}</p>
                   <div className='cart-item-price-remove'>
                     <p>{entry.game.price}</p>
-                    <a href='#' onClick={() => removeCartItem(`${entry.user_id},${entry.game_id}`)}>Remove</a>
+                    <a href='#' onClick={() => removeCartItem(entry.id)}>Remove</a>
                   </div>
                 </div>
               </div>
