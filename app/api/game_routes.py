@@ -75,6 +75,8 @@ def edit_game(id):
 
 @game_routes.route('<int:id>', methods=["DELETE"])
 def delete_game(id):
-    game = Game.query.filter(Game.id == id).delete()
+    game = db.session.query(Game).filter(Game.id == id).first()
+    # game = Game.query.filter(Game.id == id).first()
+    db.session.delete(game)
     db.session.commit()
     return "successful delete"
