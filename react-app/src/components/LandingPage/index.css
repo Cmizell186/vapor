@@ -70,6 +70,10 @@
   color: white;
 }
 
+#demo_login {
+  padding-left: 3px;
+}
+
 #loginnav {
   position: absolute;
   display: flex;
