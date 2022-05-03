@@ -12,10 +12,6 @@ const CreateGame = () => {
     const [is_mature, setIs_Mature] = useState(false);
     const [video, setVideo] = useState([]);
 
-    // for aws upload
-    const [image, setImage] = useState([]);
-    const [imageLoading, setImageLoading] = useState(false);
-
     const [developer, setDeveloper] = useState("");
     const [errors, setErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -25,12 +21,8 @@ const CreateGame = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('image', image);
         setHasSubmitted(true);
 
-        // aws is slow! adding a loading message for users to not get too worried!
-        setImageLoading(true);
 
         const game = {
             title,
@@ -39,7 +31,6 @@ const CreateGame = () => {
             release_date,
             is_mature,
             video,
-            formData,
             developer,
             userId: sessionUser.id,
         };
@@ -52,7 +43,6 @@ const CreateGame = () => {
         setRelease_Date("");
         setIs_Mature(false);
         setVideo([]);
-        setImage([]);
         setDeveloper("");
         setHasSubmitted(false);
 
@@ -61,10 +51,6 @@ const CreateGame = () => {
         }
     };
 
-    const updateImage = (e) => {
-        const file = e.target.files[0];
-        setImage(file);
-    };
     const vid_upload = (e) => {
         setVideo(e.target.value);
     };
@@ -143,10 +129,6 @@ const CreateGame = () => {
               onChange={vid_upload}
             />
           </div>
-          <div className="img-div">
-            <label htmlFor="image">Images:</label>
-            <input name="image" type="file" accept="image/*" onChange={updateImage} />
-          </div>
           <div className="developer-div">
             <label htmlFor="developer">Developer:</label>
             <input
@@ -159,7 +141,6 @@ const CreateGame = () => {
           <button className={"button btn-submit-game"} type="submit">
             Submit Game
           </button>
-          {(imageLoading)&& <p>Loading...</p>}
         </form>
       </div>
     </>
