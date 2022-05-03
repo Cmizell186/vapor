@@ -8,9 +8,11 @@ class Library(db.Model):
     game_id = db.Column(db.Integer, db.ForeignKey("games.id"), primary_key=True)
     is_owned = db.Column(db.Boolean)
 
+    game = db.relationship('Game', back_populates="library")
+
     def to_dict(self):
         return {
             'user_id': self.user_id,
             'game_id': self.game_id,
-            'is_owned': self.is_owned
+            'is_owned': self.is_owned,
         }
