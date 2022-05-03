@@ -1,7 +1,7 @@
 import { get_all_carts } from '../../store/cart'
 import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect } from 'react';
-
+import './index.css'
 const Cart = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
@@ -15,14 +15,27 @@ const Cart = () => {
   }, [dispatch])
 
   // <p>{entry.user_id} <span>{entry.game_id}</span></p>
+  // <p>{entry.game.description}</p>
   return (
-    <div>
-      {user_cart?.map(entry =>
-        <div key={entry.game_id}>
-          <p>{entry.game.title}</p>
-          <p>{entry.game.description}</p>
+    <div className='whole-page'>
+      <div className='main-page-div'>
+        <div className='header-content'>
+          <h2>YOUR SHOPPING CART</h2>
         </div>
-      )}
+        <div className='main-page-content'>
+          <div className='left-content'>
+            {user_cart?.map(entry =>
+              <div key={entry.game_id}>
+                <p>{entry.game.title}</p>
+              </div>
+            )}
+          </div>
+          <div className="right-content">
+            <div className="right-content-divs">palceholder</div>
+            <div className="right-content-divs">palceholder</div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

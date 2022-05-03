@@ -1,0 +1,51 @@
+@font-face {
+  font-family: Motiva Sans;
+  src: url("../../public/fonts/Motiva-Sans-Light.ttf");
+}
+
+.whole-page {
+  display: block;
+  border: 2px solid black;
+  padding: 0;
+  margin: 0;
+}
+
+.main-page-div {
+  display: flex;
+  flex-flow: column;
+  width: 940px;
+  margin: 0px auto;
+  border: 2px solid white;
+}
+
+.header-content {
+ padding-bottom: 64px;
+ margin-bottom: -30px;
+}
+
+.header-content h2 {
+  color: #ffffff;
+  font-size: 33px;
+  font-family: "Motiva Sans", sans-serif;
+  font-weight: 300;
+  text-shadow: 1px 1px 0 rgb(0 0 0 /40%);
+  margin-top: -4px;
+}
+
+.main-page-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-content {
+  border: 2px solid red;
+  width: 616px;
+  float: left;
+  font-family: "Motiva Sans", sans-serif;
+  color: #c6d4df;
+  font-weight: normal;
+}
+
+.right-content {
+  border: 2px solid red;
+}
