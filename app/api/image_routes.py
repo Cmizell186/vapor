@@ -14,16 +14,19 @@ def get_images():
     return {'all_images': [img.to_dict() for img in all_images]}
 
 # get user image
-@image_routes.route("/<int:id>")
-def get_single_image(id):
-    single_image = UserImage.query.filter_by(user_id=id).first()
-    return {"image": single_image.to_dict()}
+# @image_routes.route("/<int:id>")
+# def get_single_image(id):
+
+#     single_image = UserImage.query.filter_by(user_id=id).first()
+    """
+    Returns None ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ , bad syntax and user_id undefined
+    """
+    # return {"image": single_image.to_dict()}
 
 
 # upload user image to database
 @image_routes.route("", methods=["POST"])
 def upload_image():
-    print(request.files, "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
     if "image" not in request.files:
         return {"errors": "image required"}, 400
 

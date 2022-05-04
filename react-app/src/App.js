@@ -7,7 +7,6 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import GameList from './components/Games/GameList'
-import ReviewList from './components/Reviews/ReviewList'
 import GameListingForm from './components/Games/GameListingForm'
 import LandingPage from './components/LandingPage'
 import GameDetails from './components/Games/GameDetail'
@@ -20,6 +19,7 @@ import UploadGamePicture from './components/Games/GameImageForm';
 import SignUpForm from './components/auth/SignUpForm';
 import Demo from './components/auth/Demo'
 import Cart from './components/Carts/Cart'
+import Store from './components/MainPage';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -53,10 +53,13 @@ function App() {
           {user ? <Redirect to="/games" /> : <Splash />}
         </Route>
         <ProtectedRoute exact path="/games" user={user}>
-          {/* <NavBar user={user} /> */}
+        <Store />
+        </ProtectedRoute>
+        <ProtectedRoute exact path="/library">
           <GameList />
-          <GameListingForm />
-          <ReviewList />
+        </ProtectedRoute>
+        <ProtectedRoute path="/games/new">
+          <GameListingForm user={user} />
         </ProtectedRoute>
         <ProtectedRoute exact path='/images' user={user}>
           <UploadPicture />
