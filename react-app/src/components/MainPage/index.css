@@ -12,12 +12,10 @@
     display: flex;
     justify-content: center;
     color: rgb(255, 255, 255);
+    padding-right: 200px;
+    padding-bottom: 50px;
 }
 
-#sidebar_nav {
-    display: block;
-    width: 210px;
-}
 #main_content {
     display: block;
 }
@@ -71,12 +69,16 @@
 
 } */
 
+#sidebar_nav {
+    display: block;
+    width: 210px;
+    overflow: hidden;
+}
+
 #sidebar_nav_list {
     top: 31px;
     width: 0;
     z-index: 2;
-    margin-right: 50px;
-
 }
 
 #content {
@@ -93,14 +95,13 @@
 
 #feature {
     font-family: "Motiva Sans", Sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 14px;
     text-transform: uppercase;
     color: #fff;
-    margin: 0 0 10px;
+    margin: 0 0 -10px;
     letter-spacing: 0.03em;
-    font-weight: normal;
-    padding-top: 2px;
+    padding-top: 20px;
 }
 
 #carousel {
@@ -111,6 +112,11 @@
     font-size: 14px;
     text-transform: uppercase;
     color: #fff;
+    background: none;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    right: 100px;
+    z-index: auto;
 }
 
 #game_img_carousel {
@@ -132,6 +138,9 @@
     background-position: right;
     color: #fff;
     display: flex;
+    height: 353px;
+    overflow: hidden;
+    box-shadow: 2px 2px 7px 0px #000, 2px 2px 7px 2px #000;
 }
 
 #game_image_carousel {
@@ -142,6 +151,7 @@
 #game_image_main {
     width: 616px;
     height: 353px;
+    z-index: 2;
 }
 
 #game_title {
@@ -157,7 +167,8 @@
     height: 69px;
     padding-left: 6px;
     padding-right: 6px;
-    text-align: left;
+    display: flex;
+    align-items: center;
 }
 
 #game_side_content {
