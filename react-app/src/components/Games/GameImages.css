@@ -1,0 +1,8 @@
+.game-image-container{
+    position: relative;
+    width: 1150px;
+    height: 700px;
+    padding: 35px 35px;
+    min-height: 750px;
+    background-color: red;
+}

@@ -14,7 +14,7 @@ const GameImages = () =>{
     }, [dispatch])
 
     return (
-        <div>
+        <div id="game-image-container">
             {gameImages?.map(img =>(
                 <div key={img?.id}>
                     <img
