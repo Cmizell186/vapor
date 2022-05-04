@@ -1,0 +1,93 @@
+.review-form-container {
+  background-image: linear-gradient(to bottom right,#3b4652, #566473 );
+  color: #8F98A0;
+  max-width: 908px;
+  position: relative;
+  overflow: visible;
+  padding-top: 16px;
+}
+
+.review-form-container > h4 {
+  color: #5abaf4;
+}
+
+.review-form-container > p {
+  font-size: 13px;
+  margin-bottom: 15px;
+  line-height: 17px;
+  color: #8f98a0;
+}
+
+
+.review-form-container .create_textbox {
+  border: 1px solid #233c51;
+  border-radius: 3px;
+  height: 132px;
+  width: 764px;
+  max-width: 800px;
+  background-color: #222b35;
+  color: #d6d7d8;
+  padding: 10px 11px;
+  font-size: 13px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+}
+
+.review_controls_body {
+  padding: 0;
+  margin: 0;
+}
+
+.review_controls_container {
+  padding: 8px;
+  margin-bottom: 10px;
+  max-width: 772px;
+  background-image: linear-gradient(to bottom right,#343e48, #424d58 );
+}
+
+.recommend_yes, .recommend_no {
+  border-radius: 2px;
+  border: none;
+  padding: 1px;
+  margin: 2px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #67c1f5 !important;
+  background: rgba( 103, 193, 245, 0.2 );
+}
+
+.recommend_yes:hover {
+  background-color: #5893B7;
+}
+
+.recommend_no:hover {
+  background-color: #5893B7;
+}
+
+.recommend_yes > span {
+  padding: 0 15px;
+
+  font-size: 15px;
+  line-height: 30px;
+}
+
+
+.recommend_no > span {
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.ico18 {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: 0 0px;
+  background: url(https://store.cloudflare.steamstatic.com/public/shared/images/buttons/icons_18.png?v=3);
+}
+
+.btn-submit-review {
+  background-color: #3a94c7;
+
+}

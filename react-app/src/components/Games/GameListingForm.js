@@ -32,7 +32,7 @@ const CreateGame = () => {
             is_mature,
             video,
             developer,
-            userId: sessionUser.id,
+            user_id: sessionUser.id,
         };
         let newGame = await dispatch(create_game(game));
 
@@ -47,7 +47,7 @@ const CreateGame = () => {
         setHasSubmitted(false);
 
         if (newGame) {
-            history.push("/");
+            history.push(`/games/${game?.id}`);
         }
     };
 
