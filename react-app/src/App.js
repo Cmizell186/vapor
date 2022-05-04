@@ -54,8 +54,8 @@ function App() {
         </Route>
         <ProtectedRoute exact path="/games" user={user}>
           {/* <NavBar user={user} /> */}
-          <GameListingForm />
           <GameList />
+          <GameListingForm />
           <ReviewList />
         </ProtectedRoute>
         <ProtectedRoute exact path='/images' user={user}>
