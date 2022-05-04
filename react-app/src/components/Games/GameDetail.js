@@ -16,8 +16,8 @@ const GameDetails = (user) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const game = useSelector((state) => state.games[gameId])
-  console.log(game.user_id, "GAME ID")
-  console.log(user.user.id, "user id")
+  // console.log(game.user_id, "GAME ID")
+  // console.log(user.user.id, "user id")
   const reviews = useSelector(state => Object.values(state.reviews))
   const [showModal, setShowModal] = useState(false);
   const filteredReviews = reviews.filter(review => review.game_id === +gameId)
@@ -103,7 +103,7 @@ const GameDetails = (user) => {
             </div>
           )}
         </div>
-        {user?.user.id == game?.user_id ? <UploadGamePicture /> : <></>}
+        {user.user?.id == game?.user_id ? <UploadGamePicture /> : <></>}
       </div>
     </>
   )
