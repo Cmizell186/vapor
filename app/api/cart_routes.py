@@ -6,7 +6,7 @@ cart_routes = Blueprint("carts", __name__)
 
 @cart_routes.route('')
 def get_carts():
-  all_carts = Library.query.join(Game).all()
+  all_carts = Library.query.join(Game).filter(current_user.id == Library.user_id).all()
   # all_carts = db.session.query(Library).join(Game).join(Image).all()
   return {"carts": [cart.to_dict() for cart in all_carts]}
 
