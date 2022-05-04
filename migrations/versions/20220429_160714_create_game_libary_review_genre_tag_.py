@@ -75,7 +75,7 @@ def upgrade():
     )
     op.create_table('user_images',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('image', sa.String(), nullable=True),
+    sa.Column('image', sa.String(), server_default="https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg", nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'],),
     sa.PrimaryKeyConstraint('id')
