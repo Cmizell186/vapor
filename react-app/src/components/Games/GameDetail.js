@@ -7,7 +7,7 @@ import ReviewGame from "../Reviews/ReviewsForm";
 import GameEditModal from "./GameEditModal"
 import { delete_game } from "../../store/game";
 import { Modal } from "../../context/Modal";
-import UploadGamePicture from "./GameImageForm";
+import GameImageModal from "./GameImagesModal";
 import './index.css'
 
 const GameDetails = (user) => {
@@ -103,7 +103,7 @@ const GameDetails = (user) => {
             </div>
           )}
         </div>
-        {user.user?.id == game?.user_id ? <UploadGamePicture /> : <></>}
+        {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
       </div>
     </>
   )

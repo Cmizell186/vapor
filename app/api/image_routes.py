@@ -20,6 +20,7 @@ def get_single_image(id):
     return {"image": user_image.to_dict()}
 
 
+
 # upload user image to specific user page
 @image_routes.route("/<int:id>", methods=["PUT"])
 def upload_image(id):
@@ -84,3 +85,10 @@ def upload_image_to_game(id):
 def get_all_images_for_game(id):
     games_images = Image.query.filter_by(game_id=id).all()
     return {"game_images":[img.to_dict() for img in games_images]}
+
+# delete specific game image
+@image_routes.route('/game/<int:id>/images/<int:photoId>', methods=["DELETE"])
+def delete_one_game_image(id, photoId):
+    game_image = Image.query.filter(Image.id == photoId and Image.game_id == id).delete()
+    db.session.commit()
+    return "deleted image"

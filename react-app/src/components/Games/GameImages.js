@@ -1,7 +1,8 @@
-import React, {useEffect} from "react";
-import { get_all_game_images } from "../../store/gameImage";
+import React, {useEffect, useState} from "react";
+import { get_all_game_images, delete_specific_image } from "../../store/gameImage";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import './GameImages.css';
 
 const GameImages = () =>{
     const dispatch = useDispatch()
@@ -13,17 +14,18 @@ const GameImages = () =>{
     }, [dispatch])
 
     return (
-        <>
+        <div>
             {gameImages?.map(img =>(
                 <div key={img?.id}>
                     <img
                         src={img?.image}
-                        width="500"
-                        height="500"
+                        width="150"
+                        height="150"
                     />
+                <button onClick={() => dispatch(delete_specific_image(gameId, img?.id))}>delete Image</button>
                 </div>
             ))}
-        </>
+        </div>
     )
 }
 
