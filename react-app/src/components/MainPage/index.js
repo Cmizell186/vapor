@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
 import GameSlider from "./GameSlider";
 import './index.css'
+import SearchBar from "../SubNavBar";
 
 const Store = ({user}) => {
 
@@ -14,12 +15,15 @@ const Store = ({user}) => {
 
     return (
         <div id="main">
+            <div id="header_content">
             <div id="jason_div_video">
-            <video id="going_rogue_video" autoplay="true" muted width="1140" loop>
+            <SearchBar />
+            <video id="going_rogue_video" autoPlay={true} muted width="1140" loop>
                 <source src="/videos/webm_gr_page_bg_english.webm" type="video/webm" loop/>
                 <source src="/videos/webm_gr_page_bg_english.webm" type="video/mp4"/>
                 Sorry, your browser doesn't support embedded videos.
             </video>
+            </div>
             </div>
             <div id="main_page">
             <div id="main_page_content">
@@ -67,12 +71,14 @@ const Store = ({user}) => {
             </div>
         <div id="content">
         <div id="main_content">
+            <div id="feature">
             FEATURED & RECOMMENDED
+            </div>
         <GameSlider games={games} />
-        </div>
         <div id="sub_main_content">
             SPECIAL OFFERS
             game1/2/3/4
+        </div>
         </div>
         </div>
         </div>

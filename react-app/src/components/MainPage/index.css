@@ -22,12 +22,151 @@
     display: block;
 }
 
+#jason_div_video {
+    display: flex;
+    justify-content: center;
+}
+
 #going_rogue_video {
     width: 100%;
     height: 100%;
 }
 
-/* #jason_div_video {
-    width: calc(100vw);
-    height: calc(50vh);
+#search_container {
+    position: absolute;
+    width: 940px;
+    margin: 0 auto;
+    z-index: 300;
+    height: 66px;
+    margin-top: 20px;
+
+    top: calc();
+    right: calc();
+}
+
+#search_input {
+    color: #0e1c25;
+    font-size: 14px;
+    margin-top: 1px;
+    text-shadow: 1px 1px 0px rgb(255 255 255 / 10%);
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+#search_div {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    width: 940px;
+    height: 35px;
+    padding: 0 16px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, rgba(62, 103, 150, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%);
+    box-shadow: 0 0 3px rgb(0 0 0 / 40%);
+    z-index: 300;
+}
+
+/* #header_content {
+
 } */
+
+#sidebar_nav_list {
+    top: 31px;
+    width: 0;
+    z-index: 2;
+    margin-right: 50px;
+
+}
+
+#content {
+    position: relative;
+    width: 940px;
+    height: 380px;
+    margin-top: 5px;
+}
+
+#main_content {
+    width: 940px;
+    height: 353px;
+}
+
+#feature {
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0 10px;
+    letter-spacing: 0.03em;
+    font-weight: normal;
+    padding-top: 2px;
+}
+
+#carousel {
+    width: calc();
+    height: calc();
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#game_img_carousel {
+    width: 616px;
+    height: 353px;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 300ms;
+}
+
+#carousel_content {
+    display: flex;
+    background-image: url("../../public/images/background_maincap_2.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    color: #fff;
+    display: flex;
+}
+
+#game_image_carousel {
+    width: 100%;
+    height: 100%;
+}
+
+#game_image_main {
+    width: 616px;
+    height: 353px;
+}
+
+#game_title {
+    max-height: 62px;
+    overflow: hidden;
+    font-size: 24px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    line-height: 26px;
+    padding-top: 0px;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+    height: 69px;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: left;
+}
+
+#game_side_content {
+    display: flex;
+    flex-direction: row;
+}
+
+#game_image_thumb {
+    width: 162px;
+    height: 69px;
+    padding: 10px 10px 0 0;
+}
