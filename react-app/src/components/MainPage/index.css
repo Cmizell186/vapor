@@ -76,8 +76,10 @@
 }
 
 #sidebar_nav_list {
+    font-family: "Motiva Sans", Sans-serif;
+    font-size: 13px;
     top: 31px;
-    width: 0;
+    width: 210px;
     z-index: 2;
 }
 
@@ -180,6 +182,56 @@
     width: 162px;
     height: 69px;
     padding: 10px 10px 0 0;
+}
+
+#sub_main_content {
+    padding: 15px;
+}
+
+#console_wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    padding-bottom: 50px;
+    width: 900px;
+}
+
+#vapor_deck {
+    display: block;
+    max-width: 465px;
+    width: 100%;
+    height: 60px;
+    background-size: contain;
+}
+
+#vapor_deck_div {
+    display: block;
+    max-width: 465px;
+    width: 100%;
+    height: 60px;
+    background-size: cover;
+    background-image: url("../../public/images/vapordeck.png");
+    background-repeat: no-repeat;
+}
+
+#vapor_index_div {
+    display: block;
+    max-width: 465px;
+    width: 100%;
+    height: 60px;
+    min-width: none;
+    background-size: cover;
+    background-image: url("../../public/images/vaporindex.png");
+    background-repeat: no-repeat;
+}
+
+#vapor_index {
+    display: block;
+    /* max-width: 465px; */
+    width: 465px;
+    height: 60px;
+    background-size: contain;
 }
 
 a {
