@@ -1,5 +1,6 @@
 const LOAD_IMAGE = 'images/GET';
 const LOAD_ONE_IMAGE = 'images/GET_ONE';
+const ADD_USER_IMAGE = 'images/POST';
 
 const all_images = (images) =>({
     type: LOAD_IMAGE,
@@ -8,6 +9,11 @@ const all_images = (images) =>({
 
 const single_image = (image) =>({
     type: LOAD_ONE_IMAGE,
+    image
+})
+
+const add_image = (image) => ({
+    type: ADD_USER_IMAGE,
     image
 })
 
@@ -30,6 +36,20 @@ export const get_one_image = (id) => async dispatch =>{
     }
 }
 
+export const post_image = (image) => async dispatch =>{
+    const res = await fetch('/api/images',{
+        method: "POST",
+        body: image,
+    });
+
+    if (res.ok){
+        const image = await res.json();
+        dispatch(add_image(image))
+    } else {
+        return "ERROR AT POST_IMAGE THUNK"
+    }
+}
+
 const inititalState = {}
 const image_reducer = (state = inititalState, action) => {
     let newState;
@@ -47,6 +67,10 @@ const image_reducer = (state = inititalState, action) => {
                     ...action.image
                 }
             }
+        case ADD_USER_IMAGE:
+            newState = {...state};
+            newState[action.image.user_id] = action.image
+            return newState;
         default:
             return state
     }

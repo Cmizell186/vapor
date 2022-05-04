@@ -12,7 +12,7 @@ import GameListingForm from './components/Games/GameListingForm'
 import LandingPage from './components/LandingPage'
 import GameDetails from './components/Games/GameDetail'
 import ReviewDetails from './components/Reviews/ReviewDetail'
-import UploadPicture from './components/Images';
+import UploadPicture from './components/Images/index';
 import Images from './components/Images/ImageList';
 import SingleImage from './components/Images/UserImage';
 import GameImages from './components/Games/GameImages';

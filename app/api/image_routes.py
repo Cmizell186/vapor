@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 from app.models import db, Image, UserImage
 from flask_login import current_user
+from app.forms.image_form import CreateImage # wip will come back to this for csrf
 from app.s3config import (
     upload_file_to_s3, allowed_file, get_unique_filename)
 
@@ -22,6 +23,7 @@ def get_single_image(id):
 # upload user image to database
 @image_routes.route("", methods=["POST"])
 def upload_image():
+    print(request.files, "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
     if "image" not in request.files:
         return {"errors": "image required"}, 400
 
@@ -45,7 +47,7 @@ def upload_image():
     new_image = UserImage(image=url, user_id=current_user.id)
     db.session.add(new_image)
     db.session.commit()
-    return {"image": url}
+    return new_image.to_dict()
 
 
 
@@ -75,7 +77,7 @@ def upload_image_to_game(id):
     new_game_image = Image(image=url, user_id=current_user.id, game_id=id)
     db.session.add(new_game_image)
     db.session.commit()
-    return new_game_image.to_dict()
+    return {"image": url}
 
 
 @image_routes.route('/game/<int:id>')
