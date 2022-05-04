@@ -15,7 +15,7 @@ const GameImageModal = () =>{
                 <Modal onClose={() => setShowModal(false)} className="game-image-container">
                         <UploadGamePicture/>
                         <GameImages />
-                    <button onClick={() => setShowModal(false)}>Finished</button>
+                    <a onClick={() => setShowModal(false)}>Finished</a>
                 </Modal>
             )}
         </>

@@ -16,13 +16,13 @@ const GameImages = () =>{
     return (
         <div id="game-image-container">
             {gameImages?.map(img =>(
-                <div key={img?.id}>
+                <div key={img?.id} className='image-item'>
                     <img
                         src={img?.image}
                         width="150"
                         height="150"
                     />
-                <button onClick={() => dispatch(delete_specific_image(gameId, img?.id))}>delete Image</button>
+                <a id="delete-image-btn"onClick={() => dispatch(delete_specific_image(gameId, img?.id))}>delete image</a>
                 </div>
             ))}
         </div>
