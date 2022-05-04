@@ -228,3 +228,17 @@
   border-radius: 0;
   border: none;
 }
+
+#cart-button-div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* background-color: rgba( 164, 208, 7, 0.4 ); */
+  margin-bottom: 5px;
+}
+
+#cart-button-div button {
+  width: 100px;
+  box-shadow: 0 0 3px #000;
+  background-color: #a4d007;
+}
