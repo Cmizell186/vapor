@@ -5,6 +5,7 @@ from .genres import seed_genres, undo_genres
 from .libraries import seed_libraries, undo_libraries
 from .tags import seed_tags, undo_tags
 from .reviews import seed_reviews, undo_reviews
+from .images import seed_images, undo_images
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
 seed_commands = AppGroup('seed')
@@ -20,6 +21,7 @@ def seed():
     seed_libraries()
     seed_tags()
     seed_reviews()
+    seed_images()
 
 # Creates the `flask seed undo` command
 @seed_commands.command('undo')
@@ -31,3 +33,4 @@ def undo():
     undo_libraries()
     undo_tags()
     undo_reviews()
+    undo_images()
