@@ -35,7 +35,7 @@ const Cart = () => {
               <div className='cart-item-container' key={entry.game_id}>
                 <div class="cart-li-image">
                   <a>
-                    <img src={entry?.game?.images[0]?.image} />
+                    <img alt='' src={entry?.game?.images[0]?.image} />
                   </a>
                 </div>
                 <div className="cart-item-desc">
@@ -50,9 +50,9 @@ const Cart = () => {
           </div>
           <div className="right-content">
             <div className="right-content-divs">
-            <img src="https://cdn.akamai.steamstatic.com/steam/apps/468920/header.jpg?t=1651602622" /></div>
+            <img alt='' src="https://cdn.akamai.steamstatic.com/steam/apps/468920/header.jpg?t=1651602622" /></div>
             <div className="right-content-divs">
-              <img src='https://cdn.akamai.steamstatic.com/steam/apps/470310/header.jpg?t=1650008969' />
+              <img alt='' src='https://cdn.akamai.steamstatic.com/steam/apps/470310/header.jpg?t=1650008969' />
             </div>
           </div>
         </div>

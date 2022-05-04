@@ -54,8 +54,6 @@ def edit_game(id):
     form['csrf_token'].data = request.cookies['csrf_token']
 
     game = Game.query.get(id)
-    print(game.to_dict(), "====================================================")
-    print(form.is_mature.data, '*********')
     if request.method == "POST":
         if (game):
             game.title = form.title.data
@@ -67,7 +65,6 @@ def edit_game(id):
             game.developer = form.developer.data
             game.user_id = current_user.id
         db.session.commit()
-        print(game.to_dict(), "=========================================>>>>")
         return game.to_dict()
     else:
         print(form.errors)

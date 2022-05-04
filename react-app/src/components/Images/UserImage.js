@@ -15,7 +15,7 @@ const SingleImage = () =>{
     return (
         <>
             <div>
-                <img src={userImage?.image}  width="500" height="500" />
+                <img alt='' src={userImage?.image}  width="500" height="500" />
             </div>
         </>
     )

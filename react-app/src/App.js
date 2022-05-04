@@ -7,7 +7,6 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import GameList from './components/Games/GameList'
-import ReviewList from './components/Reviews/ReviewList'
 import GameListingForm from './components/Games/GameListingForm'
 import LandingPage from './components/LandingPage'
 import GameDetails from './components/Games/GameDetail'
@@ -49,17 +48,18 @@ function App() {
     <>
     <BrowserRouter>
     <NavBar user={user} />
-
       <Switch>
         <Route exact path="/">
           {user ? <Redirect to="/games" /> : <Splash />}
         </Route>
         <ProtectedRoute exact path="/games" user={user}>
         <Store />
-          {/* <NavBar user={user} /> */}
-          {/* <GameListingForm /> */}
-          {/* <GameList /> */}
-          {/* <ReviewList /> */}
+        </ProtectedRoute>
+        <ProtectedRoute exact path="/library">
+          <GameList />
+        </ProtectedRoute>
+        <ProtectedRoute path="/games/new">
+          <GameListingForm user={user} />
         </ProtectedRoute>
         <ProtectedRoute exact path='/images' user={user}>
           <UploadPicture />
