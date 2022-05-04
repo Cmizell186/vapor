@@ -7,15 +7,18 @@ import ReviewGame from "../Reviews/ReviewsForm";
 import GameEditModal from "./GameEditModal"
 import { delete_game } from "../../store/game";
 import { Modal } from "../../context/Modal";
+import UploadGamePicture from "./GameImageForm";
 import './index.css'
 
-const GameDetails = () => {
+const GameDetails = (user) => {
   const sessionUser = useSelector((state) => state.session.user);
   const { gameId } = useParams();
   const { reviewId } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
   const game = useSelector((state) => state.games[gameId])
+  // console.log(game.user_id, "GAME ID")
+  // console.log(user.user.id, "user id")
   const reviews = useSelector(state => Object.values(state.reviews))
   const [showModal, setShowModal] = useState(false);
   const filteredReviews = reviews.filter(review => review.game_id === +gameId)
@@ -105,6 +108,7 @@ const GameDetails = () => {
             </div>
           )}
         </div>
+        {user.user?.id == game?.user_id ? <UploadGamePicture /> : <></>}
       </div>
     </>
   )

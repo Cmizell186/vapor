@@ -53,7 +53,7 @@ function App() {
           {user ? <Redirect to="/games" /> : <Splash />}
         </Route>
         <ProtectedRoute exact path="/games" user={user}>
-        <Store />
+          <Store />
         </ProtectedRoute>
         <ProtectedRoute exact path="/library">
           <GameList />
@@ -78,8 +78,7 @@ function App() {
         <>
         <Switch>
          <Route path='/games/:gameId'>
-          <GameDetails />
-          <UploadGamePicture />
+          <GameDetails user={user}/>
           <GameImages />
         </Route>
         <Route path='/reviews/:reviewId'>
@@ -88,9 +87,8 @@ function App() {
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
-          <UploadPicture />
+        <ProtectedRoute path='/users/:userId' exact={true}>
+          <User users={user}/>
           <SingleImage />
         </ProtectedRoute>
         </Switch>
