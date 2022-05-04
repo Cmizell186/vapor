@@ -96,7 +96,6 @@ const GameDetails = (user) => {
         {game?.user_id !== sessionUser?.id && (
         <div className='create-reviews-container'>
           <ReviewGame gameId={gameId} />
-
         </div>
         )}
         <div className='reviews-container'>
