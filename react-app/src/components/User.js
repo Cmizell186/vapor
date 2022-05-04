@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import UploadPicture from './Images';
 
-function User({currUser}) {
+function User({users}) {
   const [user, setUser] = useState({});
   const { userId }  = useParams();
 
@@ -34,7 +34,7 @@ function User({currUser}) {
           <strong>Email</strong> {user.email}
         </li>
       </ul>
-      {currUser?.id ? <UploadPicture /> : <></>}
+      {users.id === +userId ? <UploadPicture /> : <></>}
     </>
   );
 }
