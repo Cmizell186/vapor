@@ -14,19 +14,16 @@ def get_images():
     return {'all_images': [img.to_dict() for img in all_images]}
 
 # get user image
-# @image_routes.route("/<int:id>")
-# def get_single_image(id):
-
-#     single_image = UserImage.query.filter_by(user_id=id).first()
-    """
-    Returns None ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ , bad syntax and user_id undefined
-    """
-    # return {"image": single_image.to_dict()}
+@image_routes.route("/<int:id>")
+def get_single_image(id):
+    user_image = UserImage.query.filter_by(user_id = id).first()
+    return {"image": user_image.to_dict()}
 
 
-# upload user image to database
-@image_routes.route("", methods=["POST"])
-def upload_image():
+# upload user image to specific user page
+@image_routes.route("/<int:id>", methods=["PUT"])
+def upload_image(id):
+    print(request.files)
     if "image" not in request.files:
         return {"errors": "image required"}, 400
 
@@ -47,7 +44,7 @@ def upload_image():
 
     url = upload["url"]
     # flask_login allows us to get the current user from the request
-    new_image = UserImage(image=url, user_id=current_user.id)
+    new_image = UserImage(image=url, user_id=id)
     db.session.add(new_image)
     db.session.commit()
     return new_image.to_dict()

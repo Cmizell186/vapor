@@ -12,9 +12,10 @@ const single_image = (image) =>({
     image
 })
 
-const add_image = (image) => ({
+const add_image = (image, id) => ({
     type: ADD_USER_IMAGE,
-    image
+    image,
+    id
 })
 
 export const get_all_images = () => async dispatch =>{
@@ -36,15 +37,15 @@ export const get_one_image = (id) => async dispatch =>{
     }
 }
 
-export const post_image = (image) => async dispatch =>{
-    const res = await fetch('/api/images',{
-        method: "POST",
+export const post_image = (image, id) => async dispatch =>{
+    const res = await fetch(`/api/images/${id}`,{
+        method: "PUT",
         body: image,
     });
 
     if (res.ok){
         const image = await res.json();
-        dispatch(add_image(image))
+        dispatch(add_image(image, id))
     } else {
         return "ERROR AT POST_IMAGE THUNK"
     }
