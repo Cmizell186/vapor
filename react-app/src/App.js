@@ -20,6 +20,7 @@ import UploadGamePicture from './components/Games/GameImageForm';
 import SignUpForm from './components/auth/SignUpForm';
 import Demo from './components/auth/Demo'
 import Cart from './components/Carts/Cart'
+import Store from './components/MainPage';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -48,15 +49,17 @@ function App() {
     <>
     <BrowserRouter>
     <NavBar user={user} />
+
       <Switch>
         <Route exact path="/">
           {user ? <Redirect to="/games" /> : <Splash />}
         </Route>
         <ProtectedRoute exact path="/games" user={user}>
+        <Store />
           {/* <NavBar user={user} /> */}
-          <GameList />
-          <GameListingForm />
-          <ReviewList />
+          {/* <GameListingForm /> */}
+          {/* <GameList /> */}
+          {/* <ReviewList /> */}
         </ProtectedRoute>
         <ProtectedRoute exact path='/images' user={user}>
           <UploadPicture />

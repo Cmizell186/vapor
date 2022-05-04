@@ -1,0 +1,33 @@
+#main {
+    height: calc(100vh);
+    width: calc(100vw);
+}
+
+#main_page {
+    display: flex;
+    justify-content: center;
+}
+
+#main_page_content {
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+}
+
+#sidebar_nav {
+    display: block;
+    width: 210px;
+}
+#main_content {
+    display: block;
+}
+
+#going_rogue_video {
+    width: 100%;
+    height: 100%;
+}
+
+/* #jason_div_video {
+    width: calc(100vw);
+    height: calc(50vh);
+} */
