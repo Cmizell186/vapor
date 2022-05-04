@@ -6,7 +6,7 @@ class Library(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    game_id = db.Column(db.Integer, db.ForeignKey("games.id", ondelete='CASCADE'), primary_key=True)
+    game_id = db.Column(db.Integer, db.ForeignKey("games.id", ondelete='CASCADE'))
     is_owned = db.Column(db.Boolean)
 
     # game = db.relationship('Game', backref="library", passive_deletes=True)

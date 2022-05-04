@@ -39,11 +39,11 @@ export const get_all_carts = () => async (dispatch) => {
   }
 }
 
-export const create_game = (cart) => async (dispatch) => {
-  const response = await fetch("/api/carts/", {
+export const create_cart = (cart) => async (dispatch) => {
+  const response = await fetch("/api/carts", {
     method: "POST",
     headers: {
-      'Accepect': 'application/json',
+      'Accept': 'application/json',
       'content-type': 'application/json',
     },
     body: JSON.stringify(cart)
