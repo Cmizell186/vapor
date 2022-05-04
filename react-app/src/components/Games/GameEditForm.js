@@ -47,7 +47,7 @@ const EditGame = ({ gamelisting, hideModal }) => {
     setDeveloper("");
 
     if (newGame) {
-      history.push(`/games/${gamelisting.id}`);
+      hideModal();
     }
   };
 

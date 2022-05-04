@@ -38,7 +38,7 @@ const ReviewGame = ({ gameId }) => {
     setContent("")
     setHasSubmitted(false);
     if (newReview) {
-      history.push('/')
+      history.push(`/`)
     }
   }
 

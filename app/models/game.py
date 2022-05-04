@@ -32,5 +32,6 @@ class Game(db.Model):
             'is_mature': self.is_mature,
             'video' : self.video,
             'developer': self.developer,
+            'user_id': self.user_id,
             'images': [img.to_dict() for img in self.image]
         }

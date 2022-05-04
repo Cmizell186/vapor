@@ -12,12 +12,14 @@ import './index.css'
 const GameDetails = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const { gameId } = useParams();
+  const { reviewId } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
   const game = useSelector((state) => state.games[gameId])
   const reviews = useSelector(state => Object.values(state.reviews))
   const [showModal, setShowModal] = useState(false);
   const filteredReviews = reviews.filter(review => review.game_id === +gameId)
+  // const userReview = reviews.filter(review => review.user_id === sessionUser?.id)
 
   useEffect(() => {
     dispatch(get_all_reviews())
@@ -65,7 +67,7 @@ const GameDetails = () => {
             </div>
           </div>
         </div>
-        {/* {sessionUser?.id === game?.user_id && ( */}
+        {sessionUser?.id === game?.user_id && (
         <div className='user-controls-container'>
           <GameEditModal game={game} user={{ ...sessionUser }}  />
           <button
@@ -87,10 +89,13 @@ const GameDetails = () => {
             </Modal>
           )}
         </div>
-         {/* )} */}
+        )}
+        {game?.user_id !== sessionUser?.id && (
         <div className='create-reviews-container'>
           <ReviewGame gameId={gameId} />
+
         </div>
+        )}
         <div className='reviews-container'>
           {filteredReviews?.map(review =>
             <div key={review.id}>
