@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, session
 from app.models import db, Library, Game, Image
 from flask_login import current_user
 
@@ -8,6 +8,15 @@ cart_routes = Blueprint("carts", __name__)
 def get_carts():
   all_carts = Library.query.join(Game).all()
   # all_carts = db.session.query(Library).join(Game).join(Image).all()
-
-  print(all_carts, "----------->")
   return {"carts": [cart.to_dict() for cart in all_carts]}
+
+@cart_routes.route('<int:id>', methods=["DELETE"])
+def delete_cart(id):
+  cart = Library.query.filter(Library.id == id).delete()
+  db.session.commit()
+  # print("reeached inside delete ------------------", cart)
+  # if(cart.user_id == current_user.id):
+  #   cart.delete()
+  #   db.session.commit()
+  #   return "Successful delete"
+  return "successful delete"

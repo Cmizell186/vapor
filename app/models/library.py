@@ -4,14 +4,16 @@ from .db import db
 class Library(db.Model):
     __tablename__ = 'libraries'
 
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), primary_key=True)
-    game_id = db.Column(db.Integer, db.ForeignKey("games.id", ondelete="CASCADE"), primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    game_id = db.Column(db.Integer, db.ForeignKey("games.id", ondelete='CASCADE'), primary_key=True)
     is_owned = db.Column(db.Boolean)
 
     # game = db.relationship('Game', backref="library", passive_deletes=True)
 
     def to_dict(self):
         return {
+            'id': self.id,
             'user_id': self.user_id,
             'game_id': self.game_id,
             'is_owned': self.is_owned,

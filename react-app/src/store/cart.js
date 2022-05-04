@@ -57,7 +57,7 @@ export const create_game = (cart) => async (dispatch) => {
 }
 
 export const update_cart = (cart) => async (dispatch) => {
-  const response = await fetch(`/api/games/${cart.id}`, {
+  const response = await fetch(`/api/carts/${cart.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(cart)
@@ -72,7 +72,7 @@ export const update_cart = (cart) => async (dispatch) => {
 }
 
 export const delete_cart = (id) => async (dispatch) => {
-  const current_cart = await fetch(`/api/cart/${id}`, {
+  const current_cart = await fetch(`/api/carts/${id}`, {
     method: "DELETE",
   })
   if (current_cart.ok) {
@@ -87,7 +87,8 @@ const cart_reducer = (state = {}, action) => {
   switch (action.type) {
     case LOAD_ALL_CARTS:
       newState = {}
-      action.carts.forEach((cart) => newState[`${cart.user_id},${cart.game_id}`] = cart)
+      // action.carts.forEach((cart) => newState[`${cart.user_id},${cart.game_id}`] = cart)
+      action.carts.forEach((cart) => newState[cart.id] = cart)
       return newState
     case LOAD_ONE_CART:
       return {
