@@ -13,7 +13,6 @@ const GameSlider = ({games}) => {
             stopAutoPlayOnHover={true}
             animation="fade"
             indicators={true}
-            IndicatorIcon={"♥Juan"}
             duration={500}
             navButtonsAlwaysVisible={true}
             cycleNavigation={true}
