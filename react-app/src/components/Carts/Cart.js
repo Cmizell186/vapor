@@ -1,6 +1,7 @@
 import { get_all_carts, delete_cart } from '../../store/cart'
 import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect } from 'react';
+import SearchBar from '../SubNavBar'
 import './index.css'
 const Cart = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -23,7 +24,9 @@ const Cart = () => {
 
   // <p>{entry.user_id} <span>{entry.game_id}</span></p>
   // <p>{entry.game.description}</p>
+  // <SearchBar />
   return (
+    <>
     <div className='whole-page'>
       <div className='main-page-div'>
         <div className='header-content'>
@@ -58,6 +61,7 @@ const Cart = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
