@@ -15,7 +15,8 @@ const ReviewGame = ({ gameId }) => {
   const [showModal, setShowModal] = useState(false)
   const history = useHistory()
   const dispatch = useDispatch();
-
+  const [style_rec_yes, setStyle_Rec_Yes] = useState("recommend_yes");
+  const [style_rec_no, setStyle_Rec_No] = useState("recommend_no")
   const handleSubmit = async (e) => {
     e.preventDefault();
     setHasSubmitted(true);
@@ -51,7 +52,10 @@ const ReviewGame = ({ gameId }) => {
   //     ))}
   //     </div>
   // )}
-
+  // const changeStyle = () => {
+  //   console.log("you just clicked");
+  //   setStyle_Rec_Yes("recommend_clicked");
+  // };
   return (
     <>
       {hasSubmitted && showModal && (
@@ -78,8 +82,7 @@ const ReviewGame = ({ gameId }) => {
           Please remember to be polite and follow the
           <a href="/">Rules and Guidelines.</a>
         </p>
-        <form onSubmit={handleSubmit} className="create-reviews-container">
-
+        <form onSubmit={handleSubmit} className="review-content-container">
           <div className="content-div">
             <label htmlFor='content'>
             </label>
@@ -96,30 +99,41 @@ const ReviewGame = ({ gameId }) => {
           </div>
           <div className="is_recommended-div">Do you recommend this game?</div>
           <div className='vote_up_down_container'>
-            <button className='recommend_yes'
+            <button className={style_rec_yes}
               type='button'
               value={is_recommended}
-              onClick={(e) => setIs_Recommended(true)}
+              onClick={(e) => {
+                setIs_Recommended(true)
+                setStyle_Rec_Yes("recommend_clicked")
+                setStyle_Rec_No("recommend_no")
+              }}
             >
               <span>
                 <i className="ico18 thumb_up"></i>
                 Yes
               </span>
             </button>
-            <button className='recommend_no'
+            <button className={style_rec_no}
               type='button'
               value={is_recommended}
-              onClick={(e) => (setIs_Recommended(false))}
+              onClick={(e) => {
+                setIs_Recommended(false)
+                setStyle_Rec_No("recommend_clicked")
+                setStyle_Rec_Yes("recommend_yes")
+              }}
             >
               <span>
                 <i className="ico18 thumb_down"></i>
                 No
               </span>
+
             </button>
-          </div>
           <button className="button btn-submit-review" type="submit">
+            <span>
             Post Review
+            </span>
           </button>
+          </div>
           </div>
         </form>
       </div>
