@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {useHistory} from 'react-router-dom';
+import {useHistory, useParams} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { post_image } from '../../store/image';
 
@@ -8,6 +8,8 @@ const UploadPicture = () => {
     const dispatch = useDispatch();
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
+    const{userId} = useParams()
+    // console.log(userId)
 
     const handleSubmit = async(e) =>{
         e.preventDefault();
@@ -17,7 +19,7 @@ const UploadPicture = () => {
         // it is uploading
         setImageLoading(true);
 
-        await dispatch(post_image(formData))
+        await dispatch(post_image(formData, userId))
 
         setImageLoading(false)
     }
