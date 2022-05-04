@@ -51,7 +51,7 @@ const gameImage_reducer = (state=inititalState, action) =>{
             action.images.forEach((image) => (newState[image.id] = image));
             return newState;
         case ADD_NEW_GAME_IMAGE:
-            console.log([action.image])
+            // console.log([action.image])
             newState = {...state};
             newState[action.image.id] = action.image
             return newState;
