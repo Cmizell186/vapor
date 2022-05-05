@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { get_all_game_images, delete_specific_image } from "../../store/gameImage";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import Carousel from 'react-material-ui-carousel'
 import './GameImages.css';
 
 const GameImages = () =>{
@@ -13,19 +14,30 @@ const GameImages = () =>{
         dispatch(get_all_game_images(gameId))
     }, [dispatch])
 
+    const handleClick = (gameId, imageId) =>{
+
+        dispatch(delete_specific_image(gameId, imageId))
+    }
+
     return (
         <div id="game-image-container">
+        <Carousel
+            autoPlay={false}
+            navButtonsAlwaysVisible={true}
+        >
             {gameImages?.map(img =>(
                 <div key={img?.id} className='image-item'>
                     <img
                         src={img?.image}
                         width="150"
                         height="150"
-                    />
-                <a id="delete-image-btn"onClick={() => dispatch(delete_specific_image(gameId, img?.id))}>delete image</a>
+                        />
+                <a id="delete-image-btn"onClick={() => handleClick(gameId, img?.id)}>delete image</a>
                 </div>
             ))}
+        </Carousel>
         </div>
+
     )
 }
 

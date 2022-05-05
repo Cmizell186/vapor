@@ -1,9 +1,12 @@
 #game-image-container{
     position: relative;
-    width: 1150px;
-    height: auto;
+    width: 580px;
+    height: 300px;
     padding: 35px 35px;
-    min-height: 750px;
+    /* min-height: 750px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .image-item{
@@ -21,3 +24,6 @@
     cursor: pointer;
     color: red;
 }
+/* #modal-content{
+    height: 500px;
+} */
