@@ -30,9 +30,10 @@ const Store = ({user}) => {
       }
 
     const SteamTabs = styled(Tabs)({
-        borderBottom: '1px solid #e8e8e8',
+        borderBottom: '0px',
         '& .MuiTabs-indicator': {
           backgroundColor: '#1890ff',
+          height: "0px",
         },
       });
 
@@ -45,8 +46,10 @@ const Store = ({user}) => {
           },
           fontWeight: theme.typography.fontWeightRegular,
           marginRight: theme.spacing(1),
+          marginBottom: theme.spacing(0),
           color: '#2f89bc',
           fontSize: "14px",
+          padding: "2px 10px 2px 10px",
           borderTopLeftRadius: "3px",
           borderTopRightRadius: "3px",
           fontFamily: [
@@ -177,13 +180,63 @@ const Store = ({user}) => {
       </Box>
         <div id="game_list">
         <TabPanel value={value} index={0}>
-        Item One
+        {games
+            .sort((game1, game2) => new Date(game1.release_date) - new Date(game2.release_date))
+            .map(game => (
+            <a id='game_container_link' href={`/games/${game?.id}`}>
+            <div key={game?.id} id='game_container'>
+            <div id='game_container_image'>
+                <img alt='' src={game?.images[0]?.image} />
+            </div>
+            <div id='game_container_info'>
+            <div id='game_container_title'>{game?.title}</div>
+            <div id='game_container_price'>${game?.price}</div>
+            <div id='game_container_platform'>
+            <img id='platform' src='/static/images/vapor_logo_grey.png' alt='' />
+            </div>
+            <div id='game_container_tags'>{game?.tags.map(tag => tag.genres.title).join(", ")}</div>
+            </div>
+            </div>
+            </a>
+        ))}
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+      {games
+            .sort(() => Math.random() - Math.random())
+            .map(game => (
+            <div key={game?.id} id='game_container'>
+            <div id='game_container_image'>
+                <img alt='' src={game?.images[0]?.image} />
+            </div>
+            <div id='game_container_info'>
+            <div id='game_container_title'>{game?.title}</div>
+            <div id='game_container_price'>${game?.price}</div>
+            <div id='game_container_platform'>
+            <img id='platform' src='/static/images/vapor_logo_grey.png' alt='' />
+            </div>
+            <div id='game_container_tags'>{game?.tags.map(tag => tag.genres.title).join(", ")}</div>
+            </div>
+            </div>
+        ))}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+      {games
+            .sort((game1, game2) => (game1.price) - (game2.price))
+            .map(game => (
+            <div key={game?.id} id='game_container'>
+            <div id='game_container_image'>
+                <img alt='' src={game?.images[0]?.image} />
+            </div>
+            <div id='game_container_info'>
+            <div id='game_container_title'>{game?.title}</div>
+            <div id='game_container_price'>${game?.price}</div>
+            <div id='game_container_platform'>
+            <img id='platform' src='/static/images/vapor_logo_grey.png' alt='' />
+            </div>
+            <div id='game_container_tags'>{game?.tags.map(tag => tag.genres.title).join(", ")}</div>
+            </div>
+            </div>
+        ))}
       </TabPanel>
         </div>
     </Box>

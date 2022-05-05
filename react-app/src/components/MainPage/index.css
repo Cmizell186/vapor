@@ -242,16 +242,10 @@ a {
     align-items: center;
     width: 45px;
     height: 108px;
-    position: absolute;
-    bottom: 99px;
-    right: -45px;
     background: linear-gradient( to right, rgba( 0, 0, 0, 0) 5%,rgba( 0, 0, 0, 0.3) 95%);
 }
 
 #prev_button_div {
-    position: absolute;
-    top: 171px;
-    left: -46px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -310,5 +304,93 @@ a {
 #game_list {
     width: 618px;
     height: 771px;
-    padding-top: 25px;
+}
+
+#game_container {
+    position: relative;
+    display: flex;
+    background: #202d39;
+    height: 69px;
+    margin-bottom: 5px;
+    color: #c7d5e0;
+}
+
+#game_container_info:hover {
+    background: #66c0f4;
+    color: black;
+}
+
+#game_container_link:hover {
+    background: rgba( 0, 0, 0, 0.4 );
+    text-decoration: none;
+}
+
+#game_container_image {
+    width: 184px;
+    height: 69px;
+    overflow: hidden;
+}
+
+#game_container_image img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.MuiBox-root.css-19kzrtu {
+    padding: 0px !important;
+}
+
+.MuiTabs-root.css-1vuohza-MuiTabs-root {
+    border-bottom: 0px !important;
+}
+
+#game_container_info {
+    width: 70%;
+}
+
+#game_container_title {
+    padding-left: 8px;
+    font-size: 15px;
+    line-height: 18px;
+    height: 18px;
+    transition: color 0.25s;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 6px;
+}
+
+#game_container_platform {
+    padding-left: 8px;
+    padding-top: 2px;
+    width: 20px;
+    height: 20px;
+}
+
+#platform {
+    width: 20px;
+    height: 20px;
+}
+
+#game_container_tags {
+    position: absolute;
+    bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: 20px;
+    white-space: normal;
+    overflow: hidden;
+    line-height: 20px;
+    padding-left: 8px;
+}
+
+#game_container_price {
+    font-size: 13px;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    padding-right: 8px;
 }
