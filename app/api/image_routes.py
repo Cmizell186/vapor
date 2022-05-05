@@ -16,15 +16,14 @@ def get_images():
 # get user image
 @image_routes.route("/<int:id>")
 def get_single_image(id):
-    user_image = UserImage.query.filter_by(user_id = id).first()
-    return {"image": user_image.to_dict()}
+    user_image = UserImage.query.filter_by(user_id = id).all()
+    return {"image": [pfp.to_dict() for pfp in user_image][-1]}
 
 
 
 # upload user image to specific user page
 @image_routes.route("/<int:id>", methods=["PUT"])
 def upload_image(id):
-    print(request.files)
     if "image" not in request.files:
         return {"errors": "image required"}, 400
 
