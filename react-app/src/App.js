@@ -14,7 +14,6 @@ import ReviewDetails from './components/Reviews/ReviewDetail'
 import UploadPicture from './components/Images/index';
 import Images from './components/Images/ImageList';
 import SingleImage from './components/Images/UserImage';
-import GameImages from './components/Games/GameImages';
 import UploadGamePicture from './components/Games/GameImageForm';
 import GameImageModal from './components/Games/GameImagesModal';
 import SignUpForm from './components/auth/SignUpForm';
@@ -88,6 +87,7 @@ function App() {
                 <Route path='/games/:gameId'>
                   <SubNavBar />
                   <GameDetails user={user} />
+                  <GameImageModal />
                 </Route>
                 <Route path='/reviews/:reviewId'>
                   <SubNavBar />
