@@ -1,4 +1,4 @@
-<h1 align="center"> Vap<img src="react-app/public/images/vapor_logo.png" height="30px" width="35px"></img>r </h1>
+<h1 align="center"> Vap<img src="react-app/public/static/images/vapor_logo.png" height="30px" width="35px"></img>r </h1>
 
 <h5 align="center">  By:  <a href="https://github.com/Jared-Kunhart">Jared Kunhart</a>, <a href="https://github.com/Cmizell186">Christopher Mizell</a>, <a href="https://github.com/JDVien">Jason Vien</a>, <a href="https://github.com/JayDrojas">Damian Drojas</a>, - <a href="https://vaporgamesapp.herokuapp.com/"><i>Live site</i></h5>
 

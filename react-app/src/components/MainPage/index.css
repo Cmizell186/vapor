@@ -62,10 +62,6 @@
     z-index: 300;
 }
 
-/* #header_content {
-
-} */
-
 #sidebar_nav {
     display: block;
     width: 210px;
@@ -87,7 +83,7 @@
     width: 150px;
     height: 125px;
     background-size: cover;
-    background-image: url("../../public/images/vaporcards_promo.png");
+    background-image: url("../../public/static/images/vaporcards_promo.png");
 }
 
 #content {
@@ -114,8 +110,6 @@
 }
 
 #carousel {
-    width: calc();
-    height: calc();
     font-family: "Motiva Sans", Sans-serif;
     font-weight: 300;
     font-size: 14px;
@@ -141,7 +135,7 @@
 
 #carousel_content {
     display: flex;
-    background-image: url("../../public/images/background_maincap_2.jpg");
+    background-image: url("../../public/static/images/background_maincap_2.jpg");
     background-repeat: no-repeat;
     background-position: right;
     color: #fff;
@@ -221,7 +215,7 @@
     width: 100%;
     height: 60px;
     background-size: cover;
-    background-image: url("../../public/images/vapordeck.png");
+    background-image: url("../../public/static/images/vapordeck.png");
     background-repeat: no-repeat;
 }
 
@@ -232,7 +226,7 @@
     height: 60px;
     min-width: none;
     background-size: cover;
-    background-image: url("../../public/images/vaporindex.png");
+    background-image: url("../../public/static/images/vaporindex.png");
     background-repeat: no-repeat;
 }
 

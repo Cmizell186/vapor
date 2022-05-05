@@ -19,8 +19,8 @@ const Store = ({user}) => {
             <div id="jason_div_video">
             {/* <SearchBar /> */}
             <video id="going_rogue_video" autoPlay={true} muted width="1140" loop>
-                <source src="/videos/webm_gr_page_bg_english.webm" type="video/webm" loop/>
-                <source src="/videos/webm_gr_page_bg_english.webm" type="video/mp4"/>
+                <source src="static/videos/webm_gr_page_bg_english.webm" type="video/webm" loop/>
+                <source src="static/videos/webm_gr_page_bg_english.webm" type="video/mp4"/>
                 Sorry, your browser doesn't support embedded videos.
             </video>
             </div>
