@@ -1,22 +1,22 @@
-.game-image-container{
+#game-image-container{
     position: relative;
     width: 1150px;
     height: auto;
     padding: 35px 35px;
     min-height: 750px;
-    background-color: red;
 }
 
 .image-item{
-    width: 1000px;
+    width: 500px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 #delete-image-btn{
     width: 100px;
     height: 50px;
+    margin-left: 200px;
 
     cursor: pointer;
     color: red;
