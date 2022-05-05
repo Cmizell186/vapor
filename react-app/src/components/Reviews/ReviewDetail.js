@@ -87,17 +87,27 @@ const ReviewDetails = () => {
             {sessionUser?.id === review?.user_id && (
               <div className="user-controls-container">
                 <div className="owner_panel_title">OWNER CONTROLS</div>
-                <ReviewEditModal
-                  review={review}
-                  user={{ ...sessionUser }}
-                  gameId={gameId}
-                />
-                <button
+                <div className="owner_panel_bttn">
+                  <img className="owner_action_img"
+                    src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_edit.png"
+                    alt="" />
+                    Update Review
+                  <ReviewEditModal
+                    review={review}
+                    user={{ ...sessionUser }}
+                    gameId={gameId}
+                  />
+                </div>
+                <div className="owner_controls_divider"></div>
+                <a href="#"
                   onClick={() => setShowModal(true)}
-                  className="delete-bttn"
+                  className="owner_panel_bttn"
                 >
+                <img className="owner_action_img"
+                  src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_delete.png"
+                  alt="" />
                   Delete
-                </button>
+                </a>
                 {showModal && (
                   <Modal onClose={() => setShowModal(false)}>
                     <h2>DELETE REVIEW?</h2>
