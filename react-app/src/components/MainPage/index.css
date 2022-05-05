@@ -32,14 +32,14 @@
 
 #search_container {
     position: absolute;
-    width: 940px;
+    width: 870px;
     margin: 0 auto;
     z-index: 300;
     height: 66px;
     margin-top: 2px;
 
-    top: calc();
-    right: calc();
+    top: calc(18%);
+    right: calc(27%);
 }
 
 #search_input {
@@ -148,9 +148,6 @@
     height: 100%;
 }
 
-#game_info_div {
-
-}
 
 #game_image_main {
     width: 616px;
@@ -245,6 +242,7 @@ a {
 #next_button_div {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 45px;
     height: 108px;
     position: absolute;
@@ -259,6 +257,7 @@ a {
     left: -46px;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 45px;
     height: 108px;
     background-color: rgba(0,0,0,0.3);

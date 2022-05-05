@@ -17,7 +17,7 @@ const Store = ({user}) => {
         <div id="main">
             <div id="header_content">
             <div id="jason_div_video">
-            <SearchBar />
+            {/* <SearchBar /> */}
             <video id="going_rogue_video" autoPlay={true} muted width="1140" loop>
                 <source src="/videos/webm_gr_page_bg_english.webm" type="video/webm" loop/>
                 <source src="/videos/webm_gr_page_bg_english.webm" type="video/mp4"/>
