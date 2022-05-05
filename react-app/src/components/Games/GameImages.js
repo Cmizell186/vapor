@@ -25,8 +25,8 @@ const GameImages = () =>{
                 <div key={img?.id} className='image-item'>
                     <img
                         src={img?.image}
-                        width="150"
-                        height="150"
+                        width="200"
+                        height="200"
                         />
                 <DeleteImageModal gameId={gameId} photoId={img?.id}/>
                 </div>
