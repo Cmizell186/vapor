@@ -1,6 +1,6 @@
 #main {
-    height: calc(100vh);
-    width: calc(100vw);
+    width: 100vw;
+    height: 100vh;
 }
 
 #main_page {
@@ -87,9 +87,8 @@
 }
 
 #content {
-    position: relative;
-    width: 940px;
-    height: 380px;
+    position: flex;
+    justify-content: center;
     margin-top: 5px;
 }
 
@@ -117,7 +116,7 @@
     color: #fff;
     background: none;
     padding-top: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     right: 100px;
 }
 
@@ -188,8 +187,8 @@
     padding: 10px 10px 0 0;
 }
 
-#sub_main_content {
-    padding: 15px;
+#future_specials_div {
+    padding: 1px;
 }
 
 #console_wrap {
@@ -197,16 +196,8 @@
     flex-direction: row;
     justify-content:space-between;
     padding: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
     width: 900px;
-}
-
-#vapor_deck {
-    display: block;
-    max-width: 465px;
-    width: 100%;
-    height: 60px;
-    background-size: contain;
 }
 
 #vapor_deck_div {
@@ -217,25 +208,28 @@
     background-size: cover;
     background-image: url("../../public/static/images/vapordeck.png");
     background-repeat: no-repeat;
+    border-radius: 8px;
 }
 
 #vapor_index_div {
     display: block;
     max-width: 465px;
+    margin-left: 25px;
     width: 100%;
     height: 60px;
     min-width: none;
     background-size: cover;
     background-image: url("../../public/static/images/vaporindex.png");
     background-repeat: no-repeat;
+    border-radius: 8px;
 }
 
-#vapor_index {
-    display: block;
-    /* max-width: 465px; */
-    width: 465px;
-    height: 60px;
-    background-size: contain;
+#vapor_deck_div:hover {
+    box-shadow: 0 0 12px #66c0f4;
+}
+
+#vapor_index_div:hover {
+    box-shadow: 0 0 12px #66c0f4;
 }
 
 a {
@@ -272,4 +266,49 @@ a {
 
 #prev_button_div:hover {
     background: -webkit-linear-gradient( left, rgba( 171, 218, 244, 0) 5%,rgba( 171, 218, 244, 0.3) 95%);
+}
+
+#game_list_content_container {
+    position: absolute;
+    left: 0;
+    background: linear-gradient( to bottom, rgba(42,71,94,1.0) 5%, rgba(42,71,94,0.0) 70%);
+    padding-top: 1px;
+    margin-top: 60px;
+    overflow: visible;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #c6d4df;
+    font-size: 12px;
+    width: 100%;
+    height: 835px;
+    display: flex;
+    justify-content: center;
+}
+
+#game_list_content {
+    margin-top: -49px;
+    width: 1408px;
+    height: 815px;
+    display: flex;
+    justify-content: center;
+}
+
+#game_list_left_container {
+    padding-left: 25px;
+    padding-right: 5px;
+    width: 610px;
+    float: left;
+}
+
+#right_col_hover {
+    width: 308px;
+    float: right;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#game_list {
+    width: 618px;
+    height: 771px;
+    padding-top: 25px;
 }

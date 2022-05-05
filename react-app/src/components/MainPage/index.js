@@ -1,16 +1,113 @@
+import * as React from 'react';
 import { get_all_games } from "../../store/game";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
 import GameSlider from "./GameSlider";
+import { styled } from '@mui/material/styles';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import './index.css'
 
 const Store = ({user}) => {
 
     const dispatch = useDispatch()
     const games = useSelector(state => Object.values(state.games))
+
     useEffect(() => {
       dispatch(get_all_games())
     }, [dispatch])
+
+    class StyledTabProps {
+        label = String;
+      }
+
+    class StyledTabsProps {
+        children =  React.ReactNode;
+        value = Number;
+        onChange = (event=React.SyntheticEvent, newValue=Number) => null;
+      }
+
+    const SteamTabs = styled(Tabs)({
+        borderBottom: '1px solid #e8e8e8',
+        '& .MuiTabs-indicator': {
+          backgroundColor: '#1890ff',
+        },
+      });
+
+      const SteamTab = styled((props=StyledTabProps) => <Tab disableRipple {...props} />)(
+        ({ theme }) => ({
+          textTransform: 'none',
+          minWidth: 0,
+          [theme.breakpoints.up('sm')]: {
+            minWidth: 0,
+          },
+          fontWeight: theme.typography.fontWeightRegular,
+          marginRight: theme.spacing(1),
+          color: '#2f89bc',
+          fontSize: "14px",
+          borderTopLeftRadius: "3px",
+          borderTopRightRadius: "3px",
+          fontFamily: [
+            'Arial',
+            '"Helvetica"',
+            'sans-serif',
+          ].join(','),
+          '&:hover': {
+            color: '#ffffff',
+            opacity: 1,
+          },
+          '&.Mui-selected': {
+            color: '#ffffff',
+            backgroundColor: '#2a475e',
+            fontWeight: theme.typography.fontWeightMedium,
+          },
+          '&.Mui-focusVisible': {
+            backgroundColor: '#d1eaff',
+          },
+        }),
+      );
+
+    class TabPanelProps {
+        children = React.ReactNode;
+        index = Number;
+        value = Number;
+      }
+
+    function TabPanel(props=TabPanelProps) {
+        const { children, value, index, ...other } = props;
+
+        return (
+          <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+          >
+            {value === index && (
+              <Box sx={{ p: 3 }}>
+                <Typography>{children}</Typography>
+              </Box>
+            )}
+          </div>
+        );
+      }
+
+      function a11yProps(index=Number) {
+        return {
+          id: `simple-tab-${index}`,
+          'aria-controls': `simple-tabpanel-${index}`,
+        };
+      }
+
+        const [value, setValue] = React.useState(0);
+
+        const handleChange = (event=React.SyntheticEvent, newValue=Number) => {
+          setValue(newValue);
+        };
+
 
     return (
         <div id="main">
@@ -51,24 +148,53 @@ const Store = ({user}) => {
             FEATURED & RECOMMENDED
             </div>
         <GameSlider games={games} />
-        <div id="sub_main_content">
-            SPECIAL OFFERS
-            game1/2/3/4
+        <div id="future_specials_div">
         </div>
         <div id="console_wrap">
         <div id="vapor_deck_div">
         </div>
-
         <div id="vapor_index_div">
         </div>
         </div>
-        </div>
-        </div>
+        <div id="game_list_content_container">
+        <div id="game_list_content">
+        <div id="game_list_left_container">
+        <Box sx={{ width: '100%' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <div id="game_list_tabs">
+        <SteamTabs
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+            textColor="inherit"
 
+        >
+          <SteamTab label="New Releases" {...a11yProps(0)} />
+          <SteamTab label="Top Sellers" {...a11yProps(1)} />
+          <SteamTab label="Specials" {...a11yProps(2)} />
+        </SteamTabs>
         </div>
-
+      </Box>
+        <div id="game_list">
+        <TabPanel value={value} index={0}>
+        Item One
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        Item Two
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        Item Three
+      </TabPanel>
         </div>
-
+    </Box>
+        </div>
+        <div id="right_col_hover">hover previews go here</div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
     )
 }
