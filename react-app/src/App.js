@@ -16,10 +16,13 @@ import Images from './components/Images/ImageList';
 import SingleImage from './components/Images/UserImage';
 import GameImages from './components/Games/GameImages';
 import UploadGamePicture from './components/Games/GameImageForm';
+import GameImageModal from './components/Games/GameImagesModal';
 import SignUpForm from './components/auth/SignUpForm';
 import Demo from './components/auth/Demo'
 import Cart from './components/Carts/Cart'
 import Store from './components/MainPage';
+import SubNavBar from './components/SubNavBar'
+
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -48,6 +51,7 @@ function App() {
     <>
     <BrowserRouter>
     <NavBar user={user} />
+    <SubNavBar />
       <Switch>
         <Route exact path="/">
           {user ? <Redirect to="/games" /> : <Splash />}

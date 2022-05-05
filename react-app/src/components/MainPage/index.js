@@ -17,7 +17,7 @@ const Store = ({user}) => {
         <div id="main">
             <div id="header_content">
             <div id="jason_div_video">
-            <SearchBar />
+            {/* <SearchBar /> */}
             <video id="going_rogue_video" autoPlay={true} muted width="1140" loop>
                 <source src="/videos/webm_gr_page_bg_english.webm" type="video/webm" loop/>
                 <source src="/videos/webm_gr_page_bg_english.webm" type="video/mp4"/>
@@ -29,44 +29,22 @@ const Store = ({user}) => {
             <div id="main_page_content">
             <div id="sidebar_nav">
                 <div id="sidebar_nav_list">
-                    <ul>
-                        <li>GIFT CARDS</li>
-                        <li>By Friends</li>
-                        <li>by Curators</li>
-                        <li>Tags</li>
-                        <li>Recommendations</li>
-                        <li>New Releases</li>
-                        <li>Top sellers</li>
-                        <li>New Releases</li>
-                        <li>Upcoming</li>
-                        <li>Specials</li>
-                        <li>VR Titles</li>
-                        <li>Controller-Friendly</li>
-                        <li>BROWSE BY GENRE</li>
-                        <li>Free to Play</li>
-                        <li>Early Access</li>
-                        <li>Action</li>
-                        <li>Adventure</li>
-                        <li>Casual</li>
-                        <li>Indie</li>
-                        <li>Massively Multiplayer</li>
-                        <li>Racing</li>
-                        <li>RPG</li>
-                        <li>Simulation</li>
-                        <li>Sports</li>
-                        <li>Strategy</li>
-                        <li>YOUR TAGS</li>
-                        <li>Utilities</li>
-                        <li>Programming</li>
-                        <li>Software</li>
-                        <li>MMORPG</li>
-                        <li>Mature</li>
-                        <li>Recently Viewed</li>
-                        <li>recent</li>
-                        <li>recent</li>
-                        <li>recent</li>
-                        <li>recent</li>
-                    </ul>
+                        <img alt="" src="/images/vaporcards_promo.png" />
+                        <div>GIFT CARDS</div>
+                        <div>Now Available on Vapor</div>
+                        <div>BROWSE BY GENRE</div>
+                        <div>Free to Play</div>
+                        <div>Early Access</div>
+                        <div>Action</div>
+                        <div>Adventure</div>
+                        <div>Casual</div>
+                        <div>Indie</div>
+                        <div>Massively Multiplayer</div>
+                        <div>Racing</div>
+                        <div>RPG</div>
+                        <div>Simulation</div>
+                        <div>Sports</div>
+                        <div>Strategy</div>
                 </div>
             </div>
         <div id="content">
@@ -79,10 +57,20 @@ const Store = ({user}) => {
             SPECIAL OFFERS
             game1/2/3/4
         </div>
+        <div id="console_wrap">
+        <div id="vapor_deck_div">
+        </div>
+
+        <div id="vapor_index_div">
         </div>
         </div>
         </div>
         </div>
+
+        </div>
+
+        </div>
+
         </div>
     )
 }

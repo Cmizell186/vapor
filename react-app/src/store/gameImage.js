@@ -1,5 +1,6 @@
 const LOAD_GAME_IMAGE = 'gameImages/GET'
 const ADD_NEW_GAME_IMAGE = 'gameImages/POST'
+const DELETE_GAME_IMAGE = 'gameImages/DELETE'
 
 const all_game_images = (images) =>({
     type: LOAD_GAME_IMAGE,
@@ -9,6 +10,12 @@ const add_game_image = (image, gameId) =>({
     type: ADD_NEW_GAME_IMAGE,
     image,
     gameId
+})
+
+const delete_image = (gameId, imageId) => ({
+    type: DELETE_GAME_IMAGE,
+    game_id: gameId,
+    image_id: imageId,
 })
 
 
@@ -41,6 +48,19 @@ export const add_new_image = (image, gameId) => async dispatch =>{
     }
 }
 
+export const delete_specific_image = (gameId, photoId) => async dispatch =>{
+    const res = await fetch(`/api/images/game/${gameId}/images/${photoId}`,{
+        method:"DELETE",
+    });
+
+    if (res.ok){
+        dispatch(delete_image(gameId,photoId))
+    } else {
+        return "ERROR AT DELTE IMAGE THUNK"
+    }
+
+}
+
 const inititalState = {}
 const gameImage_reducer = (state=inititalState, action) =>{
     let newState;
@@ -55,6 +75,10 @@ const gameImage_reducer = (state=inititalState, action) =>{
             newState = {...state};
             newState[action.image.id] = action.image
             return newState;
+        case DELETE_GAME_IMAGE:
+            newState = {...state}
+            delete newState[action.image_id]
+            return newState
         default:
             return state;
     }

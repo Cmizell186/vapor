@@ -9,8 +9,9 @@ import ReviewSummary from "../Reviews/ReviewSummary";
 import GameEditModal from "./GameEditModal"
 import { delete_game } from "../../store/game";
 import { Modal } from "../../context/Modal";
-import UploadGamePicture from "./GameImageForm";
+import GameImageModal from "./GameImagesModal";
 import { create_cart } from '../../store/cart'
+
 import './index.css'
 
 const GameDetails = ({user, loaded}) => {
@@ -27,11 +28,19 @@ const GameDetails = ({user, loaded}) => {
   const [showModal, setShowModal] = useState(false);
   const filteredReviews = reviews.filter(review => review.game_id === +gameId)
   const userReview = reviews.filter(review => review?.user_id === sessionUser?.id && review.game_id === +gameId)
-  console.log(userReview, '=====**********////*****************')
-  const all_owned_carts = useSelector(state => Object.values(state.carts)).filter(entry => entry.game_id === +gameId && entry.is_owned) // We get back all carts that are in the library for this user that match the game id
-  const is_owned = all_owned_carts.length > 0; // if the array has a length than the owner already owns the game
-  // console.log(is_owned)
-  // console.log(all_owned_carts)
+  const all_entry_carts = useSelector(state => Object.values(state.carts)).filter(entry => entry.game_id === +gameId) // We get back all carts that are in the library for this user that match the game id
+
+  // array will have an element if they are owned
+  const all_owned_carts =  all_entry_carts.filter(entry =>  entry.is_owned)
+
+  // array will have an element if they are in cart and not owned
+  const all_not_owned_carts =  all_entry_carts.filter(entry =>  !entry.is_owned)
+
+  // if the array has a length, than the owner already owns the game
+  const is_owned = all_owned_carts.length > 0;
+
+  // if the array has a length, than the owner doesnt own it
+  const in_cart_boolean = all_not_owned_carts.length > 0;
 
 
 
@@ -53,7 +62,21 @@ const GameDetails = ({user, loaded}) => {
       is_owned: false
     }
     dispatch(create_cart(data))
+
+    if(in_cart_boolean) {
+      history.push('/cart')
+    } else {
+
+      const data = {
+        user_id: sessionUser.id,
+        game_id: game.id,
+        is_owned: false
+      }
+
+      dispatch(create_cart(data))
+    }
   }
+  // refactor  this junk
   let hasReviewed;
   if (sessionUser && sessionUser?.id === userReview[0]?.user_id) {
     hasReviewed = (
@@ -68,8 +91,6 @@ const GameDetails = ({user, loaded}) => {
       </>
     )
   }
-
-  // {sessionUser && sessionUser.id === review.User.id ? show this : else show this }
 
   const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
 
@@ -140,7 +161,7 @@ const GameDetails = ({user, loaded}) => {
             </div>
           )} */}
         </div>
-        {user.user?.id == game?.user_id ? <UploadGamePicture /> : <></>}
+        {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
       </div>
       {!is_owned && (
         <div id="add-cart-content">
@@ -156,7 +177,7 @@ const GameDetails = ({user, loaded}) => {
                         ${game?.price}
                       </div>
                       <div id="add-cart-bttn">
-                        <button id="bttn-cartadd" type="button" onClick={handleAddToCart}>Add to cart</button>
+                        <button id="bttn-cartadd" type="button" onClick={handleAddToCart}>{in_cart_boolean ? 'In cart' : 'Add to cart'}</button>
                       </div>
                     </div>
                   </div>
