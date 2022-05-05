@@ -33,13 +33,10 @@
 #search_container {
     position: absolute;
     width: 870px;
-    margin: 0 auto;
     z-index: 300;
     height: 66px;
-    margin-top: 2px;
-
-    top: calc(11%);
-    right: calc(26%);
+    margin-top: 4px;
+    left: calc(23vw);
 }
 
 #search_input {
@@ -81,6 +78,16 @@
     top: 31px;
     width: 210px;
     z-index: 2;
+}
+
+#gift_cards {
+    max-width: 100%;
+    border: none;
+    margin: 7px 0;
+    width: 150px;
+    height: 125px;
+    background-size: cover;
+    background-image: url("../../public/images/vaporcards_promo.png");
 }
 
 #content {
@@ -140,7 +147,9 @@
     color: #fff;
     display: flex;
     height: 353px;
+    box-shadow: 0 0 7px 0px #000;
     overflow: hidden;
+    box-shadow: 0 0 10px 5px #000;
 }
 
 #game_image_carousel {
