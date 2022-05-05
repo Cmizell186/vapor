@@ -195,7 +195,7 @@
 #console_wrap {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:space-between;
     padding: 10px;
     padding-bottom: 50px;
     width: 900px;
