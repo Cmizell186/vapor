@@ -11,14 +11,11 @@ const Cart = () => {
   // user_cart is an array with only the not owned games
   const user_cart = cart_entries.filter(entry => entry.user_id === sessionUser.id && !entry.is_owned)
 
-  // useEffect(() => {
-  //   dispatch(get_all_carts())
-  // }, [dispatch])
-
   const removeCartItem = (id) => {
     // TODO SEND TO DISPATCH TO DELETE FROM LIBRARY
     dispatch(delete_cart(id))
   }
+
   // entry.game.images[0]
   // console.log(user_cart[0].game.images[0].image)
 
