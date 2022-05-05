@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Carousel from 'react-material-ui-carousel'
 import './GameImages.css';
+import DeleteImageModal from "./ImageDeleteModal";
 
 const GameImages = () =>{
     const dispatch = useDispatch()
@@ -13,11 +14,6 @@ const GameImages = () =>{
     useEffect(() =>{
         dispatch(get_all_game_images(gameId))
     }, [dispatch])
-
-    const handleClick = (gameId, imageId) =>{
-
-        dispatch(delete_specific_image(gameId, imageId))
-    }
 
     return (
         <div id="game-image-container">
@@ -32,7 +28,7 @@ const GameImages = () =>{
                         width="150"
                         height="150"
                         />
-                <a id="delete-image-btn"onClick={() => handleClick(gameId, img?.id)}>delete image</a>
+                <DeleteImageModal gameId={gameId} photoId={img?.id}/>
                 </div>
             ))}
         </Carousel>
