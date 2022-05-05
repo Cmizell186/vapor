@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import {useHistory, useParams} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { post_image } from '../../store/image';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 
 const UploadPicture = () => {
     const histroy = useHistory(); //redirect after successful image
@@ -38,7 +40,10 @@ const UploadPicture = () => {
                 onChange={updateImage}
             />
             <button type="submit">Submit Picture</button>
-            {(imageLoading)&& <p>Loading...</p>}
+            {(imageLoading)&&
+            <Box sx={{ width: '100%' }}>
+                <LinearProgress />
+            </Box>}
         </form>
     )
 }
