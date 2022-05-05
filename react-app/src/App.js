@@ -90,7 +90,7 @@ function App() {
                   <GameImageModal />
                 </Route>
                 <Route path='/reviews/:reviewId'>
-                  <SubNavBar />
+                  {/* <SubNavBar /> */}
                   <ReviewDetails />
                 </Route>
                 <ProtectedRoute path='/users' exact={true} >

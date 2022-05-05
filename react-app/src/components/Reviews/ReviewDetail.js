@@ -59,7 +59,7 @@ const ReviewDetails = () => {
         </div>
         <div className="main-content-container">
         <div className="review-detail-container">
-          <div className="review-content-subbody">
+          <div className="left-offset-review-content-subbody">
             <div className="review-rating-subbody">
               <p>No one has rated this review as helpful yet</p>
             </div>
@@ -70,14 +70,19 @@ const ReviewDetails = () => {
             <p>{review?.content}</p>
           </div>
           <div className="right-offset-detail-subbody">
+            <div className="game-review-links">
+            <div className="game_logo_img">
             <img
-              id="main_game_rev_img"
-              src="/images/spelheader.jpg"
-              alt=""
-            ></img>
-            <a href="/">View Store page</a>
-            <a href="/">View Community Hub</a>
-            <a href="/">Find More Like This</a>
+                id="main_game_rev_img"
+                src="/images/spelheader.jpg"
+                alt=""
+                width="294" height="138" alt=""
+             ></img>
+            </div>
+            <a className="game_page_link" href={`/games/${review?.game_id}`}>View Store page</a>
+            <a className="game_page_link" href={`/`}>View Community Hub</a>
+            <a className="game_page_link" href={`/games`}>Find More Like This</a>
+            </div>
 
             {sessionUser?.id === review?.user_id && (
               <div className="user-controls-container">
