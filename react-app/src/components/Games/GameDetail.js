@@ -7,7 +7,9 @@ import ReviewGame from "../Reviews/ReviewsForm";
 import GameEditModal from "./GameEditModal"
 import { delete_game } from "../../store/game";
 import { Modal } from "../../context/Modal";
-import UploadGamePicture from "./GameImageForm";
+import GameImageModal from "./GameImagesModal";
+import { create_cart } from '../../store/cart'
+
 import './index.css'
 
 const GameDetails = (user) => {
@@ -23,6 +25,10 @@ const GameDetails = (user) => {
   const [showModal, setShowModal] = useState(false);
   const filteredReviews = reviews.filter(review => review.game_id === +gameId)
   // const userReview = reviews.filter(review => review.user_id === sessionUser?.id)
+  const all_owned_carts = useSelector(state => Object.values(state.carts)).filter(entry => entry.game_id === +gameId && entry.is_owned) // We get back all carts that are in the library for this user that match the game id
+  const is_owned = all_owned_carts.length > 0; // if the array has a length than the owner already owns the game
+  // console.log(is_owned)
+  // console.log(all_owned_carts)
 
   useEffect(() => {
     dispatch(get_all_reviews())
@@ -34,6 +40,16 @@ const GameDetails = (user) => {
     setShowModal(false);
     history.push(`/games`);
   };
+
+  const handleAddToCart = () => {
+    const data = {
+      user_id: sessionUser.id,
+      game_id: game.id,
+      is_owned: false
+    }
+
+    dispatch(create_cart(data))
+  }
 
   const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
 
@@ -71,33 +87,33 @@ const GameDetails = (user) => {
           </div>
         </div>
         {sessionUser?.id === game?.user_id && (
-        <div className='user-controls-container'>
-          <GameEditModal game={game} user={{ ...sessionUser }}  />
-          <button
-            onClick={() => setShowModal(true)}
-            className="delete-bttn"
-          >
-            Delete
-          </button>
-          {showModal && (
-            <Modal onClose={() => setShowModal(false)}>
-              <h2>DELETE GAME LISTING?</h2>
-              <p>
-                Are you sure you want to remove your game listing from the Stearm Store?
-              </p>
-              <div className="modal-content-bttn-ok">
-                <span onClick={() => handleDelete(game.id)}> Ok </span>
-                <span onClick={() => setShowModal(false)}> Cancel </span>
-              </div>
-            </Modal>
-          )}
-        </div>
+          <div className='user-controls-container'>
+            <GameEditModal game={game} user={{ ...sessionUser }} />
+            <button
+              onClick={() => setShowModal(true)}
+              className="delete-bttn"
+            >
+              Delete
+            </button>
+            {showModal && (
+              <Modal onClose={() => setShowModal(false)}>
+                <h2>DELETE GAME LISTING?</h2>
+                <p>
+                  Are you sure you want to remove your game listing from the Stearm Store?
+                </p>
+                <div className="modal-content-bttn-ok">
+                  <span onClick={() => handleDelete(game.id)}> Ok </span>
+                  <span onClick={() => setShowModal(false)}> Cancel </span>
+                </div>
+              </Modal>
+            )}
+          </div>
         )}
         {game?.user_id !== sessionUser?.id && (
-        <div className='create-reviews-container'>
-          <ReviewGame gameId={gameId} />
+          <div className='create-reviews-container'>
+            <ReviewGame gameId={gameId} />
 
-        </div>
+          </div>
         )}
         <div className='reviews-container'>
           {filteredReviews?.map(review =>
@@ -108,10 +124,42 @@ const GameDetails = (user) => {
             </div>
           )}
         </div>
-        {user.user?.id == game?.user_id ? <UploadGamePicture /> : <></>}
+        {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
       </div>
+      {!is_owned && (
+        <div id="add-cart-content">
+          <div id="add-cart-div">
+            <div id="add-cart-items">
+              <p>Buy this game now!</p>
+              <div className="add-cart-items-wrapper">
+                <div className="add-cart-item">
+                  <h1>Buy {game?.title.toUpperCase()}</h1>
+                  <div id="add-cart-item-action">
+                    <div id="add-cart-item-action-div">
+                      <div id="add-cart-item-price">
+                        ${game?.price}
+                      </div>
+                      <div id="add-cart-bttn">
+                        <button id="bttn-cartadd" type="button" onClick={handleAddToCart}>Add to cart</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="right-col">
+          </div>
+        </div>
+      )}
     </>
   )
 }
 
 export default GameDetails;
+
+// <form action="/carts" method="POST">
+// <input type="hidden" name="user_id" value={sessionUser?.id} />
+// <input type="hidden" name="game_id" value={game?.id} />
+// <input type="hidden" name="is_owned" value={false} />
+// </form>

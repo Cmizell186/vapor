@@ -1,13 +1,17 @@
 import React, {useState} from 'react'
-import {useHistory} from 'react-router-dom';
+import {useHistory, useParams} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { post_image } from '../../store/image';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 
 const UploadPicture = () => {
     const histroy = useHistory(); //redirect after successful image
     const dispatch = useDispatch();
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
+    const{userId} = useParams()
+    // console.log(userId)
 
     const handleSubmit = async(e) =>{
         e.preventDefault();
@@ -17,7 +21,7 @@ const UploadPicture = () => {
         // it is uploading
         setImageLoading(true);
 
-        await dispatch(post_image(formData))
+        await dispatch(post_image(formData, userId))
 
         setImageLoading(false)
     }
@@ -36,7 +40,10 @@ const UploadPicture = () => {
                 onChange={updateImage}
             />
             <button type="submit">Submit Picture</button>
-            {(imageLoading)&& <p>Loading...</p>}
+            {(imageLoading)&&
+            <Box sx={{ width: '100%' }}>
+                <LinearProgress />
+            </Box>}
         </form>
     )
 }

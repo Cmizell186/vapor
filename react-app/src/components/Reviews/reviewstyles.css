@@ -1,7 +1,7 @@
 .review-form-container {
   background-image: linear-gradient(to bottom right,#3b4652, #566473 );
-  color: #8F98A0;
-  max-width: 908px;
+  color: #aeb8c0;
+  max-width: 1008px;
   position: relative;
   overflow: visible;
   padding-top: 16px;
@@ -9,15 +9,20 @@
 
 .review-form-container > h4 {
   color: #5abaf4;
+  padding-left: 10px;
 }
 
 .review-form-container > p {
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 15px;
   line-height: 17px;
-  color: #8f98a0;
+  padding-left: 10px;
 }
 
+.review-content-container {
+  overflow: hidden;
+  padding-left: 100px;
+}
 
 .review-form-container .create_textbox {
   border: 1px solid #233c51;
@@ -34,7 +39,7 @@
 }
 
 .review_controls_body {
-  padding: 0;
+  padding-bottom: 25px;
   margin: 0;
 }
 
@@ -43,6 +48,10 @@
   margin-bottom: 10px;
   max-width: 772px;
   background-image: linear-gradient(to bottom right,#343e48, #424d58 );
+}
+
+.vote_up_down_container {
+  padding: 4px 100px 0px 0px;
 }
 
 .recommend_yes, .recommend_no {
@@ -59,15 +68,32 @@
 
 .recommend_yes:hover {
   background-color: #5893B7;
+  color: #fff !important;
 }
 
 .recommend_no:hover {
   background-color: #5893B7;
+  color: #fff !important;
+}
+
+.recommend_clicked{
+  text-decoration: none !important;
+  color: #fff !important;
+  background: rgba( 103, 193, 245, 0.6 );
+  border-radius: 2px;
+  border: none;
+  padding: 1px;
+  margin: 2px;
+}
+
+.recommend_clicked > span {
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 30px;
 }
 
 .recommend_yes > span {
   padding: 0 15px;
-
   font-size: 15px;
   line-height: 30px;
 }
@@ -84,10 +110,35 @@
   width: 18px;
   height: 18px;
   margin: 0 0px;
-  background: url(https://store.cloudflare.steamstatic.com/public/shared/images/buttons/icons_18.png?v=3);
+  color: #fff !important;
+  background: url(https://store.cloudflare.steamstatic.com/public/shared/images/buttons/icons_18.png?v=1);
+}
+.ico18:hover {
+  color: #fff !important;
 }
 
 .btn-submit-review {
-  background-color: #3a94c7;
+  padding: 1px;
+  cursor: pointer;
+  display: block;
+  float: right;
+  text-decoration: none !important;
+  color: #2B5066 !important;
+  background: linear-gradient( to bottom, rgba(193,228,249,1) 5%, rgba(148,183,202,1) 95%);
+  border-radius: 4px;
+  border: 3px solid #17202f;
+}
 
+.btn-submit-review:hover {
+  background: linear-gradient( to bottom, rgba(193,228,249,1) 2%,  #3a94c7 95%);
+  color: #fff !important;
+}
+
+.btn-submit-review > span {
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 30px;
+  display: block;
+  background: transparent;
+  text-shadow: 1px 1px 0px rgba( 255, 255, 255, 0.1 );
 }
