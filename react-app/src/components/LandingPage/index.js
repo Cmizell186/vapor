@@ -29,7 +29,7 @@ export default function LandingPage() {
         <div id="signup">
         Join Vapor and discover thousands of games to play.
         <div id="steamcoffeepic">
-        <img id="join_pc" src="static/images/join_pc.png" alt=""></img>
+        <img id="join_pc" src="/static/images/join_pc.png" alt=""></img>
         </div>
         It's free and easy to use.
         <div id="signup_button">

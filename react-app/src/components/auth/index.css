@@ -3,13 +3,13 @@
     src: url("../../public/fonts/Motiva-Sans-Light.ttf");
 }
 
-#login_label {
+.login_label {
     font-size: 14px;
     font-family: "Motiva Sans", Sans-serif;
     font-weight: normal;
 }
 
-.login_form, #login_label, #login_input {
+.login_form, .login_label, .input_login {
     display:flex;
     justify-content: center;
     max-width: 300px;
