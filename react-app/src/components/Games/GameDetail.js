@@ -131,14 +131,14 @@ const GameDetails = ({user, loaded}) => {
         )}
         {loaded && hasReviewed}
         <div className='reviews-container'>
-          <Reviews />
+          <Reviews user={user} />
           {/* {filteredReviews?.map(review =>
             <div key={review.id}>
               <h2>
                 {review.content}
-              </h2> */}
+              </h2>
             </div>
-          )}
+          )} */}
         </div>
         {user.user?.id == game?.user_id ? <UploadGamePicture /> : <></>}
       </div>

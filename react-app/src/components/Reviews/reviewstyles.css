@@ -226,7 +226,7 @@
   position: relative;
 }
 
-/* .review-box::before {
+.review-box::before {
   content: "";
   background: linear-gradient(to right, #47bfff 30%, rgba(255,255,255,0) 70%);
   display: block;
@@ -234,4 +234,22 @@
   width: 600px;
   position: absolute;
   top: 0;
-} */
+}
+
+.review-list-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile-pic-box {
+  display: flex;
+  flex: column;
+}
+
+.review-recommendation {
+  display: flex;
+  text-align: right;
+  flex-wrap: wrap;
+  width: 400px;
+  padding: 20px;
+}
