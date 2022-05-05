@@ -16,16 +16,10 @@ const Cart = () => {
     dispatch(delete_cart(id))
   }
 
-  // entry.game.images[0]
-  // console.log(user_cart[0].game.images[0].image)
-
-  // <p>{entry.user_id} <span>{entry.game_id}</span></p>
-  // <p>{entry.game.description}</p>
   return (
     <>
     <div className='whole-page'>
     <div className='main-page-div'>
-    <SearchBar />
     <div className='header-content'>
           <h2>YOUR SHOPPING CART</h2>
         </div>
