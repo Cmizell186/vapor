@@ -127,6 +127,7 @@ const GameDetails = ({user, loaded}) => {
             </div>
           </div>
         </div>
+        {sessionUser?.id === game?.user_id ? <GameImageModal /> : <></>}
         {sessionUser?.id === game?.user_id && (
           <div className='user-controls-container'>
             <GameEditModal game={game} user={{ ...sessionUser }} />
@@ -161,7 +162,6 @@ const GameDetails = ({user, loaded}) => {
             </div>
           )} */}
         </div>
-        {sessionUser?.id === game?.user_id ? <GameImageModal /> : <></>}
       </div>
       {!is_owned && (
         <div id="add-cart-content">

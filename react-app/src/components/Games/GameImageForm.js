@@ -4,6 +4,8 @@ import { useHistory, useParams } from "react-router-dom";
 import {add_new_image} from '../../store/gameImage.js';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
+import './GameImages.css';
+
 
 const UploadGamePicture = () =>{
     const history = useHistory(); //redirect after uploading image
@@ -35,13 +37,22 @@ const UploadGamePicture = () =>{
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} id='new-image-game-form'>
+            <div>
+                <h3 className="delete-image-text">For best results use images with 616x353 dimensions</h3>
+            </div>
+            <div className="input-image-div">
+            <label for='image-upload' className="choose-image">Upload Image</label>
             <input
+                id='image-upload'
                 type='file'
                 accept="image/*"
                 onChange={updateImage}
-            />
-            <button type="submit">Submit Picture</button>
+                />
+            </div>
+            <div className="submit-image-div">
+                <button type="submit" className='submit-image'>Submit Picture</button>
+            </div>
             {(imageLoading)&&
             <Box sx={{ width: '100%' }}>
                 <LinearProgress />
