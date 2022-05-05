@@ -36,3 +36,32 @@ def create_cart():
   db.session.commit()
   print(new_cart)
   return new_cart.to_dict()
+
+@cart_routes.route('/', methods=['PUT'])
+def update_cart():
+  data = request.get_json()
+  carts_list = []
+  for entry in data:
+    library = Library.query.get(entry['id'])
+    library.is_owned = True
+    carts_list.append(library.to_dict())
+
+  db.session.commit()
+  return {'carts': carts_list}
+  # updated_cart = Library.query.filter(Library.id == id).one()
+  # updated_cart.is_owned = True
+
+  # db.session.commit()
+  # return updated_cart.to_dict()
+
+
+# @cart_routes.route('/<int:id>', methods=['PUT'])
+# def update_cart(id):
+#   data = request.get_json()
+#   print(id)
+#   updated_cart = Library.query.filter(Library.id == id).one()
+#   updated_cart.is_owned = True
+#   # print("...............................")
+#   # print(updated_cart.to_dict(), "............................")
+#   db.session.commit()
+#   return updated_cart.to_dict()

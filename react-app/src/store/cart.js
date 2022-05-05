@@ -19,9 +19,9 @@ const create = (cart) => ({
   cart
 })
 
-const update = (cart) => ({
+const update = (carts) => ({
   type: UPDATE_CART,
-  cart
+  carts
 })
 
 const remove = (id) => ({
@@ -56,16 +56,16 @@ export const create_cart = (cart) => async (dispatch) => {
   }
 }
 
-export const update_cart = (cart) => async (dispatch) => {
-  const response = await fetch(`/api/carts/${cart.id}`, {
+export const update_cart = (carts) => async (dispatch) => {
+  const response = await fetch(`/api/carts/`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(cart)
+    body: JSON.stringify(carts)
   })
   if (response.ok) {
     const data = await response.json()
-    const updated_cart = data.cart
-    dispatch(update(updated_cart))
+    const updated_carts = data.carts
+    dispatch(update(updated_carts))
   } else {
     return "ERROR AT UPDATE_CART THUNK"
   }
@@ -102,10 +102,13 @@ const cart_reducer = (state = {}, action) => {
       newState = { ...state, [action.cart.id]: action.cart }
       return newState;
     case UPDATE_CART:
-      return {
-        ...state,
-        [action.cart.id]: action.cart
-      }
+      newState = { ...state}
+      action.carts.forEach((cart) => newState[cart.id] = {...cart})
+      return newState
+      // return {
+      //   ...state,
+      //   [action.cart.id]: action.cart
+      // }
     case DELETE_CART:
       newState = { ...state }
       delete newState[action.cart_id]
