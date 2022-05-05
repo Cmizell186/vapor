@@ -11,9 +11,9 @@ import "./index.css";
 const ReviewDetails = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { reviewId } = useParams();
   const { gameId } = useParams();
   const game = useSelector((state) => state.games[gameId]);
+  const { reviewId } = useParams();
   const review = useSelector((state) => state.reviews[reviewId]);
   // const reviews = useSelector((state) => Object.values(state.reviews));
   const sessionUser = useSelector((state) => state.session.user);

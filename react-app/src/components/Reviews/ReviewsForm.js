@@ -52,10 +52,7 @@ const ReviewGame = ({ gameId }) => {
   //     ))}
   //     </div>
   // )}
-  // const changeStyle = () => {
-  //   console.log("you just clicked");
-  //   setStyle_Rec_Yes("recommend_clicked");
-  // };
+
   return (
     <>
       {hasSubmitted && showModal && (
@@ -83,6 +80,7 @@ const ReviewGame = ({ gameId }) => {
           <a href="/">Rules and Guidelines.</a>
         </p>
         <form onSubmit={handleSubmit} className="review-content-container">
+          <img id="profile_img" src={sessionUser?.profile_picture} alt=""></img>
           <div className="content-div">
             <label htmlFor='content'>
             </label>
@@ -92,7 +90,6 @@ const ReviewGame = ({ gameId }) => {
               value={content}
               onChange={(e) => setContent(e.target.value)}
             />
-          </div>
           <div className="review_controls_body">
           <div className="review_controls_container">
             <span>visibility</span>
@@ -109,7 +106,7 @@ const ReviewGame = ({ gameId }) => {
               }}
             >
               <span>
-                <i className="ico18 thumb_up"></i>
+              <i className="fa-solid fa-thumbs-up"></i>
                 Yes
               </span>
             </button>
@@ -123,7 +120,7 @@ const ReviewGame = ({ gameId }) => {
               }}
             >
               <span>
-                <i className="ico18 thumb_down"></i>
+              <i className="fa-solid fa-thumbs-down"></i>
                 No
               </span>
 
@@ -133,6 +130,7 @@ const ReviewGame = ({ gameId }) => {
             Post Review
             </span>
           </button>
+          </div>
           </div>
           </div>
         </form>

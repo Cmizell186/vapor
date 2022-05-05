@@ -1,7 +1,7 @@
 import { get_all_reviews } from '../../store/reviews'
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
-
+import './reviewstyles.css';
 
 const Reviews = () => {
 const dispatch = useDispatch()
@@ -12,9 +12,13 @@ useEffect(() => {
 
 return (
     <>
-    <h1>{reviews?.map(review =>
-        <p key={review.id}>{review.content}</p>
-        )}</h1>
+    <div className="reviews-list-container">
+        {reviews?.map(review =>
+        <div className='review-box' key={review.id}>
+            {review.content}
+        </div>
+        )}
+    </div>
     </>
 )
 
