@@ -45,12 +45,6 @@ const Store = ({user}) => {
                         <div>Simulation</div>
                         <div>Sports</div>
                         <div>Strategy</div>
-                        <div>YOUR TAGS</div>
-                        <div>Utidivties</div>
-                        <div>Programming</div>
-                        <div>Software</div>
-                        <div>MMORPG</div>
-                        <div>Mature</div>
                 </div>
             </div>
         <div id="content">
@@ -65,11 +59,9 @@ const Store = ({user}) => {
         </div>
         <div id="console_wrap">
         <div id="vapor_deck_div">
-        {/* <img id="vapor_deck" alt="" src="/images/vapordeck.png" /> */}
         </div>
 
         <div id="vapor_index_div">
-        {/* <img id="vapor_index" alt="" src="/images/vaporindex.png" /> */}
         </div>
         </div>
         </div>

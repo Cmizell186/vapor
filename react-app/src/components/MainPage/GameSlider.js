@@ -1,29 +1,55 @@
 import React, { useState } from 'react';
 import Carousel from 'react-material-ui-carousel'
 import { Link } from 'react-router-dom'
+import { Button } from '@mui/material';
 
 const GameSlider = ({games}) => {
   const [img, setImg] = useState();
+  const [index, setIndex] = useState(0);
 
+// autoPlay={false}
+// interval={4000}
+// stopAutoPlayOnHover={true}
+//cycleNavigation={true}
   return (
     <div id='carousel'>
+      <div id='next_button_div'>
+      <Button id='next_button' onClick={() => setIndex(i => i + 1)}><img src='/images/rightarrow.png' alt='' /></Button>
+      </div>
         <Carousel
             autoPlay={false}
-            interval={4000}
-            stopAutoPlayOnHover={true}
             animation="fade"
-            indicators={true}
             duration={500}
-            navButtonsAlwaysVisible={true}
-            cycleNavigation={true}
+            indicators={true}
+            navButtonsAlwaysVisible={false}
+            IndicatorIcon={<div id="rectangle_active"></div>}
+            indicatorIconButtonProps={{
+              style: {
+                display: "inline-block",
+                margin: "12px 2px",
+                width: "15px",
+                height: "9px",
+                borderRadius: "2px",
+                transition: "background-color 0.2s",
+                backgroundColor: "#FFFFFF33",
+                cursor: "pointer",
+              }
+            }}
+            activeIndicatorIconButtonProps={{
+              style: {
+                  backgroundColor: "#ffffff"
+                }
+            }}
             swipe={true}
+            height={"354px"}
+            index={index}
         >
           {games.map(game => (
             <div key={game?.id}>
               <Link to={`/games/${game.id}`}>
             <div id='carousel_content'>
             <div id='game_img_main'><img className='game_image_main' id='game_image_main' src={game?.images[0]?.image}></img></div>
-            <div>
+            <div id='game_info_div'>
             <div id='game_title'>{game?.title}</div>
             <div id='game_side_content'>
             <div>
@@ -44,6 +70,9 @@ const GameSlider = ({games}) => {
             </div>
           ))}
         </Carousel>
+        <div id='prev_button_div'>
+        <Button id='prev_button' onClick={() => setIndex(i => i - 1)}><img src='/images/leftarrow.png' alt='' /></Button>
+        </div>
     </div>
   )
 }
