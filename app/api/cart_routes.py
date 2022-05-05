@@ -48,20 +48,3 @@ def update_cart():
 
   db.session.commit()
   return {'carts': carts_list}
-  # updated_cart = Library.query.filter(Library.id == id).one()
-  # updated_cart.is_owned = True
-
-  # db.session.commit()
-  # return updated_cart.to_dict()
-
-
-# @cart_routes.route('/<int:id>', methods=['PUT'])
-# def update_cart(id):
-#   data = request.get_json()
-#   print(id)
-#   updated_cart = Library.query.filter(Library.id == id).one()
-#   updated_cart.is_owned = True
-#   # print("...............................")
-#   # print(updated_cart.to_dict(), "............................")
-#   db.session.commit()
-#   return updated_cart.to_dict()

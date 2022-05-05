@@ -22,7 +22,9 @@ const Cart = () => {
 
   const handlePurchaseCart = () => {
     // console.log(user_cart)
-    dispatch(update_cart(user_cart))
+    if(user_cart.length) {
+      dispatch(update_cart(user_cart))
+    }
   }
 
   return (
@@ -62,8 +64,8 @@ const Cart = () => {
                 <p>Thank you for choosing steam. Select button bellow to checkout</p>
               </div>
               <div id="total-div-actions">
-                <span onClick={handlePurchaseCart}>Purchase</span>
-                <span>Button</span>
+                <span id={user_cart.length ? 'is-active-total-bttns' : ''} onClick={handlePurchaseCart}>Purchase</span>
+                {/* <span>maybe delete</span> */}
               </div>
             </div>
           </div>
