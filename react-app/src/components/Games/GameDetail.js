@@ -161,7 +161,7 @@ const GameDetails = ({user, loaded}) => {
             </div>
           )} */}
         </div>
-        {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
+        {sessionUser?.id === game?.user_id ? <GameImageModal /> : <></>}
       </div>
       {!is_owned && (
         <div id="add-cart-content">

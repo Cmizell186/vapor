@@ -83,7 +83,6 @@ function App() {
         <Switch>
          <Route path='/games/:gameId'>
           <GameDetails user={user} loaded={loaded}/>
-          <GameImageModal />
         </Route>
         <Route path='/reviews/:reviewId'>
           <ReviewDetails />
