@@ -15,7 +15,7 @@ const ReviewDetails = () => {
   const { gameId } = useParams();
   const game = useSelector((state) => state.games[gameId]);
   const review = useSelector((state) => state.reviews[reviewId]);
-  const reviews = useSelector((state) => Object.values(state.reviews));
+  // const reviews = useSelector((state) => Object.values(state.reviews));
   const sessionUser = useSelector((state) => state.session.user);
   const [showModal, setShowModal] = useState(false);
 
