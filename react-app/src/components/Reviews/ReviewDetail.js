@@ -37,11 +37,27 @@ const ReviewDetails = () => {
   return (
     <>
       <div className="content-body">
-        <div className="banner-temp">Vapor</div>
         <div className="user-banner">
-          <h1>{sessionUser.username}</h1>
-          <p>-- Reviews -- "Game"</p>
+          <a href={`/users/${sessionUser.id}`}>
+            <div className="profile_avatar_small">
+              <img id="profile_img_small" src={sessionUser?.profile_picture} alt=""></img>
+            </div>
+          </a>
+          <div className="profile_header_links">
+            <span className="profile_header_name">
+              <a className="profile_link_content" href={`/users/${sessionUser.id}`}>{sessionUser.username}</a>
+            </span>
+          <span className="profile_header_arrows">>></span>
+            <span className="profile_reviews_text">
+              <a className="profile_link_content" href={`/users/${sessionUser.id}`}>Reviews</a>
+            </span>
+          <span className="profile_header_arrows">>></span>
+          <a className="profile_link_content" href={`/games/${review?.game_id}`}>
+            <span className="profile_reviews_text">Game</span>
+          </a>
+          </div>
         </div>
+        <div className="main-content-container">
         <div className="review-detail-container">
           <div className="review-content-subbody">
             <div className="review-rating-subbody">
@@ -92,6 +108,8 @@ const ReviewDetails = () => {
               </div>
             )}
           </div>
+        </div>
+
         </div>
       </div>
     </>

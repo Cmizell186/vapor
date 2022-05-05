@@ -5,23 +5,81 @@
 
 body {
   background-color: #1b2838;
+  font-family: "Motiva Sans", Sans-serif;
 }
 
-.banner-temp {
-  background-color: #000000;
-  height:100px;
-}
+
 
 .user-banner {
-  color: white;
-  height:100px;
-  background-color: #6c6c7942;
-  display: inline-flex;
-  padding: 5px;
-  width: 1120px;
+  background: #2e343e;
+  max-width: 978px;
+  height: 102px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 0 8px black;
+  z-index: 100;
 }
 .review-detail-container {
   display: inline-flex;
+  margin: 0;
+  padding: 0;
+}
+
+.profile_avatar_small {
+  position: absolute;
+  left: 30px;
+  top: 18px;
+  color: white;
+}
+
+#profile_img_small {
+  width: 64px;
+  height: 64px;
+  border: 2px solid #636363;
+}
+
+.profile_header_arrows {
+  font-size: 10px;
+  color: #828282;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.profile_header_links {
+  position: absolute;
+  left: 120px;
+  right: 30px;
+  bottom: 31px;
+  max-height: 65px;
+  color: white;
+  text-shadow: #1b2838;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile_header_name {
+  font-size: 26px;
+}
+
+.profile_link_content {
+  color: #ebebeb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.main-content-container {
+  margin: 0 auto;
+  width: 948px;
+  min-height: 948px;
+  background: none;
+  background-image: linear-gradient(to bottom,#293c50, #101a22 40% );
+  background-repeat: no-repeat, repeat-y;
+  background-position: bottom center, center;
+  width: 926px;
+  padding: 12px 12px 128px 12px;
+}
+
+.review-detail-container {
 
 }
 

@@ -86,7 +86,7 @@ function App() {
               <Switch>
                 <Route path='/games/:gameId'>
                   <SubNavBar />
-                  <GameDetails user={user} />
+                  <GameDetails user={user} loaded={loaded} />
                   <GameImageModal />
                 </Route>
                 <Route path='/reviews/:reviewId'>
