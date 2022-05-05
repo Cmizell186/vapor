@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import EditGame from './GameEditForm';
+import './GameImages.css'
 
 const GameEditModal = ({ user, game }) => {
   const[showModal, setShowModal] = useState(false);

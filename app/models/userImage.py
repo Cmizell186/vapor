@@ -4,7 +4,7 @@ class UserImage(db.Model):
     __tablename__ = 'user_images'
 
     id = db.Column(db.Integer, primary_key=True)
-    image = db.Column(db.String, server_default="https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg")
+    image = db.Column(db.String, server_default="https://vaporgames.s3.us-west-1.amazonaws.com/default_user.jpg")
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
     image_user = db.relationship("User", back_populates="user_image")

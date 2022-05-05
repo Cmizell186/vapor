@@ -2,6 +2,8 @@ import React,{useState} from "react";
 import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import {add_new_image} from '../../store/gameImage.js';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 
 const UploadGamePicture = () =>{
     const history = useHistory(); //redirect after uploading image
@@ -40,7 +42,10 @@ const UploadGamePicture = () =>{
                 onChange={updateImage}
             />
             <button type="submit">Submit Picture</button>
-            {(imageLoading)&& <p>Loading...</p>}
+            {(imageLoading)&&
+            <Box sx={{ width: '100%' }}>
+                <LinearProgress />
+            </Box>}
         </form>
     )
 }

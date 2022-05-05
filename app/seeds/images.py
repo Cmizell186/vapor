@@ -28,7 +28,7 @@ def seed_images():
     game_id = 1
   )
   game1_image6 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/29af841be77c429299664545199b2db8.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/elderringtitle.jpg",
       user_id = 2,
       game_id = 1
   )
