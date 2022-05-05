@@ -38,8 +38,8 @@
     height: 66px;
     margin-top: 2px;
 
-    top: calc(18%);
-    right: calc(27%);
+    top: calc(11%);
+    right: calc(26%);
 }
 
 #search_input {
@@ -152,8 +152,8 @@
 #game_image_main {
     width: 616px;
     height: 353px;
-    z-index: 4;
-    box-shadow: 2px 2px 7px 0px #000, 2px 2px 7px 2px #000;
+    z-index: 2;
+    background-color: #000;
     box-shadow: 0 0 10px 5px #000;
 }
 
@@ -248,7 +248,7 @@ a {
     position: absolute;
     bottom: 99px;
     right: -45px;
-    background-color: rgba(0,0,0,0.3);
+    background: linear-gradient( to right, rgba( 0, 0, 0, 0) 5%,rgba( 0, 0, 0, 0.3) 95%);
 }
 
 #prev_button_div {
@@ -261,4 +261,12 @@ a {
     width: 45px;
     height: 108px;
     background-color: rgba(0,0,0,0.3);
+}
+
+#next_button_div:hover {
+    background: -webkit-linear-gradient( left, rgba( 171, 218, 244, 0) 5%,rgba( 171, 218, 244, 0.3) 95%);
+}
+
+#prev_button_div:hover {
+    background: -webkit-linear-gradient( left, rgba( 171, 218, 244, 0) 5%,rgba( 171, 218, 244, 0.3) 95%);
 }
