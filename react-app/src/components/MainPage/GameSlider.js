@@ -21,7 +21,7 @@ const GameSlider = ({games}) => {
             animation="fade"
             duration={500}
             indicators={true}
-            navButtonsAlwaysVisible={false}
+            navButtonsAlwaysInvisible={true}
             IndicatorIcon={<div id="rectangle_active"></div>}
             indicatorIconButtonProps={{
               style: {

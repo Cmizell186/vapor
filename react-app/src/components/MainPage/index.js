@@ -29,7 +29,7 @@ const Store = ({user}) => {
             <div id="main_page_content">
             <div id="sidebar_nav">
                 <div id="sidebar_nav_list">
-                        <img alt="" src="/images/vaporcards_promo.png" />
+                        <div id="gift_cards"></div>
                         <div>GIFT CARDS</div>
                         <div>Now Available on Vapor</div>
                         <div>BROWSE BY GENRE</div>
