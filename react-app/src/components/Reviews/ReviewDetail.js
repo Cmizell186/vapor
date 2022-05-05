@@ -86,6 +86,7 @@ const ReviewDetails = () => {
 
             {sessionUser?.id === review?.user_id && (
               <div className="user-controls-container">
+                <div className="owner_panel_title">OWNER CONTROLS</div>
                 <ReviewEditModal
                   review={review}
                   user={{ ...sessionUser }}

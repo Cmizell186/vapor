@@ -144,3 +144,10 @@ body {
   -moz-border-radius: 3px;
   cursor: pointer;
 }
+
+.owner_panel_title {
+  color: #81a313;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin: 3px 0 10px 0;
+}
