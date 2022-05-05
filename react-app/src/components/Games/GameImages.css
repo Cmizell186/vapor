@@ -1,23 +1,174 @@
 #game-image-container{
     position: relative;
-    width: 1150px;
-    height: auto;
+    width: 580px;
+    height: 300px;
     padding: 35px 35px;
-    min-height: 750px;
+    /* min-height: 750px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .image-item{
     width: 500px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
 }
 
-#delete-image-btn{
-    width: 100px;
+.deleteImage{
+    background: linear-gradient( to right, #32363f 5%, #32363f 95%);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 1px 10px;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+    margin-top: 25px;
     height: 50px;
-    margin-left: 200px;
+    font-family: "Motiva Sans", Sans-serif;
+}
+.deleteImage:hover{
+    transition: none;
+    background: linear-gradient( to right, #d11a2a 5%, #d11a2a 95%);
+}
 
-    cursor: pointer;
-    color: red;
+/* new image-form */
+#new-image-game-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.choose-image{
+    background: #75b022;
+    background: linear-gradient( to right, #32363f 5%, #32363f 95%);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 10px 13px;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+
+    font-family: "Motiva Sans", Sans-serif;
+}
+.choose-image:hover{
+    transition: none;
+    background: linear-gradient( to right, #75b022 5%, #75b022 95%);
+}
+
+.submit-image{
+    background: linear-gradient( to right, #32363f 5%, #32363f 95%);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 10px 10px;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+    margin-top: 15px;
+    font-family: "Motiva Sans", Sans-serif;
+}
+.submit-image:hover{
+    transition: none;
+    background: linear-gradient( to right, #75b022 5%, #75b022 95%);
+}
+
+/* delete-gameimage-form css*/
+
+.image-text-container{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+}
+
+#delete-gameImage-form{
+    height: 200px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-gameImage-btns{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+}
+
+
+#delete-images{
+    background-color: #a4d007;
+    background: -webkit-linear-gradient( top, #32363f 5%, #588a1b 95%);
+    background: linear-gradient( to bottom, #32363f 5%, #588a1b 95%);
+    background: linear-gradient( to right, #75b022 5%, #75b022 95%);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 10px 10px;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+
+    margin-right: 15px;
+}
+#delete-images:hover{
+    transition: none;
+    background: linear-gradient( to right, #d11a2a 5%, #d11a2a 95%);
+}
+
+#cancel-images{
+    background: #75b022;
+    background: -webkit-linear-gradient( top, #75b022 5%, #588a1b 95%);
+    background: linear-gradient( to bottom, #75b022 5%, #588a1b 95%);
+    background: linear-gradient( to right, #32363f 5%, #32363f 95%);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 10px 10px;
+    font-size: 16px;
+
+    margin-right: 15px;
+
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+}
+#cancel-images:hover{
+    transition: none;
+    background: linear-gradient( to right, #d11a2a 5%, #d11a2a 95%);
+}
+
+.delete-image-text{
+    font-family: "Motiva Sans", Sans-serif;
+    margin-left: 15px;
+}
+.delete-image-text.p-tag{
+    font-size: 16px;
+}
+
+
+
+/* finished button */
+
+.finished-continer-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.finished-btn{
+    background: linear-gradient( to right, #32363f 5%, #32363f 95%);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 10px 10px;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+    margin-top: 15px;
+    font-family: "Motiva Sans", Sans-serif;
+}
+
+.finished-btn:hover{
+    transition: none;
+    background: linear-gradient( to right, #75b022 5%, #75b022 95%);
 }

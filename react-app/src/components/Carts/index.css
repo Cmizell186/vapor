@@ -21,8 +21,7 @@
 .header-content {
  padding-bottom: 64px;
  margin-bottom: -30px;
- background: url('../../public/images/background-header.png') bottom center;
- padding-top: 90px;
+ background: url('../../public/static/images/background-header.png') bottom center;
 }
 
 .extra-links {
