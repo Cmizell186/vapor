@@ -1,9 +1,11 @@
-import { get_all_reviews } from "../../store/reviews"
+import { get_all_reviews, get_one_review } from "../../store/reviews"
 import { get_one_game } from "../../store/game"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams, useHistory } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import ReviewGame from "../Reviews/ReviewsForm";
+import Reviews from "../Reviews/ReviewList";
+import ReviewSummary from "../Reviews/ReviewSummary";
 import GameEditModal from "./GameEditModal"
 import { delete_game } from "../../store/game";
 import { Modal } from "../../context/Modal";
@@ -12,18 +14,20 @@ import { create_cart } from '../../store/cart'
 
 import './index.css'
 
-const GameDetails = (user) => {
+const GameDetails = ({user, loaded}) => {
   const sessionUser = useSelector((state) => state.session.user);
   const { gameId } = useParams();
-  const { reviewId } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
   const game = useSelector((state) => state.games[gameId])
-
+  // console.log(game.user_id, "GAME ID")
+  // console.log(user.user.id, "user id")
+  const { reviewId } = useParams();
+  const review = useSelector((state) => state.reviews[reviewId]);
   const reviews = useSelector(state => Object.values(state.reviews))
   const [showModal, setShowModal] = useState(false);
   const filteredReviews = reviews.filter(review => review.game_id === +gameId)
-  // const userReview = reviews.filter(review => review.user_id === sessionUser?.id)
+  const userReview = reviews.filter(review => review?.user_id === sessionUser?.id && review.game_id === +gameId)
   const all_entry_carts = useSelector(state => Object.values(state.carts)).filter(entry => entry.game_id === +gameId) // We get back all carts that are in the library for this user that match the game id
 
   // array will have an element if they are owned
@@ -38,6 +42,8 @@ const GameDetails = (user) => {
   // if the array has a length, than the owner doesnt own it
   const in_cart_boolean = all_not_owned_carts.length > 0;
 
+
+
   useEffect(() => {
     dispatch(get_all_reviews())
     dispatch(get_one_game(gameId)) // warning here - React Hook useEffect has a missing dependency: 'gameId'. Either include it or remove the dependency array
@@ -50,6 +56,12 @@ const GameDetails = (user) => {
   };
 
   const handleAddToCart = () => {
+    const data = {
+      user_id: sessionUser.id,
+      game_id: game.id,
+      is_owned: false
+    }
+    dispatch(create_cart(data))
 
     if(in_cart_boolean) {
       history.push('/cart')
@@ -63,6 +75,21 @@ const GameDetails = (user) => {
 
       dispatch(create_cart(data))
     }
+  }
+  // refactor  this junk
+  let hasReviewed;
+  if (sessionUser && sessionUser?.id === userReview[0]?.user_id) {
+    hasReviewed = (
+      <>
+        <ReviewSummary review={userReview[0]} />
+      </>
+    )
+  } else {
+    hasReviewed = (
+      <>
+        <ReviewGame gameId={gameId} />
+      </>
+    )
   }
 
   const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
@@ -123,20 +150,16 @@ const GameDetails = (user) => {
             )}
           </div>
         )}
-        {game?.user_id !== sessionUser?.id && (
-          <div className='create-reviews-container'>
-            <ReviewGame gameId={gameId} />
-
-          </div>
-        )}
+        {loaded && hasReviewed}
         <div className='reviews-container'>
-          {filteredReviews?.map(review =>
+          <Reviews user={user} />
+          {/* {filteredReviews?.map(review =>
             <div key={review.id}>
               <h2>
                 {review.content}
               </h2>
             </div>
-          )}
+          )} */}
         </div>
         {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
       </div>

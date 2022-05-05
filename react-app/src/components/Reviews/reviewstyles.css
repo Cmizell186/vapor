@@ -1,7 +1,8 @@
 .review-form-container {
-  background-image: linear-gradient(to bottom right,#3b4652, #566473 );
+  background-image: linear-gradient(to bottom right,#2d3d4b, #566573 );
   color: #aeb8c0;
   max-width: 1008px;
+  min-width: 940px;
   position: relative;
   overflow: visible;
   padding-top: 16px;
@@ -21,7 +22,16 @@
 
 .review-content-container {
   overflow: hidden;
-  padding-left: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+#profile_img {
+  width: 90px;
+  height: 90px;
+  margin-right: 20px;
+  margin-left: 10px;
+  border: 1px solid #67707B;
 }
 
 .review-form-container .create_textbox {
@@ -141,4 +151,105 @@
   display: block;
   background: transparent;
   text-shadow: 1px 1px 0px rgba( 255, 255, 255, 0.1 );
+}
+
+.review-summary-container {
+  background-image: linear-gradient(to bottom right,#2d3d4b, #566573 );
+  color: #aeb8c0;
+  min-width: 906px;
+  position: relative;
+  overflow: visible;
+  padding-top: 16px;
+  padding: 0px 16px 16px 16px;
+  margin: 0px auto;
+  margin-bottom: 40px;
+  max-width: 1008px;
+}
+
+.review-link-bttn {
+  border-radius: 2px;
+  border: none;
+  padding: 1px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: #67c1f5 !important;
+  background: rgba( 103, 193, 245, 0.2 );
+}
+
+.review-link-bttn:hover {
+  color: #fff !important;
+  background: linear-gradient( -60deg, #417a9b 5%,#67c1f5 95%);
+}
+
+.review-link-bttn > span {
+  padding: 0 15px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.review-summary-title {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 13px;
+  color: #66c0f4;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: 300;
+  width: 100%;
+  border-top: 1px solid #212c3d;
+  padding-top: 10px;
+}
+
+
+.review-success-description {
+  display: inline-flex;
+  font-size: 14px;
+  margin: 16px 16px 8px 0px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.thumb {
+  margin-top: 10px;
+}
+.review-success-description > p {
+  padding: 10px;
+}
+
+.review-box {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  margin-bottom: 20px;
+  height: fit-content;
+  background-color: rgba(0,0,0,0.35);
+  position: relative;
+}
+
+.review-box::before {
+  content: "";
+  background: linear-gradient(to right, #47bfff 30%, rgba(255,255,255,0) 70%);
+  display: block;
+  height: 1px;
+  width: 600px;
+  position: absolute;
+  top: 0;
+}
+
+.review-list-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile-pic-box {
+  display: flex;
+  flex: column;
+}
+
+.review-recommendation {
+  display: flex;
+  text-align: right;
+  flex-wrap: wrap;
+  width: 400px;
+  padding: 20px;
 }

@@ -82,7 +82,8 @@ function App() {
         <>
         <Switch>
          <Route path='/games/:gameId'>
-          <GameDetails user={user}/>
+          <GameDetails user={user} loaded={loaded}/>
+          <GameImages />
         </Route>
         <Route path='/reviews/:reviewId'>
           <ReviewDetails />
