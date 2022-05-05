@@ -19,16 +19,24 @@ const GameDetails = (user) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const game = useSelector((state) => state.games[gameId])
-  // console.log(game.user_id, "GAME ID")
-  // console.log(user.user.id, "user id")
+
   const reviews = useSelector(state => Object.values(state.reviews))
   const [showModal, setShowModal] = useState(false);
   const filteredReviews = reviews.filter(review => review.game_id === +gameId)
   // const userReview = reviews.filter(review => review.user_id === sessionUser?.id)
-  const all_owned_carts = useSelector(state => Object.values(state.carts)).filter(entry => entry.game_id === +gameId && entry.is_owned) // We get back all carts that are in the library for this user that match the game id
-  const is_owned = all_owned_carts.length > 0; // if the array has a length than the owner already owns the game
-  // console.log(is_owned)
-  // console.log(all_owned_carts)
+  const all_entry_carts = useSelector(state => Object.values(state.carts)).filter(entry => entry.game_id === +gameId) // We get back all carts that are in the library for this user that match the game id
+
+  // array will have an element if they are owned
+  const all_owned_carts =  all_entry_carts.filter(entry =>  entry.is_owned)
+
+  // array will have an element if they are in cart and not owned
+  const all_not_owned_carts =  all_entry_carts.filter(entry =>  !entry.is_owned)
+
+  // if the array has a length, than the owner already owns the game
+  const is_owned = all_owned_carts.length > 0;
+
+  // if the array has a length, than the owner doesnt own it
+  const in_cart_boolean = all_not_owned_carts.length > 0;
 
   useEffect(() => {
     dispatch(get_all_reviews())
@@ -42,13 +50,19 @@ const GameDetails = (user) => {
   };
 
   const handleAddToCart = () => {
-    const data = {
-      user_id: sessionUser.id,
-      game_id: game.id,
-      is_owned: false
-    }
 
-    dispatch(create_cart(data))
+    if(in_cart_boolean) {
+      history.push('/cart')
+    } else {
+
+      const data = {
+        user_id: sessionUser.id,
+        game_id: game.id,
+        is_owned: false
+      }
+
+      dispatch(create_cart(data))
+    }
   }
 
   const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
@@ -140,7 +154,7 @@ const GameDetails = (user) => {
                         ${game?.price}
                       </div>
                       <div id="add-cart-bttn">
-                        <button id="bttn-cartadd" type="button" onClick={handleAddToCart}>Add to cart</button>
+                        <button id="bttn-cartadd" type="button" onClick={handleAddToCart}>{in_cart_boolean ? 'In cart' : 'Add to cart'}</button>
                       </div>
                     </div>
                   </div>
