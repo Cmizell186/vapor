@@ -29,7 +29,7 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
@@ -47,59 +47,64 @@ function App() {
     )
   }
   //
+  // {user && <SubNavBar />}
   return (
     <>
-    <BrowserRouter>
-    <NavBar user={user} />
-    <SubNavBar />
-      <Switch>
-        <Route exact path="/">
-          {user ? <Redirect to="/games" /> : <Splash />}
-        </Route>
-        <ProtectedRoute exact path="/games" user={user}>
-          <Store />
-        </ProtectedRoute>
-        <ProtectedRoute exact path="/library">
-          <GameList />
-        </ProtectedRoute>
-        <ProtectedRoute path="/games/new">
-          <GameListingForm user={user} />
-        </ProtectedRoute>
-        <ProtectedRoute exact path='/images' user={user}>
-          <UploadPicture />
-          <Images />
-        </ProtectedRoute>
-        <Route path="/signup">
-          <SignUpForm />
-        </Route>
-        <Route path="/demo">
-          <Demo />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
-        {user ?
-        <>
+      <BrowserRouter>
+        <NavBar user={user} />
         <Switch>
-         <Route path='/games/:gameId'>
-          <GameDetails user={user} loaded={loaded}/>
-          <GameImages />
-        </Route>
-        <Route path='/reviews/:reviewId'>
-          <ReviewDetails />
-        </Route>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
-        </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true}>
-          <User users={user}/>
-          <SingleImage />
-        </ProtectedRoute>
+          <Route exact path="/">
+            {user ? <Redirect to="/games" /> : <Splash />}
+          </Route>
+          <ProtectedRoute exact path="/games" user={user}>
+            <SubNavBar />
+            <Store />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/library">
+            <SubNavBar />
+            <GameList />
+          </ProtectedRoute>
+          <ProtectedRoute path="/games/new">
+            <SubNavBar />
+            <GameListingForm user={user} />
+          </ProtectedRoute>
+          <ProtectedRoute exact path='/images' user={user}>
+            <UploadPicture />
+            <Images />
+          </ProtectedRoute>
+          <Route path="/signup">
+            <SignUpForm />
+          </Route>
+          <Route path="/demo">
+            <Demo />
+          </Route>
+          <Route path="/cart">
+            <SubNavBar />
+            <Cart />
+          </Route>
+          {user ?
+            <>
+              <Switch>
+                <Route path='/games/:gameId'>
+                  <SubNavBar />
+                  <GameDetails user={user} />
+                </Route>
+                <Route path='/reviews/:reviewId'>
+                  <SubNavBar />
+                  <ReviewDetails />
+                </Route>
+                <ProtectedRoute path='/users' exact={true} >
+                  <UsersList />
+                </ProtectedRoute>
+                <ProtectedRoute path='/users/:userId' exact={true}>
+                  <User users={user} />
+                  <SingleImage />
+                </ProtectedRoute>
+              </Switch>
+            </>
+            : <Redirect to="/" />}
         </Switch>
-        </>
-        : <Redirect to="/" />}
-      </Switch>
-    </BrowserRouter>
+      </BrowserRouter>
     </>
   );
 }
