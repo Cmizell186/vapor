@@ -32,14 +32,14 @@
 
 #search_container {
     position: absolute;
-    width: 940px;
+    width: 870px;
     margin: 0 auto;
     z-index: 300;
     height: 66px;
     margin-top: 2px;
 
-    top: calc();
-    right: calc();
+    top: calc(18%);
+    right: calc(27%);
 }
 
 #search_input {
@@ -76,8 +76,10 @@
 }
 
 #sidebar_nav_list {
+    font-family: "Motiva Sans", Sans-serif;
+    font-size: 13px;
     top: 31px;
-    width: 0;
+    width: 210px;
     z-index: 2;
 }
 
@@ -116,7 +118,6 @@
     padding-top: 20px;
     padding-bottom: 40px;
     right: 100px;
-    z-index: auto;
 }
 
 #game_img_carousel {
@@ -140,7 +141,6 @@
     display: flex;
     height: 353px;
     overflow: hidden;
-    box-shadow: 2px 2px 7px 0px #000, 2px 2px 7px 2px #000;
 }
 
 #game_image_carousel {
@@ -148,10 +148,13 @@
     height: 100%;
 }
 
+
 #game_image_main {
     width: 616px;
     height: 353px;
-    z-index: 2;
+    z-index: 4;
+    box-shadow: 2px 2px 7px 0px #000, 2px 2px 7px 2px #000;
+    box-shadow: 0 0 10px 5px #000;
 }
 
 #game_title {
@@ -182,6 +185,80 @@
     padding: 10px 10px 0 0;
 }
 
+#sub_main_content {
+    padding: 15px;
+}
+
+#console_wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    padding-bottom: 50px;
+    width: 900px;
+}
+
+#vapor_deck {
+    display: block;
+    max-width: 465px;
+    width: 100%;
+    height: 60px;
+    background-size: contain;
+}
+
+#vapor_deck_div {
+    display: block;
+    max-width: 465px;
+    width: 100%;
+    height: 60px;
+    background-size: cover;
+    background-image: url("../../public/images/vapordeck.png");
+    background-repeat: no-repeat;
+}
+
+#vapor_index_div {
+    display: block;
+    max-width: 465px;
+    width: 100%;
+    height: 60px;
+    min-width: none;
+    background-size: cover;
+    background-image: url("../../public/images/vaporindex.png");
+    background-repeat: no-repeat;
+}
+
+#vapor_index {
+    display: block;
+    /* max-width: 465px; */
+    width: 465px;
+    height: 60px;
+    background-size: contain;
+}
+
 a {
     text-decoration: none;
+}
+
+#next_button_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 108px;
+    position: absolute;
+    bottom: 99px;
+    right: -45px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+#prev_button_div {
+    position: absolute;
+    top: 171px;
+    left: -46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 108px;
+    background-color: rgba(0,0,0,0.3);
 }
