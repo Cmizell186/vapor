@@ -35,7 +35,7 @@
     width: 870px;
     z-index: 300;
     height: 66px;
-    margin-top: 4px;
+    margin-top: 3px;
     left: calc(23vw);
 }
 
@@ -94,6 +94,13 @@
 
 .css-ohwg9z {
     width: 100vw !important;
+}
+
+.css-1f8sh1y {
+    border: 1px solid rgb(0, 0, 0);
+    -webkit-box-shadow: 2px 3px 8px rgb(0, 0, 0);
+   -moz-box-shadow: 2px 3px 8px rgb(0, 0, 0);
+   box-shadow: 2px 3px 8px rgb(0, 0, 0);
 }
 
 #main_content {

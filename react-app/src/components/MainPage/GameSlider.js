@@ -7,17 +7,17 @@ const GameSlider = ({games}) => {
   const [img, setImg] = useState();
   const [index, setIndex] = useState(0);
 
-// autoPlay={false}
-// interval={4000}
-// stopAutoPlayOnHover={true}
-//cycleNavigation={true}
+
   return (
     <div id='carousel'>
       <div id='prev_button_div'>
         <div id='prev_button' onClick={() => setIndex(i => i - 1)}><img src='/static/images/leftarrow.png' alt='' /></div>
         </div>
         <Carousel
-            autoPlay={false}
+            autoPlay={true}
+            interval={4000}
+            stopAutoPlayOnHover={true}
+            cycleNavigation={true}
             animation="fade"
             duration={500}
             indicators={true}
