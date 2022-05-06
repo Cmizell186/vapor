@@ -21,8 +21,14 @@
 }
 
 #jason_div_video {
+    position: relative;
+    top: -69px;
     display: flex;
     justify-content: center;
+}
+
+#header_content {
+    max-height: 390px;
 }
 
 #going_rogue_video {
@@ -31,29 +37,51 @@
 }
 
 #search_container {
-    position: absolute;
-    width: 870px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     z-index: 300;
     height: 66px;
-    margin-top: 4px;
-    left: calc(23vw);
+    margin-top: 3px;
 }
 
 #search_input {
+    position: relative;
+    top: 1px;
+    right: -35px;
     color: #0e1c25;
+    width: 195px;
+    height: 25px;
     font-size: 14px;
     margin-top: 1px;
     text-shadow: 1px 1px 0px rgb(255 255 255 / 10%);
     font-family: "Motiva Sans", Sans-serif;
     font-weight: 300;
+    background-color: #316282;
+    align-content: flex-end;
+    background-image: none;
+    border-radius: 3px;
+    border: 1px solid rgba( 0, 0, 0, 0.3);
+    box-shadow: 1px 1px 0px rgb(255 255 255 / 20%);
+    margin-bottom: 0px;
+    outline: none;
     font-style: italic;
+}
+
+#blank_search {
+    position: relative;
+    top: 4px;
+    left: 8px;
+    background-image: url("../../public/static/images/search_icon_btn.png");
+    width: 25px;
+    height: 25px;
 }
 
 #search_div {
     display: flex;
     justify-content: flex-end;
-    position: absolute;
-    width: 940px;
+    width: 910px;
     height: 35px;
     padding: 0 16px;
     margin: 0 auto;
@@ -92,9 +120,44 @@
     margin-top: 5px;
 }
 
+.css-ohwg9z {
+    width: 100vw !important;
+}
+
+.css-1f8sh1y {
+    border: 1px solid rgb(0, 0, 0);
+    -webkit-box-shadow: 2px 3px 8px rgb(0, 0, 0);
+   -moz-box-shadow: 2px 3px 8px rgb(0, 0, 0);
+   box-shadow: 2px 3px 8px rgb(0, 0, 0);
+}
+
 #main_content {
-    width: 940px;
-    height: 353px;
+    width: 1050px;
+    height: 380px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#next_button_div {
+    padding: 36px 11px;
+    cursor: pointer;
+    background: linear-gradient( to right, rgba( 0, 0, 0, 0) 5%,rgba( 0, 0, 0, 0.3) 95%);
+}
+
+#prev_button_div {
+    padding: 36px 11px;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
+}
+
+#next_button_div:hover {
+    background: -webkit-linear-gradient( left, rgba( 171, 218, 244, 0) 5%,rgba( 171, 218, 244, 0.3) 95%);
+}
+
+#prev_button_div:hover {
+    background: -webkit-linear-gradient( left, rgba( 171, 218, 244, 0) 5%,rgba( 171, 218, 244, 0.3) 95%);
 }
 
 #feature {
@@ -109,6 +172,8 @@
 }
 
 #carousel {
+    position: relative;
+    left: -49px;
     display: flex;
     align-items: center;
     font-family: "Motiva Sans", Sans-serif;
@@ -119,24 +184,11 @@
     background: none;
     padding-top: 20px;
     padding-bottom: 10px;
-    right: 100px;
-    min-width: 940px;
 }
 
 #game_img_carousel {
     width: 616px;
     height: 353px;
-    z-index: 10;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    background-position: center;
-    transition: opacity 300ms;
-}
-
-#carousel_content_main {
-    min-width: 940px;
 }
 
 #carousel_content {
@@ -149,14 +201,12 @@
     box-shadow: 0 0 7px 0px #000;
     overflow: hidden;
     box-shadow: 0 0 10px 5px #000;
-    min-width: 940px;
 }
 
 #game_image_carousel {
     width: 100%;
     height: 100%;
 }
-
 
 #game_image_main {
     width: 616px;
@@ -237,36 +287,6 @@
 
 #vapor_index_div:hover {
     box-shadow: 0 0 12px #66c0f4;
-}
-
-a {
-    text-decoration: none;
-}
-
-#next_button_div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 108px;
-    background: linear-gradient( to right, rgba( 0, 0, 0, 0) 5%,rgba( 0, 0, 0, 0.3) 95%);
-}
-
-#prev_button_div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 108px;
-    background-color: rgba(0,0,0,0.3);
-}
-
-#next_button_div:hover {
-    background: -webkit-linear-gradient( left, rgba( 171, 218, 244, 0) 5%,rgba( 171, 218, 244, 0.3) 95%);
-}
-
-#prev_button_div:hover {
-    background: -webkit-linear-gradient( left, rgba( 171, 218, 244, 0) 5%,rgba( 171, 218, 244, 0.3) 95%);
 }
 
 #game_list_content_container {
@@ -377,7 +397,7 @@ a {
 }
 
 #platform {
-    width: 20px;
+    width: 25px;
     height: 20px;
 }
 
