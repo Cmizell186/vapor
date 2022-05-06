@@ -382,6 +382,385 @@ def seed_images():
   )
 
 
+  # witcher 3
+  game11_image1 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/witcher3_1.png",
+      user_id = 4,
+      game_id = 11
+  )
+  game11_image2 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/witcher3_2.jpg",
+      user_id = 4,
+      game_id = 11
+  )
+  game11_image3 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/witcher3_3.jpg",
+      user_id = 4,
+      game_id = 11
+  )
+  game11_image4 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/witcher3_4.jpg",
+      user_id = 4,
+      game_id = 11
+  )
+  game11_image5 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/witcher3_5.jpg",
+      user_id = 4,
+      game_id = 11
+  )
+  game11_image6 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/witcher3_6.png",
+      user_id = 4,
+      game_id = 11
+  )
+  game11_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/witcher3_7.jpg",
+      user_id = 4,
+      game_id = 11
+  )
+
+
+  # borderlands 2
+  game12_image1 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/borderlands2_1.jpg",
+      user_id = 4,
+      game_id = 12
+  )
+  game12_image2 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/borderlands2_2.jpg",
+      user_id = 4,
+      game_id = 12
+  )
+  game12_image3 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/borderlands2_3.jpg",
+      user_id = 4,
+      game_id = 12
+  )
+  game12_image4 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/borderlands2_4.jpg",
+      user_id = 4,
+      game_id = 12
+  )
+  game12_image5 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/borderlands2_5.jpg",
+      user_id = 4,
+      game_id = 12
+  )
+  game12_image6 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/borderlands2_6.jpg",
+      user_id = 4,
+      game_id = 12
+  )
+  game12_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/borderlands2_7.jpg",
+      user_id = 4,
+      game_id = 12
+  )
+
+
+  # valorant
+  game13_image1 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/valorant_1.jpg",
+      user_id = 4,
+      game_id = 13
+  )
+  game13_image2 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/valorant_2.jpg",
+      user_id = 4,
+      game_id = 13
+  )
+  game13_image3 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/valorant_3.jpg",
+      user_id = 4,
+      game_id = 13
+  )
+  game13_image4 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/valorant_4.jpg",
+      user_id = 4,
+      game_id = 13
+  )
+  game13_image5 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/valorant_5.jpg",
+      user_id = 4,
+      game_id = 13
+  )
+  game13_image6 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/valorant_6.png",
+      user_id = 4,
+      game_id = 13
+  )
+  game13_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/valorant_7.jpg",
+      user_id = 4,
+      game_id = 13
+  )
+
+
+  # league of legends (LoL)
+  game14_image1 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/league_1.jpg",
+      user_id = 4,
+      game_id = 14
+  )
+  game14_image2 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/league_2.jpg",
+      user_id = 4,
+      game_id = 14
+  )
+  game14_image3 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/league_3.jpeg",
+      user_id = 4,
+      game_id = 14
+  )
+  game14_image4 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/league_4.png",
+      user_id = 4,
+      game_id = 14
+  )
+  game14_image5 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/league_5.jpg",
+      user_id = 4,
+      game_id = 14
+  )
+  game14_image6 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/league_6.png",
+      user_id = 4,
+      game_id = 14
+  )
+  game14_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/league_7.png",
+      user_id = 4,
+      game_id = 14
+  )
+
+
+  # assassin creed 2 (ac2)
+  game15_image1 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/ac2_1.jpg",
+      user_id = 4,
+      game_id = 15
+  )
+  game15_image2 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/ac2_2.jpg",
+      user_id = 4,
+      game_id = 15
+  )
+  game15_image3 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/ac2_3.jpg",
+      user_id = 4,
+      game_id = 15
+  )
+  game15_image4 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/ac2_4.jpg",
+      user_id = 4,
+      game_id = 15
+  )
+  game15_image5 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/ac2_5.jpg",
+      user_id = 4,
+      game_id = 15
+  )
+  game15_image6 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/ac2_6.png",
+      user_id = 4,
+      game_id = 15
+  )
+  game15_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/ac2_7.png",
+      user_id = 4,
+      game_id = 15
+  )
+
+
+  # rocket league
+  game16_image1 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/rocket_1.jpg",
+      user_id = 4,
+      game_id = 16
+  )
+  game16_image2 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/rocket_2.jpg",
+      user_id = 4,
+      game_id = 16
+  )
+  game16_image3 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/rocket_3.jpg",
+      user_id = 4,
+      game_id = 16
+  )
+  game16_image4 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/rocket_4.jpg",
+      user_id = 4,
+      game_id = 16
+  )
+  game16_image5 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/rocket_5.jpg",
+      user_id = 4,
+      game_id = 16
+  )
+  game16_image6 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/rocket_6.png",
+      user_id = 4,
+      game_id = 16
+  )
+  game16_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/rocket_7.png",
+      user_id = 4,
+      game_id = 16
+  )
+
+
+  # warframe
+  game17_image1 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/warframe_1.png",
+      user_id = 4,
+      game_id = 17
+  )
+  game17_image2 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/warframe_2.jpg",
+      user_id = 4,
+      game_id = 17
+  )
+  game17_image3 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/warframe_3.jpg",
+      user_id = 4,
+      game_id = 17
+  )
+  game17_image4 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/warframe_4.jpg",
+      user_id = 4,
+      game_id = 17
+  )
+  game17_image5 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/warframe_5.jpg",
+      user_id = 4,
+      game_id = 17
+  )
+  game17_image6 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/warframe_6.png",
+      user_id = 4,
+      game_id = 17
+  )
+  game17_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/warframe_7.png",
+      user_id = 4,
+      game_id = 17
+  )
+
+
+  # minecraft
+  game18_image1 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/minecraft_1.png",
+      user_id = 4,
+      game_id = 18,
+  )
+  game18_image2 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/minecraft_2.jpg",
+      user_id = 4,
+      game_id = 18,
+  )
+  game18_image3 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/minecraft_3.jpg",
+      user_id = 4,
+      game_id = 18,
+  )
+  game18_image4 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/minecraft_4.png",
+      user_id = 4,
+      game_id = 18,
+  )
+  game18_image5 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/minecraft_5.png",
+      user_id = 4,
+      game_id = 18,
+  )
+  game18_image6 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/minecraft_6.png",
+      user_id = 4,
+      game_id = 18,
+  )
+  game18_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/minecraft_7.png",
+      user_id = 4,
+      game_id = 18,
+  )
+
+
+  # ocarina
+  game19_image1 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/zelda_1.jpg",
+      user_id = 4,
+      game_id = 19
+  )
+  game19_image2 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/zelda_2.png",
+      user_id = 4,
+      game_id = 19
+  )
+  game19_image3 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/zelda_3.jpg",
+      user_id = 4,
+      game_id = 19
+  )
+  game19_image4 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/zelda_4.jpg",
+      user_id = 4,
+      game_id = 19
+  )
+  game19_image5 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/zelda_5.jpg",
+      user_id = 4,
+      game_id = 19
+  )
+  game19_image6 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/zelda_6.png",
+      user_id = 4,
+      game_id = 19
+  )
+  game19_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/zelda_7.png",
+      user_id = 4,
+      game_id = 19
+  )
+
+  # banana shooter
+  game20_image1 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/bananashooter_1.jpg",
+      user_id = 4,
+      game_id = 20
+  )
+  game20_image2 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/bananashooter_2.jpg",
+      user_id = 4,
+      game_id = 20
+  )
+  game20_image3 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/bananashooter_3.jpg",
+      user_id = 4,
+      game_id = 20
+  )
+  game20_image4 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/bananashooter_4.jpg",
+      user_id = 4,
+      game_id = 20
+  )
+  game20_image5 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/bananashooter_5.jpg",
+      user_id = 4,
+      game_id = 20
+  )
+  game20_image6 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/bananashooter_6.png",
+      user_id = 4,
+      game_id = 20
+  )
+  game20_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/bananashooter_7.png",
+      user_id = 4,
+      game_id = 20
+  )
+
+
   db.session.add_all([ game1_image1, game1_image2, game1_image3, game1_image4, game1_image5, game1_image6, game1_image7,
                        game2_image1, game2_image2, game2_image3, game2_image4, game2_image5, game2_image6, game2_image7,
                        game3_image1, game3_image2, game3_image3, game3_image4, game3_image5, game3_image6, game3_image7,
@@ -391,7 +770,17 @@ def seed_images():
                        game7_image1, game7_image2, game7_image3, game7_image4, game7_image5, game7_image6, game7_image7,
                        game8_image1, game8_image2, game8_image3, game8_image4, game8_image5, game8_image6, game8_image7,
                        game9_image1, game9_image2, game9_image3, game9_image4, game9_image5, game9_image6, game9_image7,
-                       game10_image1, game10_image2, game10_image3, game10_image4, game10_image5, game10_image6, game10_image7,])
+                       game11_image1, game11_image2, game11_image3, game11_image4, game11_image5, game11_image6, game11_image7,
+                       game12_image1, game12_image2, game12_image3, game12_image4, game12_image5, game12_image6, game12_image7,
+                       game13_image1, game13_image2, game13_image3, game13_image4, game13_image5, game13_image6, game13_image7,
+                       game14_image1, game14_image2, game14_image3, game14_image4, game14_image5, game14_image6, game14_image7,
+                       game15_image1, game15_image2, game15_image3, game15_image4, game15_image5, game15_image6, game15_image7,
+                       game16_image1, game16_image2, game16_image3, game16_image4, game16_image5, game16_image6, game16_image7,
+                       game17_image1, game17_image2, game17_image3, game17_image4, game17_image5, game17_image6, game17_image7,
+                       game18_image1, game18_image2, game18_image3, game18_image4, game18_image5, game18_image6, game18_image7,
+                       game19_image1, game19_image2, game19_image3, game19_image4, game19_image5, game19_image6, game19_image7,
+                       game20_image1, game20_image2, game20_image3, game20_image4, game20_image5, game20_image6, game20_image7,
+                       ])
   db.session.commit()
 
 def undo_images():
