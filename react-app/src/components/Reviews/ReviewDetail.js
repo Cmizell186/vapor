@@ -3,6 +3,7 @@ import { get_one_review } from "../../store/reviews";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import ReviewEditModal from "./ReviewsEditModal";
+import EditReview from "./ReviewsEditForm";
 import { delete_review } from "../../store/reviews";
 import { Modal } from "../../context/Modal";
 
@@ -33,6 +34,13 @@ const ReviewDetails = () => {
     setShowModal(false);
     history.push(`/games/${review.game_id}`);
   };
+
+  const showForm = () => {
+    <>
+    <EditReview review={review} gameId={gameId} />
+    </>
+  }
+  // create component to render review to swap in with EditReview
 
   return (
     <>
@@ -102,12 +110,16 @@ const ReviewDetails = () => {
                   <img className="owner_action_img"
                     src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_edit.png"
                     alt="" />
-                  <ReviewEditModal
+                  {/* <ReviewEditModal
                     review={review}
                     user={{ ...sessionUser }}
                     gameId={gameId}
                   >Update Review
-                  </ReviewEditModal>
+                  </ReviewEditModal> */}
+                  <a href="#"
+                    onClick={() => showForm()}
+                  >Update Review
+                  </a>
                 </div>
                 <div className="owner_controls_divider"></div>
                 <a href="#"
