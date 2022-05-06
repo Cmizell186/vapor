@@ -6,5 +6,11 @@ class Genre(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50))
-    
+
     genre_tag = db.relationship("Tag", back_populates="genres")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+        }

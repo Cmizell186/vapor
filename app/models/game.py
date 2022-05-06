@@ -34,5 +34,6 @@ class Game(db.Model):
             'developer': self.developer,
             'user_id': self.user_id,
             'images': [img.to_dict() for img in self.image],
+            'tags': [tag.to_dict() for tag in self.tags],
             'user_id': self.user_id
         }

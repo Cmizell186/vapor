@@ -1,16 +1,116 @@
+import * as React from 'react';
 import { get_all_games } from "../../store/game";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
 import GameSlider from "./GameSlider";
+import { styled } from '@mui/material/styles';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import './index.css'
 
 const Store = ({user}) => {
 
     const dispatch = useDispatch()
     const games = useSelector(state => Object.values(state.games))
+
     useEffect(() => {
       dispatch(get_all_games())
     }, [dispatch])
+
+    class StyledTabProps {
+        label = String;
+      }
+
+    class StyledTabsProps {
+        children =  React.ReactNode;
+        value = Number;
+        onChange = (event=React.SyntheticEvent, newValue=Number) => null;
+      }
+
+    const SteamTabs = styled(Tabs)({
+        borderBottom: '0px',
+        '& .MuiTabs-indicator': {
+          backgroundColor: '#1890ff',
+          height: "0px",
+        },
+      });
+
+      const SteamTab = styled((props=StyledTabProps) => <Tab disableRipple {...props} />)(
+        ({ theme }) => ({
+          textTransform: 'none',
+          minWidth: 0,
+          [theme.breakpoints.up('sm')]: {
+            minWidth: 0,
+          },
+          fontWeight: theme.typography.fontWeightRegular,
+          marginRight: theme.spacing(1),
+          marginBottom: theme.spacing(0),
+          color: '#2f89bc',
+          fontSize: "14px",
+          padding: "2px 10px 2px 10px",
+          borderTopLeftRadius: "3px",
+          borderTopRightRadius: "3px",
+          fontFamily: [
+            'Arial',
+            '"Helvetica"',
+            'sans-serif',
+          ].join(','),
+          '&:hover': {
+            color: '#ffffff',
+            opacity: 1,
+          },
+          '&.Mui-selected': {
+            color: '#ffffff',
+            backgroundColor: '#2a475e',
+            fontWeight: theme.typography.fontWeightMedium,
+          },
+          '&.Mui-focusVisible': {
+            backgroundColor: '#d1eaff',
+          },
+        }),
+      );
+
+    class TabPanelProps {
+        children = React.ReactNode;
+        index = Number;
+        value = Number;
+      }
+
+    function TabPanel(props=TabPanelProps) {
+        const { children, value, index, ...other } = props;
+
+        return (
+          <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+          >
+            {value === index && (
+              <Box sx={{ p: 3 }}>
+                <Typography>{children}</Typography>
+              </Box>
+            )}
+          </div>
+        );
+      }
+
+      function a11yProps(index=Number) {
+        return {
+          id: `simple-tab-${index}`,
+          'aria-controls': `simple-tabpanel-${index}`,
+        };
+      }
+
+        const [value, setValue] = React.useState(0);
+
+        const handleChange = (event=React.SyntheticEvent, newValue=Number) => {
+          setValue(newValue);
+        };
+
 
     return (
         <div id="main">
@@ -51,24 +151,103 @@ const Store = ({user}) => {
             FEATURED & RECOMMENDED
             </div>
         <GameSlider games={games} />
-        <div id="sub_main_content">
-            SPECIAL OFFERS
-            game1/2/3/4
+        <div id="future_specials_div">
         </div>
         <div id="console_wrap">
         <div id="vapor_deck_div">
         </div>
-
         <div id="vapor_index_div">
         </div>
         </div>
-        </div>
-        </div>
+        <div id="game_list_content_container">
+        <div id="game_list_content">
+        <div id="game_list_left_container">
+        <Box sx={{ width: '100%' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <div id="game_list_tabs">
+        <SteamTabs
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+            textColor="inherit"
 
+        >
+          <SteamTab label="New Releases" {...a11yProps(0)} />
+          <SteamTab label="Top Sellers" {...a11yProps(1)} />
+          <SteamTab label="Specials" {...a11yProps(2)} />
+        </SteamTabs>
         </div>
-
+      </Box>
+        <div id="game_list">
+        <TabPanel value={value} index={0}>
+        {games
+            .sort((game1, game2) => new Date(game1.release_date) - new Date(game2.release_date))
+            .map(game => (
+            <a id='game_container_link' href={`/games/${game?.id}`}>
+            <div key={game?.id} id='game_container'>
+            <div id='game_container_image'>
+                <img alt='' src={game?.images[0]?.image} />
+            </div>
+            <div id='game_container_info'>
+            <div id='game_container_title'>{game?.title}</div>
+            <div id='game_container_price'>${game?.price}</div>
+            <div id='game_container_platform'>
+            <img id='platform' src='/static/images/vapor_logo_grey.png' alt='' />
+            </div>
+            <div id='game_container_tags'>{game?.tags.map(tag => tag.genres.title).join(", ")}</div>
+            </div>
+            </div>
+            </a>
+        ))}
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+      {games
+            .sort(() => Math.random() - Math.random())
+            .map(game => (
+            <div key={game?.id} id='game_container'>
+            <div id='game_container_image'>
+                <img alt='' src={game?.images[0]?.image} />
+            </div>
+            <div id='game_container_info'>
+            <div id='game_container_title'>{game?.title}</div>
+            <div id='game_container_price'>${game?.price}</div>
+            <div id='game_container_platform'>
+            <img id='platform' src='/static/images/vapor_logo_grey.png' alt='' />
+            </div>
+            <div id='game_container_tags'>{game?.tags.map(tag => tag.genres.title).join(", ")}</div>
+            </div>
+            </div>
+        ))}
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+      {games
+            .sort((game1, game2) => (game1.price) - (game2.price))
+            .map(game => (
+            <div key={game?.id} id='game_container'>
+            <div id='game_container_image'>
+                <img alt='' src={game?.images[0]?.image} />
+            </div>
+            <div id='game_container_info'>
+            <div id='game_container_title'>{game?.title}</div>
+            <div id='game_container_price'>${game?.price}</div>
+            <div id='game_container_platform'>
+            <img id='platform' src='/static/images/vapor_logo_grey.png' alt='' />
+            </div>
+            <div id='game_container_tags'>{game?.tags.map(tag => tag.genres.title).join(", ")}</div>
+            </div>
+            </div>
+        ))}
+      </TabPanel>
         </div>
-
+    </Box>
+        </div>
+        <div id="right_col_hover">hover previews go here</div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
     )
 }
