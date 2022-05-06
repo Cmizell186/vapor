@@ -113,6 +113,126 @@ def seed_games():
         user_id=2
     )
 
+    # 11
+    witcher3 = Game(
+        title="The Witcher 3: Wild Hunt",
+        price=39.99,
+        description="As war rages on throughout the Northern Realms, you take on the greatest contract of your life — tracking down the Child of Prophecy, a living weapon that can alter the shape of the world.",
+        release_date='2015_05_18',
+        is_mature=True,
+        video="https://cdn.akamai.steamstatic.com/steam/apps/256658589/movie480.webm?t=1528288687",
+        developer="CD PROJEKT RED",
+        user_id = 4
+    )
+
+    # 12
+    border_lands2 = Game(
+        title = "Borderlands 2",
+        price = 19.99,
+        description = "The Ultimate Vault Hunter’s Upgrade lets you get the most out of the Borderlands 2 experience.",
+        release_date = '2012_09_17',
+        is_mature = True,
+        video = "https://cdn.akamai.steamstatic.com/steam/apps/2029699/movie480.webm?t=1447359143",
+        developer = "Gearbox Software",
+        user_id = 4
+    )
+
+    # 13
+    valorant = Game(
+        title = "Valorant",
+        price = 0.00,
+        description = "VALORANT is a character-based 5v5 tactical shooter set on the global stage. Outwit, outplay, and outshine your competition with tactical abilities, precise gunplay, and adaptive teamwork.",
+        release_date = '2020_06_02',
+        is_mature = False,
+        video = "",
+        developer = "Riot Games",
+        user_id = 4
+    )
+
+    # 14
+    lol = Game(
+        title = "League of Legends",
+        price = 0.00,
+        description = "Become a legend. Find your champion, master their abilities, and outplay your opponents in an epic 5v5 battle to destroy the enemy base.",
+        release_date = '2009_10_27',
+        is_mature = False,
+        video = "",
+        developer = "Riot Games",
+        user_id = 4
+    )
+
+    # 15
+    ac2 = Game(
+        title = "",
+        price = 19.99,
+        description = "An epic story of family, vengeance and conspiracy set in the pristine, yet brutal, backdrop of a Renaissance Italy. New low price!",
+        release_date = "2010_03_09",
+        is_mature = True,
+        video = "",
+        developer = "Ubisoft",
+        user_id = 4
+    )
+
+    # 16
+    rocket = Game(
+        title = "Rocket League",
+        price = 0.00,
+        description = "Download and compete in the high-octane hybrid of arcade-style soccer and vehicular mayhem! customize your car, hit the field, and compete in one of the most critically acclaimed sports games of all time! Download and take your shot!",
+        release_date = '2015_07_07',
+        is_mature = False,
+        video = "",
+        developer = "Psyonix LLC",
+        user_id = 4
+    )
+
+    # 17
+    warframe = Game(
+        title = "Warframe",
+        price = 0.00,
+        description = "Awaken as an unstoppable warrior and battle alongside your friends in this story-driven free-to-play online action game",
+        release_date = "2013_03_25",
+        is_mature = True,
+        video = "https://cdn.akamai.steamstatic.com/steam/apps/256862739/movie480_vp9.webm?t=1638285456",
+        developer = "Digital Extremes",
+        user_id = 4
+    )
+
+    # 18
+    minecraft = Game(
+        title = "Minecraft",
+        price = 26.95,
+        description = "Explore your own unique world, survive the night, and create anything you can imagine!",
+        release_date = "2011_11_18",
+        is_mature = False,
+        video = "",
+        developer = "Mojang",
+        user_id = 4
+    )
+
+    # 19
+    ocarina = Game(
+        title = "The Legend of Zelda: Ocarina of Time",
+        price = 59.99,
+        description = "The Legend of Zelda: Ocarina of Time is an action-adventure game developed and published by Nintendo for the Nintendo 64.",
+        release_date = "1998_11_21",
+        is_mature = False,
+        video = "",
+        developer = "Nintendo",
+        user_id = 4
+    )
+
+    # 20
+    bananashooter = Game(
+        title = "Banana Shooter",
+        price = 0.00,
+        description = "In this game, you are not a banana, you are Dave, because you like to eat bananas, so the banana is taken away, the only way to get it is to kill other Dave. When you have the highest kill count, you will will get bananas.",
+        release_date = "2022_05_01",
+        is_mature = False,
+        video = "https://cdn.akamai.steamstatic.com/steam/apps/256880748/movie480_vp9.webm?t=1650998831",
+        developer = "CodingDaniel",
+        user_id = 4
+    )
+
     db.session.add(eldenring)
     db.session.add(forza_horizon_5)
     db.session.add(death_stranding)
@@ -123,6 +243,16 @@ def seed_games():
     db.session.add(stars_wars_battlefront_II)
     db.session.add(fifa_22)
     db.session.add(madden_22)
+    db.session.add(witcher3)
+    db.session.add(border_lands2)
+    db.session.add(valorant)
+    db.session.add(lol)
+    db.session.add(ac2)
+    db.session.add(rocket)
+    db.session.add(warframe)
+    db.session.add(minecraft)
+    db.session.add(ocarina)
+    db.session.add(bananashooter)
 
     db.session.commit()
 
