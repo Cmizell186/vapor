@@ -44,15 +44,6 @@ const ReviewGame = ({ gameId }) => {
     }
   }
 
-
-  // {hasSubmitted && (
-  //   <div className="error">
-  //     {errors.map((error, index) => (
-  //       <div key={index}>{error}</div>
-  //     ))}
-  //     </div>
-  // )}
-
   return (
     <>
       {hasSubmitted && showModal && (
@@ -123,7 +114,6 @@ const ReviewGame = ({ gameId }) => {
               <i className="fa-solid fa-thumbs-down"></i>
                 No
               </span>
-
             </button>
           <button className="button btn-submit-review" type="submit">
             <span>

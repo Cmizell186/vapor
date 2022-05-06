@@ -90,8 +90,8 @@ function App() {
                   <GameDetails user={user} loaded={loaded} />
                 </Route>
                 <Route path='/reviews/:reviewId'>
-                  <SubNavBar />
-                  <ReviewDetails />
+                  {/* <SubNavBar /> */}
+                  <ReviewDetails loaded={loaded} />
                 </Route>
                 <ProtectedRoute path='/users' exact={true} >
                   <UsersList />

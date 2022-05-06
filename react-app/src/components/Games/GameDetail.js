@@ -72,25 +72,26 @@ const GameDetails = ({user, loaded}) => {
   }
   // refactor  this junk
   let hasReviewed;
-  if (sessionUser && sessionUser?.id === userReview[0]?.user_id) {
+   (sessionUser && sessionUser?.id === userReview[0]?.user_id) ?
     hasReviewed = (
       <>
         <ReviewSummary review={userReview[0]} />
       </>
     )
-  } else {
+  :
     hasReviewed = (
       <>
         <ReviewGame gameId={gameId} />
       </>
     )
-  }
+
 
   const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
 
   return (
     <>
       <div id="page-content-container">
+        <div id="game-details-box">
         <div id="title-container">
           <h2>{game?.title}</h2>
         </div>
@@ -146,8 +147,10 @@ const GameDetails = ({user, loaded}) => {
           </div>
         )}
         {loaded && hasReviewed}
+        </div>
+      </div>
         <div className='reviews-container'>
-          <Reviews user={user} />
+          <Reviews user={user} filteredReviews={filteredReviews} />
           {/* {filteredReviews?.map(review =>
             <div key={review.id}>
               <h2>
@@ -156,7 +159,7 @@ const GameDetails = ({user, loaded}) => {
             </div>
           )} */}
         </div>
-      </div>
+        {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
       {!is_owned && (
         <div id="add-cart-content">
           <div id="add-cart-div">
