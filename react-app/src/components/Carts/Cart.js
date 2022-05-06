@@ -57,8 +57,6 @@ const Cart = () => {
               <div className='item-in-purchase-modal'>Click the bottom button to view </div>
               <div id="item-in-purchase-button" className='item-in-purchase-modal'><Link to='/library'>View library</Link></div>
             </div>
-
-
           </Modal>
         )}
         <div className='main-page-div'>
@@ -102,7 +100,7 @@ const Cart = () => {
               </div>
             </div>
             <div className="right-content">
-              <div className="right-content-divs">
+              {/* <div className="right-content-divs">
                 <img alt=''
                   src="https://cdn.akamai.steamstatic.com/steam/apps/468920/header.jpg?t=1651602622"
                 // src={`${firstGame?.images[0]}`}
@@ -112,7 +110,7 @@ const Cart = () => {
               <div className="right-content-divs">
                 <img alt='' src='https://cdn.akamai.steamstatic.com/steam/apps/470310/header.jpg?t=1650008969' />
                 <div className='inside-div'></div>
-              </div>
+              </div> */}
               <div id="cart-carousel-outside-div">
                 <Carousel
                   autoPlay={false}
@@ -125,30 +123,28 @@ const Cart = () => {
                   swipe={true}
                 >
                   {games.length && games.map(game => (
-                    // <img alt='' src={`${games?.images[0]?.image}`} />
                     <>
                       <Link to={`/games/${game?.id}`}>
-                      <div>
-                        <img id="carousel-img" alt='' src={`${game?.images[5]?.image}`} />
-                      </div>
-                      <div id="spotlight-div">
-                        <h2>WEEKEND DEAL</h2>
-                        <div id="spotlight-inside-div">
-                          Offer ends May 12 @ 10:00am.
+                        <div>
+                          <img id="carousel-img" alt='' src={`${game?.images[6]?.image}`} />
                         </div>
-                        <div id="discount-div">
-                          <div id="discount-div-block">
-                            <div id="discount-pct">
-                              -50%
-                            </div>
-                            <div id="discount-prices">
-                              <div id="discount-og-price">${game?.price * 2}</div>
-                              <div id="discount-after-price">${game?.price}</div>
+                        <div id="spotlight-div">
+                          <h2>WEEKEND DEAL</h2>
+                          <div id="spotlight-inside-div">
+                            Offer ends May 12 @ 10:00am.
+                          </div>
+                          <div id="discount-div">
+                            <div id="discount-div-block">
+                              <div id="discount-pct">
+                                -50%
+                              </div>
+                              <div id="discount-prices">
+                                <div id="discount-og-price">${game?.price * 2}</div>
+                                <div id="discount-after-price">${game?.price}</div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        {/* <p>{game?.title}</p> */}
-                      </div>
                       </Link>
                     </>
                   ))}
