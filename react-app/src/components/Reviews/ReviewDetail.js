@@ -52,6 +52,7 @@ const ReviewDetails = ({ loaded }) => {
     setIs_Recommended(false);
     setContent("");
     setHasSubmitted(false);
+    ShowForm()
   };
 
   const recommendation = () => {
@@ -158,12 +159,13 @@ const ReviewDetails = ({ loaded }) => {
     </>
     )
   }
-
+  // Needs the if else again to close form on update
   const ShowForm = () => {
     let review = document.getElementById("left-offset-review-content-text");
     let editreview = document.getElementById("left-offset-review-content-edit");
     review.style.display = "none";
     editreview.style.display = "block"
+
     // setFormDiv(false);
   };
 
