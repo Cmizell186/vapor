@@ -6,7 +6,7 @@ import { logout } from '../../store/session';
 const ProfileMenu = ({user}) => {
   const dispatch = useDispatch()
   const onLogout = async (e) => {
-    await dispatch(logout());
+    dispatch(logout());
   };
     const [showMenu, setShowMenu] = useState(false);
 

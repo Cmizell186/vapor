@@ -67,7 +67,7 @@ const ReviewDetails = ({ loaded }) => {
                 {sessionUser.username}
               </a>
             </span>
-            <span className="profile_header_arrows">>></span>
+            <span className="profile_header_arrows">{'>>'}</span>
             <span className="profile_reviews_text">
               <a
                 className="profile_link_content"
@@ -76,7 +76,7 @@ const ReviewDetails = ({ loaded }) => {
                 Reviews
               </a>
             </span>
-            <span className="profile_header_arrows">>></span>
+            <span className="profile_header_arrows">{'>>'}</span>
             <a
               className="profile_link_content"
               href={`/games/${review?.game_id}`}
@@ -124,7 +124,6 @@ const ReviewDetails = ({ loaded }) => {
                     alt=""
                     width="294"
                     height="138"
-                    alt=""
                   ></img>
                 </div>
                 <a
