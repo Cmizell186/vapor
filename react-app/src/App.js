@@ -94,6 +94,9 @@ function App() {
           <User users={user}/>
           <SingleImage />
         </ProtectedRoute>
+        <Route>
+      <h2>404 error</h2>
+    </Route>
         </Switch>
         </>
         : <Redirect to="/" />}

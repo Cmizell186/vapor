@@ -13,9 +13,9 @@ const GameSlider = ({games}) => {
 //cycleNavigation={true}
   return (
     <div id='carousel'>
-      <div id='next_button_div'>
-      <div id='next_button' onClick={() => setIndex(i => i + 1)}><img src='static/images/rightarrow.png' alt='' /></div>
-      </div>
+      <div id='prev_button_div'>
+        <div id='prev_button' onClick={() => setIndex(i => i - 1)}><img src='static/images/leftarrow.png' alt='' /></div>
+        </div>
         <Carousel
             autoPlay={false}
             animation="fade"
@@ -70,9 +70,9 @@ const GameSlider = ({games}) => {
             </div>
           ))}
         </Carousel>
-        <div id='prev_button_div'>
-        <div id='prev_button' onClick={() => setIndex(i => i - 1)}><img src='static/images/leftarrow.png' alt='' /></div>
-        </div>
+        <div id='next_button_div'>
+        <div id='next_button' onClick={() => setIndex(i => i + 1)}><img src='static/images/rightarrow.png' alt='' /></div>
+      </div>
     </div>
   )
 }

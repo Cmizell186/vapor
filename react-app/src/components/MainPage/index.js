@@ -23,12 +23,6 @@ const Store = ({user}) => {
         label = String;
       }
 
-    class StyledTabsProps {
-        children =  React.ReactNode;
-        value = Number;
-        onChange = (event=React.SyntheticEvent, newValue=Number) => null;
-      }
-
     const SteamTabs = styled(Tabs)({
         borderBottom: '0px',
         '& .MuiTabs-indicator': {
