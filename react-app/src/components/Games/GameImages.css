@@ -31,6 +31,7 @@
 .deleteImage:hover{
     transition: none;
     background: linear-gradient( to right, #d11a2a 5%, #d11a2a 95%);
+    cursor: pointer;
 }
 
 /* new image-form */
@@ -59,6 +60,7 @@ input[type="file"] {
 .choose-image:hover{
     transition: none;
     background: linear-gradient( to right, #75b022 5%, #75b022 95%);
+    cursor: pointer;
 }
 
 .submit-image{
@@ -75,6 +77,7 @@ input[type="file"] {
 .submit-image:hover{
     transition: none;
     background: linear-gradient( to right, #75b022 5%, #75b022 95%);
+    cursor: pointer;
 }
 
 /* delete-gameimage-form css*/
@@ -116,6 +119,7 @@ input[type="file"] {
 #delete-images:hover{
     transition: none;
     background: linear-gradient( to right, #d11a2a 5%, #d11a2a 95%);
+    cursor: pointer;
 }
 
 #cancel-images{
@@ -136,6 +140,7 @@ input[type="file"] {
 #cancel-images:hover{
     transition: none;
     background: linear-gradient( to right, #d11a2a 5%, #d11a2a 95%);
+    cursor: pointer;
 }
 
 .delete-image-text{
@@ -171,4 +176,5 @@ input[type="file"] {
 .finished-btn:hover{
     transition: none;
     background: linear-gradient( to right, #75b022 5%, #75b022 95%);
+    cursor: pointer;
 }
