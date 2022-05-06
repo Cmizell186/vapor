@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
 import './reviewstyles.css';
 
-const Reviews = ({user}) => {
+const Reviews = ({user, filteredReviews}) => {
 const dispatch = useDispatch()
 const reviews = useSelector(state => Object.values(state.reviews))
 useEffect(() => {
@@ -13,7 +13,7 @@ useEffect(() => {
 return (
     <>
     <div className="reviews-list-container">
-        {reviews?.map(review =>
+        {filteredReviews?.map(review =>
         <div className='review-box' key={review.id}>
             <div className="profile-pic-box">
                 <img id="profile_img" src={user?.profile_picture} alt=""></img>

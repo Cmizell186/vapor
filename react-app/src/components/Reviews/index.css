@@ -5,51 +5,247 @@
 
 body {
   background-color: #1b2838;
+  font-family: "Motiva Sans", Sans-serif;
 }
 
-.banner-temp {
-  background-color: #000000;
-  height:100px;
-}
+
 
 .user-banner {
-  color: white;
-  height:100px;
-  background-color: #6c6c7942;
-  display: inline-flex;
-  padding: 5px;
-  width: 1120px;
+  background: #2e343e;
+  max-width: 978px;
+  height: 102px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 0 20px black;
+  z-index: 100;
 }
 .review-detail-container {
   display: inline-flex;
-
+  margin: 0;
+  padding: 0;
 }
 
-.review-content-subbody {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  background-color: #1b2838;
+.profile_avatar_small {
+  position: absolute;
+  left: 30px;
+  top: 18px;
   color: white;
-  font-family: "Motiva Sans", Sans-serif;
-  display: flex;
-  width: 640px;
-  height: 444px;
-  background-color: #0e0e0f42;
-  align-items: flex-start;
-  padding: 5px;
+}
+
+#profile_img_small {
+  width: 64px;
+  height: 64px;
+  border: 2px solid #636363;
+}
+
+.profile_header_arrows {
+  font-size: 10px;
+  color: #828282;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.profile_header_links {
+  position: absolute;
+  left: 120px;
+  right: 30px;
+  bottom: 31px;
+  max-height: 65px;
+  color: white;
+  text-shadow: #1b2838;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile_header_name {
+  font-size: 26px;
+}
+
+.profile_link_content {
+  color: #ebebeb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.main-content-container {
+  margin: 0 auto;
+  width: 948px;
+  min-height: 948px;
+  background: none;
+  background-image: linear-gradient(to bottom,#243445, #101a22 25% );
+  background-repeat: no-repeat, repeat-y;
+  background-position: bottom center, center;
+  width: 926px;
+  padding: 12px 12px 128px 12px;
+  border: 1px solid #101a22;
+}
+
+.review-detail-container {
+  max-width: 918px;
+  padding: 0 16px;
+  position: relative;
+}
+
+.left-offset-review-content-subbody {
+  float: left;
+  width: 580px;
+  margin: 0;
+  padding: 0;
+  padding-right: 0px;
+
 }
 
 .recommendation-subbody {
   display: inline-flex;
 }
 
+
 .right-offset-detail-subbody {
-  display: flex;
-  flex-flow: column;
-  background-image: linear-gradient(to bottom right,#5f5f5f00, #0000009c );
-  min-width: 440px;
-  color: white;
+  position: relative;
+  float: right;
+  width: 295px;
+  margin: 0;
+  padding: 0;
+  padding-top: 0px;
+  margin-left: 20px;
+  z-index: 20;
+  margin-bottom: 16px;
+  background-color: #101921;
+  padding-bottom: 6px;
+
+}
+
+.game-review-links {
+  background-color: #091016;
+}
+
+.game_page_link {
+  color: #EBEBEB;
+  background-color: transparent;
+  display: inline-block;
+  padding: 5px 8px 5px 8px;
+  margin-right: 5px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  cursor: pointer;
+}
+
+.user-controls-container {
+  background: rgba(27,27,27,.36);
+  border-radius: 4px;
+  padding: 10px 10px 10px 11px;
+  margin: 0 0 10px 0;
+  margin-top: 20px;;
+  border: 1px solid #9bc318;
+  box-shadow: 1px 1px 0 0 #39393a;
+
+}
+
+.owner_panel_title {
+  color: #81a313;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin: 3px 0 10px 0;
+}
+
+.owner_controls_divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  height: 1px;
+  background-color: #000;
+  border-bottom: 1px solid #17212e;
+}
+
+.owner_panel_bttn {
   text-decoration: none;
-  padding: 5px;
+  display: inline-block;
+  padding: 5px 8px 5px 8px;
+  margin-right: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+}
+
+.owner_action_img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+#left-offset-review-content-subbody {
+  float: left;
+  width: 580px;
+  margin: 0;
+  padding: 0;
+  padding-right: 0px;
+
+}
+
+.review-rating-subbody {
+  min-height: 15px;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  color: #898A8C;
+  padding: 4px 6px 4px 6px;
+  margin-bottom: 8px;
+  line-height: 20px;
+  display: flex;
+}
+
+.review-rating-subbody::before {
+  content: "";
+  background: linear-gradient(to right, #47bfff 30%, rgba(255,255,255,0) 70%);
+  display: block;
+  height: 1px;
+  width: 600px;
+  position: absolute;
+  top: 0;
+}
+
+.recommendation-subbody {
+  background: rgba( 0, 0, 0, 0.2 );
+  width: 580px;
+}
+
+
+.recommendation-summary > p {
+  float: right;
+  margin-right: 5px;
+  margin-top: 15px;
+  opacity: 0.5;
+  width: auto;
+  height: auto;
+}
+
+.recommendation-summary > img {
+  margin-right: 10px;
+  width: 44px;
+  height: 44px;
+}
+
+.review-rating {
+  font-size: 16px;
+  color: #D6D7D8;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+}
+
+.review-detail-content {
+  font-size: 13px;
+  line-height: 17px;
+  color: #acb2b8;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+.review_comments_header {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 16px;
+  margin-top: 40px;
+  color: #61686d;
 }

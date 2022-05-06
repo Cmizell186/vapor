@@ -78,10 +78,10 @@ function App() {
           <Route path="/demo">
             <Demo />
           </Route>
-          <Route path="/cart">
+          <ProtectedRoute path="/cart">
             <SubNavBar />
             <Cart />
-          </Route>
+          </ProtectedRoute>
           {user ?
             <>
               <Switch>
@@ -90,8 +90,8 @@ function App() {
                   <GameDetails user={user} loaded={loaded} />
                 </Route>
                 <Route path='/reviews/:reviewId'>
-                  <SubNavBar />
-                  <ReviewDetails />
+                  {/* <SubNavBar /> */}
+                  <ReviewDetails loaded={loaded} />
                 </Route>
                 <ProtectedRoute path='/users' exact={true} >
                   <UsersList />
