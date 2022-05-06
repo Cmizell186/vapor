@@ -27,7 +27,7 @@ const Library = ({user}) => {
     {user_games?.map(game =>
     <div className="games" key={game?.id}>
     <div id="game_tile">
-    <a href={`/games/${game.id}`}>
+    <a href={`/games/${game?.id}`}>
     <div className="game"><img src={game?.images[5]?.image} alt="" /></div>
     <div id="library_game_title_div">
         <div id="library_game_title">

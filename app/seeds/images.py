@@ -154,7 +154,7 @@ def seed_images():
   game5_image6 = Image(
       image = "https://vaporgames.s3.us-west-1.amazonaws.com/dynastywarriors6.jpg",
       user_id = 5,
-      game_id = 4
+      game_id = 5
   )
 
   game6_image1= Image(
