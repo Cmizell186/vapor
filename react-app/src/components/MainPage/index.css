@@ -214,6 +214,7 @@ a {
     z-index: 2;
     background-color: #000;
     box-shadow: 0 0 10px 5px #000;
+    object-fit:cover;
 }
 
 #game_title {
@@ -336,7 +337,7 @@ a {
 #game_container {
     position: relative;
     display: flex;
-    background: #202d39;
+    background: rgba( 0, 0, 0, 0.2 );
     height: 69px;
     margin-bottom: 5px;
     color: #c7d5e0;
@@ -362,6 +363,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit:cover;
+    object-position:center;
 }
 
 .MuiBox-root.css-19kzrtu {
