@@ -13,7 +13,7 @@ import ReviewDetails from './components/Reviews/ReviewDetail'
 import UploadPicture from './components/Images/index';
 import Images from './components/Images/ImageList';
 import SingleImage from './components/Images/UserImage';
-import SignUpForm from './components/auth/SignUpForm';
+import SignUp from './components/LandingPage/SignUp'
 import Demo from './components/auth/Demo'
 import Cart from './components/Carts/Cart'
 import Store from './components/MainPage';
@@ -69,7 +69,7 @@ function App() {
             <Images />
           </ProtectedRoute>
           <Route path="/signup">
-            <SignUpForm />
+            <SignUp />
           </Route>
           <Route path="/demo">
             <Demo />

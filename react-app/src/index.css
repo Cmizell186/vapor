@@ -8,3 +8,19 @@ body {
     margin: 0;
     padding: 0;
 }
+
+#footer {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 16px 0 60px 0;
+    margin: 0;
+    background: #171a21;
+    color: #8F98A0;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+  }
