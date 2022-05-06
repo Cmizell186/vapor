@@ -58,7 +58,7 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/library">
             <SubNavBar />
-            <Library />
+            <Library user={user} />
           </ProtectedRoute>
           <ProtectedRoute path="/games/new">
             <SubNavBar />
