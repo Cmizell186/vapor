@@ -63,7 +63,7 @@ const GameSlider = ({games}) => {
             </div>
             </div>
             <p>Now Available</p>
-            {game?.price}
+            ${game?.price}
             </div>
             </div>
             </Link>
