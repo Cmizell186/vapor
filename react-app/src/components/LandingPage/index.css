@@ -244,7 +244,7 @@
 #cart_link {
   background-image: url("../../public/static/images/background_cart.jpg");
   background-position: -34px 30px;
-  width: 98px;
+  width: 120px;
   height: 20px;
   background-color: rgba( 164, 208, 7, 0.4 );
   box-shadow: 0 0 3px #000;
