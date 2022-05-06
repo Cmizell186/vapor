@@ -145,16 +145,18 @@
   padding: 2px 15px;
   font-size: 15px;
   line-height: 30px;
-  font-family: 'Motiva Sans', sans-serif;
   font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 33px;
+  width: auto;
 }
 
 #continue-shopping-div:hover {
-  border-radius: 2px;
-  color: #ffffff !important;
-  background: #B3DFFF;
-  /* background: rgb(106, 191, 240) */
-  background: linear-gradient(to right, rgb(106, 191, 240) 55%,rgba(106, 191, 240, 0.699) 95%);
+  text-decoration: none !important;
+  color: #fff !important;
+  background: #417a9b;
+  background: -webkit-linear-gradient( 150deg, #417a9b 5%,#67c1f5 95%);
+  background: linear-gradient( -60deg, #417a9b 5%,#67c1f5 95%);
 }
 
 #botom-content-div {
