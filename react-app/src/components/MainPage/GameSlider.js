@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import Carousel from 'react-material-ui-carousel'
 import { Link } from 'react-router-dom'
-import { Button } from '@mui/material';
 
 const GameSlider = ({games}) => {
-  const [img, setImg] = useState();
   const [index, setIndex] = useState(0);
 
 
