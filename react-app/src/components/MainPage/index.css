@@ -21,8 +21,14 @@
 }
 
 #jason_div_video {
+    position: relative;
+    top: -69px;
     display: flex;
     justify-content: center;
+}
+
+#header_content {
+    max-height: 390px;
 }
 
 #going_rogue_video {
@@ -31,29 +37,50 @@
 }
 
 #search_container {
-    position: absolute;
-    width: 870px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     z-index: 300;
     height: 66px;
     margin-top: 3px;
-    left: calc(23vw);
 }
 
 #search_input {
+    position: relative;
+    top: 1px;
+    right: -25px;
     color: #0e1c25;
+    width: 175px;
+    height: 25px;
     font-size: 14px;
     margin-top: 1px;
     text-shadow: 1px 1px 0px rgb(255 255 255 / 10%);
     font-family: "Motiva Sans", Sans-serif;
     font-weight: 300;
+    background-color: #316282;
+    align-content: flex-end;
+    background-image: none;
+    border-radius: 3px;
+    border: 1px solid rgba( 0, 0, 0, 0.3);
+    box-shadow: 1px 1px 0px rgb(255 255 255 / 20%);
+    margin-bottom: 0px;
+    outline: none;
     font-style: italic;
+}
+
+#blank_search {
+    position: relative;
+    top: 4px;
+    background-image: url("../../public/static/images/search_icon_btn.png");
+    width: 25px;
+    height: 25px;
 }
 
 #search_div {
     display: flex;
     justify-content: flex-end;
-    position: absolute;
-    width: 940px;
+    width: 910px;
     height: 35px;
     padding: 0 16px;
     margin: 0 auto;

@@ -1,0 +1,61 @@
+
+#divname {
+  background: linear-gradient(165deg, #262f3e, #1a2129);
+  background-attachment: fixed;
+}
+
+#library {
+  margin: 1rem;
+}
+
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.game {
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: 7px;
+  object-fit: contain;
+  cursor: pointer;
+  max-width: 200px;
+  position: relative;
+  padding: 0;
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.8);
+  transition: 0.2s all ease-in-out;
+}
+
+.game img {
+    width: 100%;
+    display: inherit;
+}
+
+.game:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(
+      -135deg,
+      rgba(200, 230, 250, 1) 0%,
+      transparent 50%
+    );
+    background-size: 200%;
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.2s all ease-in-out;
+}
+
+.game:hover {
+    transform: perspective(50em) rotateX(10deg) scale(1.1);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.game:hover:before {
+    background-position: 50%;
+}

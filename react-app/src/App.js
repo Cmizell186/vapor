@@ -6,7 +6,6 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
-import GameList from './components/Games/GameList'
 import GameListingForm from './components/Games/GameListingForm'
 import LandingPage from './components/LandingPage'
 import GameDetails from './components/Games/GameDetail'
@@ -14,15 +13,12 @@ import ReviewDetails from './components/Reviews/ReviewDetail'
 import UploadPicture from './components/Images/index';
 import Images from './components/Images/ImageList';
 import SingleImage from './components/Images/UserImage';
-import GameImages from './components/Games/GameImages';
-import UploadGamePicture from './components/Games/GameImageForm';
-import GameImageModal from './components/Games/GameImagesModal';
 import SignUpForm from './components/auth/SignUpForm';
 import Demo from './components/auth/Demo'
 import Cart from './components/Carts/Cart'
 import Store from './components/MainPage';
 import SubNavBar from './components/SubNavBar'
-
+import Library from './components/Library';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -62,7 +58,7 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/library">
             <SubNavBar />
-            <GameList />
+            <Library />
           </ProtectedRoute>
           <ProtectedRoute path="/games/new">
             <SubNavBar />
