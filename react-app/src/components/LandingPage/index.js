@@ -40,7 +40,7 @@ export default function LandingPage() {
         </div>
       </div>
       <div id="footer">
-          © 2022 Vapor. A Steam clone made by Jason Vien, Chris Mizell, Jared Kunhart and Damian can fill in his own name.
+          © 2022 Vapor. A Steam clone made by Jason Vien, Chris Mizell, Jared Kunhart and Damian Rojas.
         </div>
         </>
     )
