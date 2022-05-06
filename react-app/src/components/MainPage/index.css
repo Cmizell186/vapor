@@ -49,9 +49,9 @@
 #search_input {
     position: relative;
     top: 1px;
-    right: -25px;
+    right: -35px;
     color: #0e1c25;
-    width: 175px;
+    width: 195px;
     height: 25px;
     font-size: 14px;
     margin-top: 1px;
@@ -72,6 +72,7 @@
 #blank_search {
     position: relative;
     top: 4px;
+    left: 8px;
     background-image: url("../../public/static/images/search_icon_btn.png");
     width: 25px;
     height: 25px;
@@ -396,7 +397,7 @@ a {
 }
 
 #platform {
-    width: 20px;
+    width: 25px;
     height: 20px;
 }
 
