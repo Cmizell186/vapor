@@ -127,13 +127,32 @@ const Cart = () => {
                   {games.length && games.map(game => (
                     // <img alt='' src={`${games?.images[0]?.image}`} />
                     <>
-                      <p>{game?.title}</p>
-                      <p>hello</p>
-                      <img id="carousel-img" alt='' src={`${game?.images[5]?.image}`} />
-                      <div id="spotlight-content"></div>
-                      </>
+                      <Link to={`/games/${game?.id}`}>
+                      <div>
+                        <img id="carousel-img" alt='' src={`${game?.images[5]?.image}`} />
+                      </div>
+                      <div id="spotlight-div">
+                        <h2>WEEKEND DEAL</h2>
+                        <div id="spotlight-inside-div">
+                          Offer ends May 12 @ 10:00am.
+                        </div>
+                        <div id="discount-div">
+                          <div id="discount-div-block">
+                            <div id="discount-pct">
+                              -50%
+                            </div>
+                            <div id="discount-prices">
+                              <div id="discount-og-price">${game?.price * 2}</div>
+                              <div id="discount-after-price">${game?.price}</div>
+                            </div>
+                          </div>
+                        </div>
+                        {/* <p>{game?.title}</p> */}
+                      </div>
+                      </Link>
+                    </>
                   ))}
-                    </Carousel>
+                </Carousel>
 
               </div>
             </div>
