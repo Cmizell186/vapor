@@ -15,7 +15,7 @@ const GameSlider = ({games}) => {
         </div>
         <Carousel
             autoPlay={true}
-            interval={4000}
+            interval={7000}
             stopAutoPlayOnHover={true}
             cycleNavigation={true}
             animation="fade"
