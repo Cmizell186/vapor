@@ -31,3 +31,53 @@ body .game-listing-form-container {
   border: 1px solid #101a22;
   box-shadow: 0 0 50px #304451;
 }
+
+.create_form {
+  /* position: relative; */
+  right: 150px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+  padding: 40px 20px 20px 20px;
+  /* background: radial-gradient(30% 40% at 40% 30%, rgba(33, 36, 41, .5) 0%, rgba(33, 36, 41, 0) 100%) #2124296e; */
+}
+
+.create_form, label {
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  border-radius: 3px;
+  color: #b8b6b4;
+  padding: 8px 6px;
+  display: block;
+  box-shadow: none;
+  width: 100%;
+  border: 1px solid #26282d00;
+  transition: border ease-in-out .5s;
+  outline: none;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+}
+
+.create_input{
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  border-radius: 3px;
+  color: #b8b6b4;
+  padding: 8px 6px;
+  display: block;
+  box-shadow: none;
+  width: 100%;
+  border: 1px solid #26282d00;
+  transition: border ease-in-out .5s;
+  outline: none;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  background-color: #565658;
+
+}
+
+.background_vw_logo {
+  background-image: url("../../public/static/images/vaporworks_img.jpg");
+}

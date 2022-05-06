@@ -62,6 +62,7 @@ const CreateGame = ({ user, loaded }) => {
 
       <VaporWorksModal />
       <div className="game-listing-form-container">
+        <div className="background_vw_logo">
       <div className="user-banner">
           <a href={`/users/${sessionUser.id}`}>
             <div className="profile_avatar_small">
@@ -87,19 +88,20 @@ const CreateGame = ({ user, loaded }) => {
                 className="profile_link_content"
                 href={`/users/${sessionUser.id}`}
               >
-                Reviews
+                Vaporworks
               </a>
             </span>
             <span className="profile_header_arrows">>></span>
             <a
               className="profile_link_content"
-              href="/"
+              href="/games/new"
             >
-              <span className="profile_reviews_text">Game</span>
+              <span className="profile_reviews_text">New</span>
             </a>
           </div>
         </div>
         <div className="game_listing_form_main_body">
+          <div className="create_form">
         <p>
           This area is where you configure the presentation of your product's
           page in the Steam store. Please complete all the fields marked. If you
@@ -117,7 +119,7 @@ const CreateGame = ({ user, loaded }) => {
           )}
           <div className="title-div">
             <label htmlFor="title">Game Name:</label>
-            <input
+            <input className="create_input"
               name="title"
               type="text"
               value={title}
@@ -126,7 +128,7 @@ const CreateGame = ({ user, loaded }) => {
           </div>
           <div className="price-div">
             <label htmlFor="price">Price:</label>
-            <input
+            <input className="create_input"
               name="price"
               type="number"
               value={price}
@@ -136,7 +138,7 @@ const CreateGame = ({ user, loaded }) => {
           <div className="description-div">
             <label htmlFor="description">Description:</label>
             <textarea
-              className="create_textbox"
+              className="create_textbox create_input"
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -144,7 +146,7 @@ const CreateGame = ({ user, loaded }) => {
           </div>
           <div className="release_date-div">
             <label htmlFor="release_date">Release Date:</label>
-            <input
+            <input className="create_input"
               name="release_date"
               type="date"
               value={release_date}
@@ -153,7 +155,7 @@ const CreateGame = ({ user, loaded }) => {
           </div>
           <div className="is_mature-div">
             <label htmlFor="is_mature">Mature Rating?:</label>
-            <input
+            <input className="create_input"
               name="is_mature"
               type="radio"
               value={true}
@@ -164,7 +166,7 @@ const CreateGame = ({ user, loaded }) => {
           {/* prior to s3 integration */}
           <div className="video-div">
             <label htmlFor="video">Trailers or Video clips:</label>
-            <input
+            <input className="create_input"
               name="video"
               type="text"
               multiple
@@ -174,7 +176,7 @@ const CreateGame = ({ user, loaded }) => {
           </div>
           <div className="developer-div">
             <label htmlFor="developer">Developer:</label>
-            <input
+            <input className="create_input"
               name="developer"
               type="text"
               value={developer}
@@ -185,9 +187,10 @@ const CreateGame = ({ user, loaded }) => {
             Submit Game
           </button>
         </form>
-
+        </div>
         </div>
 
+        </div>
         </div>
       </div>
     </>
