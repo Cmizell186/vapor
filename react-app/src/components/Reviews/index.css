@@ -173,7 +173,7 @@ body {
   margin-right: 10px;
 }
 
-.left-offset-review-content-subbody {
+#left-offset-review-content-subbody {
   float: left;
   width: 580px;
   margin: 0;

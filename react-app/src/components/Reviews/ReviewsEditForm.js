@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { update_review } from "../../store/reviews";
 import { Modal } from '../../context/Modal'
-import './reviewstyles.css'
+import './editstyles.css'
 
 const EditReview = ({review, gameId}) => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -45,7 +45,6 @@ const EditReview = ({review, gameId}) => {
     setIs_Recommended(false);
     setContent("");
     setHasSubmitted(false);
-    history.push("/");
   };
 
   return (
@@ -75,7 +74,6 @@ const EditReview = ({review, gameId}) => {
           <a href="/">Rules and Guidelines.</a>
         </p>
         <form onSubmit={handleSubmit} className="review-content-container">
-          <img id="profile_img" src={sessionUser?.profile_picture} alt=""></img>
           <div className="content-div">
             <label htmlFor='content'>
             </label>

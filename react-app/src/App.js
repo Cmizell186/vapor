@@ -91,7 +91,7 @@ function App() {
                 </Route>
                 <Route path='/reviews/:reviewId'>
                   {/* <SubNavBar /> */}
-                  <ReviewDetails />
+                  <ReviewDetails loaded={loaded} />
                 </Route>
                 <ProtectedRoute path='/users' exact={true} >
                   <UsersList />
