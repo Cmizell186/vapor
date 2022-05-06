@@ -222,8 +222,9 @@
   width: 600px;
   margin-bottom: 20px;
   height: fit-content;
-  background-color: rgba(0,0,0,0.35);
+  background-color: #14212c;
   position: relative;
+  text-decoration: none;
 }
 
 .review-box::before {
@@ -236,9 +237,18 @@
   top: 0;
 }
 
+.review-header {
+  display: inline-flex;
+  align-items: flex-start;
+}
+
 .review-list-container {
   display: flex;
   align-items: flex-start;
+}
+
+.profile_box {
+  display: inline-flex;
 }
 
 .profile-pic-box {
@@ -246,10 +256,22 @@
   flex: column;
 }
 
+.review_content_box {
+  padding-left: 15px;
+}
+
 .review-recommendation {
   display: flex;
-  text-align: right;
-  flex-wrap: wrap;
-  width: 400px;
-  padding: 20px;
+  flex-direction: row;
+  height: 54px;
+  background-color: #0e171e;
+  width: 385px;
+}
+
+.review-content {
+  margin: 20px 0;
+  margin-right: 10px;
+  font-size: 0.8rem;
+  color: #DCDEDF;
+  line-height: 1.3;
 }

@@ -148,7 +148,7 @@ body {
   margin: 3px 0 10px 0;
 }
 
-.owner_controls_divider {
+.owner_controls_divider, .page_content_divider {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: -10px;
@@ -182,6 +182,38 @@ body {
 
 }
 
+.game_description_long_body {
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 10px;
+  letter-spacing: 0.03em;
+  font-weight: normal;
+  padding-top: 2px;
+  margin-top: 200px;
+}
+
+.description_box {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  margin-bottom: 20px;
+  height: fit-content;
+  position: relative;
+}
+
+.description_box::before {
+  content: "";
+  background: linear-gradient(to right, #47bfff 30%, rgba(255,255,255,0) 70%);
+  display: block;
+  height: 1px;
+  width: 600px;
+  position: absolute;
+  top: 0;
+}
+
 .review-rating-subbody {
   min-height: 15px;
   background-color: rgba(0, 0, 0, 0.4);
@@ -193,15 +225,6 @@ body {
   display: flex;
 }
 
-.review-rating-subbody::before {
-  content: "";
-  background: linear-gradient(to right, #47bfff 30%, rgba(255,255,255,0) 70%);
-  display: block;
-  height: 1px;
-  width: 600px;
-  position: absolute;
-  top: 0;
-}
 
 .recommendation-subbody {
   background: rgba( 0, 0, 0, 0.2 );
