@@ -136,7 +136,7 @@ const GameDetails = ({user, loaded}) => {
               <Modal onClose={() => setShowModal(false)}>
                 <h2>DELETE GAME LISTING?</h2>
                 <p>
-                  Are you sure you want to remove your game listing from the Stearm Store?
+                  Are you sure you want to remove your game listing from the Steam Store?
                 </p>
                 <div className="modal-content-bttn-ok">
                   <span onClick={() => handleDelete(game.id)}> Ok </span>
@@ -146,21 +146,11 @@ const GameDetails = ({user, loaded}) => {
             )}
           </div>
         )}
+        <div className="user_review_box">
         {loaded && hasReviewed}
         </div>
-      </div>
-        <div className='reviews-container'>
-          <Reviews user={user} filteredReviews={filteredReviews} />
-          {/* {filteredReviews?.map(review =>
-            <div key={review.id}>
-              <h2>
-                {review.content}
-              </h2>
-            </div>
-          )} */}
-        </div>
-        {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
-      {!is_owned && (
+        <div className="add-cart-container">
+        {!is_owned && (
         <div id="add-cart-content">
           <div id="add-cart-div">
             <div id="add-cart-items">
@@ -186,6 +176,29 @@ const GameDetails = ({user, loaded}) => {
           </div>
         </div>
       )}
+      </div>
+        <div className="game_description_long_body">
+              <h4>ABOUT THIS GAME</h4>
+              <div className="description_box">
+              <p>{game?.description}</p>
+              </div>
+        </div>
+        <div className="page_content_divider"></div>
+        <h6>CUSTOMER REVIEWS</h6>
+        <div className='reviews-container'>
+          <Reviews user={user} filteredReviews={filteredReviews} />
+          {/* {filteredReviews?.map(review =>
+            <div key={review.id}>
+            <h2>
+            {review.content}
+            </h2>
+            </div>
+          )} */}
+        </div>
+        </div>
+      </div>
+        {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
+
     </>
   )
 }
