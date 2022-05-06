@@ -176,7 +176,7 @@ const Store = ({user}) => {
         <TabPanel value={value} index={0}>
         {games
             .sort((game1, game2) => new Date(game1.release_date) - new Date(game2.release_date))
-            .map(game => (
+            ?.map(game => (
             <a key={game?.id} className='game_container_link' href={`/games/${game?.id}`}>
             <div id='game_container'>
             <div id='game_container_image'>
@@ -197,7 +197,7 @@ const Store = ({user}) => {
       <TabPanel value={value} index={1}>
       {games
             .sort(() => Math.random() - Math.random())
-            .map(game => (
+            ?.map(game => (
               <a key={game?.id} className='game_container_link' href={`/games/${game?.id}`}>
             <div id='game_container'>
             <div id='game_container_image'>
@@ -218,7 +218,7 @@ const Store = ({user}) => {
       <TabPanel value={value} index={2}>
       {games
             .sort((game1, game2) => (game1.price) - (game2.price))
-            .map(game => (
+            ?.map(game => (
             <a key={game?.id} className='game_container_link' href={`/games/${game?.id}`}>
             <div key={game?.id} id='game_container'>
             <div id='game_container_image'>
