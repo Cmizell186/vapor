@@ -28,7 +28,7 @@ const SearchBar = () => {
                 <div id="search_div">
                     <input placeholder='search' id="search_input"></input>
                     <a id="blank_link" href='/library'>
-                        <img id='blank_search' src="/static/images/blank.png"></img>
+                        <img alt='' id='blank_search' src="/static/images/blank.png"/>
                     </a>
                 </div>
                 </div>
