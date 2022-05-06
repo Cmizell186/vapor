@@ -42,6 +42,11 @@ const ReviewDetails = ({ loaded }) => {
     } else {
       show.style.display = "none";
       setFormDiv(false);
+      return (
+        <>
+          <EditReview  review={review} gameId={gameId} />
+        </>
+      )
     }
   };
 
@@ -149,18 +154,12 @@ const ReviewDetails = ({ loaded }) => {
                       src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_edit.png"
                       alt=""
                     />
-                    {/* <ReviewEditModal
-                    review={review}
-                    user={{ ...sessionUser }}
-                    gameId={gameId}
-                  >Update Review
-                  </ReviewEditModal> */}
-
                     <a href="#" onClick={() => showForm()}>
                       Update Review
                     </a>
                   </div>
                   <div className="owner_controls_divider"></div>
+
                   <a
                     href="#"
                     onClick={(e) => setShowModal(true)}
@@ -175,12 +174,13 @@ const ReviewDetails = ({ loaded }) => {
                   </a>
                   {showModal && (
                     <Modal onClose={() => setShowModal(false)}>
+                      <div className="delete-review-form">
                       <h2>DELETE REVIEW?</h2>
                       <p>
                         Are you sure you want to delete this review? This cannot
                         be undone
                       </p>
-                      <div className="modal-content-bttn-ok">
+                      <div className="modal-content-bttns">
                         <span onClick={() => handleDelete(review.id)}>
                           {" "}
                           Ok{" "}
@@ -189,6 +189,7 @@ const ReviewDetails = ({ loaded }) => {
                           {" "}
                           Cancel{" "}
                         </span>
+                      </div>
                       </div>
                     </Modal>
                   )}
