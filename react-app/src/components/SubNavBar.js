@@ -1,6 +1,5 @@
 import { get_all_carts } from '../store/cart'
 import '../../src/components/LandingPage/index.css'
-import { Link } from 'react-router-dom'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -10,6 +9,7 @@ const SearchBar = () => {
     const cart_entries = useSelector(state => Object.values(state.carts))
     const user_cart = cart_entries.filter(entry => entry.user_id === sessionUser.id && !entry.is_owned)
     // nice work man ! <3
+    // thank you <3
     useEffect(() => {
         dispatch(get_all_carts())
       }, [dispatch])
