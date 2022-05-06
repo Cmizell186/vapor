@@ -78,7 +78,6 @@ input[type="file"] {
     transition: none;
     background: linear-gradient( to right, #75b022 5%, #75b022 95%);
     cursor: pointer;
-
 }
 
 /* delete-gameimage-form css*/
