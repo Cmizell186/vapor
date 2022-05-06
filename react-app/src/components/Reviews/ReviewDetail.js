@@ -42,12 +42,16 @@ const ReviewDetails = ({ loaded }) => {
     } else {
       show.style.display = "none";
       setFormDiv(false);
+      return (
+        <>
+          <EditReview  review={review} gameId={gameId} />
+        </>
+      )
     }
   };
 
   return (
     <>
-    
       <div className="content-body">
         <div className="user-banner">
           <a href={`/users/${sessionUser.id}`}>

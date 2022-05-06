@@ -4,8 +4,8 @@ import { useHistory } from "react-router-dom";
 import { create_game } from "../../store/game";
 import VaporWorksModal from "./VaporworksModal";
 import { Modal } from "../../context/Modal";
-
-const CreateGame = () => {
+import "./create.css";
+const CreateGame = ({ user, loaded }) => {
     const sessionUser = useSelector((state) => state.session.user);
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
@@ -59,16 +59,54 @@ const CreateGame = () => {
 
   return (
     <>
-    {showModal && (
+
       <VaporWorksModal />
-    )}
       <div className="game-listing-form-container">
+      <div className="user-banner">
+          <a href={`/users/${sessionUser.id}`}>
+            <div className="profile_avatar_small">
+              <img
+                id="profile_img_small"
+                src={sessionUser?.profile_picture}
+                alt=""
+              ></img>
+            </div>
+          </a>
+          <div className="profile_header_links">
+            <span className="profile_header_name">
+              <a
+                className="profile_link_content"
+                href={`/users/${sessionUser.id}`}
+              >
+                {sessionUser.username}
+              </a>
+            </span>
+            <span className="profile_header_arrows">>></span>
+            <span className="profile_reviews_text">
+              <a
+                className="profile_link_content"
+                href={`/users/${sessionUser.id}`}
+              >
+                Reviews
+              </a>
+            </span>
+            <span className="profile_header_arrows">>></span>
+            <a
+              className="profile_link_content"
+              href="/"
+            >
+              <span className="profile_reviews_text">Game</span>
+            </a>
+          </div>
+        </div>
+        <div className="game_listing_form_main_body">
         <p>
           This area is where you configure the presentation of your product's
           page in the Steam store. Please complete all the fields marked. If you
           need help, check out the Store Page Best Practices documentation for a
           video walkthrough of configuring your store page.
         </p>
+        <div className="form_body">
         <form onSubmit={handleSubmit} className="add-game-container">
           {hasSubmitted && (
             <div className="error">
@@ -147,6 +185,10 @@ const CreateGame = () => {
             Submit Game
           </button>
         </form>
+
+        </div>
+
+        </div>
       </div>
     </>
   );

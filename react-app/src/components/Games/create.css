@@ -1,0 +1,33 @@
+body .game-listing-form-container {
+  background-color: white !important;
+}
+
+.vaporworks_welcome_text {
+  margin: 0 auto;
+  max-width: 948px;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  width: 948px;
+  background: none;
+  background-image: linear-gradient(to bottom,#243445, #101a22 25% );
+  background-repeat: no-repeat, repeat-y;
+  background-position: bottom center, center;
+  width: 926px;
+  padding: 12px 12px 128px 12px;
+  border: 1px solid #101a22;
+  box-shadow: 0 0 50px #304451;
+}
+
+.game_listing_form_main_body {
+  margin: 0 auto;
+  min-height: 948px;
+  background: none;
+  background-image: linear-gradient(to bottom,#243445, #101a22 25% );
+  background-repeat: no-repeat, repeat-y;
+  background-position: bottom center, center;
+  width: 926px;
+  padding: 12px 12px 128px 12px;
+  border: 1px solid #101a22;
+  box-shadow: 0 0 50px #304451;
+}
