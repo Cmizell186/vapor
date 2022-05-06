@@ -272,3 +272,35 @@ body {
   margin-top: 40px;
   color: #61686d;
 }
+
+.delete-review-form {
+  height: 200px;
+  width: 500px;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+}
+
+.modal-content-bttns {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
+
+.modal-content-bttns > span {
+  background-color: #a4d007;
+  background: -webkit-linear-gradient( top, #32363f 5%, #588a1b 95%);
+  background: linear-gradient( to bottom, #32363f 5%, #588a1b 95%);
+  background: linear-gradient( to right, #75b022 5%, #75b022 95%);
+  border: none;
+  border-radius: 2px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+  margin-right: 15px;
+}
+.modal-content-bttns > span:hover{
+  transition: none;
+  background: linear-gradient( to right, #d11a2a 5%, #d11a2a 95%);
+}
