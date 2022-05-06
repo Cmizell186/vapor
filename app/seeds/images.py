@@ -2,6 +2,8 @@ from app.models import db
 from app.models.image import Image
 
 def seed_images():
+
+  # Elden Ring
   game1_image1 = Image(
     image = "https://vaporgames.s3.us-west-1.amazonaws.com/eldenring1.png",
     user_id = 2,
@@ -32,7 +34,14 @@ def seed_images():
       user_id = 2,
       game_id = 1
   )
+  game1_image7 = Image(
+      image="https://vaporgames.s3.us-west-1.amazonaws.com/elden_ring_7.png",
+      user_id = 2,
+      game_id = 1
+  )
 
+
+  # death stranding
   game2_image1 = Image(
       image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding1.jpg",
       user_id = 3,
@@ -63,7 +72,13 @@ def seed_images():
       user_id = 3,
       game_id = 2
   )
+  game2_image7 = Image(
+      image="https://vaporgames.s3.us-west-1.amazonaws.com/death_stranding_7.png",
+      user_id = 3,
+      game_id = 2
+  )
 
+  # forza horizon
   game3_image1 = Image(
       image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon1.jpg",
       user_id = 4,
@@ -94,7 +109,14 @@ def seed_images():
       user_id = 4,
       game_id = 3
   )
+  game3_image7 = Image(
+      image="https://vaporgames.s3.us-west-1.amazonaws.com/forza_horizon5_7.jpg",
+      user_id = 4,
+      game_id = 3
+  )
 
+
+  # Skyrim VR
   game4_image1 = Image(
       image = "https://vaporgames.s3.us-west-1.amazonaws.com/skyrimvr1.jpg",
       user_id = 5,
@@ -125,7 +147,14 @@ def seed_images():
       user_id = 5,
       game_id = 4
   )
+  game4_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/elder_scrollsv_7.png",
+      user_id = 5,
+      game_id = 4
+  )
 
+
+  # dynasty warriors
   game5_image1 = Image(
       image = "https://vaporgames.s3.us-west-1.amazonaws.com/dynastywarriors1.jpg",
       user_id = 4,
@@ -153,10 +182,17 @@ def seed_images():
   )
   game5_image6 = Image(
       image = "https://vaporgames.s3.us-west-1.amazonaws.com/dynastywarriors6.jpg",
-      user_id = 5,
-      game_id = 4
+      user_id = 4,
+      game_id = 5
+  )
+  game5_image7 = Image(
+      image ="https://vaporgames.s3.us-west-1.amazonaws.com/dynast_warriors_extremelegends_7.png",
+      user_id= 4,
+      game_id = 5
   )
 
+
+  # attack on titans
   game6_image1= Image(
       image="https://vaporgames.s3.us-west-1.amazonaws.com/attackontitan1.jpg",
       user_id = 2,
@@ -187,8 +223,14 @@ def seed_images():
       user_id = 2,
       game_id = 6,
   )
+  game6_image7 = Image(
+      image="https://vaporgames.s3.us-west-1.amazonaws.com/attackontitan_7.png",
+      user_id = 2,
+      game_id = 6
+  )
 
 
+  # dune spice wars
   game7_image1 = Image(
       image="https://vaporgames.s3.us-west-1.amazonaws.com/dune1.jpg",
       user_id = 3,
@@ -219,7 +261,14 @@ def seed_images():
       user_id = 3,
       game_id = 7,
   )
+  game7_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/dunce_spicewars_7.png",
+      user_id = 3,
+      game_id = 7
+  )
 
+
+  # star wars battlefront
   game8_image1 = Image(
       image="https://vaporgames.s3.us-west-1.amazonaws.com/starwarsbattlefront1.jpg",
       user_id=1,
@@ -250,7 +299,14 @@ def seed_images():
       user_id=1,
       game_id=8,
   )
+  game8_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/star_wars_battlefront_II_7.png",
+      user_id = 1,
+      game_id = 8
+  )
 
+
+  # fifa
   game9_image1 = Image(
       image="https://vaporgames.s3.us-west-1.amazonaws.com/fifa221.jpg",
       user_id=2,
@@ -281,7 +337,14 @@ def seed_images():
       user_id=2,
       game_id=9
   )
+  game9_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/fifa22_7.jpg",
+      user_id = 2,
+      game_id = 9
+  )
 
+
+  # madden nfl
   game10_image1 = Image(
       image="https://vaporgames.s3.us-west-1.amazonaws.com/madden221.jpg",
       user_id=2,
@@ -312,18 +375,23 @@ def seed_images():
       user_id=2,
       game_id=10
   )
+  game10_image7 = Image(
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/madden22_7.jpg",
+      user_id = 2,
+      game_id = 10
+  )
 
 
-  db.session.add_all([ game1_image1, game1_image2, game1_image3, game1_image4, game1_image5, game1_image6,
-                       game2_image1, game2_image2, game2_image3, game2_image4, game2_image5, game2_image6,
-                       game3_image1, game3_image2, game3_image3, game3_image4, game3_image5, game3_image6,
-                       game4_image1, game4_image2, game4_image3, game4_image4, game4_image5, game4_image6,
-                       game5_image1, game5_image2, game5_image3, game5_image4, game5_image5, game5_image6,
-                       game6_image1, game6_image2, game6_image3, game6_image4, game6_image5, game6_image6,
-                       game7_image1, game7_image2, game7_image3, game7_image4, game7_image5, game7_image6,
-                       game8_image1, game8_image2, game8_image3, game8_image4, game8_image5, game8_image6,
-                       game9_image1, game9_image2, game9_image3, game9_image4, game9_image5, game9_image6,
-                       game10_image1, game10_image2, game10_image3, game10_image4, game10_image5, game10_image6,])
+  db.session.add_all([ game1_image1, game1_image2, game1_image3, game1_image4, game1_image5, game1_image6, game1_image7,
+                       game2_image1, game2_image2, game2_image3, game2_image4, game2_image5, game2_image6, game2_image7,
+                       game3_image1, game3_image2, game3_image3, game3_image4, game3_image5, game3_image6, game3_image7,
+                       game4_image1, game4_image2, game4_image3, game4_image4, game4_image5, game4_image6, game4_image7,
+                       game5_image1, game5_image2, game5_image3, game5_image4, game5_image5, game5_image6, game5_image7,
+                       game6_image1, game6_image2, game6_image3, game6_image4, game6_image5, game6_image6, game6_image7,
+                       game7_image1, game7_image2, game7_image3, game7_image4, game7_image5, game7_image6, game7_image7,
+                       game8_image1, game8_image2, game8_image3, game8_image4, game8_image5, game8_image6, game8_image7,
+                       game9_image1, game9_image2, game9_image3, game9_image4, game9_image5, game9_image6, game9_image7,
+                       game10_image1, game10_image2, game10_image3, game10_image4, game10_image5, game10_image6, game10_image7,])
   db.session.commit()
 
 def undo_images():
