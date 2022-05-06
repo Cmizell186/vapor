@@ -85,7 +85,7 @@ const Store = ({user}) => {
           >
             {value === index && (
               <Box sx={{ p: 3 }}>
-                <Typography>{children}</Typography>
+                <Typography component={'span'} variant={'body2'}>{children}</Typography>
               </Box>
             )}
           </div>
@@ -177,8 +177,8 @@ const Store = ({user}) => {
         {games
             .sort((game1, game2) => new Date(game1.release_date) - new Date(game2.release_date))
             .map(game => (
-            <a id='game_container_link' href={`/games/${game?.id}`}>
-            <div key={game?.id} id='game_container'>
+            <a key={game?.id} className='game_container_link' href={`/games/${game?.id}`}>
+            <div id='game_container'>
             <div id='game_container_image'>
                 <img alt='' src={game?.images[0]?.image} />
             </div>
@@ -198,7 +198,8 @@ const Store = ({user}) => {
       {games
             .sort(() => Math.random() - Math.random())
             .map(game => (
-            <div key={game?.id} id='game_container'>
+              <a key={game?.id} className='game_container_link' href={`/games/${game?.id}`}>
+            <div id='game_container'>
             <div id='game_container_image'>
                 <img alt='' src={game?.images[0]?.image} />
             </div>
@@ -211,12 +212,14 @@ const Store = ({user}) => {
             <div id='game_container_tags'>{game?.tags.map(tag => tag.genres.title).join(", ")}</div>
             </div>
             </div>
+            </a>
         ))}
       </TabPanel>
       <TabPanel value={value} index={2}>
       {games
             .sort((game1, game2) => (game1.price) - (game2.price))
             .map(game => (
+            <a key={game?.id} className='game_container_link' href={`/games/${game?.id}`}>
             <div key={game?.id} id='game_container'>
             <div id='game_container_image'>
                 <img alt='' src={game?.images[0]?.image} />
@@ -230,6 +233,7 @@ const Store = ({user}) => {
             <div id='game_container_tags'>{game?.tags.map(tag => tag.genres.title).join(", ")}</div>
             </div>
             </div>
+            </a>
         ))}
       </TabPanel>
         </div>
