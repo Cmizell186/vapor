@@ -48,7 +48,7 @@ const ReviewDetails = () => {
               <p>No one has rated this review as helpful yet</p>
             </div>
             <div className="recommendation-subbody">
-              <img id="thumb_img" src="static/images/thumbs.png" alt=""></img>
+              <img id="thumb_img" src="/static/images/thumbs.png" alt=""></img>
               <h2>{recommendation()}</h2>
             </div>
             <p>{review?.content}</p>
