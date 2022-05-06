@@ -46,7 +46,7 @@ const GameSlider = ({games}) => {
         >
           {games.map(game => (
             <div key={game?.id}>
-              <Link to={`/games/${game.id}`}>
+              <Link to={`/games/${game?.id}`}>
             <div id='carousel_content'>
             <div id='game_img_main'><img alt='' className='game_image_main' id='game_image_main' src={game?.images[0]?.image}></img></div>
             <div id='game_info_div'>
@@ -63,7 +63,7 @@ const GameSlider = ({games}) => {
             </div>
             </div>
             <p>Now Available</p>
-            {game.price}
+            {game?.price}
             </div>
             </div>
             </Link>
