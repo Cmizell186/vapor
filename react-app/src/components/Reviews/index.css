@@ -86,19 +86,21 @@ body {
   position: relative;
 }
 
-.left-offset-review-content-subbody {
+#left-offset-review-content-text {
   float: left;
   width: 580px;
   margin: 0;
   padding: 0;
   padding-right: 0px;
-
 }
 
-.recommendation-subbody {
-  display: inline-flex;
+#left-offset-review-content-edit {
+  float: left;
+  width: 580px;
+  margin: 0;
+  padding: 0;
+  padding-right: 0px;
 }
-
 
 .right-offset-detail-subbody {
   position: relative;
@@ -112,7 +114,10 @@ body {
   margin-bottom: 16px;
   background-color: #101921;
   padding-bottom: 6px;
+}
 
+.recommendation-subbody {
+  display: inline-flex;
 }
 
 .game-review-links {
@@ -171,15 +176,6 @@ body {
 .owner_action_img {
   vertical-align: middle;
   margin-right: 10px;
-}
-
-#left-offset-review-content-subbody {
-  float: left;
-  width: 580px;
-  margin: 0;
-  padding: 0;
-  padding-right: 0px;
-
 }
 
 .game_description_long_body {

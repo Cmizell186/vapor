@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { update_review } from "../../store/reviews";
-import { Modal } from '../../context/Modal'
 import './editstyles.css'
 
 const EditReview = ({review, gameId}) => {
@@ -12,11 +11,9 @@ const EditReview = ({review, gameId}) => {
   const games = useSelector((state) => state.session.user);
   const game = games[id];
   const dispatch = useDispatch();
-  const history = useHistory();
   const [is_recommended, setIs_Recommended] = useState(
     review?.is_recommended
   );
-  const [showModal, setShowModal] = useState(false)
   const [content, setContent] = useState(review?.content);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -27,7 +24,6 @@ const EditReview = ({review, gameId}) => {
   if (!content) ourErrors.push("Please provide what you liked or disliked about this game and whether you recommend it to others.")
   if (is_recommended === null) ourErrors.push("Please provide either recommended or not recommended.")
   if (ourErrors.length) {
-    setShowModal(true)
     return setErrors(ourErrors)
   }
 
@@ -49,30 +45,7 @@ const EditReview = ({review, gameId}) => {
 
   return (
     <>
-      {hasSubmitted && showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <div className="modal-content-text">
-            <h2>WRITE A REVIEW FOR {currentGame.title.toUpperCase()}</h2>
-            <div className="error-modal">
-              {errors.map((error, index) => (
-                <div key={index}>{error}</div>
-              ))}
-            </div>
-            <div className="modal-content-bttn-ok">
-                <span onClick={e => setShowModal(false)}>OK</span>
-            </div>
-          </div>
-
-        </Modal>
-      )}
       <div className="review-form-container">
-        <h4>WRITE A REVIEW FOR {currentGame?.title.toUpperCase()}</h4>
-        <p>Please describe what you liked or disliked about this game
-          and whether you recommend it to others.
-          <br/>
-          Please remember to be polite and follow the
-          <a href="/">Rules and Guidelines.</a>
-        </p>
         <form onSubmit={handleSubmit} className="review-content-container">
           <div className="content-div">
             <label htmlFor='content'>
@@ -119,7 +92,7 @@ const EditReview = ({review, gameId}) => {
             </button>
           <button className="button btn-submit-review" type="submit">
             <span>
-            Post Review
+            Update Review
             </span>
           </button>
           </div>

@@ -19,6 +19,7 @@ import Cart from './components/Carts/Cart'
 import Store from './components/MainPage';
 import SubNavBar from './components/SubNavBar'
 import Library from './components/Library';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -89,13 +90,16 @@ function App() {
                   {/* <SubNavBar /> */}
                   <ReviewDetails loaded={loaded} />
                 </Route>
-                <ProtectedRoute path='/users' exact={true} >
+                {/* <ProtectedRoute path='/users' exact={true} >
                   <UsersList />
-                </ProtectedRoute>
+                </ProtectedRoute> */}
                 <ProtectedRoute path='/users/:userId' exact={true}>
                   <User users={user} />
                   <SingleImage />
                 </ProtectedRoute>
+      <Route>
+        <ErrorPage/>
+      </Route>
               </Switch>
             </>
             : <Redirect to="/" />}
