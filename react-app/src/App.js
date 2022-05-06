@@ -61,7 +61,7 @@ function App() {
             <Library user={user} />
           </ProtectedRoute>
           <ProtectedRoute path="/games/new">
-            <SubNavBar />
+            {/* <SubNavBar /> */}
             <GameListingForm user={user} />
           </ProtectedRoute>
           <ProtectedRoute exact path='/images' user={user}>

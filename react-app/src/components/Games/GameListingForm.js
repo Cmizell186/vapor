@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { create_game } from "../../store/game";
+import VaporWorksModal from "./VaporworksModal";
+import { Modal } from "../../context/Modal";
 
 const CreateGame = () => {
     const sessionUser = useSelector((state) => state.session.user);
@@ -11,7 +13,7 @@ const CreateGame = () => {
     const [release_date, setRelease_Date] = useState("");
     const [is_mature, setIs_Mature] = useState(null);
     const [video, setVideo] = useState([]);
-
+    const [showModal, setShowModal] = useState(true);
     const [developer, setDeveloper] = useState("");
     const [errors, setErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -57,6 +59,9 @@ const CreateGame = () => {
 
   return (
     <>
+    {showModal && (
+      <VaporWorksModal />
+    )}
       <div className="game-listing-form-container">
         <p>
           This area is where you configure the presentation of your product's

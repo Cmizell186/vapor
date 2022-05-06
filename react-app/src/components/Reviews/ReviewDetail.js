@@ -47,6 +47,7 @@ const ReviewDetails = ({ loaded }) => {
 
   return (
     <>
+    
       <div className="content-body">
         <div className="user-banner">
           <a href={`/users/${sessionUser.id}`}>
