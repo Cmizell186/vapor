@@ -150,13 +150,6 @@ const ReviewDetails = ({ loaded }) => {
                       src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_edit.png"
                       alt=""
                     />
-                    {/* <ReviewEditModal
-                    review={review}
-                    user={{ ...sessionUser }}
-                    gameId={gameId}
-                  >Update Review
-                  </ReviewEditModal> */}
-
                     <a href="#" onClick={() => showForm()}>
                       Update Review
                     </a>

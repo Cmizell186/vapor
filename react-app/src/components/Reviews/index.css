@@ -299,8 +299,10 @@ body {
   font-size: 16px;
   box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
   margin-right: 15px;
+
 }
 .modal-content-bttns > span:hover{
   transition: none;
   background: linear-gradient( to right, #d11a2a 5%, #d11a2a 95%);
+  cursor: pointer;
 }
