@@ -78,19 +78,19 @@ const GameDetails = ({user, loaded}) => {
   }
   // refactor  this junk
   let hasReviewed;
-  if (sessionUser && sessionUser?.id === userReview[0]?.user_id) {
+   (sessionUser && sessionUser?.id === userReview[0]?.user_id) ?
     hasReviewed = (
       <>
         <ReviewSummary review={userReview[0]} />
       </>
     )
-  } else {
+  :
     hasReviewed = (
       <>
         <ReviewGame gameId={gameId} />
       </>
     )
-  }
+
 
   const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
 

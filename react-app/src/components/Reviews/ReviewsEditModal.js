@@ -7,7 +7,7 @@ const ReviewsEditModal = ({ user, review, gameId }) => {
 
   return (
     <>
-      <a href="#" className='edit_button' onClick={() => setShowModal(true)} />
+      <a href="#" className='edit_button' onClick={() => setShowModal(true)}>Update Review</a>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <EditReview review={review} hideModal={() => setShowModal(false)} gameId={gameId} />

@@ -87,18 +87,6 @@ body {
 }
 
 .left-offset-review-content-subbody {
-  /* display: flex;
-  flex-flow: column;
-  align-items: center;
-  background-color: #1b2838;
-  color: white;
-  font-family: "Motiva Sans", Sans-serif;
-  display: flex;
-  width: 640px;
-  height: 444px;
-  background-color: #0e0e0f42;
-  align-items: flex-start;
-  padding: 5px; */
   float: left;
   width: 580px;
   margin: 0;
@@ -113,20 +101,13 @@ body {
 
 
 .right-offset-detail-subbody {
-  /* display: flex;
-  flex-flow: column;
-
-  min-width: 440px;
-  color: white;
-  text-decoration: none;
-  padding: 5px; */
-  /* background-image: linear-gradient(to bottom right,#5f5f5f00, #0000009c ); */
   position: relative;
   float: right;
   width: 295px;
   margin: 0;
   padding: 0;
   padding-top: 0px;
+  margin-left: 20px;
   z-index: 20;
   margin-bottom: 16px;
   background-color: #101921;
@@ -199,4 +180,72 @@ body {
   padding: 0;
   padding-right: 0px;
 
+}
+
+.review-rating-subbody {
+  min-height: 15px;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  color: #898A8C;
+  padding: 4px 6px 4px 6px;
+  margin-bottom: 8px;
+  line-height: 20px;
+  display: flex;
+}
+
+.review-rating-subbody::before {
+  content: "";
+  background: linear-gradient(to right, #47bfff 30%, rgba(255,255,255,0) 70%);
+  display: block;
+  height: 1px;
+  width: 600px;
+  position: absolute;
+  top: 0;
+}
+
+.recommendation-subbody {
+  background: rgba( 0, 0, 0, 0.2 );
+  width: 580px;
+}
+
+
+.recommendation-summary > p {
+  float: right;
+  margin-right: 5px;
+  margin-top: 15px;
+  opacity: 0.5;
+  width: auto;
+  height: auto;
+}
+
+.recommendation-summary > img {
+  margin-right: 10px;
+  width: 44px;
+  height: 44px;
+}
+
+.review-rating {
+  font-size: 16px;
+  color: #D6D7D8;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+}
+
+.review-detail-content {
+  font-size: 13px;
+  line-height: 17px;
+  color: #acb2b8;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+.review_comments_header {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 16px;
+  margin-top: 40px;
+  color: #61686d;
 }

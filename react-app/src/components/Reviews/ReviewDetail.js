@@ -61,13 +61,24 @@ const ReviewDetails = () => {
         <div className="review-detail-container">
           <div className="left-offset-review-content-subbody">
             <div className="review-rating-subbody">
-              <p>No one has rated this review as helpful yet</p>
+              No one has rated this review as helpful yet
             </div>
             <div className="recommendation-subbody">
-              <img id="thumb_img" src="/images/thumbs.png" alt=""></img>
-              <h2>{recommendation()}</h2>
+              <div className="recommendation-summary">
+              <img src={review?.is_recommended
+                 ? "https://store.cloudflare.steamstatic.com/public/shared/images/userreviews/icon_thumbsUp.png"
+                 : "https://community.cloudflare.steamstatic.com/public/shared/images/userreviews/icon_thumbsDown.png?v=1"
+                }
+                width="44" height="44" alt=""
+              />
+              </div>
+              <div className="review-rating">{recommendation()}</div>
             </div>
+            <div className="recommendation-created-at"></div>
+            <div className="review-detail-content">
             <p>{review?.content}</p>
+            </div>
+            <div className="review_comments_header">Comments are disabled for this review.</div>
           </div>
           <div className="right-offset-detail-subbody">
             <div className="game-review-links">
@@ -91,12 +102,12 @@ const ReviewDetails = () => {
                   <img className="owner_action_img"
                     src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_edit.png"
                     alt="" />
-                    Update Review
                   <ReviewEditModal
                     review={review}
                     user={{ ...sessionUser }}
                     gameId={gameId}
-                  />
+                  >Update Review
+                  </ReviewEditModal>
                 </div>
                 <div className="owner_controls_divider"></div>
                 <a href="#"
