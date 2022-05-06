@@ -36,7 +36,7 @@
     margin-bottom: 18px;
 }
 
-#sign_in_button {
+.sign_in_button {
     padding: 3px 80px;
     font-size: 15px;
     line-height: 15px;

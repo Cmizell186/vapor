@@ -34,63 +34,63 @@ def seed_images():
   )
 
   game2_image1 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding1.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon1.jpg",
       user_id = 3,
       game_id = 2
   )
   game2_image2 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding2.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon2.jpg",
       user_id = 3,
       game_id = 2
   )
   game2_image3 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding3.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon3.jpg",
       user_id = 3,
       game_id = 2
   )
   game2_image4 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding4.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon4.jpg",
       user_id = 3,
       game_id = 2
   )
   game2_image5 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding5.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon5.jpg",
       user_id = 3,
       game_id = 2
   )
   game2_image6 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding6.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon6.jpg",
       user_id = 3,
       game_id = 2
   )
 
   game3_image1 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon1.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding1.jpg",
       user_id = 4,
       game_id = 3
   )
   game3_image2 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon2.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding2.jpg",
       user_id = 4,
       game_id = 3
   )
   game3_image3 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon3.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding3.jpg",
       user_id = 4,
       game_id = 3
   )
   game3_image4 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon4.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding4.jpg",
       user_id = 4,
       game_id = 3
   )
   game3_image5 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon5.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding5.jpg",
       user_id = 4,
       game_id = 3
   )
   game3_image6 = Image(
-      image = "https://vaporgames.s3.us-west-1.amazonaws.com/forzahorizon6.jpg",
+      image = "https://vaporgames.s3.us-west-1.amazonaws.com/deathstranding6.jpg",
       user_id = 4,
       game_id = 3
   )

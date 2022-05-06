@@ -347,7 +347,7 @@ a {
     color: black;
 }
 
-#game_container_link:hover {
+.game_container_link:hover {
     background: rgba( 0, 0, 0, 0.4 );
     text-decoration: none;
 }

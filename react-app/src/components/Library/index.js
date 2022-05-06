@@ -20,6 +20,7 @@ const Library = ({user}) => {
 // {new Date(game?.release_date).toLocaleDateString('en-US', DATE_OPTIONS)}
 // 6th picture? should be 600x900
   return (
+    <>
     <div id="library_container">
     <div id="library_content">
     <div id="library">
@@ -27,7 +28,7 @@ const Library = ({user}) => {
     <div className="games" key={game?.id}>
     <div id="game_tile">
     <a href={`/games/${game.id}`}>
-    <div class="game"><img src={game?.images[0]?.image} alt="" /></div>
+    <div className="game"><img src={game?.images[5]?.image} alt="" /></div>
     <div id="library_game_title_div">
         <div id="library_game_title">
         {game?.title}
@@ -40,6 +41,7 @@ const Library = ({user}) => {
 </div>
 </div>
 </div>
+</>
   )
 }
 
