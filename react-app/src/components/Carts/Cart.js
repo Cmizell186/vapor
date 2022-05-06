@@ -95,9 +95,30 @@ const Cart = () => {
                 </div>
                 <div id="total-div-actions">
                   <span id={user_cart.length ? 'is-active-total-bttns' : ''} onClick={handlePurchaseCart}>Purchase</span>
-                  {/* <span>maybe delete</span> */}
                 </div>
               </div>
+              <div id="tax-notice-div">
+                Sales tax will be calculated during checkout where applicable
+              </div>
+              <div>
+                <Link to={'/games'}>
+                  <span id="continue-shopping-div">
+                    Continue Shopping
+                  </span>
+                </Link>
+              </div>
+              <div id="botom-content-div">
+                <div id="bottom-content-title">
+                  <h2>Delivery</h2>
+              </div>
+                <div id="bottom-content-main">
+                  <img alt='' src="/static/images/vapor_logo.png" />
+                  <div id="bottom-content-info">
+                  <h4>All digital games are just for show.</h4>
+                  <p>Vapor does not take any form of payment.</p>
+                  </div>
+                </div>
+                </div>
             </div>
             <div className="right-content">
               {/* <div className="right-content-divs">
@@ -123,7 +144,7 @@ const Cart = () => {
                   swipe={true}
                 >
                   {games.length && games.map(game => (
-                    <>
+                    <div key={game?.id}>
                       <Link to={`/games/${game?.id}`}>
                         <div>
                           <img id="carousel-img" alt='' src={`${game?.images[6]?.image}`} />
@@ -146,10 +167,9 @@ const Cart = () => {
                           </div>
                         </div>
                       </Link>
-                    </>
+                    </div>
                   ))}
                 </Carousel>
-
               </div>
             </div>
           </div>
