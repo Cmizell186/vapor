@@ -33,5 +33,5 @@ def seed_userImages():
     db.session.commit()
 
 def undo_userImages():
-    db.session.execute('TRUNCATE userImages RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE user_images RESTART IDENTITY CASCADE;')
     db.session.commit()
