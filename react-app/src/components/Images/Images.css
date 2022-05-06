@@ -1,0 +1,42 @@
+input[type="file"] {
+    display: none;
+}
+
+.choose-profile-image{
+    background: #75b022;
+    background: linear-gradient( to right, #32363f 5%, #32363f 95%);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 10px 13px;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+
+    font-family: "Motiva Sans", Sans-serif;
+}
+.choose-profile-image:hover{
+    transition: none;
+    background: linear-gradient( to right, #75b022 5%, #75b022 95%);
+    cursor: pointer;
+
+}
+
+
+.profile-image-input{
+    background: linear-gradient( to right, #32363f 5%, #32363f 95%);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 10px 10px;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+    margin-top: 15px;
+    font-family: "Motiva Sans", Sans-serif;
+}
+
+.profile-image-input:hover{
+    transition: none;
+    background: linear-gradient( to right, #75b022 5%, #75b022 95%);
+    cursor: pointer;
+
+}
