@@ -136,7 +136,6 @@
 }
 
 #carousel_content {
-    display: flex;
     background-image: url("../../public/static/images/background_maincap_2.jpg");
     background-repeat: no-repeat;
     background-position: right;
@@ -146,6 +145,7 @@
     box-shadow: 0 0 7px 0px #000;
     overflow: hidden;
     box-shadow: 0 0 10px 5px #000;
+    min-width: 940px;
 }
 
 #game_image_carousel {
