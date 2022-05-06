@@ -43,11 +43,11 @@ def upload_image(id):
         return upload, 400
 
     url = upload["url"]
-    # flask_login allows us to get the current user from the request
-    new_image = UserImage(image=url, user_id=id)
-    db.session.add(new_image)
+    updated_pfp = UserImage.query.filter(UserImage.user_id==id).one()
+    print(updated_pfp.to_dict())
+    updated_pfp.image = url
     db.session.commit()
-    return new_image.to_dict()
+    return updated_pfp.to_dict()
 
 
 

@@ -1,11 +1,10 @@
 import email
 from flask import Blueprint, jsonify, redirect, session, request
-from app.models import User, db
+from app.models import User, db, UserImage
 from app.forms import LoginForm
 from app.forms import SignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.s3config import (
-    upload_file_to_s3, allowed_file, get_unique_filename)
+
 
 
 auth_routes = Blueprint('auth', __name__)
@@ -82,6 +81,9 @@ def sign_up():
             password=form.data['password']
         )
         db.session.add(user)
+        db.session.commit()
+        new_user_image = UserImage(image="https://vaporgames.s3.us-west-1.amazonaws.com/default_user.jpg", user_id=user.id)
+        db.session.add(new_user_image)
         db.session.commit()
         login_user(user)
         return user.to_dict()
