@@ -1,6 +1,6 @@
 #main {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 #main_page {
@@ -133,6 +133,10 @@
     background-size: cover;
     background-position: center;
     transition: opacity 300ms;
+}
+
+#carousel_content_main {
+    min-width: 940px;
 }
 
 #carousel_content {

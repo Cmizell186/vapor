@@ -14,7 +14,7 @@ const GameSlider = ({games}) => {
   return (
     <div id='carousel'>
       <div id='prev_button_div'>
-        <div id='prev_button' onClick={() => setIndex(i => i - 1)}><img src='static/images/leftarrow.png' alt='' /></div>
+        <div id='prev_button' onClick={() => setIndex(i => i - 1)}><img src='/static/images/leftarrow.png' alt='' /></div>
         </div>
         <Carousel
             autoPlay={false}
@@ -45,7 +45,7 @@ const GameSlider = ({games}) => {
             index={index}
         >
           {games.map(game => (
-            <div key={game?.id}>
+            <div id='carousel_content_main' key={game?.id}>
               <Link to={`/games/${game?.id}`}>
             <div id='carousel_content'>
             <div id='game_img_main'><img alt='' className='game_image_main' id='game_image_main' src={game?.images[0]?.image}></img></div>
@@ -71,7 +71,7 @@ const GameSlider = ({games}) => {
           ))}
         </Carousel>
         <div id='next_button_div'>
-        <div id='next_button' onClick={() => setIndex(i => i + 1)}><img src='static/images/rightarrow.png' alt='' /></div>
+        <div id='next_button' onClick={() => setIndex(i => i + 1)}><img src='/static/images/rightarrow.png' alt='' /></div>
       </div>
     </div>
   )
