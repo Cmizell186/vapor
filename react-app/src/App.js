@@ -78,10 +78,10 @@ function App() {
           <Route path="/demo">
             <Demo />
           </Route>
-          <Route path="/cart">
+          <ProtectedRoute path="/cart">
             <SubNavBar />
             <Cart />
-          </Route>
+          </ProtectedRoute>
           {user ?
             <>
               <Switch>
