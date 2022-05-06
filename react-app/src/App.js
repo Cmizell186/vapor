@@ -6,7 +6,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
-import GameListingForm from './components/Games/GameListingForm'
+import CreateGame from './components/Games/GameListingForm'
 import LandingPage from './components/LandingPage'
 import GameDetails from './components/Games/GameDetail'
 import ReviewDetails from './components/Reviews/ReviewDetail'
@@ -62,8 +62,8 @@ function App() {
             <Library user={user} />
           </ProtectedRoute>
           <ProtectedRoute path="/games/new">
-            <SubNavBar />
-            <GameListingForm user={user} />
+            {/* <SubNavBar /> */}
+            <CreateGame user={user} loaded={loaded} />
           </ProtectedRoute>
           <ProtectedRoute exact path='/images' user={user}>
             <UploadPicture />
