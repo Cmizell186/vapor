@@ -56,15 +56,8 @@ const GameDetails = ({user, loaded}) => {
   };
 
   const handleAddToCart = () => {
-    const data = {
-      user_id: sessionUser.id,
-      game_id: game.id,
-      is_owned: false
-    }
-    dispatch(create_cart(data))
-
     if(in_cart_boolean) {
-      history.push('/cart')
+      return history.push('/cart')
     } else {
 
       const data = {
@@ -74,6 +67,7 @@ const GameDetails = ({user, loaded}) => {
       }
 
       dispatch(create_cart(data))
+       return history.push('/cart')
     }
   }
   // refactor  this junk
@@ -128,6 +122,7 @@ const GameDetails = ({user, loaded}) => {
             </div>
           </div>
         </div>
+        {sessionUser?.id === game?.user_id ? <GameImageModal /> : <></>}
         {sessionUser?.id === game?.user_id && (
           <div className='user-controls-container'>
             <GameEditModal game={game} user={{ ...sessionUser }} />

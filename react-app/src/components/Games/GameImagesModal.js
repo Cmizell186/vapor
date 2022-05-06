@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Modal } from '../../context/Modal';
 import GameImages from './GameImages';
 import UploadGamePicture from './GameImageForm'
-// import './GameImages.css'
+import './GameImages.css'
 const GameImageModal = () =>{
     const [showModal, setShowModal] = useState(false);
 
@@ -15,7 +15,11 @@ const GameImageModal = () =>{
                 <Modal onClose={() => setShowModal(false)} className="game-image-container">
                         <UploadGamePicture/>
                         <GameImages />
-                    <a onClick={() => setShowModal(false)}>Finished</a>
+                <div className='finished-continer-btn'>
+                    <button onClick={() => setShowModal(false)} className='finished-btn'>
+                        Finished Editing
+                    </button>
+                </div>
                 </Modal>
             )}
         </>

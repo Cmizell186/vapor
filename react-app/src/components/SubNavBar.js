@@ -19,7 +19,7 @@ const SearchBar = () => {
             <div id='search_container'>
                 <div id="cart-button-div">
                     <Link to='/cart'>
-                        <button type='button'>Cart ({user_cart.length})</button>
+                        <button type='button'>{(user_cart.length ? `Cart (${user_cart.length})` : "Cart" )}</button>
                     </Link>
                 </div>
                 <div id="search_div">

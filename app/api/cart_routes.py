@@ -36,3 +36,15 @@ def create_cart():
   db.session.commit()
   print(new_cart)
   return new_cart.to_dict()
+
+@cart_routes.route('/', methods=['PUT'])
+def update_cart():
+  data = request.get_json()
+  carts_list = []
+  for entry in data:
+    library = Library.query.get(entry['id'])
+    library.is_owned = True
+    carts_list.append(library.to_dict())
+
+  db.session.commit()
+  return {'carts': carts_list}

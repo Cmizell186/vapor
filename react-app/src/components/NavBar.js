@@ -24,7 +24,7 @@ const NavBar = ({user}) => {
     <div className='splashWrapper'>
       <div id="nav">
         <div id="navarea">
-        <div id="div_logo"><img src="/images/vapor_logo.png" id="logo" alt=""></img></div>
+        <div id="div_logo"><img src="/static/images/vapor_logo.png" id="logo" alt=""></img></div>
         <div id="navbar">
                 <div className="nav_nav" id="nav_store"><a className='nav_links' href='/games'>STORE</a></div>
                 <div className="nav_nav" id="nav_library"><a className='nav_links' href='/library'>LIBRARY</a></div>
