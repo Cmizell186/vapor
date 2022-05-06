@@ -1,10 +1,8 @@
-import { get_all_carts, delete_cart, update_cart } from '../../store/cart'
+import { delete_cart, update_cart } from '../../store/cart'
 import { useDispatch, useSelector } from 'react-redux'
-import React, { useEffect, useState } from 'react';
-import SearchBar from '../SubNavBar'
+import React, { useState } from 'react';
 import './index.css'
 import { Link } from 'react-router-dom';
-import { get_all_games } from '../../store/game';
 import { Modal } from "../../context/Modal"
 
 const Cart = () => {
