@@ -129,7 +129,7 @@ const Cart = () => {
                     <>
                       <p>{game?.title}</p>
                       <p>hello</p>
-                      <img id="carousel-img" alt='' src={`${game?.images[0]?.image}`} />
+                      <img id="carousel-img" alt='' src={`${game?.images[5]?.image}`} />
                       <div id="spotlight-content"></div>
                       </>
                   ))}
