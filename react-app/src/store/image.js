@@ -70,7 +70,7 @@ const image_reducer = (state = inititalState, action) => {
             }
         case ADD_USER_IMAGE:
             newState = {...state};
-            newState[action.image.user_id] = {...action.image}
+            newState[action.image.id] = action.image
             return newState;
         default:
             return state
