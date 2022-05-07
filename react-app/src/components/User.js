@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import UploadPicture from './Images';
+import './User.css'
 
 function User({users}) {
   const [user, setUser] = useState({});
@@ -23,12 +24,21 @@ function User({users}) {
 
   return (
     <>
-      <div>
+      <div className='user-background-page'>
+        <img className='user-background-page' src='https://vaporgames.s3.us-west-1.amazonaws.com/steam-background.jpg'/>
+      </div>
+      <div className='user-info-area-container'>
         <div>
           <strong>{user.username}</strong>
+          {users.id === +userId ?
+          <div>
+            <UploadPicture />
+          </div>
+          :
+
+          <></>}
         </div>
       </div>
-      {users.id === +userId ? <UploadPicture /> : <></>}
     </>
   );
 }
