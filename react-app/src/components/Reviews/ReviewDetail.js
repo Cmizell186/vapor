@@ -165,9 +165,12 @@ const ReviewDetails = ({ loaded }) => {
             <label htmlFor='content'>
             </label>
             <textarea
+              key={review?.id}
               className='create_edit_textbox'
               type='text'
-              defaultValue={review?.content}
+              defaultValue={content}
+              // value={review?.content}
+              placeholder={review?.content}
               onBlur={handleChange}
             />
           <div className="review_controls_body">

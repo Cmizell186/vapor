@@ -102,6 +102,7 @@ body .game-listing-form-container {
   top: 4em;
   left: 30em;
   z-index: 1;
+  max-width: 560px;
 }
 
 .vw_intro_text {
