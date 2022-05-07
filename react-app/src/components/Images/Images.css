@@ -40,3 +40,12 @@ input[type="file"] {
     cursor: pointer;
 
 }
+
+.update-pfp-h3{
+    color: white;
+}
+
+
+.profile-single-image{
+    border: 5px solid #2a475e;
+}
