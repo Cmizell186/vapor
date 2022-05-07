@@ -28,7 +28,6 @@ const GameDetails = ({user, loaded}) => {
   const [showModal, setShowModal] = useState(false);
   const filteredReviews = reviews.filter(review => review.game_id === +gameId)
   const userReview = reviews.filter(review => review?.user_id === sessionUser?.id && review.game_id === +gameId)
-  console.log(userReview[0])
   const all_entry_carts = useSelector(state => Object.values(state.carts)).filter(entry => entry.game_id === +gameId) // We get back all carts that are in the library for this user that match the game id
 
   // array will have an element if they are owned
@@ -74,7 +73,7 @@ const GameDetails = ({user, loaded}) => {
   const Owner = () => {
     return (
       <div className="reviewed_div">
-        <ReviewSummary review={userReview} />
+        <ReviewSummary review={userReview[0]} />
       </div>
     )
   }
@@ -236,7 +235,7 @@ const GameDetails = ({user, loaded}) => {
       </div>
       <div id="user_review_container">
         <div className="user_review_box">
-        {(sessionUser && sessionUser?.id === userReview[0]?.user_id) ? ( <Owner review={userReview} /> ) : ( <NotOwner review={userReview[0]} /> )}
+        {(sessionUser && sessionUser?.id === userReview[0]?.user_id) ? ( <Owner review={userReview[0]} /> ) : ( <NotOwner gameId={gameId} /> )}
           {/* {loaded && hasReviewed} */}
         </div>
         </div>

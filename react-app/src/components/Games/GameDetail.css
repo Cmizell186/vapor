@@ -155,11 +155,13 @@
     font-size: 12px;
     color: #b0bdc5;
     padding-top: 30px;
+    padding-left: 5px;
 }
 
 #game_tags {
     display: flex;
     padding-top: 3px;
+    padding-left: 5px;
 }
 
 #genre_tags {
@@ -241,4 +243,8 @@
     height: 16px;
     width: 16px;
     padding-right: 5px;
+}
+
+#user_review_container {
+    padding-top: 25px;
 }
