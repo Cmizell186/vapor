@@ -1,19 +1,19 @@
-.review-form-container {
+.review-edit-container {
   background-image: linear-gradient(to bottom right,#2d3d4b, #566573 );
   color: #aeb8c0;
-  max-width: 580px;
+  max-width: 976px;
   width: 580px;
   position: relative;
   overflow: visible;
   padding-top: 16px;
 }
 
-.review-form-container > h4 {
+.review-edit-container > h4 {
   color: #5abaf4;
   padding-left: 10px;
 }
 
-.review-form-container > p {
+.review-edit-container > p {
   font-size: 15px;
   margin-bottom: 15px;
   line-height: 17px;
@@ -24,15 +24,15 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding-left: 3px;
+  padding-left: 10px;
 }
 
-.review-form-container .create_textbox {
+.review-edit-container .create_edit_textbox {
   border: 1px solid #233c51;
   border-radius: 3px;
   height: 208px;
   width: 550px;
-  max-width: 580px;
+  max-width: 940px;
   background-color: #222b35;
   color: #d6d7d8;
   /* padding: 10px 11px; */

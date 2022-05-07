@@ -19,6 +19,7 @@ const ReviewDetails = ({ loaded }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const [showModal, setShowModal] = useState(false);
   const [formDiv, setFormDiv] = useState(false);
+  console.log(formDiv, "formDiv1")
   const [is_recommended, setIs_Recommended] = useState(
     review?.is_recommended
   );
@@ -54,9 +55,10 @@ const ReviewDetails = ({ loaded }) => {
     setIs_Recommended(false);
     setContent("");
     setHasSubmitted(false);
-    setFormDiv(true)
     ShowForm()
+    setFormDiv(false)
   };
+  console.log(formDiv, "formDiv2")
 
   const recommendation = () => {
     let recommend = review?.is_recommended;
@@ -68,6 +70,20 @@ const ReviewDetails = ({ loaded }) => {
     setShowModal(false);
     history.push(`/games/${review.game_id}`);
   };
+
+    // Needs the if else again to close form on update
+    const ShowForm = () => {
+      let review = document.getElementById("left-offset-review-content-text");
+      let editreview = document.getElementById("left-offset-review-content-edit");
+      if (formDiv)  {
+        review.style.display = "block"
+        return editreview.style.display = "none"
+      } if (!formDiv)
+      review.style.display = "none"
+      editreview.style.display = "block"
+      console.log("heeeeerrrrre in !formDiv")
+      return setFormDiv(true)
+    };
 
   const ShowReview = () => {
     return (
@@ -100,21 +116,21 @@ const ReviewDetails = ({ loaded }) => {
       </>
     )
   }
-
+  console.log(formDiv, "formDiv3")
   const handleChange = (e) => {
-    setContent(e.target.value)
+   return setContent(e.target.value)
   }
 
   const EditReview = ({review, gameId}) => {
     return (
       <>
-      <div className="review-form-container">
+      <div className="review-edit-container">
         <form onSubmit={handleSubmit} className="review-content-container">
           <div className="content-div">
             <label htmlFor='content'>
             </label>
             <textarea
-              className='create_textbox'
+              className='create_edit_textbox'
               type='text'
               defaultValue={review?.content}
               onBlur={handleChange}
@@ -127,7 +143,7 @@ const ReviewDetails = ({ loaded }) => {
           <div className='vote_up_down_container'>
             <button className={style_rec_yes}
               type='button'
-              defaultValue={review?.is_recommended}
+              defaultValue={content}
               onClick={(e) => {
                 setIs_Recommended(true)
                 setStyle_Rec_Yes("recommend_clicked")
@@ -166,17 +182,7 @@ const ReviewDetails = ({ loaded }) => {
     </>
     )
   }
-  // Needs the if else again to close form on update
-  const ShowForm = () => {
-    let review = document.getElementById("left-offset-review-content-text");
-    let editreview = document.getElementById("left-offset-review-content-edit");
-    if (formDiv)  {
-      review.style.display = "block"
-      editreview.style.display = "none"
-    } else
-      editreview.style.display = "block"
-      review.style.display = "none"
-  };
+  console.log(formDiv, "formDiv after editReview")
 
   return (
     <>
