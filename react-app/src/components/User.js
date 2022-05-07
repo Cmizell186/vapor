@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Carousel from 'react-material-ui-carousel';
 import { useParams } from 'react-router-dom';
 import UploadPicture from './Images';
 import SingleImage from './Images/UserImage';
@@ -42,8 +43,15 @@ function User({users}) {
         <div id="upload-pic-form">
           {users.id === +userId ? <UploadPicture /> :<></>}
         </div>
-        <div>
-          <p></p>
+        <div className='screen-shots'>
+          <h2 className='art-showcase-h2'>Art Show Case</h2>
+          <Carousel
+          height='250px'>
+            <img id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_1.jpg"></img>
+            <img id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_2.png"></img>
+            <img id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_3.gif"></img>
+            <img id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_4.jpg"></img>
+          </Carousel>
         </div>
       </div>
     </div>
