@@ -47,7 +47,7 @@ body .game-listing-form-container {
   /* background: radial-gradient(30% 40% at 40% 30%, rgba(33, 36, 41, .5) 0%, rgba(33, 36, 41, 0) 100%) #2124296e; */
 }
 
-.create_form > label {
+.create_label {
 
   max-width: 300px;
   border-radius: 3px;
@@ -63,7 +63,7 @@ body .game-listing-form-container {
   font-weight: normal;
 }
 
-.create_input{
+.create_input {
   display: flex;
   justify-content: center;
   max-width: 300px;
