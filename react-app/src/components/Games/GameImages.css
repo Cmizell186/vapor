@@ -178,3 +178,9 @@ input[type="file"] {
     background: linear-gradient( to right, #75b022 5%, #75b022 95%);
     cursor: pointer;
 }
+
+.edit_button_game {
+    text-decoration: none;
+    color: white;
+    padding-right: 15px;
+}
