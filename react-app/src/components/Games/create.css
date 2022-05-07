@@ -29,7 +29,7 @@ body .game-listing-form-container {
   background-image: linear-gradient(to bottom,#243445, #101a22 25% );
   background-repeat: no-repeat, repeat-y;
   background-position: bottom center, center;
-  width: 926px;
+  width: 620px;
   max-width: 926px;
   padding: 12px 12px 128px 12px;
   border: 1px solid #101a22;
@@ -47,7 +47,7 @@ body .game-listing-form-container {
   /* background: radial-gradient(30% 40% at 40% 30%, rgba(33, 36, 41, .5) 0%, rgba(33, 36, 41, 0) 100%) #2124296e; */
 }
 
-.create_form, label {
+.create_form > label {
 
   max-width: 300px;
   border-radius: 3px;
