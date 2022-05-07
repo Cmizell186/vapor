@@ -85,6 +85,11 @@ const GameDetails = ({user, loaded}) => {
       </>
     )
 
+  console.log(game?.video)
+{/* <video id="movie_256885299" playsinline="true" class="highlight_player_item highlight_movie"
+poster="https://cdn.akamai.steamstatic.com/steam/apps/256885299/movie.293x165.jpg?t=1651759217"
+preload="none" src="https://cdn.akamai.steamstatic.com/steam/apps/256885299/movie480_vp9.webm?t=1651759217"
+data-hd-src="https://cdn.akamai.steamstatic.com/steam/apps/256885299/movie_max_vp9.webm?t=1651759217"></video> */}
 
   const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
 
@@ -97,11 +102,14 @@ const GameDetails = ({user, loaded}) => {
         </div>
         <div id="image-details-container">
           <div id="react-media-subcontainer">
-            <img id="selected-image" src={'https://community.clover.com/themes/base/admin/img/default-coverImage.png'} alt="" />
+          <video id="game_video_detail_id" preload="none" playsinline="true" autoPlay={true} muted width="1140" loop>
+                <source src={game?.video} type="video/webm" loop/>
+                Sorry, your browser doesn't support embedded videos.
+            </video>
           </div>
           <div id="details-subcontainer">
             <div>
-              <img id="main-game-image" src='https://community.clover.com/themes/base/admin/img/default-coverImage.png' alt="" />
+              <img id="main-game-image" src={game?.images[0]?.image} alt="" />
             </div>
             <div id="description-paragraph">
               <p>{game?.description}</p>

@@ -6,6 +6,8 @@ import './index.css'
 import { Link } from 'react-router-dom';
 import { Modal } from "../../context/Modal"
 import Carousel from 'react-material-ui-carousel';
+import ArrowLeftSharpIcon from '@mui/icons-material/ArrowLeftSharp';
+import ArrowRightSharpIcon from '@mui/icons-material/ArrowRightSharp';
 
 const Cart = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -135,13 +137,28 @@ const Cart = () => {
               <div id="cart-carousel-outside-div">
                 <Carousel
                   autoPlay={false}
-                  interval={4000}
                   stopAutoPlayOnHover={true}
-                  cycleNavigation={true}
                   animation="fade"
                   duration={500}
-                  indicators={true}
                   swipe={true}
+                  navButtonsAlwaysVisible={true}
+                  NextIcon={<ArrowRightSharpIcon/>}
+                  PrevIcon={<ArrowLeftSharpIcon/>}
+                  navButtonsProps={{          // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
+                      style: {
+                          backgroundColor: 'rgba( 0, 0, 0, 0.2 )',
+                          borderRadius: 0,
+                          padding: "1px 10px",
+                          left: "5px",
+                          right: "10px",
+
+                      }
+                  }}
+                  navButtonsWrapperProps={{   // Move the buttons to the bottom. Unsetting top here to override default style.
+                      style: {
+                        top: '175px',
+                      }
+                  }}
                 >
                   {games.length && games.map(game => (
                     <div key={game?.id}>

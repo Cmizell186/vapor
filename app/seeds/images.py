@@ -73,7 +73,7 @@ def seed_images():
       game_id = 2
   )
   game2_image7 = Image(
-      image="https://vaporgames.s3.us-west-1.amazonaws.com/death_stranding_7.png",
+      image="https://vaporgames.s3.us-west-1.amazonaws.com/forza_horizon5_7.jpg",
       user_id = 3,
       game_id = 2
   )
@@ -110,7 +110,7 @@ def seed_images():
       game_id = 3
   )
   game3_image7 = Image(
-      image="https://vaporgames.s3.us-west-1.amazonaws.com/forza_horizon5_7.jpg",
+      image="https://vaporgames.s3.us-west-1.amazonaws.com/death_stranding_7.png",
       user_id = 4,
       game_id = 3
   )
