@@ -5,7 +5,8 @@ import {add_new_image} from '../../store/gameImage.js';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import './GameImages.css';
-
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const UploadGamePicture = () =>{
     const history = useHistory(); //redirect after uploading image
@@ -37,20 +38,17 @@ const UploadGamePicture = () =>{
     }
 
     return (
+    <div id="upload_submit_form">
         <form onSubmit={handleSubmit} id='new-image-game-form'>
-            <div>
-                <h3 className="delete-image-text">For best results use images with 616x353 dimensions</h3>
-            </div>
-            <div className="input-image-div">
-            <label for='image-upload' className="choose-image">Upload Image</label>
+          <h4 className="delete-image-text">For best results use images with 616x353 dimensions.</h4>
+            <div id="delete_image_buttons">
+            <label for='image-upload' className="choose-image">Upload a New Image</label>
             <input
                 id='image-upload'
                 type='file'
                 accept="image/*"
                 onChange={updateImage}
                 />
-            </div>
-            <div className="submit-image-div">
                 <button type="submit" className='submit-image'>Submit Picture</button>
             </div>
             {(imageLoading)&&
@@ -58,6 +56,7 @@ const UploadGamePicture = () =>{
                 <LinearProgress />
             </Box>}
         </form>
+    </div>
     )
 }
 export default UploadGamePicture;

@@ -8,17 +8,19 @@ const GameImageModal = () =>{
 
     return (
         <>
-            <button className='edit_images' onClick={() => setShowModal(true)}>
+            <button id='jared_button' className='edit_images' onClick={() => setShowModal(true)}>
                 Update Game Images
             </button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)} className="game-image-container">
-                        <UploadGamePicture/>
+                    <div id='edit_image_modal'>
                         <GameImages />
+                        <UploadGamePicture/>
                 <div className='finished-continer-btn'>
                     <button onClick={() => setShowModal(false)} className='finished-btn'>
                         Finished Editing
                     </button>
+                </div>
                 </div>
                 </Modal>
             )}
