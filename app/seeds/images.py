@@ -770,6 +770,7 @@ def seed_images():
                        game7_image1, game7_image2, game7_image3, game7_image4, game7_image5, game7_image6, game7_image7,
                        game8_image1, game8_image2, game8_image3, game8_image4, game8_image5, game8_image6, game8_image7,
                        game9_image1, game9_image2, game9_image3, game9_image4, game9_image5, game9_image6, game9_image7,
+                       game10_image1, game10_image2, game10_image3, game10_image4, game10_image5, game10_image6, game10_image7,
                        game11_image1, game11_image2, game11_image3, game11_image4, game11_image5, game11_image6, game11_image7,
                        game12_image1, game12_image2, game12_image3, game12_image4, game12_image5, game12_image6, game12_image7,
                        game13_image1, game13_image2, game13_image3, game13_image4, game13_image5, game13_image6, game13_image7,

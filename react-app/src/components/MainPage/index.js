@@ -174,8 +174,8 @@ const Store = ({user}) => {
       </Box>
         <div id="game_list">
         <TabPanel value={value} index={0}>
-        {games
-            .sort((game1, game2) => new Date(game1.release_date) - new Date(game2.release_date))
+        {games?.slice(0, 10)
+            ?.sort((game1, game2) => new Date(game1.release_date) - new Date(game2.release_date))
             ?.map(game => (
             <a key={game?.id} className='game_container_link' href={`/games/${game?.id}`}>
             <div id='game_container'>
@@ -195,8 +195,8 @@ const Store = ({user}) => {
         ))}
       </TabPanel>
       <TabPanel value={value} index={1}>
-      {games
-            .sort(() => Math.random() - Math.random())
+      {games?.slice(0, 10)
+            ?.sort(() => Math.random() - Math.random())
             ?.map(game => (
               <a key={game?.id} className='game_container_link' href={`/games/${game?.id}`}>
             <div id='game_container'>
@@ -216,8 +216,8 @@ const Store = ({user}) => {
         ))}
       </TabPanel>
       <TabPanel value={value} index={2}>
-      {games
-            .sort((game1, game2) => (game1.price) - (game2.price))
+      {games?.slice(0, 10)
+            ?.sort((game1, game2) => (game1.price) - (game2.price))
             ?.map(game => (
             <a key={game?.id} className='game_container_link' href={`/games/${game?.id}`}>
             <div key={game?.id} id='game_container'>
