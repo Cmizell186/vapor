@@ -18,6 +18,7 @@ import Store from './components/MainPage';
 import SubNavBar from './components/SubNavBar'
 import Library from './components/Library';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import AboutUs from './components/About';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -76,6 +77,9 @@ function App() {
           <ProtectedRoute path="/cart">
             <SubNavBar />
             <Cart />
+          </ProtectedRoute>
+          <ProtectedRoute path="/about">
+            <AboutUs />
           </ProtectedRoute>
           {user ?
             <>
