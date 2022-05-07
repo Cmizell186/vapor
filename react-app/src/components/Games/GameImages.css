@@ -1,19 +1,43 @@
-#game-image-container{
-    position: relative;
-    width: 580px;
-    height: 300px;
-    padding: 35px 35px;
-    /* min-height: 750px; */
+#edit_image_modal {
+    width: 500px;
+    height: 500px;
+    padding: 25px 20px;
+    min-height: 450px;
     display: flex;
+    border-radius: 3px;
+    justify-content: center;
     flex-direction: column;
+    background: linear-gradient( -60deg, rgba(226,244,255,0.3) 5%,rgba(84, 107, 115, 0.3) 95%);
+}
+
+#upload_submit_form {
+    display: flex;
     justify-content: center;
 }
 
-.image-item{
+#delete_image_div {
+    position: absolute;
+    top: 225px;
+    right: 25px;
+}
+
+#game_image_container {
+    object-fit: contain;
+}
+
+#image_item {
     width: 500px;
+    height: 255px;
+}
+
+#delete_image_buttons {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+#delete_item_image {
+    width: 100%;
+    height: 100%;
 }
 
 .deleteImage{
@@ -23,8 +47,8 @@
     color: white;
     padding: 1px 10px;
     font-size: 16px;
+    border: 1px solid red;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
-    margin-top: 25px;
     height: 50px;
     font-family: "Motiva Sans", Sans-serif;
 }
@@ -35,11 +59,6 @@
 }
 
 /* new image-form */
-#new-image-game-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 input[type="file"] {
     display: none;
@@ -51,10 +70,10 @@ input[type="file"] {
     border: none;
     border-radius: 2px;
     color: white;
-    padding: 10px 13px;
+    padding: 15px 15px;
+    margin-right: 15px;
     font-size: 16px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
-
     font-family: "Motiva Sans", Sans-serif;
 }
 .choose-image:hover{
@@ -66,12 +85,12 @@ input[type="file"] {
 .submit-image{
     background: linear-gradient( to right, #32363f 5%, #32363f 95%);
     border: none;
+    margin-left: 15px;
     border-radius: 2px;
     color: white;
     padding: 10px 10px;
     font-size: 16px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
-    margin-top: 15px;
     font-family: "Motiva Sans", Sans-serif;
 }
 .submit-image:hover{
@@ -143,30 +162,53 @@ input[type="file"] {
     cursor: pointer;
 }
 
-.delete-image-text{
+.delete-image-text {
     font-family: "Motiva Sans", Sans-serif;
-    margin-left: 15px;
+    font-size: 18px;
 }
 .delete-image-text.p-tag{
     font-size: 16px;
 }
 
+#jared_button {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 15px;
+    height: 33px;
+    width: auto;
+    border-radius: 2px;
+    border: none;
+    padding: 1px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none !important;
+    color: #67c1f5 !important;
+    background: rgba( 103, 193, 245, 0.2 );
+    padding: 0 15px;
+    font-size: 15px;
+    line-height: 30px;
+}
 
+#jared_button:hover {
+    text-decoration: none !important;
+    color: #fff !important;
+    background: #417a9b;
+    background: -webkit-linear-gradient( 150deg, #417a9b 5%,#67c1f5 95%);
+    background: linear-gradient( -60deg, #417a9b 5%,#67c1f5 95%);
+}
 
 /* finished button */
 
 .finished-continer-btn{
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    margin-bottom: 25px;
+    margin-top: 25px;
 }
 .finished-btn{
     background: linear-gradient( to right, #32363f 5%, #32363f 95%);
     border: none;
     border-radius: 2px;
     color: white;
-    padding: 10px 10px;
+    padding: 15px 50px;
     font-size: 16px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
     margin-top: 15px;
@@ -177,4 +219,10 @@ input[type="file"] {
     transition: none;
     background: linear-gradient( to right, #75b022 5%, #75b022 95%);
     cursor: pointer;
+}
+
+.edit_button_game {
+    text-decoration: none;
+    color: white;
+    padding-right: 15px;
 }

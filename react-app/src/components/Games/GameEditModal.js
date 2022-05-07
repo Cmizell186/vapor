@@ -8,7 +8,7 @@ const GameEditModal = ({ user, game }) => {
 
   return (
     <>
-      <button className='edit_button' onClick={() => setShowModal(true)}>Update Game Details</button>
+      <a href="#" className='edit_button_game' onClick={() => setShowModal(true)}>Update Game Details</a>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <EditGame gamelisting={game} hideModal={() => setShowModal(false)} />

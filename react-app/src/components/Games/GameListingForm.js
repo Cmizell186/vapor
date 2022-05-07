@@ -126,7 +126,7 @@ const CreateGame = ({ user, loaded }) => {
             </div>
           </div>
           <div className="create_form">
-            <p>
+            <p className="create_label p">
               This area is where you configure the presentation of your
               product's page in the Steam store. Please complete all the fields
               marked. If you need help, check out the Store Page Best Practices
@@ -143,7 +143,7 @@ const CreateGame = ({ user, loaded }) => {
                   </div>
                 )}
                 <div className="title-div">
-                  <label htmlFor="title">Game Name:</label>
+                  <label className="create_label" htmlFor="title">Game Name:</label>
                   <input
                     className="create_input"
                     name="title"
@@ -153,7 +153,7 @@ const CreateGame = ({ user, loaded }) => {
                   />
                 </div>
                 <div className="price-div">
-                  <label htmlFor="price">Price:</label>
+                  <label className="create_label" htmlFor="price">Price:</label>
                   <input
                     className="create_input"
                     name="price"
@@ -163,7 +163,7 @@ const CreateGame = ({ user, loaded }) => {
                   />
                 </div>
                 <div className="description-div">
-                  <label htmlFor="description">Description:</label>
+                  <label className="create_label" htmlFor="description">Description:</label>
                   <textarea
                     className="create_textbox create_input"
                     type="text"
@@ -172,7 +172,7 @@ const CreateGame = ({ user, loaded }) => {
                   />
                 </div>
                 <div className="release_date-div">
-                  <label htmlFor="release_date">Release Date:</label>
+                  <label className="create_label" htmlFor="release_date">Release Date:</label>
                   <input
                     className="create_input"
                     name="release_date"
@@ -182,7 +182,7 @@ const CreateGame = ({ user, loaded }) => {
                   />
                 </div>
                 <div className="is_mature-div">
-                  <label htmlFor="is_mature">Mature Rating?:</label>
+                  <label className="create_label" htmlFor="is_mature">Mature Rating?:</label>
                   <input
                     className="create_input"
                     name="is_mature"
@@ -194,7 +194,7 @@ const CreateGame = ({ user, loaded }) => {
                 </div>
                 {/* prior to s3 integration */}
                 <div className="video-div">
-                  <label htmlFor="video">Trailers or Video clips:</label>
+                  <label className="create_label" htmlFor="video">Trailers or Video clips:</label>
                   <input
                     className="create_input"
                     name="video"
@@ -205,7 +205,7 @@ const CreateGame = ({ user, loaded }) => {
                   />
                 </div>
                 <div className="developer-div">
-                  <label htmlFor="developer">Developer:</label>
+                  <label className="create_label" htmlFor="developer">Developer:</label>
                   <input
                     className="create_input"
                     name="developer"

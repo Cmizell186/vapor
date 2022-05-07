@@ -29,7 +29,6 @@ export function Modal({ onClose, children }) {
     <div id="modal">
       <div id="modal-background" onClick={onClose} />
       <div id="modal-content">
-        <div id="top-modal-div"></div>
         {children}
       </div>
     </div>,
