@@ -125,13 +125,23 @@ const GameDetails = ({user, loaded}) => {
         {sessionUser?.id === game?.user_id ? <GameImageModal /> : <></>}
         {sessionUser?.id === game?.user_id && (
           <div className='user-controls-container'>
+            <img
+              className="owner_action_img"
+              src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_edit.png"
+              alt=""
+            />
             <GameEditModal game={game} user={{ ...sessionUser }} />
-            <button
+            <img
+              className="owner_action_img"
+              src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_delete.png"
+              alt=""
+            />
+            <a href="#"
               onClick={() => setShowModal(true)}
               className="delete-bttn"
             >
               Delete
-            </button>
+            </a>
             {showModal && (
               <Modal onClose={() => setShowModal(false)}>
                 <h2>DELETE GAME LISTING?</h2>
