@@ -9,7 +9,10 @@ const GameSlider = ({games}) => {
   return (
     <div id='carousel'>
       <div id='prev_button_div'>
-        <div id='prev_button' onClick={() => setIndex(i => i - 1)}><img src='/static/images/leftarrow.png' alt='' /></div>
+        <div id='prev_button' onClick={() => {
+          if(index === 0) return setIndex(games?.length - 1)
+          return setIndex(i => i - 1)
+          }}><img src='/static/images/leftarrow.png' alt='' /></div>
         </div>
         <Carousel
             autoPlay={true}
@@ -69,7 +72,10 @@ const GameSlider = ({games}) => {
           ))}
         </Carousel>
         <div id='next_button_div'>
-        <div id='next_button' onClick={() => setIndex(i => i + 1)}><img src='/static/images/rightarrow.png' alt='' /></div>
+        <div id='next_button' onClick={() => {
+          if (games?.length - 1 === index) return setIndex(0)
+          return setIndex(i => i + 1)
+          }}><img src='/static/images/rightarrow.png' alt='' /></div>
       </div>
     </div>
   )
