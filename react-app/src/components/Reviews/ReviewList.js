@@ -6,7 +6,9 @@ import './reviewstyles.css';
 const Reviews = ({user, filteredReviews}) => {
 const dispatch = useDispatch()
 const reviews = useSelector(state => Object.values(state.reviews))
-// const  reviewUser = users.filter(revUser => revUser?.user_id === review.user_id)
+// review.query.join to get users associated with review
+// const users = useSelector(state => Object.values(state.users))
+let reviewUser;
 // console.log(reviewUser, '-------------------00000')
 useEffect(() => {
     dispatch(get_all_reviews())
@@ -22,6 +24,7 @@ return (
                 <a className='profile_img_link' href={`/users/${user.id}`}>
                     <img id="profile_img" src={user?.profile_picture} alt=""></img>
                 </a>
+                {/* {reviewUser = users.filter(revUser => revUser?.user_id === review.user_id)} */}
                 <a href={`/users/${user.id}`}>
                     <div className="profile_name_link">{user.username}</div>
                 </a>

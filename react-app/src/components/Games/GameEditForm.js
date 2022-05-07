@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { update_game } from "../../store/game";
+import './edit.css';
 
 const EditGame = ({ gamelisting, hideModal }) => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -57,14 +58,61 @@ const vid_upload = (e) => {
 
   return (
     <>
-      <div className="game-listing-form-container">
-        <p>
-          This area is where you configure the presentation of your product's
-          page in the Steam store. Please complete all the fields marked. If you
+      <div className="edit-listing-form-container">
+      <img
+          className="vw_logo_blk"
+          src="/static/images/vaporworks_logo.png"
+          alt=""
+        ></img>
+          <div className="game_listing_form_main_body">
+          <div className="user-banner">
+            <a href={`/users/${sessionUser.id}`}>
+              <div className="profile_avatar_small">
+                <img
+                  id="profile_img_small"
+                  src={sessionUser?.profile_picture}
+                  alt=""
+                ></img>
+              </div>
+            </a>
+            <div className="profile_header_links">
+              <span className="profile_header_name">
+                <a
+                  className="profile_link_content"
+                  href={`/users/${sessionUser.id}`}
+                >
+                  {sessionUser.username}
+                </a>
+              </span>
+              <span className="profile_header_arrows">>></span>
+              <span className="profile_reviews_text">
+                <a
+                  className="profile_link_content"
+                  href={`/users/${sessionUser.id}`}
+                >
+                  Vaporworks
+                </a>
+              </span>
+              <span className="profile_header_arrows">>></span>
+              <a className="profile_link_content" href="/games/new">
+                <span className="profile_reviews_text">New</span>
+              </a>
+            </div>
+          </div>
+
+        <div className="edit_form">
+
+        </div>
+        <p className="edit_label p">
+          You can configure the details of your product here.
+           Please complete all the fields marked. If you
           need help, check out the Store Page Best Practices documentation for a
           video walkthrough of configuring your store page.
         </p>
-        <form onSubmit={handleSubmit} className="add-game-container">
+        <div className="edit_form_body">
+
+        </div>
+        <form onSubmit={handleSubmit} className="edit-game-container">
           {hasSubmitted && (
             <div className="error">
               {errors.map((error, index) => (
@@ -73,8 +121,9 @@ const vid_upload = (e) => {
             </div>
           )}
           <div className="title-div">
-            <label htmlFor="title">Game Name:</label>
+            <label className="create_label" htmlFor="title">Game Name:</label>
             <input
+              className="create_input"
               name="title"
               type="text"
               value={title}
@@ -82,8 +131,9 @@ const vid_upload = (e) => {
             />
           </div>
           <div className="price-div">
-            <label htmlFor="price">Price:</label>
+            <label className="create_label" htmlFor="price">Price:</label>
             <input
+              className="create_input"
               name="price"
               type="number"
               value={price}
@@ -91,17 +141,18 @@ const vid_upload = (e) => {
             />
           </div>
           <div className="description-div">
-            <label htmlFor="description">Description:</label>
+            <label className="create_label" htmlFor="description">Description:</label>
             <textarea
-              className="create_textbox"
+              className="create_textbox create_input"
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
           <div className="release_date-div">
-            <label htmlFor="release_date">Release Date:</label>
+            <label className="create_label" htmlFor="release_date">Release Date:</label>
             <input
+              className="create_input"
               name="release_date"
               type="date"
               value={release_date}
@@ -109,26 +160,20 @@ const vid_upload = (e) => {
             />
           </div>
           <div className="is_mature-div">
-            <label htmlFor="is_mature">Mature Rating?:</label>
-            {/* <input
-              name="is_mature"
-              type="radio"
-              value={is_mature}
-              onChange={(e) => setIs_Mature(true)}
-              checked={is_mature === true}
-            /> */}
+            <label className="create_label" htmlFor="is_mature">Mature Rating?:</label>
             <input
+              className="create_input"
               type="checkbox"
               checked={is_mature ? true : false}
               value={is_mature}
               name="is_mature"
               onChange={e => is_mature ? setIs_Mature(false) : setIs_Mature(true) }
-
             />
           </div>
           <div className="video-div">
-            <label htmlFor="video">Trailers or Video clips:</label>
+            <label className="create_label" htmlFor="video">Trailers or Video clips:</label>
             <input
+              className="create_input"
               name="video"
               type="text"
               multiple
@@ -137,8 +182,9 @@ const vid_upload = (e) => {
             />
           </div>
           <div className="developer-div">
-            <label htmlFor="developer">Developer:</label>
+            <label className="create_label" htmlFor="developer">Developer:</label>
             <input
+              className="create_input"
               name="developer"
               type="text"
               value={developer}
@@ -149,6 +195,7 @@ const vid_upload = (e) => {
             Update Game Details
           </button>
         </form>
+      </div>
       </div>
     </>
   );
