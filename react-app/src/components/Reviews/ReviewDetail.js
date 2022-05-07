@@ -15,6 +15,7 @@ const ReviewDetails = ({ loaded }) => {
   const { gameId } = useParams();
   const { reviewId } = useParams();
   const review = useSelector((state) => state.reviews[reviewId]);
+  console.log(review, "88888888888888888888888")
   const sessionUser = useSelector((state) => state.session.user);
   const [showModal, setShowModal] = useState(false);
   const [formDiv, setFormDiv] = useState(false);
@@ -36,6 +37,7 @@ const ReviewDetails = ({ loaded }) => {
 
   useEffect(() => {
     dispatch(get_one_review(reviewId)); //warning here- useEffect has a missing dependency: 'reviewId'. Either include it or remove the dependency array
+
   }, [dispatch]);
 
   const handleSubmit = async (e) => {
@@ -52,6 +54,7 @@ const ReviewDetails = ({ loaded }) => {
     setIs_Recommended(false);
     setContent("");
     setHasSubmitted(false);
+    setFormDiv(true)
     ShowForm()
   };
 
@@ -98,6 +101,10 @@ const ReviewDetails = ({ loaded }) => {
     )
   }
 
+  const handleChange = (e) => {
+    setContent(e.target.value)
+  }
+
   const EditReview = ({review, gameId}) => {
     return (
       <>
@@ -109,8 +116,8 @@ const ReviewDetails = ({ loaded }) => {
             <textarea
               className='create_textbox'
               type='text'
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
+              defaultValue={review?.content}
+              onBlur={handleChange}
             />
           <div className="review_controls_body">
           <div className="review_controls_container">
@@ -120,7 +127,7 @@ const ReviewDetails = ({ loaded }) => {
           <div className='vote_up_down_container'>
             <button className={style_rec_yes}
               type='button'
-              value={is_recommended}
+              defaultValue={review?.is_recommended}
               onClick={(e) => {
                 setIs_Recommended(true)
                 setStyle_Rec_Yes("recommend_clicked")
@@ -134,7 +141,7 @@ const ReviewDetails = ({ loaded }) => {
             </button>
             <button className={style_rec_no}
               type='button'
-              value={is_recommended}
+              defaultValue={review?.is_recommended}
               onClick={(e) => {
                 setIs_Recommended(false)
                 setStyle_Rec_No("recommend_clicked")
@@ -163,10 +170,12 @@ const ReviewDetails = ({ loaded }) => {
   const ShowForm = () => {
     let review = document.getElementById("left-offset-review-content-text");
     let editreview = document.getElementById("left-offset-review-content-edit");
-    review.style.display = "none";
-    editreview.style.display = "block"
-
-    // setFormDiv(false);
+    if (formDiv)  {
+      review.style.display = "block"
+      editreview.style.display = "none"
+    } else
+      editreview.style.display = "block"
+      review.style.display = "none"
   };
 
   return (
