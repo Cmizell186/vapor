@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { get_one_image } from '../../store/image';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-
+import "./Images.css"
 const SingleImage = () =>{
     const dispatch = useDispatch()
     const {userId} = useParams()
@@ -13,11 +13,11 @@ const SingleImage = () =>{
     }, [dispatch])
 
     return (
-        <>
-            <div>
-                <img alt='' src={userImage?.image}  width="500" height="500" />
+        <div className='profile-single-image-container'>
+            <div className='profile-single-image'>
+                <img alt='' src={userImage?.image}  width="150" height="150" />
             </div>
-        </>
+        </div>
     )
 }
 

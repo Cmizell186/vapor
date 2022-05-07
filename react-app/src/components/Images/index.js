@@ -7,12 +7,11 @@ import LinearProgress from '@mui/material/LinearProgress';
 import './Images.css'
 
 const UploadPicture = () => {
-    const histroy = useHistory(); //redirect after successful image
     const dispatch = useDispatch();
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
     const{userId} = useParams()
-    // console.log(userId)
+
 
     const handleSubmit = async(e) =>{
         e.preventDefault();
@@ -36,7 +35,7 @@ const UploadPicture = () => {
     return(
         <form onSubmit={handleSubmit}>
             <div>
-                <h3>Update Profile Picture</h3>
+                <h3 className='update-pfp-h3'>Update Profile Picture</h3>
             </div>
             <label for='profile-upload' className='choose-profile-image'>Upload Image</label>
             <input

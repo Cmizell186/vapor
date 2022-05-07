@@ -3,7 +3,6 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import CreateGame from './components/Games/GameListingForm'
@@ -12,7 +11,6 @@ import GameDetails from './components/Games/GameDetail'
 import ReviewDetails from './components/Reviews/ReviewDetail'
 import UploadPicture from './components/Images/index';
 import Images from './components/Images/ImageList';
-import SingleImage from './components/Images/UserImage';
 import SignUp from './components/LandingPage/SignUp'
 import Demo from './components/auth/Demo'
 import Cart from './components/Carts/Cart'
@@ -95,7 +93,6 @@ function App() {
                 </ProtectedRoute> */}
                 <ProtectedRoute path='/users/:userId' exact={true}>
                   <User users={user} />
-                  <SingleImage />
                 </ProtectedRoute>
       <Route>
         <ErrorPage/>
