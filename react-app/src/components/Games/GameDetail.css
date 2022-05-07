@@ -1,0 +1,244 @@
+@font-face {
+    font-family: Motiva Sans Bold;
+    src: url("../../public/fonts/Motiva-Sans-Bold.ttf");
+  }
+@font-face {
+    font-family: Motiva Sans;
+    src: url("../../public/fonts/Motiva-Sans.ttf");
+  }
+@font-face {
+    font-family: Motiva Sans Light;
+    src: url("../../public/fonts/Motiva-Sans-Light.ttf");
+  }
+
+#page_content_container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: -69px;
+    margin: 0 auto;
+}
+
+#game_details_container {
+    display: flex;
+    justify-content: center;
+}
+
+#game_details_box {
+    width: 940px;
+    height: 482px;
+    padding-top: 75px;
+    background-color: #1b2838;
+    color: white;
+    background-image: url("../../public/static/images/game_detail_bg.jpg");
+    background-repeat: no-repeat;
+}
+
+#title_container {
+    font-family: Motiva Sans Light;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding-top: 10px;
+}
+
+#image-details-container {
+    background-color: #0e0e0f42;
+    display: flex;
+}
+
+#selected_media_div {
+  width: 600px;
+  height: 337px;
+  float: left;
+  margin-right: 16px;
+}
+
+#game_video_detail_id {
+    width: 600px;
+    height: 337px;
+}
+
+#scroll_container {
+    width: 600px;
+    height: 69px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#scroll_div {
+    display: flex;
+    flex-direction: row;
+    height: 69px;
+    width: 100vw;
+}
+
+#video_div {
+    width: 116px;
+    height: 65px;
+}
+
+#game_video_detail_mini {
+    width: 116px;
+    height: 65px;
+}
+
+.thumb_div {
+    width: 116px;
+    height: 65px;
+    margin-left: 5px;
+}
+
+.main_game_image {
+    width: 116px;
+    height: 65px;
+}
+
+#main_game_image {
+    width: 324px;
+    height: 151px;
+}
+
+#details_subcontainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    height: 410px;
+    width: 324px;
+    word-wrap: break-word;
+    background-image: linear-gradient(to bottom right,#5f5f5f00, #0000009c );
+}
+
+#description_paragraph {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #c6d4df;
+    max-height: 111px;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 18px;
+    padding-right: 16px;
+}
+
+#game_about_info_div {
+    font-size: 11px;
+    color: #a3abb1;
+    margin: 0px 0px 0px 0px;
+}
+
+#all_reviews_div {
+    display: flex;
+}
+
+#release_date_div {
+    display: flex;
+}
+
+#all_reviews_div > p {
+    margin-right: 11px;
+}
+
+#developer_name_div {
+    display: flex;
+}
+
+#developer_name_div > p {
+    margin-right: 25px;
+}
+
+#game_id_tags {
+    height: 70px;
+    width: 323px;
+    display: flex;
+    flex-direction: column;
+    line-height: 19px;
+    font-size: 12px;
+    color: #b0bdc5;
+    padding-top: 30px;
+}
+
+#game_tags {
+    display: flex;
+    padding-top: 3px;
+}
+
+#genre_tags {
+    color: #67c1f5;
+    background-color: rgba( 103, 193, 245, 0.4 );
+    line-height: 19px;
+    padding: 0 7px;
+    color: #67c1f5;
+    background-color: rgba( 103, 193, 245, 0.2 );
+    box-shadow: none;
+    margin-right: 2px;
+    border-radius: 2px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#sub_container {
+    display: flex;
+    justify-content: center;
+}
+
+#sub_container_game {
+    width: 940px;
+    height: 482px;
+}
+
+#sub_container_game_panel {
+
+}
+
+#game_image_update_container {
+
+}
+
+#game_options_container {
+    display: flex;
+}
+
+#game_edit_delete_container {
+    display: flex;
+    justify-content: space-between;
+    width: 940px;
+    background-color: #1b2838;
+    color: white;
+}
+
+#user_controls_container {
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+    height: 65px;
+    background: rgba(27,27,27,.36);
+    border-radius: 4px;
+    padding: 10px 10px 10px 11px;
+    margin: 0 0 10px 0;
+    margin-top: 20px;;
+    border: 1px solid #9bc318;
+    box-shadow: 1px 1px 0 0 #39393a;
+}
+
+.control_options {
+    padding: 5px;
+}
+
+#game_edit_link {
+    text-decoration: none;
+    color: white;
+}
+
+#owner_update_img {
+    height: 16px;
+    width: 16px;
+    padding-right: 5px;
+}
+
+#owner_delete_img {
+    height: 16px;
+    width: 16px;
+    padding-right: 5px;
+}

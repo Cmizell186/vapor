@@ -9,6 +9,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import './index.css'
+import { Link } from 'react-router-dom';
 
 const Store = ({user}) => {
 
@@ -177,7 +178,7 @@ const Store = ({user}) => {
         {games?.slice(0, 10)
             ?.sort((game1, game2) => new Date(game1.release_date) - new Date(game2.release_date))
             ?.map(game => (
-            <a key={game?.id} className='game_container_link' href={`/games/${game?.id}`}>
+            <Link key={game?.id} className='game_container_link' to={`/games/${game?.id}`}>
             <div id='game_container'>
             <div id='game_container_image'>
                 <img alt='' src={game?.images[0]?.image} />
@@ -191,14 +192,14 @@ const Store = ({user}) => {
             <div id='game_container_tags'>{game?.tags.map(tag => tag.genres.title).join(", ")}</div>
             </div>
             </div>
-            </a>
+            </Link>
         ))}
       </TabPanel>
       <TabPanel value={value} index={1}>
       {games?.slice(0, 10)
             ?.sort(() => Math.random() - Math.random())
             ?.map(game => (
-              <a key={game?.id} className='game_container_link' href={`/games/${game?.id}`}>
+              <Link key={game?.id} className='game_container_link' to={`/games/${game?.id}`}>
             <div id='game_container'>
             <div id='game_container_image'>
                 <img alt='' src={game?.images[0]?.image} />
@@ -212,14 +213,14 @@ const Store = ({user}) => {
             <div id='game_container_tags'>{game?.tags.map(tag => tag.genres.title).join(", ")}</div>
             </div>
             </div>
-            </a>
+            </Link>
         ))}
       </TabPanel>
       <TabPanel value={value} index={2}>
       {games?.slice(0, 10)
             ?.sort((game1, game2) => (game1.price) - (game2.price))
             ?.map(game => (
-            <a key={game?.id} className='game_container_link' href={`/games/${game?.id}`}>
+            <Link key={game?.id} className='game_container_link' to={`/games/${game?.id}`}>
             <div key={game?.id} id='game_container'>
             <div id='game_container_image'>
                 <img alt='' src={game?.images[0]?.image} />
@@ -233,7 +234,7 @@ const Store = ({user}) => {
             <div id='game_container_tags'>{game?.tags.map(tag => tag.genres.title).join(", ")}</div>
             </div>
             </div>
-            </a>
+            </Link>
         ))}
       </TabPanel>
         </div>

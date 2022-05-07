@@ -1,7 +1,7 @@
 import { get_all_reviews, get_one_review } from "../../store/reviews"
 import { get_one_game } from "../../store/game"
 import { useDispatch, useSelector } from "react-redux"
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import ReviewGame from "../Reviews/ReviewsForm";
 import Reviews from "../Reviews/ReviewList";
@@ -11,8 +11,10 @@ import { delete_game } from "../../store/game";
 import { Modal } from "../../context/Modal";
 import GameImageModal from "./GameImagesModal";
 import { create_cart } from '../../store/cart'
+import AddToCart from "../Carts/AddToCart";
 
 import './index.css'
+import './GameDetail.css'
 
 const GameDetails = ({user, loaded}) => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -20,14 +22,13 @@ const GameDetails = ({user, loaded}) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const game = useSelector((state) => state.games[gameId])
-  // console.log(game.user_id, "GAME ID")
-  // console.log(user.user.id, "user id")
   const { reviewId } = useParams();
   const review = useSelector((state) => state.reviews[reviewId]);
   const reviews = useSelector(state => Object.values(state.reviews))
   const [showModal, setShowModal] = useState(false);
   const filteredReviews = reviews.filter(review => review.game_id === +gameId)
   const userReview = reviews.filter(review => review?.user_id === sessionUser?.id && review.game_id === +gameId)
+  console.log(userReview[0])
   const all_entry_carts = useSelector(state => Object.values(state.carts)).filter(entry => entry.game_id === +gameId) // We get back all carts that are in the library for this user that match the game id
 
   // array will have an element if they are owned
@@ -43,11 +44,10 @@ const GameDetails = ({user, loaded}) => {
   const in_cart_boolean = all_not_owned_carts.length > 0;
 
 
-
   useEffect(() => {
     dispatch(get_all_reviews())
-    dispatch(get_one_game(gameId)) // warning here - React Hook useEffect has a missing dependency: 'gameId'. Either include it or remove the dependency array
-  }, [dispatch])
+    dispatch(get_one_game(gameId))
+  }, [dispatch, gameId])
 
   const handleDelete = (gameId) => {
     dispatch(delete_game(gameId));
@@ -70,69 +70,144 @@ const GameDetails = ({user, loaded}) => {
        return history.push('/cart')
     }
   }
-  // refactor  this junk
-  let hasReviewed;
-   (sessionUser && sessionUser?.id === userReview[0]?.user_id) ?
-    hasReviewed = (
-      <>
-        <ReviewSummary review={userReview[0]} />
-      </>
+
+  const Owner = () => {
+    return (
+      <div className="reviewed_div">
+        <ReviewSummary review={userReview} />
+      </div>
     )
-  :
-    hasReviewed = (
-      <>
+  }
+
+  const NotOwner = () => {
+    return (
+      <div id="review_div">
         <ReviewGame gameId={gameId} />
-      </>
+      </div>
     )
+  }
+
+  // let hasReviewed;
+  //  (sessionUser && sessionUser?.id === userReview[0]?.user_id) ?
+  //   hasReviewed = (
+  //     <>
+  //       <ReviewSummary review={userReview[0]} />
+  //     </>
+  //   )
+  // :
+  //   hasReviewed = (
+  //     <>
+  //       <ReviewGame gameId={gameId} />
+  //     </>
+  //   )
 
 
+    //
   const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
 
   return (
     <>
-      <div id="page-content-container">
-        <div id="game-details-box">
-        <div id="title-container">
-          <h2>{game?.title}</h2>
-        </div>
-        <div id="image-details-container">
-          <div id="react-media-subcontainer">
-            <img id="selected-image" src={'https://community.clover.com/themes/base/admin/img/default-coverImage.png'} alt="" />
-          </div>
-          <div id="details-subcontainer">
-            <div>
-              <img id="main-game-image" src='https://community.clover.com/themes/base/admin/img/default-coverImage.png' alt="" />
+      <div id="page_content_container">
+        <div id="game_details_container">
+          <div id="game_details_box">
+            <div id="title_container">
+              <h1>{game?.title}</h1>
             </div>
-            <div id="description-paragraph">
+          <div id="image_details_container">
+            <div id="selected_media_div">
+              <video key={game?.video} controls="controls" id="game_video_detail_id" preload="none" playsInline="true" autoPlay={true} muted width="1140" loop>
+                <source src={game?.video} type="video/webm" loop/>
+              </video>
+            <div id="scroll_container">
+              <div id="scroll_div">
+                <div id="video_div">
+                  <div className="thumb_div">
+                    <video key={game?.video} id="game_video_detail_mini" preload="none" autoPlay={true} muted width="1140" loop>
+                      <source src={game?.video} type="video/webm" loop/>
+                    </video>
+                  </div>
+                </div>
+                  <div className="thumb_div">
+                    <img className="main_game_image" src={game?.images[1]?.image} alt="" />
+                  </div>
+                  <div className="thumb_div">
+                    <img className="main_game_image" src={game?.images[2]?.image} alt="" />
+                  </div>
+                  <div className="thumb_div">
+                    <img className="main_game_image" src={game?.images[3]?.image} alt="" />
+                  </div>
+                  <div className="thumb_div">
+                    <img className="main_game_image" src={game?.images[4]?.image} alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div id="details_subcontainer">
+            <div id="main_game_image_container">
+              <img id="main_game_image" src={game?.images[0]?.image} alt="" />
+            </div>
+            <div id="description_paragraph">
               <p>{game?.description}</p>
             </div>
-            <div id="user-review-div" className="subdetail-divs">
+          <div id="game_about_info_div">
+            <div id="all_reviews_div">
               <p>ALL REVIEWS:</p>
               <p>Very Positive</p>
             </div>
             <div>
-              <div id="developer-name-div" className="subdetail-divs">
+              <div id="release_date_div">
                 <p>RELEASE DATE:</p>
                 <p>{new Date(game?.release_date).toLocaleDateString('en-US', DATE_OPTIONS)}</p>
               </div>
             </div>
-            <div id="developer-name-div" className="subdetail-divs">
+            <div id="developer_name_div" className="subdetail-divs">
               <p>PUBLISHER:</p>
               <p>{game?.developer}</p>
             </div>
           </div>
+            <div id="game_id_tags">
+              Popular user-defined tags for this product:
+                <div id="game_tags">
+                  {game?.tags.map(tag =>
+                    <div key={tag.genres.id} id="genre_tags">
+                      {tag.genres.title}
+                    </div>
+                  )}
+                </div>
+            </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div id="sub_container">
+        <div id="sub_container_game">
+          <div id="sub_container_game_panel">
+          <div id="game_image_update_container">
+            {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
+          </div>
+      <div id="add_to_cart_container">
+        <div className="add-cart-container">
+          {!is_owned && ( <AddToCart handleAddToCart={handleAddToCart}
+            in_cart_boolean={in_cart_boolean} game={game} />
+          )}
+        </div>
+      </div>
+      <div id='game_options_container'>
+      <div id="game_edit_delete_container">
         {sessionUser?.id === game?.user_id ? <GameImageModal /> : <></>}
         {sessionUser?.id === game?.user_id && (
-          <div className='user-controls-container'>
+          <div id='user_controls_container'>
+            <div className="control_options">
             <img
-              className="owner_action_img"
+              id="owner_update_img"
               src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_edit.png"
               alt=""
             />
-            <GameEditModal game={game} user={{ ...sessionUser }} />
+            <Link game={game} id="game_edit_link" href={`/games/${game.id}/edit`}>  Update Game Details </Link>
+            </div>
+            <div className="control_options">
             <img
-              className="owner_action_img"
+              id="owner_delete_img"
               src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_delete.png"
               alt=""
             />
@@ -142,6 +217,7 @@ const GameDetails = ({user, loaded}) => {
             >
               Delete
             </a>
+            </div>
             {showModal && (
               <Modal onClose={() => setShowModal(false)}>
                 <h2>DELETE GAME LISTING?</h2>
@@ -149,74 +225,38 @@ const GameDetails = ({user, loaded}) => {
                   Are you sure you want to remove your game listing from the Steam Store?
                 </p>
                 <div className="modal-content-bttn-ok">
-                  <span onClick={() => handleDelete(game.id)}> Ok </span>
+                  <span onClick={() => handleDelete(game.id)}> Delete </span>
                   <span onClick={() => setShowModal(false)}> Cancel </span>
                 </div>
               </Modal>
             )}
           </div>
         )}
-        <div className="user_review_box">
-        {loaded && hasReviewed}
-        </div>
-        <div className="add-cart-container">
-        {!is_owned && (
-        <div id="add-cart-content">
-          <div id="add-cart-div">
-            <div id="add-cart-items">
-              <p>Buy this game now!</p>
-              <div className="add-cart-items-wrapper">
-                <div className="add-cart-item">
-                  <h1>Buy {game?.title.toUpperCase()}</h1>
-                  <div id="add-cart-item-action">
-                    <div id="add-cart-item-action-div">
-                      <div id="add-cart-item-price">
-                        ${game?.price}
-                      </div>
-                      <div id="add-cart-bttn">
-                        <button id="bttn-cartadd" type="button" onClick={handleAddToCart}>{in_cart_boolean ? 'In cart' : 'Add to cart'}</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="right-col">
-          </div>
-        </div>
-      )}
       </div>
+      </div>
+      <div id="user_review_container">
+        <div className="user_review_box">
+        {(sessionUser && sessionUser?.id === userReview[0]?.user_id) ? ( <Owner review={userReview} /> ) : ( <NotOwner review={userReview[0]} /> )}
+          {/* {loaded && hasReviewed} */}
+        </div>
+        </div>
         <div className="game_description_long_body">
-              <h4>ABOUT THIS GAME</h4>
-              <div className="description_box">
+          <h4>ABOUT THIS GAME</h4>
+            <div className="description_box">
               <p>{game?.description}</p>
-              </div>
+            </div>
         </div>
         <div className="page_content_divider"></div>
-        <h6>CUSTOMER REVIEWS</h6>
+          <h6>CUSTOMER REVIEWS</h6>
         <div className='reviews-container'>
           <Reviews user={user} filteredReviews={filteredReviews} />
-          {/* {filteredReviews?.map(review =>
-            <div key={review.id}>
-            <h2>
-            {review.content}
-            </h2>
-            </div>
-          )} */}
+        </div>
+        </div>
         </div>
         </div>
       </div>
-        {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
-
     </>
   )
 }
 
 export default GameDetails;
-
-// <form action="/carts" method="POST">
-// <input type="hidden" name="user_id" value={sessionUser?.id} />
-// <input type="hidden" name="game_id" value={game?.id} />
-// <input type="hidden" name="is_owned" value={false} />
-// </form>
