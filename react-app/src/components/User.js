@@ -27,7 +27,7 @@ function User({users}) {
   return (
     <div id='user-info-area-container'>
       <video autoPlay muted loop id="user-video">
-        <source src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/1492660/3b67d75c3161ff8ebb1501f4436b839ea490e050.webm"></source>
+        <source src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/1492660/3b67d75c3161ff8ebb1501f4436b839ea490e050.webm"/>
       </video>
       <div id="user-content">
         <div id="pfp-container">
