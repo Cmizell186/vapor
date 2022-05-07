@@ -36,13 +36,16 @@ const UploadGamePicture = () =>{
         const file = e.target.files[0];
         setImage(file);
     }
+    const loaded = () => {
+        alert("File was selected.")
+    }
 
     return (
     <div id="upload_submit_form">
         <form onSubmit={handleSubmit} id='new-image-game-form'>
           <h4 className="delete-image-text">For best results use images with 616x353 dimensions.</h4>
             <div id="delete_image_buttons">
-            <label for='image-upload' className="choose-image">Upload a New Image</label>
+            <label for='image-upload' onLoadedMetadata={loaded} className="choose-image">Upload a New Image</label>
             <input
                 id='image-upload'
                 type='file'

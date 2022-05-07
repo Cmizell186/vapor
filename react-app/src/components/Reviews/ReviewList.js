@@ -18,20 +18,19 @@ return (
     <>
     <div className="reviews-list-container">
         {filteredReviews?.map(review =>
-        <div className='review-box' key={review.id}>
+        <div id='review-box' key={review.id}>
             <div className="user_box">
             <div className="profile_box">
                 <a className='profile_img_link' href={`/users/${user.id}`}>
-                    <img id="profile_img" src={user?.profile_picture} alt=""></img>
+                    <img id="profile_img_review" src={user?.profile_picture} alt=""></img>
                 </a>
-                {/* {reviewUser = users.filter(revUser => revUser?.user_id === review.user_id)} */}
-                <a href={`/users/${user.id}`}>
-                    <div className="profile_name_link">{user.username}</div>
+                <a id="profile_name_link" href={`/users/${user.id}`}>
+                    <div id="profile_name_div">{user.username}</div>
                 </a>
             </div>
             </div>
             <div className="review_content_box">
-            <div className="review-recommendation">
+            <div className="review_recommendation">
                 <div className="review-header">
                 <div className="thumb">
                 <img src={review?.is_recommended
@@ -42,15 +41,15 @@ return (
                 />
                 </div>
                 <div className="recommend-description">
-                <h4>{review?.is_recommended
+                <div id='yay_or_nay'>{review?.is_recommended
                     ? "Recommended"
                     : "Not Recommended"
                 }
-                </h4>
+                </div>
                 </div>
                 </div>
             </div>
-                <div className="review-content">
+                <div id="review_content">
                     {review.content}
                 </div>
                 </div>
