@@ -1,5 +1,6 @@
 body .game-listing-form-container {
   background-color: white !important;
+  min-height: 1248px;
 }
 
 .vaporworks_welcome_text {
@@ -20,14 +21,122 @@ body .game-listing-form-container {
 }
 
 .game_listing_form_main_body {
-  margin: 0 auto;
-  min-height: 948px;
+  position: absolute;
+  left: 75em;
+  top: 6.5em;
+  min-height: 1100px;
   background: none;
   background-image: linear-gradient(to bottom,#243445, #101a22 25% );
   background-repeat: no-repeat, repeat-y;
   background-position: bottom center, center;
   width: 926px;
+  max-width: 926px;
   padding: 12px 12px 128px 12px;
   border: 1px solid #101a22;
   box-shadow: 0 0 50px #304451;
+  z-index: 1000;
+}
+
+.create_form {
+  /* position: relative; */
+  right: 150px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+  padding: 40px 20px 20px 20px;
+  /* background: radial-gradient(30% 40% at 40% 30%, rgba(33, 36, 41, .5) 0%, rgba(33, 36, 41, 0) 100%) #2124296e; */
+}
+
+.create_form, label {
+
+  max-width: 300px;
+  border-radius: 3px;
+  color: #b8b6b4;
+  padding: 8px 6px;
+  display: block;
+  box-shadow: none;
+  width: 100%;
+  border: 1px solid #26282d00;
+  transition: border ease-in-out .5s;
+  outline: none;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+}
+
+.create_input{
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  border-radius: 3px;
+  color: #b8b6b4;
+  padding: 8px 6px;
+  display: block;
+  box-shadow: none;
+  width: 100%;
+  border: 1px solid #26282d00;
+  transition: border ease-in-out .5s;
+  outline: none;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  background-color: #565658;
+
+}
+
+/* .background_vw_logo {
+  background-image: url("../../public/static/images/vaporworks_logo.png");
+  background-repeat: no-repeat;
+  background-position:left;
+
+} */
+
+.vw_logo_blk {
+  max-width: 600px;
+}
+
+.vid_div {
+  position: relative;
+  top: 4em;
+  left: 30em;
+  z-index: 1;
+}
+
+.vw_intro_text {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  font-size: 22px;
+
+}
+
+#vw_jared_button {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 15px;
+  height: 33px;
+  width: auto;
+  border-radius: 2px;
+  border: none;
+  padding: 1px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #67c1f5 !important;
+  background: rgba( 103, 193, 245, 0.2 );
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+#vw_jared_button:hover {
+  text-decoration: none !important;
+  color: #fff !important;
+  background: #417a9b;
+  background: -webkit-linear-gradient( 150deg, #417a9b 5%,#67c1f5 95%);
+  background: linear-gradient( -60deg, #417a9b 5%,#67c1f5 95%);
+}
+
+.vw_stats_img {
+  position: relative;
+  top: 8em;
+  z-index: 1;
 }
