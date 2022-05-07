@@ -1,7 +1,7 @@
 import { get_all_reviews, get_one_review } from "../../store/reviews"
 import { get_one_game } from "../../store/game"
 import { useDispatch, useSelector } from "react-redux"
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import ReviewGame from "../Reviews/ReviewsForm";
 import Reviews from "../Reviews/ReviewList";
@@ -28,6 +28,7 @@ const GameDetails = ({user, loaded}) => {
   const [showModal, setShowModal] = useState(false);
   const filteredReviews = reviews.filter(review => review.game_id === +gameId)
   const userReview = reviews.filter(review => review?.user_id === sessionUser?.id && review.game_id === +gameId)
+  console.log(userReview[0])
   const all_entry_carts = useSelector(state => Object.values(state.carts)).filter(entry => entry.game_id === +gameId) // We get back all carts that are in the library for this user that match the game id
 
   // array will have an element if they are owned
@@ -73,7 +74,7 @@ const GameDetails = ({user, loaded}) => {
   const Owner = () => {
     return (
       <div className="reviewed_div">
-        <ReviewSummary review={userReview[0]} />
+        <ReviewSummary review={userReview} />
       </div>
     )
   }
@@ -114,14 +115,16 @@ const GameDetails = ({user, loaded}) => {
             </div>
           <div id="image_details_container">
             <div id="selected_media_div">
-              <video id="game_video_detail_id" preload="none" playsInline="true" autoPlay={true} muted width="1140" loop>
+              <video key={game?.video} controls="controls" id="game_video_detail_id" preload="none" playsInline="true" autoPlay={true} muted width="1140" loop>
                 <source src={game?.video} type="video/webm" loop/>
               </video>
             <div id="scroll_container">
               <div id="scroll_div">
                 <div id="video_div">
                   <div className="thumb_div">
-                    video thumb
+                    <video key={game?.video} id="game_video_detail_mini" preload="none" autoPlay={true} muted width="1140" loop>
+                      <source src={game?.video} type="video/webm" loop/>
+                    </video>
                   </div>
                 </div>
                   <div className="thumb_div">
@@ -140,26 +143,28 @@ const GameDetails = ({user, loaded}) => {
               </div>
             </div>
           <div id="details_subcontainer">
-            <div>
+            <div id="main_game_image_container">
               <img id="main_game_image" src={game?.images[0]?.image} alt="" />
             </div>
             <div id="description_paragraph">
               <p>{game?.description}</p>
             </div>
-            <div id="user_review_div">
+          <div id="game_about_info_div">
+            <div id="all_reviews_div">
               <p>ALL REVIEWS:</p>
               <p>Very Positive</p>
             </div>
             <div>
-              <div id="developer_name_div">
+              <div id="release_date_div">
                 <p>RELEASE DATE:</p>
                 <p>{new Date(game?.release_date).toLocaleDateString('en-US', DATE_OPTIONS)}</p>
               </div>
             </div>
-            <div id="developer-name-div" className="subdetail-divs">
+            <div id="developer_name_div" className="subdetail-divs">
               <p>PUBLISHER:</p>
               <p>{game?.developer}</p>
             </div>
+          </div>
             <div id="game_id_tags">
               Popular user-defined tags for this product:
                 <div id="game_tags">
@@ -174,9 +179,12 @@ const GameDetails = ({user, loaded}) => {
           </div>
         </div>
       </div>
-      <div id="game_image_update_container">
-        {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
-      </div>
+      <div id="sub_container">
+        <div id="sub_container_game">
+          <div id="sub_container_game_panel">
+          <div id="game_image_update_container">
+            {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
+          </div>
       <div id="add_to_cart_container">
         <div className="add-cart-container">
           {!is_owned && ( <AddToCart handleAddToCart={handleAddToCart}
@@ -184,18 +192,22 @@ const GameDetails = ({user, loaded}) => {
           )}
         </div>
       </div>
+      <div id='game_options_container'>
       <div id="game_edit_delete_container">
         {sessionUser?.id === game?.user_id ? <GameImageModal /> : <></>}
         {sessionUser?.id === game?.user_id && (
-          <div className='user-controls-container'>
+          <div id='user_controls_container'>
+            <div className="control_options">
             <img
-              className="owner_action_img"
+              id="owner_update_img"
               src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_edit.png"
               alt=""
             />
-            <GameEditModal game={game} user={{ ...sessionUser }} />
+            <Link game={game} id="game_edit_link" href={`/games/${game.id}/edit`}>  Update Game Details </Link>
+            </div>
+            <div className="control_options">
             <img
-              className="owner_action_img"
+              id="owner_delete_img"
               src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_delete.png"
               alt=""
             />
@@ -205,6 +217,7 @@ const GameDetails = ({user, loaded}) => {
             >
               Delete
             </a>
+            </div>
             {showModal && (
               <Modal onClose={() => setShowModal(false)}>
                 <h2>DELETE GAME LISTING?</h2>
@@ -220,10 +233,12 @@ const GameDetails = ({user, loaded}) => {
           </div>
         )}
       </div>
+      </div>
       <div id="user_review_container">
         <div className="user_review_box">
-        {(sessionUser && sessionUser?.id === userReview[0]?.user_id) ? ( <Owner /> ) : ( <NotOwner /> )}
+        {(sessionUser && sessionUser?.id === userReview[0]?.user_id) ? ( <Owner review={userReview} /> ) : ( <NotOwner review={userReview[0]} /> )}
           {/* {loaded && hasReviewed} */}
+        </div>
         </div>
         <div className="game_description_long_body">
           <h4>ABOUT THIS GAME</h4>
@@ -235,6 +250,8 @@ const GameDetails = ({user, loaded}) => {
           <h6>CUSTOMER REVIEWS</h6>
         <div className='reviews-container'>
           <Reviews user={user} filteredReviews={filteredReviews} />
+        </div>
+        </div>
         </div>
         </div>
       </div>
