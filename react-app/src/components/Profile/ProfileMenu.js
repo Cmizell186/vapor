@@ -34,8 +34,8 @@ return (
     {showMenu && (
         <>
         <div className='profile_dropdown'>
-        <div id='profile'><a id="profile" href={`/users/${user.id}`}>View profile</a></div>
-        <div id='logout'><a id="profile" onClick={onLogout} href="/">Logout: {user.username}</a></div>
+          <div id='profile'><a id="profile" href={`/users/${user.id}`}>View profile</a></div>
+          <div id='logout'><a id="profile" onClick={onLogout} href="/">Logout: {user.username}</a></div>
         </div>
         </>
     )}

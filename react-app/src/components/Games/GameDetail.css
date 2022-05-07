@@ -1,0 +1,68 @@
+@font-face {
+    font-family: Motiva Sans Bold;
+    src: url("../../public/fonts/Motiva-Sans-Bold.ttf");
+  }
+@font-face {
+    font-family: Motiva Sans;
+    src: url("../../public/fonts/Motiva-Sans.ttf");
+  }
+@font-face {
+    font-family: Motiva Sans Light;
+    src: url("../../public/fonts/Motiva-Sans-Light.ttf");
+  }
+
+#page_content_container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: -69px;
+    margin: 0 auto;
+}
+
+#game_details_container {
+    display: flex;
+    justify-content: center;
+}
+
+#game_details_box {
+    width: 940px;
+    padding-top: 75px;
+    background-color: #1b2838;
+    color: white;
+    background-image: url("../../public/static/images/game_detail_bg.jpg");
+    background-repeat: no-repeat;
+}
+
+#title_container {
+    font-family: Motiva Sans Light;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding-top: 10px;
+}
+
+#image-details-container {
+    background-color: #0e0e0f42;
+    display: flex;
+}
+
+#selected_media_div {
+  width: 600px;
+  height: 337px;
+  float: left;
+  margin-right: 16px;
+}
+
+#game_video_detail_id {
+    width: 600px;
+    height: 337px;
+}
+
+#scroll_container {
+    width: 600px;
+    height: 69px;
+}
+
+#scroll_div {
+    height: 69px;
+    width: 100vw;
+}

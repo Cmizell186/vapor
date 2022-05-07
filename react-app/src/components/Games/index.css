@@ -3,44 +3,19 @@
   src: url("../../public/fonts/Motiva-Sans-Light.ttf");
 }
 
-#title-container,
-#image-details-container,
-.create-reviews-container,
-#reviews-container {
-  font-family: "Motiva Sans", Sans-serif;
-  width: 940px;
-}
 
-#page-content-container {
-  display: flex;
-  flex-flow: column;
-  box-sizing: border-box;
-  align-items: center;
-  background-color: #1b2838;
-  color: white;
-}
-
-#title-container {
-  display: flex;
-  justify-content: flex-start;
-  width: 940px;
-}
-
-#image-details-container {
-  display: flex;
-  flex-flow: row;
-  width: 940px;
-  height: 444px;
-  background-color: #0e0e0f42;
-}
 
 #selected-image {
   width: 600px;
   height: 337px;
 }
 
+#game_video_detail_id {
+  width: 600px;
+  height: 337px;
+}
+
 #react-media-subcontainer {
-  display: block;
   width: 616px;
   margin: 0px;
   padding: 0px 0px 0px 0px;
@@ -57,18 +32,22 @@
   background-image: linear-gradient(to bottom right,#5f5f5f00, #0000009c );
 }
 
-#details-subcontainer > div {
-  margin: 0px 0px 0px 0px;
-  font-family: "Motiva Sans", Sans-serif;
-}
-
 #main-game-image {
   width: 324px;
   height: 151px;
 }
 
 #description-paragraph {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c6d4df;
+  max-height: 111px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 18px;
   padding-right: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
 }
 
 #user-review-div {
@@ -89,7 +68,7 @@
 
 .subdetail-divs {
   font-size: 11px;
-  color: #5f6168;
+  color: #a3abb1;
   margin: 0px 0px 0px 0px;
 }
 
@@ -199,4 +178,36 @@
 .delete-bttn {
   text-decoration: none;
   color: white;
+}
+
+#game_id_tags {
+  height: 70px;
+  width: 323px;
+  display: flex;
+  flex-direction: column;
+  line-height: 19px;
+  font-size: 12px;
+  color: #b0bdc5;
+  padding-top: 10px;
+}
+
+#game_tags {
+  display: flex;
+  padding-top: 10px;
+}
+
+#genre_tags {
+  color: #67c1f5;
+  background-color: rgba( 103, 193, 245, 0.4 );
+  line-height: 19px;
+  padding: 0 7px;
+  color: #67c1f5;
+  background-color: rgba( 103, 193, 245, 0.2 );
+  box-shadow: none;
+  margin-right: 2px;
+  border-radius: 2px;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
