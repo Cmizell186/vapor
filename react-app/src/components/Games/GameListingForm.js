@@ -68,7 +68,7 @@ const CreateGame = ({ user, loaded }) => {
         <div className="vw_intro_text">
           Vaporworks is a set of tools and services that help game developers
           and publishers build their games and get the most out of distributing
-          on Steam.
+          on Vapor.
         </div>
         <div className="vid_div">
           <video id="labworks_video" autoPlay={true} muted width="540" loop>
