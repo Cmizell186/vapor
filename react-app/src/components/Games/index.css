@@ -27,8 +27,10 @@
 }
 
 #add-cart-content {
+  display: flex;
   width: 940px;
   margin: 0 auto;
+  padding-top: 15px;
 }
 
 #add-cart-div {

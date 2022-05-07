@@ -28,11 +28,11 @@ const GameDetails = ({user, loaded}) => {
   const [showModal, setShowModal] = useState(false);
   const filteredReviews = reviews.filter(review => review.game_id === +gameId)
   const userReview = reviews.filter(review => review?.user_id === sessionUser?.id && review.game_id === +gameId)
-  console.log(userReview[0])
   const all_entry_carts = useSelector(state => Object.values(state.carts)).filter(entry => entry.game_id === +gameId) // We get back all carts that are in the library for this user that match the game id
 
   // array will have an element if they are owned
   const all_owned_carts =  all_entry_carts.filter(entry =>  entry.is_owned)
+  console.log(all_owned_carts)
 
   // array will have an element if they are in cart and not owned
   const all_not_owned_carts =  all_entry_carts.filter(entry =>  !entry.is_owned)
@@ -74,7 +74,7 @@ const GameDetails = ({user, loaded}) => {
   const Owner = () => {
     return (
       <div className="reviewed_div">
-        <ReviewSummary review={userReview} />
+        <ReviewSummary review={userReview[0]} />
       </div>
     )
   }
@@ -82,7 +82,7 @@ const GameDetails = ({user, loaded}) => {
   const NotOwner = () => {
     return (
       <div id="review_div">
-        <ReviewGame gameId={gameId} />
+       {all_owned_carts.length ? <ReviewGame gameId={gameId} /> : <></> }
       </div>
     )
   }
@@ -236,19 +236,18 @@ const GameDetails = ({user, loaded}) => {
       </div>
       <div id="user_review_container">
         <div className="user_review_box">
-        {(sessionUser && sessionUser?.id === userReview[0]?.user_id) ? ( <Owner review={userReview} /> ) : ( <NotOwner review={userReview[0]} /> )}
+        {(sessionUser && sessionUser?.id === userReview[0]?.user_id) ? ( <Owner review={userReview[0]} /> ) : ( <NotOwner gameId={gameId} /> )}
           {/* {loaded && hasReviewed} */}
         </div>
         </div>
-        <div className="game_description_long_body">
+        <div id="game_description">
           <h4>ABOUT THIS GAME</h4>
-            <div className="description_box">
+            <div id="description_box">
               <p>{game?.description}</p>
             </div>
         </div>
-        <div className="page_content_divider"></div>
-          <h6>CUSTOMER REVIEWS</h6>
-        <div className='reviews-container'>
+          <div id="customer_reviews_div">CUSTOMER REVIEWS</div>
+        <div className='reviews_container'>
           <Reviews user={user} filteredReviews={filteredReviews} />
         </div>
         </div>

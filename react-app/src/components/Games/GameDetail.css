@@ -155,11 +155,13 @@
     font-size: 12px;
     color: #b0bdc5;
     padding-top: 30px;
+    padding-left: 5px;
 }
 
 #game_tags {
     display: flex;
     padding-top: 3px;
+    padding-left: 5px;
 }
 
 #genre_tags {
@@ -189,11 +191,11 @@
 }
 
 #sub_container_game_panel {
-
+    border: 0px;
 }
 
 #game_image_update_container {
-
+    border: 0px;
 }
 
 #game_options_container {
@@ -242,3 +244,38 @@
     width: 16px;
     padding-right: 5px;
 }
+
+#user_review_container {
+    padding-top: 25px;
+}
+
+#game_description {
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0 10px;
+    letter-spacing: 0.03em;
+    font-weight: normal;
+    padding-top: 20px;
+}
+
+#description_box {
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    margin-bottom: 20px;
+    height: fit-content;
+    position: relative;
+}
+
+#description_box::before {
+    content: "";
+    background: linear-gradient(to right, #47bfff 30%, rgba(255,255,255,0) 70%);
+    display: block;
+    height: 1px;
+    width: 600px;
+    position: absolute;
+    top: 0;
+  }
