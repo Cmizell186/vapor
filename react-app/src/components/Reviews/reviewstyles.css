@@ -1,8 +1,8 @@
 .review-form-container {
   background-image: linear-gradient(to bottom right,#2d3d4b, #566573 );
   color: #aeb8c0;
-  max-width: 1008px;
-  min-width: 940px;
+  max-width: 580px;
+  /* min-width: 580px; */
   position: relative;
   overflow: visible;
   padding-top: 16px;
@@ -38,7 +38,7 @@
   border: 1px solid #233c51;
   border-radius: 3px;
   height: 132px;
-  width: 764px;
+  /* width: 764px; */
   max-width: 800px;
   background-color: #222b35;
   color: #d6d7d8;
@@ -145,7 +145,7 @@
 }
 
 .btn-submit-review > span {
-  padding: 0 15px;
+  padding: 0 5px;
   font-size: 15px;
   line-height: 30px;
   display: block;
