@@ -3,6 +3,10 @@ body .game-listing-form-container {
   min-height: 1248px;
 }
 
+.game-listing-form-container {
+  overflow-x: hidden;
+}
+
 .vaporworks_welcome_text {
   margin: 0 auto;
   max-width: 948px;
@@ -29,12 +33,12 @@ body .game-listing-form-container {
   background-image: linear-gradient(to bottom,#243445, #101a22 25% );
   background-repeat: no-repeat, repeat-y;
   background-position: bottom center, center;
-  width: 620px;
-  max-width: 926px;
+  width: 680px;
   padding: 12px 12px 128px 12px;
   border: 1px solid #101a22;
   box-shadow: 0 0 50px #304451;
   z-index: 1000;
+  overflow-x: hidden;
 }
 
 .create_form {
