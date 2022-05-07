@@ -20,16 +20,71 @@
   padding-left: 10px;
 }
 
+#yay_or_nay {
+  font-size: 16px;
+  color: #d6d7d8;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-left: 10px;
+  line-height: 19px;
+}
+
+#customer_reviews_div {
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: 300;
+  font-weight: normal;
+  font-size: 14px;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  letter-spacing: 2px;
+}
+
 .review-content-container {
   overflow: hidden;
   display: flex;
   flex-direction: row;
 }
 
+#review_content {
+  overflow: hidden;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 8px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 17px;
+  color: #bcc3ca;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+#profile_name_div {
+  padding-top: 5px;
+}
+
+#profile_name_link {
+  text-decoration: none;
+  color: #c1dbf4;
+  font-size: 13px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: bold;
+}
+
+#profile_img_review {
+  width: 34px;
+  height: 34px;
+  padding-right: 10px;
+}
+
 #profile_img {
-  width: 90px;
-  height: 90px;
-  margin-right: 20px;
+  width: 64px;
+  height: 64px;
+  margin-top: 5px;
+  margin-right: 10px;
   margin-left: 10px;
   border: 1px solid #67707B;
 }
@@ -216,6 +271,27 @@
   padding: 10px;
 }
 
+#review-box {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  margin-bottom: 20px;
+  height: fit-content;
+  background-color: #14212c;
+  position: relative;
+  text-decoration: none;
+}
+
+#review-box::before {
+  content: "";
+  background: linear-gradient(to right, #47bfff 30%, rgba(255,255,255,0) 70%);
+  display: block;
+  height: 1px;
+  width: 600px;
+  position: absolute;
+  top: 0;
+}
+
 .review-box {
   display: flex;
   flex-direction: row;
@@ -257,7 +333,7 @@
 }
 
 .review_content_box {
-  padding-left: 15px;
+  padding-left: 25px;
 }
 
 .review-recommendation {
@@ -266,6 +342,11 @@
   height: 54px;
   background-color: #0e171e;
   width: 385px;
+}
+
+.review_recommendation {
+  background-color: #0e171e;
+  width: 477px;
 }
 
 .review-content {

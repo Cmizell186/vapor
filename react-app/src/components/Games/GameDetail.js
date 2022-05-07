@@ -246,7 +246,7 @@ const GameDetails = ({user, loaded}) => {
               <p>{game?.description}</p>
             </div>
         </div>
-          <h6>CUSTOMER REVIEWS</h6>
+          <div id="customer_reviews_div">CUSTOMER REVIEWS</div>
         <div className='reviews_container'>
           <Reviews user={user} filteredReviews={filteredReviews} />
         </div>
