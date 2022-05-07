@@ -32,6 +32,7 @@ const GameDetails = ({user, loaded}) => {
 
   // array will have an element if they are owned
   const all_owned_carts =  all_entry_carts.filter(entry =>  entry.is_owned)
+  console.log(all_owned_carts)
 
   // array will have an element if they are in cart and not owned
   const all_not_owned_carts =  all_entry_carts.filter(entry =>  !entry.is_owned)
@@ -81,7 +82,7 @@ const GameDetails = ({user, loaded}) => {
   const NotOwner = () => {
     return (
       <div id="review_div">
-        <ReviewGame gameId={gameId} />
+       {all_owned_carts.length ? <ReviewGame gameId={gameId} /> : <></> }
       </div>
     )
   }
@@ -239,15 +240,14 @@ const GameDetails = ({user, loaded}) => {
           {/* {loaded && hasReviewed} */}
         </div>
         </div>
-        <div className="game_description_long_body">
+        <div id="game_description">
           <h4>ABOUT THIS GAME</h4>
-            <div className="description_box">
+            <div id="description_box">
               <p>{game?.description}</p>
             </div>
         </div>
-        <div className="page_content_divider"></div>
           <h6>CUSTOMER REVIEWS</h6>
-        <div className='reviews-container'>
+        <div className='reviews_container'>
           <Reviews user={user} filteredReviews={filteredReviews} />
         </div>
         </div>
