@@ -44,7 +44,6 @@ const AboutUs = () => {
   }
 
   const handleChange = (i) => {
-    console.log(usArray[meIndex].videoUrl)
     setMeIndex(i)
   }
 
