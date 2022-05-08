@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { create_review } from "../../store/reviews"
+import {get_one_image} from '../../store/image';
 import { Modal } from '../../context/Modal'
 import './reviewstyles.css'
 
@@ -17,6 +18,13 @@ const ReviewGame = ({ gameId }) => {
   const dispatch = useDispatch();
   const [style_rec_yes, setStyle_Rec_Yes] = useState("recommend_yes");
   const [style_rec_no, setStyle_Rec_No] = useState("recommend_no")
+  const userImage = useSelector(state => Object.values(state.images))
+  const pfp = userImage[0];
+
+  useEffect(() =>{
+    dispatch(get_one_image(sessionUser?.id))
+  }, [dispatch])
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setHasSubmitted(true);
@@ -71,7 +79,7 @@ const ReviewGame = ({ gameId }) => {
           <a href="/">Rules and Guidelines.</a>
         </p>
         <form onSubmit={handleSubmit} className="review-content-container">
-          <img id="profile_img" src={sessionUser?.profile_picture} alt=""></img>
+          <img id="profile_img" src={pfp?.image} alt=""></img>
           <div className="content-div">
             <label htmlFor='content'>
             </label>
