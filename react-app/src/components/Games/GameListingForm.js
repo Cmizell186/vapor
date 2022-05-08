@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { get_all_games } from "../../store/game"
 import { get_one_game } from "../../store/game"
+import {get_one_image} from '../../store/image';
 import { create_game } from "../../store/game";
 import VaporWorksModal from "./VaporworksModal";
-import { Modal } from "../../context/Modal";
 import "./create.css";
+
 const CreateGame = ({ user, loaded }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const [title, setTitle] = useState("");
@@ -19,16 +20,18 @@ const CreateGame = ({ user, loaded }) => {
   const games = useSelector(state => Object.values(state.games))
   const addedGame = games[games.length - 1]
   const userGame = games.filter(game => game?.user_id === sessionUser?.id && game?.id === addedGame?.id)
-  const [showModal, setShowModal] = useState(true);
   const [developer, setDeveloper] = useState("");
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const history = useHistory();
   const dispatch = useDispatch();
+  const userImage = useSelector(state => Object.values(state.images))
+  const pfp = userImage[0];
 
   useEffect(() => {
     dispatch(get_all_games())
     dispatch(get_one_game(id))
+    dispatch(get_one_image(sessionUser?.id))
   }, [dispatch])
 
   const handleSubmit = async (e) => {
@@ -103,7 +106,7 @@ const CreateGame = ({ user, loaded }) => {
               <div className="profile_avatar_small">
                 <img
                   id="profile_img_small"
-                  src={sessionUser?.profile_picture}
+                  src={pfp?.image}
                   alt=""
                 ></img>
               </div>
