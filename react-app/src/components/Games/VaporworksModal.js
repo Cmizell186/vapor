@@ -12,7 +12,7 @@ const VaporWorksModal = () =>{
                 <Modal onClose={() => setShowModal(false)} className="game-image-container">
                         <h1>Welcome to Vaporworks!</h1>
                         <div className="vaporworks_welcome_text">
-                        <div class="modal-dialog modal-dialog-scrollable">
+                        <div className="modal-dialog modal-dialog-scrollable">
                           Welcome to Vaporworks! This new submission path is designed to provide a streamlined, transparent, and affordable route for new game developers from anywhere in the world to bring games to Vapor.
                           <br />
                           <br />

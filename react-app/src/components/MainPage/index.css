@@ -475,7 +475,7 @@ a {
     padding-top: 20px;
     height: 90px;
     width: 150px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-image: url("../../public/static/images/tiltedvaporworks.png");
 }
@@ -491,7 +491,7 @@ a {
 
 .nav_links_main_page {
     line-height: 16px;
-    margin: 7px 0;
+    margin: 5px 0;
     display: block;
     color: #c7d5e0;
     font-size: 13px;
@@ -507,4 +507,21 @@ a {
 .nav_links_main_page a:hover {
     color: #ffffff;
     text-decoration: none;
+}
+
+#game_info_content_carousel {
+    padding: 10px 10px;
+    font-size: 21px;
+    font-weight: 200;
+    min-height: auto;
+    text-transform: capitalize;
+}
+
+#game_info_content_price {
+    color: #acdbf5;
+    font-size: 11px;
+    padding-top: 50px;
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
 }
