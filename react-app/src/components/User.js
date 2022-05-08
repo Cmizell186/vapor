@@ -52,10 +52,10 @@ function User({users}) {
             navButtonsAlwaysInvisible={true}
             height='250px'
           >
-            <img id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_1.jpg"></img>
-            <img id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_2.png"></img>
-            <img id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_3.gif"></img>
-            <img id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_4.jpg"></img>
+            <img alt='' id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_1.jpg"></img>
+            <img alt='' id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_2.png"></img>
+            <img alt='' id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_3.gif"></img>
+            <img alt='' id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_4.jpg"></img>
           </Carousel>
         </div>
       </div>

@@ -163,7 +163,7 @@ def seed_games():
 
     # 15
     ac2 = Game(
-        title = "",
+        title = "Assassin's Creed II",
         price = 19.99,
         description = "An epic story of family, vengeance and conspiracy set in the pristine, yet brutal, backdrop of a Renaissance Italy. New low price!",
         release_date = "2010_03_09",
