@@ -46,7 +46,12 @@ function User({users}) {
         <div className='screen-shots'>
           <h2 className='art-showcase-h2'>Art Show Case</h2>
           <Carousel
-          height='250px'>
+            autoPlay={true}
+            interval={3000}
+            indicators={true}
+            navButtonsAlwaysInvisible={true}
+            height='250px'
+          >
             <img id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_1.jpg"></img>
             <img id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_2.png"></img>
             <img id="art-showcase-img" src="https://vaporgames.s3.us-west-1.amazonaws.com/screen_3.gif"></img>
