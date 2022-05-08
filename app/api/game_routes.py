@@ -48,7 +48,7 @@ def get_specific_game(id):
     # print('================', game.to_dict())
     return {'game': game.to_dict()}
 
-@game_routes.route('/<int:id>', methods=["POST"])
+@game_routes.route('/<int:id>/edit', methods=["POST"])
 def edit_game(id):
     form = EditGame()
     form['csrf_token'].data = request.cookies['csrf_token']
