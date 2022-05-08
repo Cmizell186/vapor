@@ -21,10 +21,6 @@ const ReviewGame = ({ gameId }) => {
   const userImage = useSelector(state => Object.values(state.images))
   const pfp = userImage[0];
 
-  useEffect(() =>{
-    dispatch(get_one_image(sessionUser?.id))
-  }, [dispatch])
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setHasSubmitted(true);

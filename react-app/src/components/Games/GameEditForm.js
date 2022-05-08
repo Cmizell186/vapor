@@ -96,7 +96,7 @@ const EditGame = () => {
                   {sessionUser.username}
                 </a>
               </span>
-              <span className="profile_header_arrows">>></span>
+              <span className="profile_header_arrows">{">>"}</span>
               <span className="profile_reviews_text">
                 <a
                   className="profile_link_content"
@@ -105,7 +105,7 @@ const EditGame = () => {
                   Vaporworks
                 </a>
               </span>
-              <span className="profile_header_arrows">>></span>
+              <span className="profile_header_arrows">{">>"}</span>
               <a className="profile_link_content" href="/games/new">
                 <span className="profile_reviews_text">New</span>
               </a>
@@ -176,6 +176,7 @@ const EditGame = () => {
                     type="date"
                     value={release_date}
                     onChange={(e) => setRelease_Date(e.target.value)}
+                    required={true}
                   />
                 </div>
                 <div className="is_mature-div">
