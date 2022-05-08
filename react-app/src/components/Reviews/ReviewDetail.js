@@ -12,7 +12,6 @@ import "./index.css";
 const ReviewDetails = ({ loaded }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { gameId } = useParams();
   const { reviewId } = useParams();
   const review = useSelector((state) => state.reviews[reviewId]);
   const sessionUser = useSelector((state) => state.session.user);
@@ -23,7 +22,8 @@ const ReviewDetails = ({ loaded }) => {
   const [content, setContent] = useState(review?.content);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
-
+  console.log(is_recommended)
+  console.log(review?.is_recommended)
 
   useEffect(() => {
     dispatch(get_one_review(reviewId)); //warning here- useEffect has a missing dependency: 'reviewId'. Either include it or remove the dependency array
@@ -132,7 +132,7 @@ const ReviewDetails = ({ loaded }) => {
     return setContent(e.target.value)
   }
 
-  const EditReview = ({ review, gameId }) => {
+  const EditReview = ({ review }) => {
     return (
       <>
         <div className="review-edit-container">
@@ -140,7 +140,7 @@ const ReviewDetails = ({ loaded }) => {
             <div className="recommend_control_box">
               <div className="is_recommended-div">Do you recommend this game?</div>
               <div className='edit_vote_up_down_container'>
-                <button className={is_recommended ? 'recommend_clicked' : 'recommend_yes'}
+                <button className={review?.is_recommended ? 'recommend_clicked' : 'recommend_yes'}
                   type='button'
                   // defaultValue={content}
                   onClick={(e) => {
@@ -154,7 +154,7 @@ const ReviewDetails = ({ loaded }) => {
                     Yes
                   </span>
                 </button>
-                <button className={!is_recommended ? 'recommend_clicked' : 'recommend_no'}
+                <button className={!review?.is_recommended ? 'recommend_clicked' : 'recommend_no'}
                   type='button'
                   // defaultValue={review?.is_recommended}
                   onClick={(e) => {
@@ -244,7 +244,7 @@ const ReviewDetails = ({ loaded }) => {
         <div className="main-content-container">
           <div className="review-detail-container">
             <div id="left-offset-review-content-text" style={{ display: "block" }}><ShowReview /></div>
-            <div id="left-offset-review-content-edit" style={{ display: "none" }}><EditReview review={review} gameId={gameId} /></div>
+            <div id="left-offset-review-content-edit" style={{ display: "none" }}><EditReview review={review} /></div>
             <div className="right-offset-detail-subbody">
               <div className="game-review-links">
                 <div className="game_logo_img">
