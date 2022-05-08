@@ -196,8 +196,8 @@ const Store = ({user}) => {
         ))}
       </TabPanel>
       <TabPanel value={value} index={1}>
-      {games?.slice(0, 10)
-            ?.sort(() => Math.random() - Math.random())
+      {games?.sort(() => Math.random() - Math.random())
+            ?.slice(0, 10)
             ?.map(game => (
               <Link key={game?.id} className='game_container_link' to={`/games/${game?.id}`}>
             <div id='game_container'>
