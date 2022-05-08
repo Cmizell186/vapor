@@ -27,6 +27,15 @@ body .edit-listing-form-container {
   box-shadow: 0 0 50px #304451;
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .edit_listing_form_main_body {
   position: absolute;
   left: 75em;
@@ -42,6 +51,7 @@ body .edit-listing-form-container {
   box-shadow: 0 0 50px #304451;
   z-index: 1000;
   overflow-x: hidden;
+  animation: 2s ease-out 0s 1 slideInFromLeft;
 }
 
 .edit_form {
@@ -50,7 +60,7 @@ body .edit-listing-form-container {
   font-family: "Motiva Sans", Sans-serif;
   font-weight: normal;
   font-size: 12px;
-  padding: 40px 20px 20px 20px;
+  padding: 10px 10px 10px 20px;
   /* background: radial-gradient(30% 40% at 40% 30%, rgba(33, 36, 41, .5) 0%, rgba(33, 36, 41, 0) 100%) #2124296e; */
 }
 
@@ -163,27 +173,15 @@ body .edit-listing-form-container {
   }
 }
 
-#update_game_text {
-  color: white;
-  font-weight: bold;
 
-  /* left: 2em; */
-  margin-left: 2em;
-  transition: margin-left 5s ease-in-out;
-  animation: 1s ease-out 0s 1 slideInFromLeft;
-
-  /* background: #333; */
-  padding: 30px;
-}
-
-@keyframes vw_lab_edit_bg {
+/* @keyframes vw_lab_edit_bg {
   0% {
     transform: translateX(60%);
   }
   100% {
     transform: translateX(0);
   }
-}
+} */
 
 .vw_lab_edit_bg {
   animation: 300s ease-out 0s 1 slideInFromRight;
