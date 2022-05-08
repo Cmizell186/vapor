@@ -266,9 +266,9 @@ div#scroll_container::-webkit-scrollbar-thumb {
     padding-right: 5px;
 }
 
-#user_review_container {
+/* #user_review_container {
     padding-top: 25px;
-}
+} */
 
 #game_description {
     font-family: "Motiva Sans", Sans-serif;
@@ -299,4 +299,72 @@ div#scroll_container::-webkit-scrollbar-thumb {
     width: 600px;
     position: absolute;
     top: 0;
+  }
+
+  .game_owned_banner_jd {
+    max-width: 940px;
+    width: 926px;
+    margin: 0 2%;
+    height: 40px;
+    padding: 0px 15px 0px 0px;
+    right: 18px;
+    position: relative;
+    background: linear-gradient(to right, rgba(163,207,6,0.6) 0%,rgba(75,106,33,0.6) 100%);
+    font-size: 18px;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+    line-height: 40px;
+    color: #040500;
+    transition: transform 0.5s, opacity 0.2s;
+  }
+
+  .game_owned_banner_jd:before {
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  .game_owned_banner_jd:hover {
+    transform: scale(1.05);
+    color: rgba(201, 255, 6, 0.974);
+    background: linear-gradient(to right, rgba(163,207,6,0.6) 50%,rgba(255, 255, 255, 0.948) 100%);
+    box-shadow: 0 0 20px rgba(201, 255, 6, 0.974);
+    z-index: 500;
+  }
+
+  .game_owned_banner_jd:hover::before {
+    opacity: 1;
+  }
+
+  .game_owned_banner_jd .game_owned_library_tag {
+    position: relative;
+    float: left;
+    top: 10px;
+    left: -8px;
+    box-shadow: 2px 2px 3px #000000;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUNDNzBFNTUyMUM0MTFFNDk1REVFODRBNUU5RjA2MUYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUNDNzBFNTYyMUM0MTFFNDk1REVFODRBNUU5RjA2MUYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5Q0M3MEU1MzIxQzQxMUU0OTVERUU4NEE1RTlGMDYxRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5Q0M3MEU1NDIxQzQxMUU0OTVERUU4NEE1RTlGMDYxRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv3vUKAAAAAlSURBVHjaYvz//z8DsYARpFhISAivjnfv3jGSp3jUGeQ4AyDAADZHNe2nyOBrAAAAAElFTkSuQmCC) no-repeat 4px 4px #a3cf06;
+  }
+
+  .game_owned_library_tag {
+    height: 18px;
+    line-height: 19px;
+    padding: 0 10px 0 18px;
+    white-space: nowrap;
+    z-index: 5;
+    position: absolute;
+    left: 0;
+    top: 14px;
+    font-size: 10px;
+    color: #111111;
+    box-shadow: 0 0 10px rgb(0 0 0 / 90%);
+  }
+
+  .game_owned_banner_jd .game_owned_message {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  #game_owned_library_link {
+      text-decoration: none;
+      color: #111111;
   }
