@@ -299,7 +299,7 @@ a {
     position: absolute;
     left: 0;
     background: linear-gradient( to bottom, rgba(42,71,94,1.0) 5%, rgba(42,71,94,0.0) 70%);
-    padding-top: 1px;
+    padding-top: 20px;
     margin-top: 60px;
     overflow: visible;
     margin: 0 auto;
@@ -487,4 +487,24 @@ a {
 
 #game_creation_div:hover {
     color: #66c0f4;
+}
+
+.nav_links_main_page {
+    line-height: 16px;
+    margin: 7px 0;
+    display: block;
+    color: #c7d5e0;
+    font-size: 13px;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: normal;
+}
+
+.nav_links_main_page a{
+    text-decoration: none;
+    color: #66c0f4;
+}
+
+.nav_links_main_page a:hover {
+    color: #ffffff;
+    text-decoration: none;
 }
