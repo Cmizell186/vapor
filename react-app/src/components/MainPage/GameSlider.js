@@ -65,8 +65,13 @@ const GameSlider = ({games}) => {
             </div>
             </div>
             </div>
+            <div id='game_info_content_carousel'>
             <p>Now Available</p>
+            <div id='game_info_content_price'>
             ${game?.price}
+            <div id='platform_carousel'><img id='platform' src='/static/images/vapor_logo_grey.png' alt='' /></div>
+            </div>
+            </div>
             </div>
             </div>
             </Link>

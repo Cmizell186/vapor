@@ -250,7 +250,7 @@ const ReviewDetails = ({ loaded }) => {
                 <div className="game_logo_img">
                   <img
                     id="main_game_rev_img"
-                    src="/images/spelheader.jpg"
+                    src="/static/images/spelheader.jpg"
                     alt=""
                     width="294"
                     height="138"

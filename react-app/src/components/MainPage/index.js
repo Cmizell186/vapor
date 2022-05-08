@@ -10,6 +10,12 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import './index.css'
 import { Link } from 'react-router-dom';
+import FreeBreakfastTwoToneIcon from '@mui/icons-material/FreeBreakfastTwoTone';
+import CarCrashTwoToneIcon from '@mui/icons-material/CarCrashTwoTone';
+import SportsHockeyTwoToneIcon from '@mui/icons-material/SportsHockeyTwoTone';
+import VideogameAssetTwoToneIcon from '@mui/icons-material/VideogameAssetTwoTone';
+import SportsEsportsTwoToneIcon from '@mui/icons-material/SportsEsportsTwoTone';
+import VideogameAssetOffTwoToneIcon from '@mui/icons-material/VideogameAssetOffTwoTone';
 
 const Store = ({user}) => {
 
@@ -126,12 +132,12 @@ const Store = ({user}) => {
                         <div className='nav_links_main_page'><a href='https://github.com/bradsimpson213'>GIFT CARDS</a></div>
                         <div className='nav_links_main_page'>Now Available on Vapor</div>
                         <div className='nav_links_main_page'>BROWSE BY GENRE</div>
-                        <div className='nav_links_main_page'><Link>Free to Play</Link></div>
-                        <div className='nav_links_main_page'><Link>Action</Link></div>
-                        <div className='nav_links_main_page'><Link>Adventure</Link></div>
-                        <div className='nav_links_main_page'><Link>Racing</Link></div>
-                        <div className='nav_links_main_page'><Link>RPG</Link></div>
-                        <div className='nav_links_main_page'><Link>Sports</Link></div>
+                        <div className='nav_links_main_page'><Link><FreeBreakfastTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Free to Play</Link></div>
+                        <div className='nav_links_main_page'><Link><SportsEsportsTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}}/>Action</Link></div>
+                        <div className='nav_links_main_page'><Link><VideogameAssetOffTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Adventure</Link></div>
+                        <div className='nav_links_main_page'><Link><CarCrashTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Racing</Link></div>
+                        <div className='nav_links_main_page'><Link><VideogameAssetTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />RPG</Link></div>
+                        <div className='nav_links_main_page'><Link><SportsHockeyTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Sports</Link></div>
                         <Link to="/games/new">
                         <div id='game_creation_div'>
                           <h3>Developer ? {'\n'}
@@ -248,6 +254,7 @@ const Store = ({user}) => {
         </div>
         </div>
         </div>
+
     )
 }
 
