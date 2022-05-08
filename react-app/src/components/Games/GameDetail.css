@@ -303,8 +303,10 @@ div#scroll_container::-webkit-scrollbar-thumb {
 
   .game_owned_banner_jd {
     max-width: 940px;
-    width: 926px;
+    width: 925px;
     margin: 0 2%;
+    margin-top: 25px;
+    margin-bottom: 1px;
     height: 40px;
     padding: 0px 15px 0px 0px;
     right: 18px;
