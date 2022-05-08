@@ -216,7 +216,7 @@ def seed_games():
         description = "The Legend of Zelda: Ocarina of Time is an action-adventure game developed and published by Nintendo for the Nintendo 64.",
         release_date = "1998_11_21",
         is_mature = False,
-        video = "",
+        video = "https://www.youtube.com/embed/CtMllWsML5M",
         developer = "Nintendo",
         user_id = 4
     )

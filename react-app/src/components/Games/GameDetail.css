@@ -17,21 +17,25 @@
     width: 100%;
     top: -69px;
     margin: 0 auto;
+    background-image: url("../../public/static/images/game_detail_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+
 }
 
 #game_details_container {
     display: flex;
     justify-content: center;
+
 }
 
 #game_details_box {
     width: 940px;
     height: 482px;
     padding-top: 75px;
-    background-color: #1b2838;
+    /* background-color: #1b2838; */
     color: white;
-    background-image: url("../../public/static/images/game_detail_bg.jpg");
-    background-repeat: no-repeat;
+
 }
 
 #title_container {
@@ -42,7 +46,6 @@
 }
 
 #image-details-container {
-    background-color: #0e0e0f42;
     display: flex;
 }
 
@@ -192,6 +195,11 @@
 
 #sub_container_game_panel {
     border: 0px;
+    padding-bottom: 50px;
+}
+
+#image_details_container {
+    background-color: #1b2838;
 }
 
 #game_image_update_container {
