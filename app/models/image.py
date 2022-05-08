@@ -10,7 +10,8 @@ class Image(db.Model):
     # game_id = db.Column(db.Integer, db.ForeignKey("games.id"))
     game_id = db.Column(db.Integer, db.ForeignKey("games.id", ondelete='CASCADE'))
 
-    games = db.relationship("Game", back_populates="image", passive_deletes=True)
+    # games = db.relationship("Game", back_populates="image", passive_deletes=True)
+    # games = db.relationship("Game", back_populates="image", passive_deletes=True)
     user = db.relationship("User", back_populates="image")
 
     def to_dict(self):
