@@ -247,10 +247,14 @@ const GameDetails = ({user, loaded}) => {
               <p>{game?.description}</p>
             </div>
         </div>
-          <div id="customer_reviews_div">CUSTOMER REVIEWS</div>
-        <div className='reviews_container'>
-          <Reviews user={user} filteredReviews={filteredReviews} />
-        </div>
+        {filteredReviews.length ? (
+          <>
+            <div id="customer_reviews_div">CUSTOMER REVIEWS</div>
+              <div className='reviews_container'>
+                <Reviews user={user} filteredReviews={filteredReviews} />
+              </div>
+          </> ) : <></>
+        }
         </div>
         </div>
         </div>
