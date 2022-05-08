@@ -203,7 +203,8 @@ const GameDetails = ({user, loaded}) => {
               src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_edit.png"
               alt=""
             />
-            <Link game={game} id="game_edit_link" to={`/games/${game.id}/edit`}>  Update Game Details
+            {/* was not able to pass prop to <Link> */}
+            <Link id="game_edit_link" to={`/games/${game?.id}/edit`}>  Update Game Details
              </Link>
             </div>
             <div className="control_options">

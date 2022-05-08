@@ -64,7 +64,7 @@ body .edit-listing-form-container {
   /* background: radial-gradient(30% 40% at 40% 30%, rgba(33, 36, 41, .5) 0%, rgba(33, 36, 41, 0) 100%) #2124296e; */
 }
 
-.create_label {
+.create_label, #game_edit_form_title {
 
   max-width: 300px;
   border-radius: 3px;
