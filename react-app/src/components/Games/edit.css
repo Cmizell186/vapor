@@ -1,10 +1,13 @@
 body .edit-listing-form-container {
-  background-color: rgb(0, 0, 0) !important;
+  background: linear-gradient( -60deg,  #e5e7ea 70%, #000000 50%);
   min-height: 1248px;
+  background-image: url("../../public/static/images/background_lab.jpg");
+  background-repeat: repeat-y;
 }
 
 .edit-listing-form-container {
   overflow-x: hidden;
+
 }
 
 .vaporworks_welcome_text {
@@ -93,8 +96,12 @@ body .edit-listing-form-container {
 
 } */
 
-.vw_logo_blk {
-  max-width: 600px;
+.vw_logo_wht {
+  position: relative;
+  padding-left: 255px;
+  max-width: 678px;
+  background-color: black;
+  z-index: 100;
 }
 
 .vid_div {
@@ -114,7 +121,7 @@ body .edit-listing-form-container {
 
 }
 
-#vw_jared_button {
+#vw_edit_jared_button {
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 15px;
   height: 33px;
@@ -132,7 +139,7 @@ body .edit-listing-form-container {
   line-height: 30px;
 }
 
-#vw_jared_button:hover {
+#vw_edit_jared_button:hover {
   text-decoration: none !important;
   color: #fff !important;
   background: #417a9b;
@@ -144,4 +151,42 @@ body .edit-listing-form-container {
   position: relative;
   top: 8em;
   z-index: 1;
+}
+
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(00%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#update_game_text {
+  color: white;
+  font-weight: bold;
+
+  /* left: 2em; */
+  margin-left: 2em;
+  transition: margin-left 5s ease-in-out;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+
+  /* background: #333; */
+  padding: 30px;
+}
+
+@keyframes vw_lab_edit_bg {
+  0% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.vw_lab_edit_bg {
+  animation: 300s ease-out 0s 1 slideInFromRight;
+  z-index: 10;
+
 }

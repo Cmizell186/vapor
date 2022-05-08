@@ -7,6 +7,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import CreateGame from './components/Games/GameListingForm'
 import LandingPage from './components/LandingPage'
+import EditGame from './components/Games/GameEditForm'
 import GameDetails from './components/Games/GameDetail'
 import ReviewDetails from './components/Reviews/ReviewDetail'
 import UploadPicture from './components/Images/index';
@@ -63,6 +64,9 @@ function App() {
           <ProtectedRoute path="/games/new">
             {/* <SubNavBar /> */}
             <CreateGame user={user} loaded={loaded} />
+          </ProtectedRoute>
+          <ProtectedRoute path="/games/:gameId/edit">
+            <EditGame />
           </ProtectedRoute>
           <ProtectedRoute exact path='/images' user={user}>
             <UploadPicture />

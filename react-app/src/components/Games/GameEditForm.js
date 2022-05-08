@@ -4,21 +4,21 @@ import { useHistory, useParams } from "react-router-dom";
 import { update_game } from "../../store/game";
 import './edit.css';
 
-const EditGame = ({ gamelisting, hideModal }) => {
+const EditGame = ({game}) => {
   const sessionUser = useSelector((state) => state.session.user);
   const { id } = useParams()
   const history = useHistory();
   const dispatch = useDispatch();
   const games = useSelector((state) => state.games)
   const gamesList = Object.values(games)
-  const game = gamesList.filter((game) => game.id === +id)[0];
-  const [title, setTitle] = useState(gamelisting?.title);
-  const [price, setPrice] = useState(gamelisting?.price);
-  const [description, setDescription] = useState(gamelisting?.description);
-  const [release_date, setRelease_Date] = useState(gamelisting?.release_date);
-  const [is_mature, setIs_Mature] = useState(gamelisting?.is_mature);
-  const [video, setVideo] = useState(gamelisting?.video);
-  const [developer, setDeveloper] = useState(gamelisting?.developer);
+  // const game = gamesList.filter((game) => game.id === +id)[0];
+  const [title, setTitle] = useState(game?.title);
+  const [price, setPrice] = useState(game?.price);
+  const [description, setDescription] = useState(game?.description);
+  const [release_date, setRelease_Date] = useState(game?.release_date);
+  const [is_mature, setIs_Mature] = useState(game?.is_mature);
+  const [video, setVideo] = useState(game?.video);
+  const [developer, setDeveloper] = useState(game?.developer);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
@@ -28,7 +28,7 @@ const EditGame = ({ gamelisting, hideModal }) => {
     setHasSubmitted(true);
 
     const updatedGame = {
-      id: gamelisting.id,
+      id: game.id,
       title,
       price,
       description,
@@ -38,7 +38,7 @@ const EditGame = ({ gamelisting, hideModal }) => {
       developer,
       userId: sessionUser.id,
     };
-    let newGame = await dispatch(update_game(updatedGame));
+    await dispatch(update_game(updatedGame));
     setTitle("");
     setPrice("");
     setDescription("");
@@ -47,9 +47,6 @@ const EditGame = ({ gamelisting, hideModal }) => {
     setVideo([]);
     setDeveloper("");
 
-    if (newGame) {
-      hideModal();
-    }
   };
 
 const vid_upload = (e) => {
@@ -60,8 +57,16 @@ const vid_upload = (e) => {
     <>
       <div className="edit-listing-form-container">
       <img
-          className="vw_logo_blk"
-          src="/static/images/vaporworks_logo.png"
+          className="vw_logo_wht"
+          src="/static/images/vaporworks_logo_inverted.png"
+          alt=""
+        ></img>
+        {/* <div id="update_game_text">
+          <h1>Update Your Product Details</h1>
+        </div> */}
+      <img
+          className="vw_lab_edit_bg"
+          src="/static/images/background_lab_long.jpg"
           alt=""
         ></img>
           <div className="game_listing_form_main_body">
@@ -191,8 +196,8 @@ const vid_upload = (e) => {
               onChange={(e) => setDeveloper(e.target.value)}
             />
           </div>
-          <button className={"button btn-submit-game"} type="submit">
-            Update Game Details
+          <button id="vw_edit_jared_button" type="submit">
+                  Submit Game
           </button>
         </form>
       </div>
