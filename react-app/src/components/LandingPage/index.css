@@ -319,7 +319,6 @@
 #cart-button-div {
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
   width: 940px;
   margin-bottom: 5px;
 }
