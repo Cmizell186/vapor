@@ -19,7 +19,8 @@ class Game(db.Model):
     user = db.relationship("User", back_populates="games")
     reviews = db.relationship("Review", backref="games", cascade='all,delete')
     tags = db.relationship("Tag", back_populates="games")
-    image = db.relationship("Image", back_populates="games")
+    # image = db.relationship("Image", back_populates="games")
+    image = db.relationship("Image", backref="games", cascade='all,delete')
     library = db.relationship("Library", backref="games", cascade='all,delete')
 
     def to_dict(self):
