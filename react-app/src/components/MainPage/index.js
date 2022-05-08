@@ -127,17 +127,17 @@ const Store = ({user}) => {
                         <div>Now Available on Vapor</div>
                         <div>BROWSE BY GENRE</div>
                         <div>Free to Play</div>
-                        <div>Early Access</div>
                         <div>Action</div>
                         <div>Adventure</div>
-                        <div>Casual</div>
-                        <div>Indie</div>
-                        <div>Massively Multiplayer</div>
                         <div>Racing</div>
                         <div>RPG</div>
-                        <div>Simulation</div>
                         <div>Sports</div>
-                        <div>Strategy</div>
+                        <Link to="/games/new">
+                        <div id='game_creation_div'>
+                          <h3>Developer ? {'\n'}
+                          List your game here !</h3>
+                        </div>
+                        </Link>
                 </div>
             </div>
         <div id="content">

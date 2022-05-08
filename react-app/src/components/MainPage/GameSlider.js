@@ -45,7 +45,9 @@ const GameSlider = ({games}) => {
             height={"354px"}
             index={index}
         >
-          {games.slice(0, 10).map(game => (
+          {games?.sort(() => Math.random() - Math.random())
+                 .slice(0, 10)
+                 .map(game => (
             <div id='carousel_content_main' key={game?.id}>
               <Link to={`/games/${game?.id}`}>
             <div id='carousel_content'>

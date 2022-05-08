@@ -35,7 +35,7 @@ const SearchBar = () => {
                 <div id='search_bar_welcome_msg'>
                 <img id='plus' src='/static/images/new_white.svg'></img>
                 </div>
-                 Welcome {sessionUser?.username} to Vapor !
+                 Welcome {sessionUser?.username} to Vapor Games !
                 </div>
                     <input placeholder='search' id="search_input"></input>
                     <a id="blank_link" href='/library'>
