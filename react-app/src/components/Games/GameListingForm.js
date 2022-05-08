@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
+import { get_all_games } from "../../store/game"
+import { get_one_game } from "../../store/game"
 import { create_game } from "../../store/game";
 import VaporWorksModal from "./VaporworksModal";
 import { Modal } from "../../context/Modal";
@@ -13,19 +15,27 @@ const CreateGame = ({ user, loaded }) => {
   const [release_date, setRelease_Date] = useState("");
   const [is_mature, setIs_Mature] = useState(null);
   const [video, setVideo] = useState([]);
+  const { id } = useParams();
+  const games = useSelector(state => Object.values(state.games))
+  const addedGame = games[games.length - 1]
+  const userGame = games.filter(game => game?.user_id === sessionUser?.id && game?.id === addedGame?.id)
   const [showModal, setShowModal] = useState(true);
   const [developer, setDeveloper] = useState("");
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
-  // const [validationErrors, setValidationErrors] = useState([])
   const history = useHistory();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(get_all_games())
+    dispatch(get_one_game(id))
+  }, [dispatch])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setHasSubmitted(true);
 
-    const game = {
+    const newgame = {
       title,
       price,
       description,
@@ -35,7 +45,7 @@ const CreateGame = ({ user, loaded }) => {
       developer,
       user_id: sessionUser.id,
     };
-    let newGame = await dispatch(create_game(game));
+    await dispatch(create_game(newgame));
 
     // set all back to empty form field
     setTitle("");
@@ -46,10 +56,7 @@ const CreateGame = ({ user, loaded }) => {
     setVideo([]);
     setDeveloper("");
     setHasSubmitted(false);
-
-    if (newGame) {
-      history.push(`/games/${game?.id}`);
-    }
+    history.push(`/games/${userGame[0]?.id + 1}`);
   };
 
   const vid_upload = (e) => {
@@ -128,7 +135,7 @@ const CreateGame = ({ user, loaded }) => {
           <div className="create_form">
             <p className="create_label p">
               This area is where you configure the presentation of your
-              product's page in the Steam store. Please complete all the fields
+              product's page in the Vapor store. Please complete all the fields
               marked. If you need help, check out the Store Page Best Practices
               documentation for a video walkthrough of configuring your store
               page.
@@ -184,15 +191,13 @@ const CreateGame = ({ user, loaded }) => {
                 <div className="is_mature-div">
                   <label className="create_label" htmlFor="is_mature">Mature Rating?:</label>
                   <input
-                    className="create_input"
+                    type="checkbox"
+                    checked={is_mature ? true : false}
+                    value={is_mature}
                     name="is_mature"
-                    type="radio"
-                    value={true}
-                    onChange={(e) => setIs_Mature(true)}
-                    checked={is_mature === true}
+                    onChange={e => is_mature ? setIs_Mature(false) : setIs_Mature(true) }
                   />
                 </div>
-                {/* prior to s3 integration */}
                 <div className="video-div">
                   <label className="create_label" htmlFor="video">Trailers or Video clips:</label>
                   <input

@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import ReviewGame from "../Reviews/ReviewsForm";
 import Reviews from "../Reviews/ReviewList";
 import ReviewSummary from "../Reviews/ReviewSummary";
-import GameEditModal from "./GameEditModal"
+import EditGame from "./GameEditForm";
 import { delete_game } from "../../store/game";
 import { Modal } from "../../context/Modal";
 import GameImageModal from "./GameImagesModal";
@@ -203,7 +203,8 @@ const GameDetails = ({user, loaded}) => {
               src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_edit.png"
               alt=""
             />
-            <Link game={game} id="game_edit_link" href={`/games/${game.id}/edit`}>  Update Game Details </Link>
+            <Link game={game} id="game_edit_link" to={`/games/${game.id}/edit`}>  Update Game Details
+             </Link>
             </div>
             <div className="control_options">
             <img
