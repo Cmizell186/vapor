@@ -88,7 +88,7 @@ const AboutUs = () => {
           </div>
           <div className='user-level-jd'>
             <strong>Level</strong>
-            <span className='level-num-jd'>0</span>
+            <span className='level-num-jd'>8</span>
           </div>
         </div>
         <div className='screen-shots-jd'>
