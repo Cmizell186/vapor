@@ -60,8 +60,33 @@
 
 /* new image-form */
 
-input[type="file"] {
+/* input[type="file"] {
     display: none;
+} */
+
+#image-upload {
+    width: 150px;
+    align-self: center;
+    font-family: "Motiva Sans", Sans-serif;
+    color: white;
+    font-size: 14px;
+}
+
+#profile-upload {
+    width: 120px;
+    align-self: center;
+    font-family: "Motiva Sans", Sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 1000;
+}
+
+::-webkit-file-upload-button {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    border: #32363f00;
+    width: .1px;
+    color: #32363f00;
+    font-family: "Motiva Sans", Sans-serif;
 }
 
 .choose-image{
