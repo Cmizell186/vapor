@@ -213,7 +213,7 @@ div#scroll_container::-webkit-scrollbar-thumb {
     background-image: url("../../public/static/images/game_detail_bg.jpg");
     background-repeat: no-repeat;
     background-position: bottom;
-    background-size: contain;
+    background-size: cover;
 }
 
 #image_details_container {

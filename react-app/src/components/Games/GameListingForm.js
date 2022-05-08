@@ -26,6 +26,8 @@ const CreateGame = ({ user, loaded }) => {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  console.log(addedGame?.id)
+
   useEffect(() => {
     dispatch(get_all_games())
     dispatch(get_one_game(id))
@@ -56,7 +58,8 @@ const CreateGame = ({ user, loaded }) => {
     setVideo([]);
     setDeveloper("");
     setHasSubmitted(false);
-    history.push(`/games/${userGame[0]?.id + 1}`);
+    history.push(`/games/${addedGame?.id + 1}`); // was ${userGame[0]?.id + 1 ??
+    
   };
 
   const vid_upload = (e) => {
@@ -117,7 +120,7 @@ const CreateGame = ({ user, loaded }) => {
                   {sessionUser.username}
                 </a>
               </span>
-              <span className="profile_header_arrows">>></span>
+              <span className="profile_header_arrows">{">>"}</span>
               <span className="profile_reviews_text">
                 <a
                   className="profile_link_content"
@@ -126,7 +129,7 @@ const CreateGame = ({ user, loaded }) => {
                   Vaporworks
                 </a>
               </span>
-              <span className="profile_header_arrows">>></span>
+              <span className="profile_header_arrows">{">>"}</span>
               <a className="profile_link_content" href="/games/new">
                 <span className="profile_reviews_text">New</span>
               </a>
