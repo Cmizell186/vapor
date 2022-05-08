@@ -87,22 +87,22 @@ const GameDetails = ({user, loaded}) => {
     )
   }
 
-  // let hasReviewed;
-  //  (sessionUser && sessionUser?.id === userReview[0]?.user_id) ?
-  //   hasReviewed = (
-  //     <>
-  //       <ReviewSummary review={userReview[0]} />
-  //     </>
-  //   )
-  // :
-  //   hasReviewed = (
-  //     <>
-  //       <ReviewGame gameId={gameId} />
-  //     </>
-  //   )
+  // function randomImg() {
+  //   let images = [
+  //     "/static/images/backgrounds/ac.png",
+  //     "/static/images/backgrounds/borderlands.jpg",
+  //     "/static/images/backgrounds/darksouls.png",
+  //     "/static/images/backgrounds/dontstarve.png",
+  //     "/static/images/backgrounds/masseffect.png",
+  //     "/static/images/backgrounds/warframe.png",
+  //     "/static/images/backgrounds/witcher3.png",
+  //     "/static/images/backgrounds/xbox.jpg",
+  //     "/static/images/backgrounds/rockstar.jpg",
+  //   ]
+  //   let random = images[Math.floor(Math.random() * images.length)];
+  //   document.querySelector("#page_content_container").style.backgroundImage = 'url(' + random + ')';
+  //   }
 
-
-    //
   const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
 
   return (

@@ -18,9 +18,9 @@
     top: -69px;
     margin: 0 auto;
     background-image: url("../../public/static/images/game_detail_bg.jpg");
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
-
 }
 
 #game_details_container {
@@ -204,11 +204,16 @@ div#scroll_container::-webkit-scrollbar-thumb {
 #sub_container_game {
     width: 940px;
     height: 482px;
+
 }
 
 #sub_container_game_panel {
     border: 0px;
     padding-bottom: 50px;
+    background-image: url("../../public/static/images/game_detail_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
 }
 
 #image_details_container {
