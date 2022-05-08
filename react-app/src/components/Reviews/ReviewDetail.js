@@ -22,16 +22,16 @@ const ReviewDetails = ({ loaded }) => {
   const [content, setContent] = useState(review?.content);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
-  console.log(is_recommended)
-  console.log(review?.is_recommended)
+  const [style_rec_yes, setStyle_Rec_Yes] = useState("recommend_yes");
+  const [style_rec_no, setStyle_Rec_No] = useState("recommend_no")
 
   useEffect(() => {
     dispatch(get_one_review(reviewId)); //warning here- useEffect has a missing dependency: 'reviewId'. Either include it or remove the dependency array
-
+    setIs_Recommended(review?.is_recommended)
   }, [dispatch]);
 
   const handleSubmit = async (e) => {
-    console.log("inside of handle Submit")
+    // console.log("inside of handle Submit")
     e.preventDefault();
     setHasSubmitted(true);
 
@@ -140,13 +140,13 @@ const ReviewDetails = ({ loaded }) => {
             <div className="recommend_control_box">
               <div className="is_recommended-div">Do you recommend this game?</div>
               <div className='edit_vote_up_down_container'>
-                <button className={review?.is_recommended ? 'recommend_clicked' : 'recommend_yes'}
+                <button className={style_rec_yes}
                   type='button'
-                  // defaultValue={content}
+                  defaultValue={content}
                   onClick={(e) => {
                     setIs_Recommended(true)
-                    // setStyle_Rec_Yes("recommend_clicked")
-                    // setStyle_Rec_No("recommend_no")
+                    setStyle_Rec_Yes("recommend_clicked")
+                    setStyle_Rec_No("recommend_no")
                   }}
                 >
                   <span>
@@ -154,13 +154,13 @@ const ReviewDetails = ({ loaded }) => {
                     Yes
                   </span>
                 </button>
-                <button className={!review?.is_recommended ? 'recommend_clicked' : 'recommend_no'}
+                <button className={style_rec_no}
                   type='button'
-                  // defaultValue={review?.is_recommended}
+                  defaultValue={review?.is_recommended}
                   onClick={(e) => {
                     setIs_Recommended(false)
-                    // setStyle_Rec_No("recommend_clicked")
-                    // setStyle_Rec_Yes("recommend_yes")
+                    setStyle_Rec_No("recommend_clicked")
+                    setStyle_Rec_Yes("recommend_yes")
                   }}
                 >
                   <span>
@@ -199,7 +199,7 @@ const ReviewDetails = ({ loaded }) => {
       </>
     )
   }
-  console.log(formDiv, "formDiv after editReview")
+  // console.log(formDiv, "formDiv after editReview")
 
   return (
     <>
