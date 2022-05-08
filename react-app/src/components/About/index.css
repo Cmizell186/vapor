@@ -3,6 +3,10 @@
   src: url("../../public/fonts/Motiva-Sans-Light.ttf");
 }
 
+body {
+  overflow-x: hidden;
+}
+
 #main-div-about-us-jd {
   display: flex;
   justify-content: center;
