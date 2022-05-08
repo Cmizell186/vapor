@@ -44,9 +44,9 @@ const Store = ({user}) => {
           marginBottom: theme.spacing(0),
           color: '#2f89bc',
           fontSize: "14px",
-          padding: "2px 10px 2px 10px",
-          borderTopLeftRadius: "3px",
-          borderTopRightRadius: "3px",
+          padding: "2px 10px 20px 10px",
+          borderTopLeftRadius: "4px",
+          borderTopRightRadius: "4px",
           fontFamily: [
             'Arial',
             '"Helvetica"',
@@ -123,21 +123,21 @@ const Store = ({user}) => {
             <div id="sidebar_nav">
                 <div id="sidebar_nav_list">
                         <div id="gift_cards"></div>
-                        <div>GIFT CARDS</div>
-                        <div>Now Available on Vapor</div>
-                        <div>BROWSE BY GENRE</div>
-                        <div>Free to Play</div>
-                        <div>Early Access</div>
-                        <div>Action</div>
-                        <div>Adventure</div>
-                        <div>Casual</div>
-                        <div>Indie</div>
-                        <div>Massively Multiplayer</div>
-                        <div>Racing</div>
-                        <div>RPG</div>
-                        <div>Simulation</div>
-                        <div>Sports</div>
-                        <div>Strategy</div>
+                        <div className='nav_links_main_page'><a href='https://github.com/bradsimpson213'>GIFT CARDS</a></div>
+                        <div className='nav_links_main_page'>Now Available on Vapor</div>
+                        <div className='nav_links_main_page'>BROWSE BY GENRE</div>
+                        <div className='nav_links_main_page'><Link>Free to Play</Link></div>
+                        <div className='nav_links_main_page'><Link>Action</Link></div>
+                        <div className='nav_links_main_page'><Link>Adventure</Link></div>
+                        <div className='nav_links_main_page'><Link>Racing</Link></div>
+                        <div className='nav_links_main_page'><Link>RPG</Link></div>
+                        <div className='nav_links_main_page'><Link>Sports</Link></div>
+                        <Link to="/games/new">
+                        <div id='game_creation_div'>
+                          <h3>Developer ? {'\n'}
+                          List your game here !</h3>
+                        </div>
+                        </Link>
                 </div>
             </div>
         <div id="content">

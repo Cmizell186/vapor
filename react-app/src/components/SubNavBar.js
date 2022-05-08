@@ -8,6 +8,8 @@ const SearchBar = () => {
     const dispatch = useDispatch();
     const cart_entries = useSelector(state => Object.values(state.carts))
     const user_cart = cart_entries.filter(entry => entry.user_id === sessionUser.id && !entry.is_owned)
+    const userImage = useSelector(state => Object.values(state.images))
+    const pfp = userImage[0];
     // nice work man ! <3
     // thank you <3
     useEffect(() => {
@@ -26,6 +28,15 @@ const SearchBar = () => {
                     </div>
                 </div>
                 <div id="search_div">
+                <div id='search_bar_extra_div'>
+                <div id='search_bar_profilepic_div'>
+                <img src={pfp?.image} id="profile_pic_search_bar" alt="" />
+                </div>
+                <div id='search_bar_welcome_msg'>
+                <img id='plus' src='/static/images/new_white.svg'></img>
+                </div>
+                 Welcome {sessionUser?.username} to Vapor Games !
+                </div>
                     <input placeholder='search' id="search_input"></input>
                     <a id="blank_link" href='/library'>
                         <img alt='' id='blank_search' src="/static/images/blank.png"/>

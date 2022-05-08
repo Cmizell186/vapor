@@ -82,9 +82,9 @@ function App() {
             <SubNavBar />
             <Cart />
           </ProtectedRoute>
-          <ProtectedRoute path="/about">
+          <Route path="/about">
             <AboutUs />
-          </ProtectedRoute>
+          </Route>
           {user ?
             <>
               <Switch>

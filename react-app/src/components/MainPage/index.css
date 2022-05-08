@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Motiva Sans;
+    src: url("../../public/fonts/Motiva-Sans-Bold.ttf");
+  }
+
 #main {
     width: 100%;
     height: 100%;
@@ -294,7 +299,7 @@ a {
     position: absolute;
     left: 0;
     background: linear-gradient( to bottom, rgba(42,71,94,1.0) 5%, rgba(42,71,94,0.0) 70%);
-    padding-top: 1px;
+    padding-top: 20px;
     margin-top: 60px;
     overflow: visible;
     margin: 0 auto;
@@ -422,4 +427,84 @@ a {
     right: 0;
     text-align: center;
     padding-right: 8px;
+}
+
+#search_bar_extra_div {
+    display: flex;
+    text-align: center;
+    padding-top: 1px;
+    width: 720px;
+    color: #d9d9d9;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 34px;
+    text-shadow: 0px 2px 3px rgb(0 0 0 / 30%);
+    font-weight: bold;
+    white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#search_bar_profilepic_div {
+    position: relative;
+    padding-top: 5px;
+}
+
+#profile_pic_search_bar {
+    width: 24px;
+    height: 24px;
+}
+
+#search_bar_welcome_msg {
+    height: 35px;
+    text-overflow: clip;
+    overflow: hidden;
+    max-width: 300px;
+}
+
+#plus {
+    padding-top: 1px;
+    height: 26px;
+    width: 26px;
+}
+
+#game_creation_div {
+    white-space: pre-line;
+    font-family: "Motiva Sans", Sans-serif;
+    text-decoration: none;
+    color: white;
+    padding-top: 20px;
+    height: 90px;
+    width: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../../public/static/images/tiltedvaporworks.png");
+}
+
+#game_creation_div h3 {
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 600;
+}
+
+#game_creation_div:hover {
+    color: #66c0f4;
+}
+
+.nav_links_main_page {
+    line-height: 16px;
+    margin: 7px 0;
+    display: block;
+    color: #c7d5e0;
+    font-size: 13px;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: normal;
+}
+
+.nav_links_main_page a{
+    text-decoration: none;
+    color: #66c0f4;
+}
+
+.nav_links_main_page a:hover {
+    color: #ffffff;
+    text-decoration: none;
 }

@@ -20,10 +20,9 @@ export default function LandingPage() {
         </div>
         It's free and easy to use.
         <div id="signup_button">
-
             <button id="join_vapor"><a href="/signup">Join Vapor</a></button>
+            <button id="join_vapor"><a href="/demo">Demo User</a></button>
         </div>
-
         </div>
       </div>
       <div id="footer">

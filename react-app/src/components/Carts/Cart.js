@@ -136,27 +136,31 @@ const Cart = () => {
               </div> */}
               <div id="cart-carousel-outside-div">
                 <Carousel
-                  autoPlay={false}
+                  autoPlay={true}
                   stopAutoPlayOnHover={true}
+                  interval={5000}
                   animation="fade"
                   duration={500}
                   swipe={true}
+                  width={"350px"}
+                  height={"360px"}
                   navButtonsAlwaysVisible={true}
                   NextIcon={<ArrowRightSharpIcon/>}
                   PrevIcon={<ArrowLeftSharpIcon/>}
                   navButtonsProps={{          // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
                       style: {
-                          backgroundColor: 'rgba( 0, 0, 0, 0.2 )',
+                          backgroundColor: 'rgba( 0, 0, 0, 0.5 )',
                           borderRadius: 0,
-                          padding: "1px 10px",
-                          left: "5px",
-                          right: "10px",
-
+                          width: "38px",
+                          height: '18px',
+                          marginLeft: '1px'
                       }
                   }}
                   navButtonsWrapperProps={{   // Move the buttons to the bottom. Unsetting top here to override default style.
                       style: {
-                        top: '175px',
+                        height: '717px',
+                        width: '55px',
+                        right: '-15px'
                       }
                   }}
                 >

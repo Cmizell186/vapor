@@ -139,6 +139,12 @@ const GameDetails = ({user, loaded}) => {
                   <div className="thumb_div">
                     <img className="main_game_image" src={game?.images[4]?.image} alt="" />
                   </div>
+                  <div className="thumb_div">
+                    <img className="main_game_image" src={game?.images[5]?.image} alt="" />
+                  </div>
+                  <div className="thumb_div">
+                    <img className="main_game_image" src={game?.images[6]?.image} alt="" />
+                  </div>
                 </div>
               </div>
             </div>
