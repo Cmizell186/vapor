@@ -1,7 +1,7 @@
 from crypt import methods
 from flask import Blueprint, jsonify, request
 from flask_login import current_user
-from app.models import Game, db
+from app.models import Game, Library, db
 from app.forms.create_game_form import CreateGame
 from app.forms.edit_game_form import EditGame
 from app.models.image import Image
@@ -37,6 +37,14 @@ def post_games():
         )
         db.session.add(game)
         db.session.commit()
+        new_cart = Library(
+        user_id = current_user.id,
+        game_id = game.id,
+        is_owned = True)
+        db.session.add(new_cart)
+        db.session.commit()
+        print(game.to_dict())
+        print(new_cart.to_dict(), '00000000000000')
         return game.to_dict()
     else:
         print(form.errors)
