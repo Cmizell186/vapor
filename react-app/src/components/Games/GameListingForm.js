@@ -7,6 +7,7 @@ import { create_game } from "../../store/game";
 import VaporWorksModal from "./VaporworksModal";
 import { Modal } from "../../context/Modal";
 import "./create.css";
+
 const CreateGame = ({ user, loaded }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const [title, setTitle] = useState("");
@@ -14,7 +15,7 @@ const CreateGame = ({ user, loaded }) => {
   const [description, setDescription] = useState("");
   const [release_date, setRelease_Date] = useState("");
   const [is_mature, setIs_Mature] = useState(null);
-  const [video, setVideo] = useState([]);
+  const [video, setVideo] = useState("");
   const { id } = useParams();
   const games = useSelector(state => Object.values(state.games))
   const addedGame = games[games.length - 1]
@@ -26,12 +27,10 @@ const CreateGame = ({ user, loaded }) => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  console.log(addedGame?.id)
-
-  useEffect(() => {
-    dispatch(get_all_games())
-    dispatch(get_one_game(id))
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(get_all_games())
+  //   dispatch(get_one_game(id))
+  // }, [dispatch])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,7 +46,7 @@ const CreateGame = ({ user, loaded }) => {
       developer,
       user_id: sessionUser.id,
     };
-    await dispatch(create_game(newgame));
+    const updated_game = await dispatch(create_game(newgame));
 
     // set all back to empty form field
     setTitle("");
@@ -55,11 +54,11 @@ const CreateGame = ({ user, loaded }) => {
     setDescription("");
     setRelease_Date("");
     setIs_Mature(false);
-    setVideo([]);
+    setVideo("");
     setDeveloper("");
     setHasSubmitted(false);
-    history.push(`/games/${addedGame?.id + 1}`); // was ${userGame[0]?.id + 1 ??
-    
+    history.push(`/games/${updated_game?.id}`); // was ${userGame[0]?.id + 1 ??
+
   };
 
   const vid_upload = (e) => {

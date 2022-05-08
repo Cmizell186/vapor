@@ -32,6 +32,12 @@ const GameDetails = ({ user, loaded }) => {
   useEffect(() =>{
       dispatch(get_all_game_images(gameId))
   }, [dispatch])
+
+  useEffect(() => {
+    dispatch(get_all_reviews());
+    dispatch(get_one_game(gameId));
+  }, [dispatch, gameId]);
+
   const filteredReviews = reviews.filter(
     (review) => review.game_id === +gameId
   );
@@ -66,10 +72,6 @@ const GameDetails = ({ user, loaded }) => {
 
   const owned_game = user_game[0]?.game_id;
 
-  useEffect(() => {
-    dispatch(get_all_reviews());
-    dispatch(get_one_game(gameId));
-  }, [dispatch, gameId]);
 
   const handleDelete = (gameId) => {
     dispatch(delete_game(gameId));
@@ -148,6 +150,8 @@ const GameDetails = ({ user, loaded }) => {
                   loop
                 >
                   <source src={game?.video} type="video/webm" loop />
+                  <source src={game?.video} type="video/mp4" loop />
+                  error
                 </video>
                 <div id="scroll_container">
                   <div id="scroll_div">

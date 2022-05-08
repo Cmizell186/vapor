@@ -22,8 +22,6 @@ const ReviewDetails = ({ loaded }) => {
   const [content, setContent] = useState(review?.content);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
-  console.log(is_recommended)
-  console.log(review?.is_recommended)
 
   useEffect(() => {
     dispatch(get_one_review(reviewId)); //warning here- useEffect has a missing dependency: 'reviewId'. Either include it or remove the dependency array
@@ -31,7 +29,6 @@ const ReviewDetails = ({ loaded }) => {
   }, [dispatch]);
 
   const handleSubmit = async (e) => {
-    console.log("inside of handle Submit")
     e.preventDefault();
     setHasSubmitted(true);
 
@@ -199,7 +196,6 @@ const ReviewDetails = ({ loaded }) => {
       </>
     )
   }
-  console.log(formDiv, "formDiv after editReview")
 
   return (
     <>
