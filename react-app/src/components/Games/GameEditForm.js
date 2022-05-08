@@ -69,7 +69,7 @@ const vid_upload = (e) => {
           src="/static/images/background_lab_long.jpg"
           alt=""
         ></img>
-          <div className="game_listing_form_main_body">
+          <div className="edit_listing_form_main_body">
           <div className="user-banner">
             <a href={`/users/${sessionUser.id}`}>
               <div className="profile_avatar_small">
@@ -107,8 +107,8 @@ const vid_upload = (e) => {
 
         <div className="edit_form">
 
-        </div>
-        <p className="edit_label p">
+        <p className="create_label p">
+        <h2>Update Your Product Details</h2>
           You can configure the details of your product here.
            Please complete all the fields marked. If you
           need help, check out the Store Page Best Practices documentation for a
@@ -116,7 +116,6 @@ const vid_upload = (e) => {
         </p>
         <div className="edit_form_body">
 
-        </div>
         <form onSubmit={handleSubmit} className="edit-game-container">
           {hasSubmitted && (
             <div className="error">
@@ -200,6 +199,8 @@ const vid_upload = (e) => {
                   Submit Game
           </button>
         </form>
+        </div>
+        </div>
       </div>
       </div>
     </>
