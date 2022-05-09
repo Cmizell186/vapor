@@ -135,11 +135,11 @@ const Store = ({user}) => {
                         <div className='nav_links_main_page'>Now Available on Vapor</div>
                         <div className='nav_links_main_page'>BROWSE BY GENRE</div>
                         <div className='nav_links_main_page'><Link to='/freetoplay'><FreeBreakfastTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Free to Play</Link></div>
-                        <div className='nav_links_main_page'><Link to='#'><SportsEsportsTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}}/>Action</Link></div>
-                        <div className='nav_links_main_page'><Link to='#'><VideogameAssetOffTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Adventure</Link></div>
-                        <div className='nav_links_main_page'><Link to='#'><CarCrashTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Racing</Link></div>
-                        <div className='nav_links_main_page'><Link to='#'><VideogameAssetTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />RPG</Link></div>
-                        <div className='nav_links_main_page'><Link to='#'><SportsHockeyTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Sports</Link></div>
+                        <div className='nav_links_main_page'><Link to='/action'><SportsEsportsTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}}/>Action</Link></div>
+                        <div className='nav_links_main_page'><Link to='/adventure'><VideogameAssetOffTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Adventure</Link></div>
+                        <div className='nav_links_main_page'><Link to='/racing'><CarCrashTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Racing</Link></div>
+                        <div className='nav_links_main_page'><Link to='/rpg'><VideogameAssetTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />RPG</Link></div>
+                        <div className='nav_links_main_page'><Link to='/sports'><SportsHockeyTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Sports</Link></div>
                         <Link to="/games/new">
                         <div id='game_creation_div'>
                           <h3>Developer ? {'\n'}

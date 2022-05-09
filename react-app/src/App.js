@@ -21,6 +21,11 @@ import Library from './components/Library';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import AboutUs from './components/About';
 import FTPSlider from './components/MainPage/FTPSlider';
+import ActionSlider from './components/MainPage/ActionSlider';
+import AdventureSlider from './components/MainPage/AdventureSlider';
+import RacingSlider from './components/MainPage/RacingSlider';
+import RPGSlider from './components/MainPage/RPGSlider';
+import SportsSlider from './components/MainPage/SportsSlider';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -101,6 +106,21 @@ function App() {
                 </ProtectedRoute>
                 <ProtectedRoute path='/freetoplay'>
                 <FTPSlider />
+                </ProtectedRoute>
+                <ProtectedRoute path='/action'>
+                  <ActionSlider />
+                </ProtectedRoute>
+                <ProtectedRoute path='/adventure'>
+                  <AdventureSlider />
+                </ProtectedRoute>
+                <ProtectedRoute path='/racing'>
+                  <RacingSlider />
+                </ProtectedRoute>
+                <ProtectedRoute path='/rpg'>
+                  <RPGSlider />
+                </ProtectedRoute>
+                <ProtectedRoute path='/sports'>
+                  <SportsSlider />
                 </ProtectedRoute>
       <Route>
         <ErrorPage/>
