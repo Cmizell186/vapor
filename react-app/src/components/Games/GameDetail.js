@@ -29,7 +29,7 @@ const GameDetails = ({ user, loaded }) => {
   const [showModal, setShowModal] = useState(false);
   const gameImages = useSelector(state => Object.values(state.gameImages))
   const [source, setSource] = useState();
-  console.log(gameImages)
+  // console.log(gameImages)
 
   const swapImage = (img) => {
     let video = document.getElementById("selected_media_div_video")
