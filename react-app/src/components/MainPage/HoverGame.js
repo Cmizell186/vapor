@@ -4,11 +4,11 @@
 
 
 
-const HoverGame = ({games}) => {
+const HoverGame = ({game}) => {
 
     return (
-        <div>
-            hmmm
+        <div style={{ position: "absolute"}}>
+           <h1>{game.title}</h1>
 
         </div>
     )

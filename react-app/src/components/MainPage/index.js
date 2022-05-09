@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { get_all_games } from "../../store/game";
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from "react";
+import { useEffect, useState, useRef  } from "react";
 import GameSlider from "./GameSlider";
 import { styled } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
@@ -16,13 +16,17 @@ import SportsHockeyTwoToneIcon from '@mui/icons-material/SportsHockeyTwoTone';
 import VideogameAssetTwoToneIcon from '@mui/icons-material/VideogameAssetTwoTone';
 import SportsEsportsTwoToneIcon from '@mui/icons-material/SportsEsportsTwoTone';
 import VideogameAssetOffTwoToneIcon from '@mui/icons-material/VideogameAssetOffTwoTone';
-import HoverGame from './HoverGame';
+
 
 
 const Store = ({user}) => {
 
     const dispatch = useDispatch()
     const games = useSelector(state => Object.values(state.games))
+
+
+    // Hook
+
 
     useEffect(() => {
       dispatch(get_all_games())
@@ -229,6 +233,7 @@ const Store = ({user}) => {
             ?.sort((game1, game2) => (game1.price) - (game2.price))
             ?.map(game => (
             <Link key={game?.id} className='game_container_link' to={`/games/${game?.id}`}>
+
             <div key={game?.id} id='game_container'>
             <div id='game_container_image'>
                 <img alt='' src={game?.images[0]?.image} />
@@ -239,6 +244,7 @@ const Store = ({user}) => {
             <div id='game_container_platform'>
             <img id='platform' src='/static/images/vapor_logo_grey.png' alt='' />
             </div>
+
             <div id='game_container_tags'>{game?.tags.map(tag => tag.genres.title).join(", ")}</div>
             </div>
             </div>
@@ -248,7 +254,7 @@ const Store = ({user}) => {
         </div>
     </Box>
         </div>
-        <div id="right_col_hover"><HoverGame games={games} /></div>
+        <div id="right_col_hover"></div>
         </div>
         </div>
         </div>
