@@ -22,7 +22,7 @@ const ReviewDetails = ({ loaded }) => {
   const [content, setContent] = useState(review?.content);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
-  
+
   useEffect(() => {
 
     dispatch(get_one_review(reviewId)); //warning here- useEffect has a missing dependency: 'reviewId'. Either include it or remove the dependency array
@@ -247,7 +247,7 @@ const ReviewDetails = ({ loaded }) => {
                 <div className="game_logo_img">
                   <img
                     id="main_game_rev_img"
-                    src="/static/images/spelheader.jpg"
+                    src="/static/images/vapor_title_logo.png"
                     alt=""
                     width="294"
                     height="138"

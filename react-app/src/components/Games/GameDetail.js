@@ -28,7 +28,24 @@ const GameDetails = ({ user, loaded }) => {
   const reviews = useSelector((state) => Object.values(state.reviews));
   const [showModal, setShowModal] = useState(false);
   const gameImages = useSelector(state => Object.values(state.gameImages))
-  const [imageIndex, setImageIndex] = useState(0);
+  const [source, setSource] = useState();
+  console.log(gameImages)
+
+  const swapImage = (img) => {
+    let video = document.getElementById("selected_media_div_video")
+    let image = document.getElementById("selected_media_div_img")
+    video.style.display = "none"
+    image.style.display = "block"
+    setSource(img)
+  }
+
+  const swapVideo = (vid) => {
+    let video = document.getElementById("selected_media_div_video")
+    let image = document.getElementById("selected_media_div_img")
+    video.style.display = "block"
+    image.style.display = "none"
+    setSource(vid)
+  }
 
   useEffect(() =>{
       dispatch(get_all_game_images(gameId))
@@ -138,7 +155,8 @@ const GameDetails = ({ user, loaded }) => {
               <h1>{game?.title}</h1>
             </div>
             <div id="image_details_container">
-              <div id="selected_media_div">
+              <div id='selected_media_div'>
+              <div id="selected_media_div_video" style={{ display: 'block'}}>
                 <video
                   key={game?.video}
                   controls="controls"
@@ -151,19 +169,23 @@ const GameDetails = ({ user, loaded }) => {
                   loop
                 >
                   <source src={game?.video} type="video/webm" loop />
-                  <source src={game?.video} type="video/mp4" loop />
-                  error
                 </video>
+                </div>
+                <div id="selected_media_div_img" style={{ display: 'none'}}>
+                <img id="selected_main_game_img" src={source} type='image/jpeg' />
+                </div>
                 <div id="scroll_container">
                   <div id="scroll_div">
                     <div id="video_div">
-                      <div className="thumb_div">
+                      <div onClick={(e) => {swapVideo(game?.video)}} className="thumb_div">
+                      <div id="play_button"></div>
                         <video
                           key={game?.video}
                           id="game_video_detail_mini"
                           preload="none"
-                          autoPlay={true}
+                          autoPlay={false}
                           muted
+                          poster={gameImages[0]?.image}
                           width="1140"
                           loop
                         >
@@ -177,51 +199,10 @@ const GameDetails = ({ user, loaded }) => {
                         className="main_game_image"
                         src={game?.image}
                         alt=""
+                        onClick={(e) => {swapImage(game?.image)}}
                       />
                     </div>
                     ))}
-                    {/* <div className="thumb_div">
-                      <img
-                        className="main_game_image"
-                        src={game?.images[1]?.image}
-                        alt=""
-                      />
-                    </div>
-                    <div className="thumb_div">
-                      <img
-                        className="main_game_image"
-                        src={game?.images[2]?.image}
-                        alt=""
-                      />
-                    </div>
-                    <div className="thumb_div">
-                      <img
-                        className="main_game_image"
-                        src={game?.images[3]?.image}
-                        alt=""
-                      />
-                    </div>
-                    <div className="thumb_div">
-                      <img
-                        className="main_game_image"
-                        src={game?.images[4]?.image}
-                        alt=""
-                      />
-                    </div>
-                    <div className="thumb_div">
-                      <img
-                        className="main_game_image"
-                        src={game?.images[5]?.image}
-                        alt=""
-                      />
-                    </div>
-                    <div className="thumb_div">
-                      <img
-                        className="main_game_image"
-                        src={game?.images[6]?.image}
-                        alt=""
-                      />
-                    </div> */}
                   </div>
                 </div>
               </div>
