@@ -11,7 +11,7 @@ const FTPSlider = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const dispatch = useDispatch()
   const games = useSelector(state => Object.values(state.games))
-  const ftpgames = games?.filter(games => games.tags.filter(tag => tag.genre_id === 0).length > 0)
+  const ftpgames = games?.filter(games => games.tags.filter(tag => tag.genre_id === 1).length > 0)
 
   useEffect(() => {
     dispatch(get_all_games())
