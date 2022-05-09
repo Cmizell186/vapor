@@ -18,20 +18,17 @@ const ReviewDetails = ({ loaded }) => {
   const [showModal, setShowModal] = useState(false);
   const [errorModal, setErrorModal] = useState(false);
   const [formDiv, setFormDiv] = useState(false);
-  const [is_recommended, setIs_Recommended] = useState(review?.is_recommended);
+  const [is_recommended, setIs_Recommended] = useState(null);
   const [content, setContent] = useState(review?.content);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
-  const [style_rec_yes, setStyle_Rec_Yes] = useState("recommend_yes");
-  const [style_rec_no, setStyle_Rec_No] = useState("recommend_no")
-
   useEffect(() => {
+
     dispatch(get_one_review(reviewId)); //warning here- useEffect has a missing dependency: 'reviewId'. Either include it or remove the dependency array
-    setIs_Recommended(review?.is_recommended)
+
   }, [dispatch]);
 
   const handleSubmit = async (e) => {
-    // console.log("inside of handle Submit")
     e.preventDefault();
     setHasSubmitted(true);
 
@@ -140,13 +137,13 @@ const ReviewDetails = ({ loaded }) => {
             <div className="recommend_control_box">
               <div className="is_recommended-div">Do you recommend this game?</div>
               <div className='edit_vote_up_down_container'>
-                <button className={style_rec_yes}
+                <button className={is_recommended ? 'recommend_clicked' : 'recommend_yes'}
                   type='button'
-                  defaultValue={content}
+                  // defaultValue={content}
                   onClick={(e) => {
                     setIs_Recommended(true)
-                    setStyle_Rec_Yes("recommend_clicked")
-                    setStyle_Rec_No("recommend_no")
+                    // setStyle_Rec_Yes("recommend_clicked")
+                    // setStyle_Rec_No("recommend_no")
                   }}
                 >
                   <span>
@@ -154,13 +151,13 @@ const ReviewDetails = ({ loaded }) => {
                     Yes
                   </span>
                 </button>
-                <button className={style_rec_no}
+                <button className={is_recommended === false ? 'recommend_clicked' : 'recommend_no'}
                   type='button'
-                  defaultValue={review?.is_recommended}
+                  // defaultValue={review?.is_recommended}
                   onClick={(e) => {
                     setIs_Recommended(false)
-                    setStyle_Rec_No("recommend_clicked")
-                    setStyle_Rec_Yes("recommend_yes")
+                    // setStyle_Rec_No("recommend_clicked")
+                    // setStyle_Rec_Yes("recommend_yes")
                   }}
                 >
                   <span>
@@ -199,7 +196,6 @@ const ReviewDetails = ({ loaded }) => {
       </>
     )
   }
-  // console.log(formDiv, "formDiv after editReview")
 
   return (
     <>
@@ -279,14 +275,14 @@ const ReviewDetails = ({ loaded }) => {
                       src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_edit.png"
                       alt=""
                     />
-                    <a href="#" onClick={() => ShowForm()}>
+                    <span onClick={() => ShowForm()}>
                       Update Review
-                    </a>
+                    </span>
                   </div>
                   <div className="owner_controls_divider"></div>
 
-                  <a
-                    href="#"
+                  <span
+
                     onClick={(e) => setShowModal(true)}
                     className="owner_panel_bttn"
                   >
@@ -296,7 +292,7 @@ const ReviewDetails = ({ loaded }) => {
                       alt=""
                     />
                     Delete
-                  </a>
+                  </span>
                   {showModal && (
                     <Modal onClose={() => setShowModal(false)}>
                       <div className="delete-review-form">
