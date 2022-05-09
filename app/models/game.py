@@ -11,9 +11,9 @@ class Game(db.Model):
     price = db.Column(db.Float(precision=4, asdecimal=False), nullable=False)
     description = db.Column(db.String(2500), nullable=False)
     release_date = db.Column(db.Date, nullable=False)
-    is_mature = db.Column(db.Boolean)
     video = db.Column(db.String(255), nullable=False)
     developer = db.Column(db.String(255), nullable=False)
+    maturity_rating = db.Column(db.String(50))
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
     user = db.relationship("User", back_populates="games")
@@ -30,9 +30,9 @@ class Game(db.Model):
             'price': self.price,
             'description': self.description,
             'release_date': self.release_date,
-            'is_mature': self.is_mature,
             'video' : self.video,
             'developer': self.developer,
+            'maturity_rating': self.maturity_rating,
             'user_id': self.user_id,
             'images': [img.to_dict() for img in self.image],
             'tags': [tag.to_dict() for tag in self.tags],

@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { get_all_games } from "../../store/game"
 import { get_one_game } from "../../store/game"
+import {get_one_image} from '../../store/image';
 import { create_game } from "../../store/game";
 import VaporWorksModal from "./VaporworksModal";
-import { Modal } from "../../context/Modal";
 import "./create.css";
 
 const CreateGame = ({ user, loaded }) => {
@@ -14,23 +14,26 @@ const CreateGame = ({ user, loaded }) => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [release_date, setRelease_Date] = useState("");
-  const [is_mature, setIs_Mature] = useState(null);
+  // const [is_mature, setIs_Mature] = useState(null);
   const [video, setVideo] = useState("");
   const { id } = useParams();
   const games = useSelector(state => Object.values(state.games))
   const addedGame = games[games.length - 1]
   const userGame = games.filter(game => game?.user_id === sessionUser?.id && game?.id === addedGame?.id)
-  const [showModal, setShowModal] = useState(true);
   const [developer, setDeveloper] = useState("");
+  const [maturity_rating, setMaturity_Rating] = useState("")
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const history = useHistory();
   const dispatch = useDispatch();
+  const userImage = useSelector(state => Object.values(state.images))
+  const pfp = userImage[0];
 
   // useEffect(() => {
   //   dispatch(get_all_games())
   //   dispatch(get_one_game(id))
   // }, [dispatch])
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,9 +44,9 @@ const CreateGame = ({ user, loaded }) => {
       price,
       description,
       release_date,
-      is_mature,
       video,
       developer,
+      maturity_rating,
       user_id: sessionUser.id,
     };
     const updated_game = await dispatch(create_game(newgame));
@@ -53,17 +56,18 @@ const CreateGame = ({ user, loaded }) => {
     setPrice("");
     setDescription("");
     setRelease_Date("");
-    setIs_Mature(false);
     setVideo("");
     setDeveloper("");
+    setMaturity_Rating("")
     setHasSubmitted(false);
     history.push(`/games/${updated_game?.id}`); // was ${userGame[0]?.id + 1 ??
 
   };
 
-  const vid_upload = (e) => {
-    setVideo(e.target.value);
-  };
+
+  // const vid_upload = (e) => {
+  //   setVideo(e.target.value);
+  // };
 
   return (
     <>
@@ -105,7 +109,7 @@ const CreateGame = ({ user, loaded }) => {
               <div className="profile_avatar_small">
                 <img
                   id="profile_img_small"
-                  src={sessionUser?.profile_picture}
+                  src={pfp?.image}
                   alt=""
                 ></img>
               </div>
@@ -190,7 +194,23 @@ const CreateGame = ({ user, loaded }) => {
                     onChange={(e) => setRelease_Date(e.target.value)}
                   />
                 </div>
-                <div className="is_mature-div">
+                <div className="maturity-rating-div">
+                  <label className="create_label" htmlFor="maturity_rating">ESRB Rating:
+                  <select
+                    className="maturity_rating_select_input create_input"
+                    value={maturity_rating}
+                    onChange={(e) => setMaturity_Rating(e.target.value)}
+                  >
+                    <option defaultValue="Everyone">Everyone</option>
+                    <option value="Everyone 10+">Everyone 10+</option>
+                    <option value="Teen">Teen</option>
+                    <option value="Mature 17+">Mature 17+</option>
+                    <option value="Adults Only 18+">Adults Only 18+</option>
+                    <option value="Rating Pending">Rating Pending</option>
+                  </select>
+                  </label>
+                </div>
+                {/* <div className="is_mature-div">
                   <label className="create_label" htmlFor="is_mature">Mature Rating?:</label>
                   <input
                     type="checkbox"
@@ -199,7 +219,7 @@ const CreateGame = ({ user, loaded }) => {
                     name="is_mature"
                     onChange={e => is_mature ? setIs_Mature(false) : setIs_Mature(true) }
                   />
-                </div>
+                </div> */}
                 <div className="video-div">
                   <label className="create_label" htmlFor="video">Trailers or Video clips:</label>
                   <input
@@ -208,7 +228,7 @@ const CreateGame = ({ user, loaded }) => {
                     type="text"
                     multiple
                     value={video}
-                    onChange={vid_upload}
+                    onChange={(e) => setVideo(e.target.video)}
                   />
                 </div>
                 <div className="developer-div">

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { update_game } from "../../store/game";
 import { get_all_games } from "../../store/game";
+import {get_one_image} from '../../store/image';
 import "./edit.css";
 
 const EditGame = () => {
@@ -22,9 +23,12 @@ const EditGame = () => {
   const [developer, setDeveloper] = useState(mygame?.developer);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const userImage = useSelector(state => Object.values(state.images))
+  const pfp = userImage[0];
 
   useEffect(() => {
     dispatch(get_all_games());
+    dispatch(get_one_image(sessionUser?.id))
   }, [dispatch]);
 
   const handleSubmit = async (e) => {
@@ -78,7 +82,7 @@ const EditGame = () => {
               <div className="profile_avatar_small">
                 <img
                   id="profile_img_small"
-                  src={sessionUser?.profile_picture}
+                  src={pfp?.image}
                   alt=""
                 ></img>
               </div>
