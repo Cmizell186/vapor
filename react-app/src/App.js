@@ -20,6 +20,7 @@ import SubNavBar from './components/SubNavBar'
 import Library from './components/Library';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import AboutUs from './components/About';
+import FTPSlider from './components/MainPage/FTPSlider';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -97,6 +98,9 @@ function App() {
                 </Route>
                 <ProtectedRoute path='/users/:userId' exact={true}>
                   <User users={user} />
+                </ProtectedRoute>
+                <ProtectedRoute path='/freetoplay'>
+                <FTPSlider />
                 </ProtectedRoute>
       <Route>
         <ErrorPage/>

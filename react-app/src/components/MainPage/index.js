@@ -134,7 +134,7 @@ const Store = ({user}) => {
                         <div className='nav_links_main_page'><a href='https://github.com/bradsimpson213'>GIFT CARDS</a></div>
                         <div className='nav_links_main_page'>Now Available on Vapor</div>
                         <div className='nav_links_main_page'>BROWSE BY GENRE</div>
-                        <div className='nav_links_main_page'><Link to='#'><FreeBreakfastTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Free to Play</Link></div>
+                        <div className='nav_links_main_page'><Link to='/freetoplay'><FreeBreakfastTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Free to Play</Link></div>
                         <div className='nav_links_main_page'><Link to='#'><SportsEsportsTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}}/>Action</Link></div>
                         <div className='nav_links_main_page'><Link to='#'><VideogameAssetOffTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Adventure</Link></div>
                         <div className='nav_links_main_page'><Link to='#'><CarCrashTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Racing</Link></div>
