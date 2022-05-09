@@ -76,6 +76,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 div#scroll_container::-webkit-scrollbar {
