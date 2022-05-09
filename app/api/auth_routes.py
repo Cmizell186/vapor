@@ -80,11 +80,14 @@ def sign_up():
             email=form.data['email'],
             password=form.data['password']
         )
+
         db.session.add(user)
         db.session.commit()
-        new_user_image = UserImage(image="https://vaporgames.s3.us-west-1.amazonaws.com/default_user.jpg", user_id=user.id)
-        db.session.add(new_user_image)
-        db.session.commit()
+        # print(user.to_dict(), "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+        # new_user_image = UserImage(image="https://vaporgames.s3.us-west-1.amazonaws.com/default_user.jpg", user_id=user.id)
+        # db.session.add(new_user_image)
+        # db.session.commit()
+        # print(new_user_image.to_dict(), "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<NEWUSERIMAGE>>>>>>>>>>>>>>")
         login_user(user)
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
