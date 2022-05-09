@@ -90,7 +90,7 @@ const Cart = () => {
               <div id="total-div-container">
                 <div id="total-price-items">
                   <p>Estimated Total</p>
-                  <p>{total ? `$${total}` : '$0.00'}</p>
+                  <p>{total ? `$${ (Math.round(total * 1000000000)) /  1000000000}` : '$0.00'}</p>
                 </div>
                 <div id="total-div-price-checkout">
                   <p>Thank you for choosing steam. Select button bellow to checkout</p>
