@@ -197,7 +197,7 @@ const CreateGame = ({ user, loaded }) => {
                 <div className="maturity-rating-div">
                   <label className="create_label" htmlFor="maturity_rating">ESRB Rating:
                   <select
-                    className="maturity_rating_select_input"
+                    className="maturity_rating_select_input create_input"
                     value={maturity_rating}
                     onChange={(e) => setMaturity_Rating(e.target.value)}
                   >
