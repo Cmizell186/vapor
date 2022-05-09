@@ -22,6 +22,7 @@ const ReviewDetails = ({ loaded }) => {
   const [content, setContent] = useState(review?.content);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  
   useEffect(() => {
 
     dispatch(get_one_review(reviewId)); //warning here- useEffect has a missing dependency: 'reviewId'. Either include it or remove the dependency array
