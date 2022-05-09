@@ -44,7 +44,7 @@ def upload_image(id):
 
     url = upload["url"]
     updated_pfp = UserImage.query.filter(UserImage.user_id==id).one()
-    print(updated_pfp.to_dict())
+    # print(updated_pfp.to_dict())
     updated_pfp.image = url
     db.session.commit()
     return updated_pfp.to_dict()
