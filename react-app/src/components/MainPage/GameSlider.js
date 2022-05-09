@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 const GameSlider = ({games}) => {
   const [index, setIndex] = useState(0);
   const [imageIndex, setImageIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div id='carousel'>
