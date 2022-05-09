@@ -188,13 +188,43 @@ def seed_reviews():
         game_id = 11,
         user_id = 2,
     )
+    review31 = Review(
+        is_recommended = True,
+        content = "there should be an easy mode. not everyone treats these games as serious business 🍌",
+        game_id = 1,
+        user_id = 3,
+    )
+    review32 = Review(
+        is_recommended = True,
+        content = "The best From game since Dark Souls. Just wish it ran better on my pc",
+        game_id = 1,
+        user_id = 4,
+    )
+    review33 = Review(
+        is_recommended = True,
+        content = "This game feels like...walking out into Hyrule field after the Great Deku tree. I did not think I would ever experience such an overwhelming feeling of amazement again. Please bring back this level of gaming. I'm so tired of paying $14.99 for skimpy DLC and $29.99 'season passes.' Just give us complete works like Elden Ring. I promise you'll get all our money. And honestly? This game is the new example in evaluating all others. Why should you pay $60+ for a game that's not even half as complete as Elden Ring?",
+        game_id = 1,
+        user_id = 5,
+    )
+    review34 = Review(
+        is_recommended = False,
+        content = "All you do is walk around. What was Kojima smoking? If I wanted to deliver stuff all day, I'd work at Fedex",
+        game_id = 2,
+        user_id = 4,
+    )
+    review35 = Review(
+        is_recommended = True,
+        content = "It's a truly beautiful game, very ponderous. You can get lost just wandering around. Very different from the MGS games so I understand if some players expected a totally different kind of game. For me, it reminded me of hiking in a different state or country. It's nice being lost sometimes",
+        game_id = 2,
+        user_id = 5,
+    )
 
 
     db.session.add_all([review1, review2, review3,review4,review5,review6,review7,
                         review8,review9,review10,review11,review12,review13,review14,
                         review15,review16,review17,review18,review19,review20,review21,
                         review22,review23,review24,review25,review26,review27,review28,
-                        review29,review30
+                        review29,review30,review31,review32,review33,review34,review35
                         ])
     db.session.commit()
 
