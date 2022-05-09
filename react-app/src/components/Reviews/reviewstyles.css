@@ -20,6 +20,11 @@
   padding-left: 10px;
 }
 
+#main_game_rev_img {
+  width: 250px;
+  height: 90px;
+}
+
 #yay_or_nay {
   font-size: 16px;
   color: #d6d7d8;

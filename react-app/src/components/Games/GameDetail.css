@@ -56,6 +56,13 @@
   margin-right: 16px;
 }
 
+#selected_media_div_img {
+    width: 600px;
+    height: 337px;
+    float: left;
+    margin-right: 16px;
+}
+
 #game_video_detail_id {
     width: 600px;
     height: 337px;
@@ -68,6 +75,7 @@
     flex-direction: row;
     overflow-x: auto;
     overflow-y: hidden;
+    margin-bottom: 5px;
 }
 
 div#scroll_container::-webkit-scrollbar {
@@ -96,8 +104,22 @@ div#scroll_container::-webkit-scrollbar-thumb {
 }
 
 #game_video_detail_mini {
+    position: relative;
     width: 116px;
     height: 65px;
+    top: -35px;
+}
+
+#play_button {
+    position: relative;
+    background-image: url("../../public/static/images/ico_game_highlight_video.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+    z-index: 100;
+    top: 15px;
+    right: -40px;
 }
 
 .thumb_div {
@@ -109,6 +131,11 @@ div#scroll_container::-webkit-scrollbar-thumb {
 .main_game_image {
     width: 116px;
     height: 65px;
+}
+
+#selected_main_game_img {
+    width: 600px;
+    height: 337px;
 }
 
 #main_game_image {
