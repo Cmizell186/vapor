@@ -7,8 +7,6 @@ const Reviews = ({user, filteredReviews}) => {
 const dispatch = useDispatch()
 const reviews = useSelector(state => Object.values(state.reviews))
 
-let reviewUser;
-// console.log(reviewUser, '-------------------00000')
 useEffect(() => {
     dispatch(get_all_reviews())
 }, [dispatch])
@@ -20,12 +18,12 @@ return (
         <div id='review-box' key={review.id}>
             <div className="user_box">
             <div className="profile_box">
-                <a className='profile_img_link' href={`/users/${user.id}`}>
-                    <img id="profile_img_review" src={user?.profile_picture} alt=""></img>
-                </a>
-                <a id="profile_name_link" href={`/users/${user.id}`}>
-                    <div id="profile_name_div">{user.username}</div>
-                </a>
+                <p className='profile_img_link' href={`/users/${user.id}`}>
+                    <img id="profile_img_review" src={review?.users.user_image[0].image} alt=""></img>
+                </p>
+                <p id="profile_name_link" href={`/users/${user.id}`}>
+                    <div id="profile_name_div">{review?.users.username}</div>
+                </p>
             </div>
             </div>
             <div className="review_content_box">

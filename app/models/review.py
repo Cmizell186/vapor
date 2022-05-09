@@ -1,3 +1,4 @@
+from turtle import back
 from .db import db
 
 
@@ -20,5 +21,6 @@ class Review(db.Model):
             'is_recommended': self.is_recommended,
             'content': self.content,
             'game_id': self.game_id,
-            'user_id': self.user_id
+            'user_id': self.user_id,
+            'users': self.users.to_dict()
         }
