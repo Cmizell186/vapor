@@ -33,7 +33,7 @@ const SearchBar = () => {
                 <img src={pfp?.image} id="profile_pic_search_bar" alt="" />
                 </div>
                 <div id='search_bar_welcome_msg'>
-                <img id='plus' src='/static/images/new_white.svg'></img>
+                <img alt='' id='plus' src='/static/images/new_white.svg'></img>
                 </div>
                  Welcome {sessionUser?.username} to Vapor Games !
                 </div>

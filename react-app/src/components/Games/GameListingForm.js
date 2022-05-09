@@ -163,6 +163,7 @@ const CreateGame = ({ user, loaded }) => {
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
+                    required={true}
                   />
                 </div>
                 <div className="price-div">
@@ -173,6 +174,7 @@ const CreateGame = ({ user, loaded }) => {
                     type="number"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
+                    required={true}
                   />
                 </div>
                 <div className="description-div">
@@ -182,6 +184,7 @@ const CreateGame = ({ user, loaded }) => {
                     type="text"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
+                    required={true}
                   />
                 </div>
                 <div className="release_date-div">
@@ -192,6 +195,7 @@ const CreateGame = ({ user, loaded }) => {
                     type="date"
                     value={release_date}
                     onChange={(e) => setRelease_Date(e.target.value)}
+                    required={true}
                   />
                 </div>
                 <div className="maturity-rating-div">
@@ -239,6 +243,7 @@ const CreateGame = ({ user, loaded }) => {
                     type="text"
                     value={developer}
                     onChange={(e) => setDeveloper(e.target.value)}
+                    required={true}
                   />
                 </div>
                 <button id="vw_jared_button" type="submit">

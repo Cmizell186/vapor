@@ -274,7 +274,7 @@ const GameDetails = ({ user, loaded }) => {
           <div id="sub_container_game">
             <div id="sub_container_game_panel">
               <div id="game_image_update_container">
-                {user.user?.id == game?.user_id ? <GameImageModal /> : <></>}
+                {user.user?.id === game?.user_id ? <GameImageModal /> : <></>}
               </div>
               <div id="add_to_cart_container">
                 <div className="add-cart-container">
@@ -302,7 +302,6 @@ const GameDetails = ({ user, loaded }) => {
                           src="https://community.akamai.steamstatic.com/public/images/sharedfiles/icons/icon_edit.png"
                           alt=""
                         />
-                        {/* was not able to pass prop to <Link> */}
                         <Link
                           id="game_edit_link"
                           to={`/games/${game?.id}/edit`}
