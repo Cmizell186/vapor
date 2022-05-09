@@ -29,13 +29,10 @@ const CreateGame = ({ user, loaded }) => {
   const userImage = useSelector(state => Object.values(state.images))
   const pfp = userImage[0];
 
-  console.log(addedGame?.id)
-
-  useEffect(() => {
-    dispatch(get_all_games())
-    dispatch(get_one_game(id))
-    dispatch(get_one_image(sessionUser?.id))
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(get_all_games())
+  //   dispatch(get_one_game(id))
+  // }, [dispatch])
 
 
   const handleSubmit = async (e) => {
@@ -52,9 +49,7 @@ const CreateGame = ({ user, loaded }) => {
       maturity_rating,
       user_id: sessionUser.id,
     };
-    console.log(maturity_rating)
-    console.log(newgame)
-    await dispatch(create_game(newgame));
+    const updated_game = await dispatch(create_game(newgame));
 
     // set all back to empty form field
     setTitle("");
@@ -65,9 +60,10 @@ const CreateGame = ({ user, loaded }) => {
     setDeveloper("");
     setMaturity_Rating("")
     setHasSubmitted(false);
-    history.push(`/games/${addedGame?.id + 1}`); // was ${userGame[0]?.id + 1 ??
+    history.push(`/games/${updated_game?.id}`); // was ${userGame[0]?.id + 1 ??
 
   };
+
 
   // const vid_upload = (e) => {
   //   setVideo(e.target.value);

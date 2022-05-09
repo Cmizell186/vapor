@@ -6,7 +6,6 @@ const GenreSlider = ({games}) => {
     const [img, setImg] = useState()
     const [url, setUrl] = useState()
     const game = games[0]
-    console.log(game)
 
     return (
         <div className="item-display">

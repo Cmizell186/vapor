@@ -12,6 +12,7 @@ import { Modal } from "../../context/Modal";
 import GameImageModal from "./GameImagesModal";
 import { create_cart } from "../../store/cart";
 import AddToCart from "../Carts/AddToCart";
+import { get_all_game_images } from "../../store/gameImage";
 
 import "./index.css";
 import "./GameDetail.css";
@@ -26,6 +27,17 @@ const GameDetails = ({ user, loaded }) => {
   const review = useSelector((state) => state.reviews[reviewId]);
   const reviews = useSelector((state) => Object.values(state.reviews));
   const [showModal, setShowModal] = useState(false);
+  const gameImages = useSelector(state => Object.values(state.gameImages))
+
+  useEffect(() =>{
+      dispatch(get_all_game_images(gameId))
+  }, [dispatch])
+
+  useEffect(() => {
+    dispatch(get_all_reviews());
+    dispatch(get_one_game(gameId));
+  }, [dispatch, gameId]);
+
   const filteredReviews = reviews.filter(
     (review) => review.game_id === +gameId
   );
@@ -39,7 +51,6 @@ const GameDetails = ({ user, loaded }) => {
 
   // array will have an element if they are owned
   const all_owned_carts = all_entry_carts.filter((entry) => entry.is_owned);
-  console.log(all_owned_carts);
 
   // array will have an element if they are in cart and not owned
   const all_not_owned_carts = all_entry_carts.filter(
@@ -58,13 +69,9 @@ const GameDetails = ({ user, loaded }) => {
     (entry) =>
       entry.user_id === user.id && entry.is_owned && entry.game_id === game?.id
   );
-  console.log(user_game[0]?.game_id, "user_game------------------++++");
+
   const owned_game = user_game[0]?.game_id;
 
-  useEffect(() => {
-    dispatch(get_all_reviews());
-    dispatch(get_one_game(gameId));
-  }, [dispatch, gameId]);
 
   const handleDelete = (gameId) => {
     dispatch(delete_game(gameId));
@@ -143,6 +150,8 @@ const GameDetails = ({ user, loaded }) => {
                   loop
                 >
                   <source src={game?.video} type="video/webm" loop />
+                  <source src={game?.video} type="video/mp4" loop />
+                  error
                 </video>
                 <div id="scroll_container">
                   <div id="scroll_div">
@@ -161,7 +170,16 @@ const GameDetails = ({ user, loaded }) => {
                         </video>
                       </div>
                     </div>
-                    <div className="thumb_div">
+                    {gameImages?.map(game => (
+                      <div key={game?.id} className="thumb_div">
+                      <img
+                        className="main_game_image"
+                        src={game?.image}
+                        alt=""
+                      />
+                    </div>
+                    ))}
+                    {/* <div className="thumb_div">
                       <img
                         className="main_game_image"
                         src={game?.images[1]?.image}
@@ -202,7 +220,7 @@ const GameDetails = ({ user, loaded }) => {
                         src={game?.images[6]?.image}
                         alt=""
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

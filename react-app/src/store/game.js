@@ -62,7 +62,8 @@ export const create_game = (game) => async(dispatch) => {
     })
     if (response.ok) {
         const game = await response.json()
-        dispatch(create(game))
+        await dispatch(create(game))
+        return game
     } else {
         return "ERROR AT CREATE_GAME THUNK"
     }

@@ -31,7 +31,7 @@ const AboutUs = () => {
     about: "about goes here",
     linkedIn: "https://www.linkedin.com/in/christopher-mizell-4b21a4174",
     github: "https://github.com/Cmizell186",
-    videoUrl: 'https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/1492660/3b67d75c3161ff8ebb1501f4436b839ea490e050.webm',
+    videoUrl: 'https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/1465660/6f0c3c0d89b37e1d0fbdd805f114eb359dc0e539.webm',
     imgUrl: "https://avatars.akamai.steamstatic.com/96b7ff8d843b358304b9f4c813ca62011c09028c_full.jpg"
   }
   const jason = {
@@ -44,7 +44,6 @@ const AboutUs = () => {
   }
 
   const handleChange = (i) => {
-    console.log(usArray[meIndex].videoUrl)
     setMeIndex(i)
   }
 
