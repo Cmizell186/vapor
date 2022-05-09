@@ -11,7 +11,6 @@ const GameSlider = ({games}) => {
     <div id='carousel'>
       <div id='prev_button_div'>
         <div id='prev_button' onClick={() => {
-          console.log(index)
           if(index === 0) return setIndex(9)
           return setIndex(i => i - 1)
           }}><img src='/static/images/leftarrow.png' alt='' /></div>
@@ -89,7 +88,6 @@ const GameSlider = ({games}) => {
         </Carousel>
         <div id='next_button_div'>
         <div id='next_button' onClick={() => {
-          console.log(index, "next button")
           if ( 9 === index) return setIndex(0)
           return setIndex(i => i + 1)
           }}><img src='/static/images/rightarrow.png' alt='' /></div>

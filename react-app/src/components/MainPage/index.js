@@ -24,10 +24,6 @@ const Store = ({user}) => {
     const dispatch = useDispatch()
     const games = useSelector(state => Object.values(state.games))
 
-
-    // Hook
-
-
     useEffect(() => {
       dispatch(get_all_games())
     }, [dispatch])
