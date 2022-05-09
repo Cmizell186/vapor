@@ -23,6 +23,7 @@ const EditGame = () => {
   const [developer, setDeveloper] = useState(mygame?.developer);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [maturity_rating, setMaturity_Rating] = useState(mygame?.maturity_rating)
   const userImage = useSelector(state => Object.values(state.images))
   const pfp = userImage[0];
 
@@ -41,7 +42,7 @@ const EditGame = () => {
       price,
       description,
       release_date,
-      is_mature,
+      maturity_rating,
       video,
       developer,
       userId: sessionUser.id,
@@ -51,7 +52,7 @@ const EditGame = () => {
     setPrice("");
     setDescription("");
     setRelease_Date("");
-    setIs_Mature(false);
+    setMaturity_Rating("")
     setVideo([]);
     setDeveloper("");
     if (thisGame) {
@@ -179,20 +180,21 @@ const EditGame = () => {
                     required={true}
                   />
                 </div>
-                <div className="is_mature-div">
-                  <label className="create_label" htmlFor="is_mature">
-                    Mature Rating?:
+                <div className="maturity-rating-div">
+                  <label className="create_label" htmlFor="maturity_rating">ESRB Rating:
+                  <select
+                    className="maturity_rating_select_input create_input"
+                    value={maturity_rating}
+                    onChange={(e) => setMaturity_Rating(e.target.value)}
+                  >
+                    <option defaultValue="Everyone">Everyone</option>
+                    <option value="Everyone 10+">Everyone 10+</option>
+                    <option value="Teen">Teen</option>
+                    <option value="Mature 17+">Mature 17+</option>
+                    <option value="Adults Only 18+">Adults Only 18+</option>
+                    <option value="Rating Pending">Rating Pending</option>
+                  </select>
                   </label>
-                  <input
-                    className="create_input"
-                    type="checkbox"
-                    checked={is_mature ? true : false}
-                    value={is_mature}
-                    name="is_mature"
-                    onChange={(e) =>
-                      is_mature ? setIs_Mature(false) : setIs_Mature(true)
-                    }
-                  />
                 </div>
                 <div className="video-div">
                   <label className="create_label" htmlFor="video">
