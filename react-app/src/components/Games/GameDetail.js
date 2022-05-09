@@ -28,6 +28,7 @@ const GameDetails = ({ user, loaded }) => {
   const reviews = useSelector((state) => Object.values(state.reviews));
   const [showModal, setShowModal] = useState(false);
   const gameImages = useSelector(state => Object.values(state.gameImages))
+  const [imageIndex, setImageIndex] = useState(0);
 
   useEffect(() =>{
       dispatch(get_all_game_images(gameId))
