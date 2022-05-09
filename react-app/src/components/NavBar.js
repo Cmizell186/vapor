@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from 'react-redux'
 
 const NavBar = ({user}) => {
   const [showMenu, setShowMenu] = useState(false);
+  // const user = useSelector(state => state.session.user)
 
   const openMenu = () => {
       if (showMenu) return;
@@ -17,7 +18,9 @@ const NavBar = ({user}) => {
   const pfp = userImage[0];
 
   useEffect(() =>{
-    dispatch(get_one_image(user?.id))
+    if(user) {
+      dispatch(get_one_image(user?.id))
+    }
   }, [dispatch])
 
   return (

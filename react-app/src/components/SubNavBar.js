@@ -2,6 +2,7 @@ import { get_all_carts } from '../store/cart'
 import '../../src/components/LandingPage/index.css'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { get_one_image } from '../store/image'
 
 const SearchBar = () => {
     const sessionUser = useSelector((state) => state.session.user);
@@ -14,6 +15,7 @@ const SearchBar = () => {
     // thank you <3
     useEffect(() => {
         dispatch(get_all_carts())
+        dispatch(get_one_image(sessionUser?.id))
       }, [dispatch])
 
     return (
