@@ -14,13 +14,14 @@ const CreateGame = ({ user, loaded }) => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [release_date, setRelease_Date] = useState("");
-  const [is_mature, setIs_Mature] = useState(null);
-  const [video, setVideo] = useState([]);
+  // const [is_mature, setIs_Mature] = useState(null);
+  const [video, setVideo] = useState("");
   const { id } = useParams();
   const games = useSelector(state => Object.values(state.games))
   const addedGame = games[games.length - 1]
   const userGame = games.filter(game => game?.user_id === sessionUser?.id && game?.id === addedGame?.id)
   const [developer, setDeveloper] = useState("");
+  const [maturity_rating, setMaturity_Rating] = useState("")
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const history = useHistory();
@@ -36,6 +37,7 @@ const CreateGame = ({ user, loaded }) => {
     dispatch(get_one_image(sessionUser?.id))
   }, [dispatch])
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setHasSubmitted(true);
@@ -45,11 +47,13 @@ const CreateGame = ({ user, loaded }) => {
       price,
       description,
       release_date,
-      is_mature,
       video,
       developer,
+      maturity_rating,
       user_id: sessionUser.id,
     };
+    console.log(maturity_rating)
+    console.log(newgame)
     await dispatch(create_game(newgame));
 
     // set all back to empty form field
@@ -57,17 +61,17 @@ const CreateGame = ({ user, loaded }) => {
     setPrice("");
     setDescription("");
     setRelease_Date("");
-    setIs_Mature(false);
-    setVideo([]);
+    setVideo("");
     setDeveloper("");
+    setMaturity_Rating("")
     setHasSubmitted(false);
     history.push(`/games/${addedGame?.id + 1}`); // was ${userGame[0]?.id + 1 ??
-    
+
   };
 
-  const vid_upload = (e) => {
-    setVideo(e.target.value);
-  };
+  // const vid_upload = (e) => {
+  //   setVideo(e.target.value);
+  // };
 
   return (
     <>
@@ -194,7 +198,23 @@ const CreateGame = ({ user, loaded }) => {
                     onChange={(e) => setRelease_Date(e.target.value)}
                   />
                 </div>
-                <div className="is_mature-div">
+                <div className="maturity-rating-div">
+                  <label className="create_label" htmlFor="maturity_rating">ESRB Rating:
+                  <select
+                    className="maturity_rating_select_input"
+                    value={maturity_rating}
+                    onChange={(e) => setMaturity_Rating(e.target.value)}
+                  >
+                    <option defaultValue="Everyone">Everyone</option>
+                    <option value="Everyone 10+">Everyone 10+</option>
+                    <option value="Teen">Teen</option>
+                    <option value="Mature 17+">Mature 17+</option>
+                    <option value="Adults Only 18+">Adults Only 18+</option>
+                    <option value="Rating Pending">Rating Pending</option>
+                  </select>
+                  </label>
+                </div>
+                {/* <div className="is_mature-div">
                   <label className="create_label" htmlFor="is_mature">Mature Rating?:</label>
                   <input
                     type="checkbox"
@@ -203,7 +223,7 @@ const CreateGame = ({ user, loaded }) => {
                     name="is_mature"
                     onChange={e => is_mature ? setIs_Mature(false) : setIs_Mature(true) }
                   />
-                </div>
+                </div> */}
                 <div className="video-div">
                   <label className="create_label" htmlFor="video">Trailers or Video clips:</label>
                   <input
@@ -212,7 +232,7 @@ const CreateGame = ({ user, loaded }) => {
                     type="text"
                     multiple
                     value={video}
-                    onChange={vid_upload}
+                    onChange={(e) => setVideo(e.target.video)}
                   />
                 </div>
                 <div className="developer-div">

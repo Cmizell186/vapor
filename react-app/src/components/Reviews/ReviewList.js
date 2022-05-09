@@ -6,8 +6,7 @@ import './reviewstyles.css';
 const Reviews = ({user, filteredReviews}) => {
 const dispatch = useDispatch()
 const reviews = useSelector(state => Object.values(state.reviews))
-// review.query.join to get users associated with review
-// const users = useSelector(state => Object.values(state.users))
+
 let reviewUser;
 // console.log(reviewUser, '-------------------00000')
 useEffect(() => {

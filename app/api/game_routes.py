@@ -30,9 +30,9 @@ def post_games():
             price = form.price.data,
             description = form.description.data,
             release_date = form.release_date.data,
-            is_mature = form.is_mature.data,
             video = form.video.data,
             developer = form.developer.data,
+            maturity_rating = form.developer.data,
             user_id = current_user.id
         )
         db.session.add(game)
@@ -68,9 +68,9 @@ def edit_game(id):
             game.price = form.price.data
             game.description = form.description.data
             game.release_date = form.release_date.data
-            game.is_mature = form.is_mature.data
             game.video = form.video.data
             game.developer = form.developer.data
+            game.maturity_rating = form.maturity_rating.data
             game.user_id = current_user.id
         db.session.commit()
         return game.to_dict()
