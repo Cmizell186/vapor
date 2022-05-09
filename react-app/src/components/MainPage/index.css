@@ -525,3 +525,8 @@ a {
     width: 300px;
     justify-content: space-between;
 }
+
+#content_sub_genre {
+    display: flex;
+    justify-content: center;
+}

@@ -69,9 +69,13 @@
 
 #profile_name_div {
   padding-top: 5px;
+  max-width: 50px;
 }
 
 #profile_name_link {
+  width: 60px;
+  max-width: 60px;
+  text-overflow: clip;
   text-decoration: none;
   color: #c1dbf4;
   font-size: 13px;
@@ -279,7 +283,7 @@
 #review-box {
   display: flex;
   flex-direction: row;
-  width: 600px;
+  width: 700px;
   margin-bottom: 20px;
   height: fit-content;
   background-color: #14212c;
@@ -351,7 +355,8 @@
 
 .review_recommendation {
   background-color: #0e171e;
-  width: 477px;
+  width: 555px;
+  max-width: 555px;
 }
 
 .review-content {
