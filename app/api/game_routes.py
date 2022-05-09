@@ -43,8 +43,8 @@ def post_games():
         is_owned = True)
         db.session.add(new_cart)
         db.session.commit()
-        print(game.to_dict())
-        print(new_cart.to_dict(), '00000000000000')
+        # print(game.to_dict())
+        # print(new_cart.to_dict(), '00000000000000')
         return game.to_dict()
     else:
         print(form.errors)
