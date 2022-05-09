@@ -16,6 +16,8 @@ import SportsHockeyTwoToneIcon from '@mui/icons-material/SportsHockeyTwoTone';
 import VideogameAssetTwoToneIcon from '@mui/icons-material/VideogameAssetTwoTone';
 import SportsEsportsTwoToneIcon from '@mui/icons-material/SportsEsportsTwoTone';
 import VideogameAssetOffTwoToneIcon from '@mui/icons-material/VideogameAssetOffTwoTone';
+import HoverGame from './HoverGame';
+
 
 const Store = ({user}) => {
 
@@ -132,12 +134,12 @@ const Store = ({user}) => {
                         <div className='nav_links_main_page'><a href='https://github.com/bradsimpson213'>GIFT CARDS</a></div>
                         <div className='nav_links_main_page'>Now Available on Vapor</div>
                         <div className='nav_links_main_page'>BROWSE BY GENRE</div>
-                        <div className='nav_links_main_page'><Link><FreeBreakfastTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Free to Play</Link></div>
-                        <div className='nav_links_main_page'><Link><SportsEsportsTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}}/>Action</Link></div>
-                        <div className='nav_links_main_page'><Link><VideogameAssetOffTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Adventure</Link></div>
-                        <div className='nav_links_main_page'><Link><CarCrashTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Racing</Link></div>
-                        <div className='nav_links_main_page'><Link><VideogameAssetTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />RPG</Link></div>
-                        <div className='nav_links_main_page'><Link><SportsHockeyTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Sports</Link></div>
+                        <div className='nav_links_main_page'><Link to='#'><FreeBreakfastTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Free to Play</Link></div>
+                        <div className='nav_links_main_page'><Link to='#'><SportsEsportsTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}}/>Action</Link></div>
+                        <div className='nav_links_main_page'><Link to='#'><VideogameAssetOffTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Adventure</Link></div>
+                        <div className='nav_links_main_page'><Link to='#'><CarCrashTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Racing</Link></div>
+                        <div className='nav_links_main_page'><Link to='#'><VideogameAssetTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />RPG</Link></div>
+                        <div className='nav_links_main_page'><Link to='#'><SportsHockeyTwoToneIcon style={{height: "20px", width:"20px", paddingTop: "5px", paddingRight: "5px"}} />Sports</Link></div>
                         <Link to="/games/new">
                         <div id='game_creation_div'>
                           <h3>Developer ? {'\n'}
@@ -181,9 +183,9 @@ const Store = ({user}) => {
       </Box>
         <div id="game_list">
         <TabPanel value={value} index={0}>
-        {games?.slice(0, 10)
-            ?.sort((game1, game2) => new Date(game1.release_date) - new Date(game2.release_date))
-            ?.map(game => (
+        {games?.sort((game1, game2) => new Date(game2?.release_date) - new Date(game1?.release_date))
+              ?.slice(0, 10)
+              ?.map(game => (
             <Link key={game?.id} className='game_container_link' to={`/games/${game?.id}`}>
             <div id='game_container'>
             <div id='game_container_image'>
@@ -246,7 +248,7 @@ const Store = ({user}) => {
         </div>
     </Box>
         </div>
-        <div id="right_col_hover">hover previews go here</div>
+        <div id="right_col_hover"><HoverGame games={games} /></div>
         </div>
         </div>
         </div>

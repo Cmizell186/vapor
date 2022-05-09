@@ -5,9 +5,6 @@ import {add_new_image} from '../../store/gameImage.js';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import './GameImages.css';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
 const UploadGamePicture = () =>{
     const history = useHistory(); //redirect after uploading image
     const dispatch = useDispatch();
