@@ -73,7 +73,22 @@
   ![image](https://user-images.githubusercontent.com/89172742/171495169-797039d0-a5ba-4724-b376-3f4226c15878.png)
   
 ## Cart
+  - Cart games.
+  You can view items in cart, as well as see the total amount.
+  ![image](https://user-images.githubusercontent.com/86801740/171500163-71f8bc7f-2ed2-4e23-b359-470cb2b984d7.png)
+  
+  - Cart button.
+  Cart button will show how many items are currently in cart. If cart is empty it wont show any number.
+  ![image](https://user-images.githubusercontent.com/86801740/171500355-609c3c47-77ef-4600-a8b6-dea2cf3c7940.png)
+  
+  - Remove from cart.
+  Remove button removes item from cart.
+  ![image](https://user-images.githubusercontent.com/86801740/171500561-69fa7d79-3f0e-4ee7-ba98-7923c9fdbf4e.png)
 
+  - Purchase cart.
+  Purchased button sets all cart items to owned to be displayed in library. It also removes them from cart and shows a thank you message.  
+  ![image](https://user-images.githubusercontent.com/86801740/171500787-b04f75e1-6ec3-472c-8c1c-9533c1898c98.png)
+  ![image](https://user-images.githubusercontent.com/86801740/171500847-7e5e62f6-ff07-4c78-a429-a243db0d1353.png)
 
 ## Conclusion
   Vapor was a culmination of excellent group chemistry and hard work. What was achieved in only a week is something we are all very happy with.
