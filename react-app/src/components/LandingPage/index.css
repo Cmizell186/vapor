@@ -358,3 +358,47 @@
   color: #111111;
   background-color: rgba( 164, 208, 7, 0.50 );
 }
+
+#search_form {
+  position: static;
+  z-index: 10;
+}
+
+.form-search-div {
+  width: 314.34px;
+}
+
+.searchresult-list {
+  background: linear-gradient(180deg, #575860 11.6%, #3A4852 54.73%, #2C2D34 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  right: -41px;
+  top: 5.1px;
+  z-index: 11;
+}
+
+.game-li {
+  list-style: none;
+  border-bottom: 1px solid black;
+  padding: 8px 5px 8px 5px;
+  font-size: 12px;
+  display: flex;
+  /* max-height: 53.8px; */
+  min-width: 243px;
+}
+.game-li:hover {
+  background: linear-gradient(180deg, #27282b 11.6%, #3A4852 54.73%, #2C2D34 100%);
+}
+
+.game-link {
+  text-decoration: none;
+  color: white;
+}
+
+.game-separator {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  color: white;
+}
