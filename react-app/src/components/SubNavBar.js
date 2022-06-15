@@ -44,8 +44,19 @@ const SearchBar = () => {
     console.log(filteredList[0][2], "filteredList");
     e.preventDefault();
     if (filteredList.length > 0) {
-      history.push(`/games/${filteredList[0][2]}`);
+      history.push(`/games/${filteredList[0][1]}`);
     }
+  }
+
+  function isActive(e) {
+    const searchinput = document.getElementsByClassName("search-input-bar")
+    if (searchinput === document.activeElement) {
+      console.log("in the if block")
+    }
+    setTimeout(() => {
+      setSearchWord("")
+      return false
+    }, 100);
   }
 
   return (
@@ -72,15 +83,15 @@ const SearchBar = () => {
             <div className="form-search-div">
               <form onSubmit={(e) => handleSubmit(e)} id="search-form">
                 <input
-                  type="text"
+                  type="search"
                   value={searchWord}
                   onChange={(e) => setSearchWord(e.target.value)}
                   className="search-bar-input"
                   id="search_input"
                   placeholder="search"
+                  onBlur={(e) => isActive(e)}
                 />
-              </form>
-              {searchWord != "" && (
+              {isActive && searchWord && (
                 <div id="search-container">
                   <div className="searchresult-list">
                     {filteredList?.slice(0, 5).map((game) => (
@@ -110,6 +121,7 @@ const SearchBar = () => {
                   </div>
                 </div>
               )}
+              </form>
             </div>
             <a id="blank_link" href="/library">
               <img alt="" id="blank_search" src="/static/images/blank.png" />
