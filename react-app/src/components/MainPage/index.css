@@ -308,6 +308,12 @@ a {
     justify-content: center;
 }
 
+@media (min-width: 1921px) {
+    #game_list_content_container {
+        width: 75vw;
+    }
+  }
+
 #game_list_content {
     margin-top: -49px;
     width: 1408px;
