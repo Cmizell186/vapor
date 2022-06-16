@@ -10,6 +10,7 @@ const VaporWorksModal = () =>{
             {showModal && (
               <div className="vaporworks_welcome_body">
                 <Modal onClose={() => setShowModal(false)} className="game-image-container">
+                    <div id='vapor_works_modal_container'>
                         <h1>Welcome to Vaporworks!</h1>
                         <div className="vaporworks_welcome_text">
                         <div className="modal-dialog modal-dialog-scrollable">
@@ -42,6 +43,7 @@ Click the button below to sign in with your Vapor account and begin the Vapor Di
                     <button onClick={() => setShowModal(false)} className='finished-btn'>
                         Sign In With Your Vapor Credentials
                     </button>
+                </div>
                 </div>
                 </div>
                 </Modal>
