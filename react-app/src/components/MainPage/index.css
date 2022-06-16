@@ -327,13 +327,6 @@ a {
     float: left;
 }
 
-#right_col_hover {
-    width: 308px;
-    float: right;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
 #game_list {
     width: 618px;
     height: 771px;
@@ -349,9 +342,25 @@ a {
 }
 
 #game_container_info:hover {
-    background: #66c0f4;
+    background: -webkit-linear-gradient( left, #c6e6f8 5%,#95bcd3 95%);
+    background: linear-gradient( to right, #c6e6f8 5%,#95bcd3 95%);
     color: black;
+    margin-right: -14px;
+    padding-right: 14px;
 }
+
+/* #right_col_hover {
+    width: 308px;
+    float: right;
+    padding-left: 5px;
+    margin-left: 15px;
+    padding-right: 5px;
+    position: relative;
+    margin-top: 49px;
+    background: -webkit-linear-gradient( left, #95bbd4 5%,#859bac 95%);
+    background: linear-gradient( to right, #95bbd4 5%,#859bac 95%);
+    height: 735px;
+} */
 
 .game_container_link:hover {
     background: rgba( 0, 0, 0, 0.4 );
