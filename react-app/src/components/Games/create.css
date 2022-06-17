@@ -7,6 +7,12 @@ body .game-listing-form-container {
   overflow-x: hidden;
 }
 
+@media (max-width: 1440px) {
+  .game_listing_form_main_body {
+      margin-left: -175px;
+  }
+}
+
 @media (max-width: 1920px) {
   #vapor_works_modal_container {
     height: 100vh;
@@ -16,6 +22,12 @@ body .game-listing-form-container {
 @media (min-width: 1921px) {
   #vapor_works_modal_container {
     height: 100vh;
+  }
+}
+
+@media (max-width: 1440px) {
+  #vapor_works_modal_container {
+      height: auto;
   }
 }
 

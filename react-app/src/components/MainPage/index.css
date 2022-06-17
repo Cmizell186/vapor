@@ -13,6 +13,14 @@
     justify-content: center;
 }
 
+@media (max-width: 1440px) {
+    #main_page {
+        margin: 0;
+        padding: 0;
+        margin-left: 50px;
+    }
+}
+
 #main_page_content {
     display: flex;
     justify-content: center;
