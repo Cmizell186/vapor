@@ -316,6 +316,7 @@ a {
 
 #game_list_content {
     margin-top: -49px;
+    margin-right: 440px;
     width: 1408px;
     height: 815px;
     display: flex;
