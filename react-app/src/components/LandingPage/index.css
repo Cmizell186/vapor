@@ -112,6 +112,18 @@
   background-position: left;
 }
 
+@media (max-width: 1440px) {
+  #signup_page_content {
+    height: 90vh;
+  }
+}
+
+@media (max-width: 1440px) {
+  #page_content {
+    height: 90vh;
+  }
+}
+
 #signup_form {
   position: relative;
   right: 150px;
