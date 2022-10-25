@@ -102,7 +102,7 @@
 }
 
 #signup_page_content {
-  height: 80vh;
+  height: 100vh;
   background: #212429;
   display: flex;
   justify-content: center;
@@ -114,15 +114,24 @@
 
 @media (max-width: 1440px) {
   #signup_page_content {
-    height: 90vh;
+    height: 100vh;
   }
-}
 
-@media (max-width: 1440px) {
   #page_content {
     height: 90vh;
   }
+
+  #signup_page_content {
+    padding-bottom: 100px;
+  }
+
+  #footer {
+    /* margin-bottom: -69px !important; */
+    /* position: relative;
+    top: 730px; */
+  }
 }
+
 
 #signup_form {
   position: relative;
@@ -170,7 +179,7 @@
   cursor: pointer;
   background: transparent;
   text-shadow: 1px 1px 0px rgb(0 0 0 / 30%);
-  background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
+  background: linear-gradient(to right, #47bfff 5%, #1a44c2 60%);
   box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
   background-position: 25%;
   background-size: 330% 100%;
@@ -243,7 +252,7 @@
   color: #E9E9E9;
   display: block;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 2px;
 }
 
@@ -255,12 +264,13 @@
 
 #footer {
   font-family: Arial, Helvetica, sans-serif;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  padding: 16px 0 60px 0;
+  height: 25px;
+  padding: 15px;
   margin: 0;
   background: #171a21;
   color: #8F98A0;
@@ -344,7 +354,7 @@
   background-position: -34px 30px;
   width: auto;
   height: 20px;
-  background-color: rgba( 164, 208, 7, 0.4 );
+  background-color: rgba(164, 208, 7, 0.4);
   box-shadow: 0 0 3px #000;
   font-size: 11px;
   text-align: center;
@@ -368,7 +378,7 @@
 
 #cart_link a:hover {
   color: #111111;
-  background-color: rgba( 164, 208, 7, 0.50 );
+  background-color: rgba(164, 208, 7, 0.50);
 }
 
 #search_form {
@@ -399,6 +409,7 @@
   /* max-height: 53.8px; */
   min-width: 243px;
 }
+
 .game-li:hover {
   background: linear-gradient(180deg, #27282b 11.6%, #3A4852 54.73%, #2C2D34 100%);
 }

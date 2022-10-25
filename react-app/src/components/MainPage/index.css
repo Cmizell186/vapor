@@ -28,6 +28,9 @@
     #game_list_content {
         margin-left: 150px;
     }
+    #header_content {
+        height: 205px;
+    }
 }
 
 #main_page_content {
