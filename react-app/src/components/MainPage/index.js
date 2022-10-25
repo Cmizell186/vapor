@@ -23,6 +23,7 @@ const Store = ({ user }) => {
 
   const dispatch = useDispatch()
   const games = useSelector(state => Object.values(state.games))
+  const sortedGames = games?.sort((game1, game2) => new Date(game2?.release_date) - new Date(game1?.release_date))
   const [hoveredGame, setHoveredGame] = useState();
 
   useEffect(() => {
@@ -250,23 +251,27 @@ const Store = ({ user }) => {
                     </Box>
                   </div>
                   <div id="right_col_hover">
-                    <div id='right_col_game_title'>{hoveredGame?.title}</div>
+                    <div id='right_col_game_title'>{hoveredGame ? hoveredGame?.title : sortedGames[0]?.title}</div>
                     <div id='right_col_game_reviews'>
                       Overall user reviews:{"\n"}
                       Very Positive (58,441)
                     </div>
                     <div id='right_col_game_tags'>
-                      {hoveredGame?.tags.map(tag =>
+                      {hoveredGame ? hoveredGame?.tags.map(tag =>
+                        <div id='right_col_game_tag'>
+                          {tag?.genres.title}
+                        </div>
+                      ) : sortedGames[0]?.tags.map(tag =>
                         <div id='right_col_game_tag'>
                           {tag?.genres.title}
                         </div>
                       )}
                     </div>
                     <div id='right_col_game_images'>
-                      <img alt='' className='right_col_game_image' src={hoveredGame?.images[1]?.image} />
-                      <img alt='' className='right_col_game_image' src={hoveredGame?.images[2]?.image} />
-                      <img alt='' className='right_col_game_image' src={hoveredGame?.images[3]?.image} />
-                      <img alt='' className='right_col_game_image' src={hoveredGame?.images[4]?.image} />
+                      <img alt='' className='right_col_game_image' src={hoveredGame ? hoveredGame?.images[1]?.image : sortedGames[0]?.images[1]?.image} />
+                      <img alt='' className='right_col_game_image' src={hoveredGame ? hoveredGame?.images[2]?.image : sortedGames[0]?.images[2]?.image} />
+                      <img alt='' className='right_col_game_image' src={hoveredGame ? hoveredGame?.images[3]?.image : sortedGames[0]?.images[3]?.image} />
+                      <img alt='' className='right_col_game_image' src={hoveredGame ? hoveredGame?.images[4]?.image : sortedGames[0]?.images[4]?.image} />
                     </div>
                   </div>
                 </div>
