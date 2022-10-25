@@ -80,7 +80,7 @@
 }
 
 div#scroll_container::-webkit-scrollbar {
-    height: 10px;
+    height: 13px;
 }
 
 div#scroll_container::-webkit-scrollbar-track {
