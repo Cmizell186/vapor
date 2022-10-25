@@ -124,11 +124,10 @@
   #signup_page_content {
     padding-bottom: 100px;
   }
-
-  #footer {
-    /* margin-bottom: -69px !important; */
-    /* position: relative;
-    top: 730px; */
+}
+@media screen and (max-width: 1000px) {
+  #page_content {
+    height: 100vh;
   }
 }
 
@@ -194,6 +193,7 @@
 #fake_checkbox {
   display: flex;
   justify-content: flex-start;
+
 }
 
 #robot_div {

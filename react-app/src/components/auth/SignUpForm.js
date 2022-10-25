@@ -93,11 +93,11 @@ const SignUpForm = () => {
       </div>
       <div id='robot_div'>
       <input id='login_checkboxa' type='checkbox'></input>
-      <label className='login_label'>I am a robot.</label>
+      <label className='login_label'>I'm not a robot.</label>
       </div>
       <div id='fake_checkbox'>
       <input id='login_checkbox' type='checkbox'></input>
-      <label className='login_label'>I am 13 years of age or older and agree to the terms of the Vapor Subscriber Agreement and the Jason Privacy Policy.</label>
+      <label className='login_label'>I am 13 years of age or older and agree to the terms of the Vapor Subscriber Agreement and the Vapor Privacy Policy</label>
       </div>
       <button className="sign_up_button" type='submit'>Continue</button>
     </form>
