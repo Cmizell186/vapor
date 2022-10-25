@@ -17,7 +17,16 @@
     #main_page {
         margin: 0;
         padding: 0;
-        margin-left: 50px;
+        min-width: 1440px;
+    }
+    #sidebar_nav {
+        margin-left: 20px;
+    }
+    #carousel {
+        width: 990px;
+    }
+    #game_list_content {
+        margin-left: 150px;
     }
 }
 
@@ -305,6 +314,7 @@ a {
     background: linear-gradient( to bottom, rgba(42,71,94,1.0) 5%, rgba(42,71,94,0.0) 70%);
     padding-top: 20px;
     margin-top: 60px;
+    padding-left: 150px;
     overflow: visible;
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
@@ -316,11 +326,11 @@ a {
     justify-content: center;
 }
 
-@media (min-width: 1921px) {
+/* @media (min-width: 1921px) {
     #game_list_content_container {
         width: 75vw;
     }
-  }
+  } */
 
 #game_list_content {
     margin-top: -49px;
@@ -360,7 +370,7 @@ a {
     padding-right: 14px;
 }
 
-/* #right_col_hover {
+#right_col_hover {
     width: 308px;
     float: right;
     padding-left: 5px;
@@ -371,7 +381,7 @@ a {
     background: -webkit-linear-gradient( left, #95bbd4 5%,#859bac 95%);
     background: linear-gradient( to right, #95bbd4 5%,#859bac 95%);
     height: 735px;
-} */
+}
 
 .game_container_link:hover {
     background: rgba( 0, 0, 0, 0.4 );
