@@ -91,3 +91,9 @@
     z-index: 30;
     overflow: hidden;
 }
+
+@media screen and (max-width: 1000px) {
+  #library_content  {
+    margin-right: 50px;
+  }
+}
