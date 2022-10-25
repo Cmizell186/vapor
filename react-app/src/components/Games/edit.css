@@ -1,4 +1,4 @@
-body .edit-listing-form-container {
+.edit-listing-form-container {
   background: linear-gradient( -60deg,  #e5e7ea 70%, #000000 50%);
   min-height: 1248px;
   background-image: url("../../public/static/images/background_lab.jpg");
@@ -186,5 +186,18 @@ body .edit-listing-form-container {
 .vw_lab_edit_bg {
   animation: 300s ease-out 0s 1 slideInFromRight;
   z-index: 10;
+}
 
+@media screen and (max-width: 1440px) and (max-height: 800px) {
+  .edit_listing_form_main_body {
+    position: absolute;
+    left: 35em;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .edit_listing_form_main_body {
+    position: absolute;
+    left: 45em;
+  }
 }
