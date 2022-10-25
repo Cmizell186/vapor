@@ -311,6 +311,22 @@ a {
     box-shadow: 0 0 12px #66c0f4;
 }
 
+@media screen and (max-width: 1000px) {
+    #root {
+        min-width: 1440px;
+    }
+    #main_page_content {
+        margin-top: 75px;
+        padding-right: 69px;
+    }
+    #game_list_content_container {
+        min-width: 1440px;
+    }
+    /* #game_list_content {
+        width: 1440px;
+    } */
+  }
+
 #game_list_content_container {
     position: absolute;
     left: 0;
@@ -328,12 +344,6 @@ a {
     display: flex;
     justify-content: center;
 }
-
-/* @media (min-width: 1921px) {
-    #game_list_content_container {
-        width: 75vw;
-    }
-  } */
 
 #game_list_content {
     margin-top: -49px;
