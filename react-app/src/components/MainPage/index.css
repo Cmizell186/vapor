@@ -26,7 +26,7 @@
         width: 990px;
     }
     #game_list_content {
-        margin-left: 150px;
+        margin-left: 240px;
     }
     #header_content {
         height: 205px;
@@ -380,19 +380,6 @@ a {
     padding-right: 14px;
 }
 
-#right_col_hover {
-    width: 308px;
-    float: right;
-    padding-left: 5px;
-    margin-left: 15px;
-    padding-right: 5px;
-    position: relative;
-    margin-top: 49px;
-    background: -webkit-linear-gradient( left, #95bbd4 5%,#859bac 95%);
-    background: linear-gradient( to right, #95bbd4 5%,#859bac 95%);
-    height: 735px;
-}
-
 .game_container_link:hover {
     background: rgba( 0, 0, 0, 0.4 );
     text-decoration: none;
@@ -569,4 +556,83 @@ a {
 #content_sub_genre {
     display: flex;
     justify-content: center;
+}
+
+
+#right_col_hover {
+    width: 308px;
+    float: right;
+    padding-left: 5px;
+    margin-left: 15px;
+    padding-right: 5px;
+    position: relative;
+    margin-top: 49px;
+    background: -webkit-linear-gradient( left, #95bbd4 5%,#859bac 95%);
+    background: linear-gradient( to right, #95bbd4 5%,#859bac 95%);
+    height: 735px;
+}
+
+#right_col_game_title {
+    text-transform: none;
+    font-size: 21px;
+    letter-spacing: 0px;
+    color: #263645;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 10px;
+    padding-right: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#right_col_game_reviews {
+    padding: 5px 7px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    background-color: rgba( 38, 54, 69, 0.6);
+    width: 272px;
+    height: 30px;
+    border-radius: 2px;
+    white-space: pre-wrap;
+}
+
+#right_col_game_tags {
+    margin-left: 10px;
+}
+
+#right_col_game_tag {
+    background-color: rgba( 38, 54, 69, 0.6);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    display: inline-block;
+    line-height: 19px;
+    padding: 0 7px;
+    font-weight: 500;
+    box-shadow: none;
+    cursor: pointer;
+    margin-right: 2px;
+    border-radius: 2px;
+    margin-bottom: 2px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 11px;
+}
+
+#right_col_game_tag:hover {
+    text-decoration: none;
+    color: #66c0f4;
+}
+
+#right_col_game_images {
+    margin-left: 10px;
+}
+
+.right_col_game_image {
+    width: 285px;
+    height: 150px;
+    background-size: cover;
+    background-position: center center;
 }
