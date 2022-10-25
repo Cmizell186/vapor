@@ -85,7 +85,7 @@
     #user-content {
       position: relative;
       width: 75vw;
-      height: 100%;
+      height: 100vh;
     }
   }
 
@@ -101,7 +101,7 @@
     #pfp-container {
         display: flex;
         justify-content: center;
-        padding-right: 40px;
+        padding-right: 30px;
     }
     #upload-pic-form {
         margin-left: 300px;

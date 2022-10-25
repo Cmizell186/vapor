@@ -98,9 +98,7 @@ body {
 }
 
 #pfp-container-jd{
-  padding-top: 15px;
-  padding-bottom: 10px;
-  padding-left: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -181,7 +179,7 @@ body {
 
 @media screen and (max-width: 1000px) {
   #user-content-jd {
-    width: 100vw;
-    height: 1080px;
+    width: auto;
+    height: auto;
   }
 }

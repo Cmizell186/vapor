@@ -20,16 +20,16 @@
         min-width: 1440px;
     }
     #sidebar_nav {
-        margin-left: 20px;
+        margin-left: 40px;
     }
     #carousel {
         width: 990px;
     }
     #game_list_content {
-        margin-left: 240px;
+        margin-left: 0px;
     }
     #header_content {
-        height: 205px;
+        height: 275px;
     }
 }
 
@@ -320,7 +320,7 @@ a {
         padding-right: 69px;
     }
     #game_list_content_container {
-        min-width: 1440px;
+        min-width: 1540px;
     }
   }
 

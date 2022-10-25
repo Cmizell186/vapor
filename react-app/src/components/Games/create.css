@@ -9,7 +9,7 @@
 
 @media (max-width: 1440px) {
   .game_listing_form_main_body {
-      margin-left: -275px;
+      margin-left: -150px;
   }
 }
 
@@ -24,7 +24,7 @@
       height: auto;
   }
   .vaporworks_welcome_text {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 

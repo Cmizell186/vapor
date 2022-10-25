@@ -177,8 +177,8 @@ const Store = ({ user }) => {
 
                           >
                             <SteamTab label="New Releases" {...a11yProps(0)} />
-                            <SteamTab label="Top Sellers" {...a11yProps(1)} />
-                            <SteamTab label="Specials" {...a11yProps(2)} />
+                            {/* <SteamTab label="Top Sellers" {...a11yProps(1)} />
+                            <SteamTab label="Specials" {...a11yProps(2)} /> */}
                           </SteamTabs>
                         </div>
                       </Box>
@@ -204,7 +204,7 @@ const Store = ({ user }) => {
                               </Link>
                             ))}
                         </TabPanel>
-                        <TabPanel value={value} index={1}>
+                        {/* <TabPanel value={value} index={1}>
                           {games?.sort(() => Math.random() - Math.random())
                             ?.slice(0, 10)
                             ?.map(game => (
@@ -245,7 +245,7 @@ const Store = ({ user }) => {
                                 </div>
                               </Link>
                             ))}
-                        </TabPanel>
+                        </TabPanel> */}
                       </div>
                     </Box>
                   </div>
