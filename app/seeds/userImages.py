@@ -20,7 +20,7 @@ def seed_userImages():
     )
     chris_user = UserImage(
         id=4,
-        image="https://vaporgames.s3.us-west-1.amazonaws.com/THELASTTIMEISEENPHOTO.jpg",
+        image="https://vaporgames.s3.us-west-1.amazonaws.com/IMG_2600.jpg",
         user_id=4
     )
     jared_user = UserImage(
