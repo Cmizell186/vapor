@@ -10,6 +10,8 @@ ENV REACT_APP_BASE_URL=https://vapor-app-docker.onrender.com
 ENV FLASK_APP=app
 ENV FLASK_ENV=production
 ENV SQLALCHEMY_ECHO=True
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
 
 # Set the directory for upcoming commands
 WORKDIR /var/www
