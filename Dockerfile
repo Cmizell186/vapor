@@ -30,7 +30,7 @@ RUN pip install psycopg2-binary
 RUN mkdir -p app/static
 
 # Copy the built react app from the build directory to static directory
-RUN cp -r react-app/build/* app/static/
+RUN cp -r react-app/build/* .
 
 # Start the flask environment
 CMD gunicorn app:app
