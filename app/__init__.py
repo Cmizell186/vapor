@@ -76,11 +76,5 @@ def inject_csrf_token(response):
 def react_root(path):
     if path == 'favicon.ico':
         return app.send_static_file('favicon.ico')
-    # Check if the path is for a static file
-    if path.startswith('static/'):
-        return app.send_static_file(path)
-    # For API routes, let Flask handle them
-    if path.startswith('api/'):
-        return app.send_static_file('index.html')
     # For all other routes, serve the React app
     return app.send_static_file('index.html')
