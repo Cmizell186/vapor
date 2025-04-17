@@ -74,16 +74,19 @@ def inject_csrf_token(response):
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def react_root(path):
-    print(f"Received path: {path}") 
+    print(f"DEBUG: Requested path is: '{path}'")
+    
     if path == 'favicon.ico':
         return app.send_static_file('favicon.ico')
+    
     if path.startswith('api/'):
-        pass
-    try:
-        if os.path.exists(os.path.join(app.static_folder, path)):
-            return app.send_static_file(path)
-    except:
-        pass
+        return
         
-    # For all other routes, serve React's index.html
+    if path.startswith('static/'):
+        try:
+            return app.send_static_file(path)
+        except:
+            pass
+
+    print(f"DEBUG: Serving index.html for path: '{path}'")
     return app.send_static_file('index.html')
